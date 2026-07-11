@@ -1,0 +1,41 @@
+name: n8n-nodes-pco-local
+
+services:
+  n8n:
+    image: n8nio/n8n:${N8N_VERSION:-latest}
+    container_name: n8n-nodes-pco-local
+    restart: unless-stopped
+    ports:
+      - "${N8N_PORT:-5678}:5678"
+    environment:
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:-local-development-only-change-me-32chars}
+      N8N_BASIC_AUTH_ACTIVE: ${N8N_BASIC_AUTH_ACTIVE:-false}
+      N8N_BASIC_AUTH_USER: ${N8N_BASIC_AUTH_USER:-local}
+      N8N_BASIC_AUTH_PASSWORD: ${N8N_BASIC_AUTH_PASSWORD:-local}
+      N8N_COMMUNITY_PACKAGES_ENABLED: "true"
+      N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
+      GENERIC_TIMEZONE: ${GENERIC_TIMEZONE:-America/New_York}
+      TZ: ${TZ:-America/New_York}
+    volumes:
+      - n8n-data:/home/node/.n8n
+      - ./custom:/home/node/.n8n/custom
+      - ..:/workspace:ro
+    working_dir: /home/node/.n8n/custom
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - rm -rf node_modules package-lock.json /tmp/n8n-nodes-pco-package && mkdir -p /tmp/n8n-nodes-pco-package && npm pack /workspace --pack-destination /tmp/n8n-nodes-pco-package --silent && npm install --no-save --no-audit --no-fund /tmp/n8n-nodes-pco-package/*.tgz && cd /home/node && exec n8n start
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - const net = require('net'); const socket = net.createConnection(5678, '127.0.0.1'); socket.setTimeout(2000); socket.on('connect', () => process.exit(0)); socket.on('timeout', () => process.exit(1)); socket.on('error', () => process.exit(1));
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+volumes:
+  n8n-data:
+    driver: local

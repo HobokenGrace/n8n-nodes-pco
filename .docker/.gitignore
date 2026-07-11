@@ -1,0 +1,4 @@
+.env
+custom/node_modules/
+custom/package-lock.json
+*.log

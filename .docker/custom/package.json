@@ -1,0 +1,5 @@
+{
+  "name": "n8n-nodes-pco-local-custom",
+  "private": true,
+  "description": "Local n8n custom extensions workspace for @hobokengrace/n8n-nodes-pco. The package is installed from a tarball created at container startup."
+}
