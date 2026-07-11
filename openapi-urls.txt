@@ -1,0 +1,11 @@
+https://api.planningcenteronline.com/api/v2/open_api/2025-09-30
+https://api.planningcenteronline.com/calendar/v2/open_api/2022-07-07
+https://api.planningcenteronline.com/check-ins/v2/open_api/2025-05-28
+https://api.planningcenteronline.com/current/v2/open_api/2018-08-01
+https://api.planningcenteronline.com/giving/v2/open_api/2019-10-18
+https://api.planningcenteronline.com/groups/v2/open_api/2023-07-10
+https://api.planningcenteronline.com/people/v2/open_api/2025-11-10
+https://api.planningcenteronline.com/publishing/v2/open_api/2024-03-25
+https://api.planningcenteronline.com/registrations/v2/open_api/2025-05-01
+https://api.planningcenteronline.com/services/v2/open_api/2018-11-01
+https://api.planningcenteronline.com/webhooks/v2/open_api/2022-10-20

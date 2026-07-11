@@ -1,0 +1,1676 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Planning Center Current",
+    "version": "2018-08-01",
+    "description": "The Current API requires no scopes and imposes no app access or permissions, so\nany OAuth app can use it to recover whoami-level details about the current person\nand their organization.\n\nIt's intended to be used through either `/current/v2/me` or\n`/current/v2/me?include=organization`.\n",
+    "termsOfService": "https://planningcenter.com/terms",
+    "contact": {
+      "name": "Planning Center",
+      "url": "https://www.planningcenter.com",
+      "email": "support@planningcenter.com"
+    },
+    "x-pco-api-version": "16.2.0"
+  },
+  "externalDocs": {
+    "description": "Planning Center developer documentation",
+    "url": "https://planningcenter.com/developers"
+  },
+  "servers": [
+    {
+      "url": "https://api.planningcenteronline.com/current/v2"
+    }
+  ],
+  "security": [
+    {
+      "oauth2": [
+        "api"
+      ]
+    },
+    {
+      "personal_access_token": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Person"
+    }
+  ],
+  "paths": {
+    "/people": {
+      "summary": "Person",
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/person_include_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/person_all_fields_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/organization_all_fields_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/pagination_offset_per_page_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/pagination_offset_offset_parameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful collection response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization_people_collection_envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400_read"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        }
+      }
+    },
+    "/people/{person_id}": {
+      "summary": "Person",
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "person_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The Person id"
+          },
+          {
+            "$ref": "#/components/parameters/person_include_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/person_all_fields_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/organization_all_fields_parameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful read response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization_people_resource_envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400_read"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        }
+      }
+    },
+    "/people/{person_id}/organization": {
+      "summary": "Organization",
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "person_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The Person id"
+          },
+          {
+            "$ref": "#/components/parameters/organization_all_fields_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/pagination_offset_per_page_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/pagination_offset_offset_parameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful collection response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/person_organization_collection_envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400_read"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        }
+      }
+    },
+    "/people/{person_id}/organization/{organization_id}": {
+      "summary": "Organization",
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "person_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The Person id"
+          },
+          {
+            "name": "organization_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The Organization id"
+          },
+          {
+            "$ref": "#/components/parameters/organization_all_fields_parameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful read response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/person_organization_resource_envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400_read"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        }
+      }
+    },
+    "/me": {
+      "summary": "Person",
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/person_include_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/person_all_fields_parameter"
+          },
+          {
+            "$ref": "#/components/parameters/organization_all_fields_parameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful read response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization_people_resource_envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400_read"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "organization_all_fields_parameter": {
+        "name": "fields[Organization]",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/organization_renderable_attributes_enum"
+              }
+            ]
+          },
+          "uniqueItems": true
+        },
+        "explode": false
+      },
+      "organization_only_attributes_fields_parameter": {
+        "name": "fields[Organization]",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/organization_renderable_attributes_enum"
+              }
+            ]
+          },
+          "uniqueItems": true
+        },
+        "explode": false
+      },
+      "person_all_fields_parameter": {
+        "name": "fields[Person]",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/person_renderable_attributes_enum"
+              },
+              {
+                "$ref": "#/components/schemas/person_relationships_and_includes_enum"
+              }
+            ]
+          },
+          "uniqueItems": true
+        },
+        "explode": false
+      },
+      "person_only_attributes_fields_parameter": {
+        "name": "fields[Person]",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/person_renderable_attributes_enum"
+              }
+            ]
+          },
+          "uniqueItems": true
+        },
+        "explode": false
+      },
+      "person_include_parameter": {
+        "name": "include",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "organization"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "explode": false
+      },
+      "pagination_offset_per_page_parameter": {
+        "name": "per_page",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 25
+        },
+        "description": "Maximum number of records per page"
+      },
+      "pagination_offset_offset_parameter": {
+        "name": "offset",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "description": "Pagination offset"
+      }
+    },
+    "requestBodies": {
+      "organization_resource_create": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "Organization"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "organization_resource_update": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "Organization"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "person_resource_create": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "Person"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "person_resource_update": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "Person"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "400": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/MissingParameterError"
+                },
+                {
+                  "$ref": "#/components/schemas/UnknownAttributeError"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "401": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UnauthorizedError"
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ForbiddenError"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NotFoundError"
+            }
+          }
+        }
+      },
+      "409": {
+        "description": "Conflict",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NotUniqueError"
+            }
+          }
+        }
+      },
+      "422": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/AttributeNotFoundError"
+                },
+                {
+                  "$ref": "#/components/schemas/ForbiddenAttributeError"
+                },
+                {
+                  "$ref": "#/components/schemas/InvalidPayloadError"
+                },
+                {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InternalServerError"
+            }
+          }
+        }
+      },
+      "400_read": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/MissingParameterError"
+                },
+                {
+                  "$ref": "#/components/schemas/RangeError"
+                },
+                {
+                  "$ref": "#/components/schemas/UnknownAttributeError"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "400_modify": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ParseJsonError"
+                },
+                {
+                  "$ref": "#/components/schemas/ParsePayloadError"
+                },
+                {
+                  "$ref": "#/components/schemas/MissingParameterError"
+                },
+                {
+                  "$ref": "#/components/schemas/SaveFailedError"
+                },
+                {
+                  "$ref": "#/components/schemas/UnknownAttributeError"
+                },
+                {
+                  "$ref": "#/components/schemas/UnknownAttributeError"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "400_destroy": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/DeleteRestrictionError"
+                },
+                {
+                  "$ref": "#/components/schemas/MissingParameterError"
+                },
+                {
+                  "$ref": "#/components/schemas/UnknownAttributeError"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "organization_attributes": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "subdomain": {
+            "type": "string"
+          }
+        },
+        "title": "Organization"
+      },
+      "person_attributes": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          }
+        },
+        "title": "Person"
+      },
+      "person_relationships_and_includes_enum": {
+        "type": "string",
+        "enum": [
+          "organization"
+        ]
+      },
+      "organization_renderable_attributes_enum": {
+        "type": "string",
+        "enum": [
+          "name",
+          "subdomain"
+        ]
+      },
+      "person_renderable_attributes_enum": {
+        "type": "string",
+        "enum": [
+          "email",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "organization_resource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Organization"
+            ]
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/organization_attributes"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string"
+              },
+              "people": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "person_resource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Person"
+            ]
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/person_attributes"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "organization_people_resource_envelope": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/person_resource"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/organization_resource"
+                }
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "can_include": {
+                "type": "array",
+                "items": {},
+                "enum": [
+                  [
+                    "organization"
+                  ]
+                ]
+              },
+              "parent": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Organization"
+                    ]
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "person_organization_resource_envelope": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/organization_resource"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "parent": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Person"
+                    ]
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "organization_people_collection_envelope": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/person_resource"
+            }
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/organization_resource"
+                }
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "can_include": {
+                "type": "array",
+                "items": {},
+                "enum": [
+                  [
+                    "organization"
+                  ]
+                ]
+              },
+              "parent": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Organization"
+                    ]
+                  }
+                }
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer"
+              },
+              "prev": {
+                "type": "object",
+                "properties": {
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 0
+                  }
+                }
+              },
+              "next": {
+                "type": "object",
+                "properties": {
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string"
+              },
+              "prev": {
+                "type": "string"
+              },
+              "next": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "person_organization_collection_envelope": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/organization_resource"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "parent": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Person"
+                    ]
+                  }
+                }
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer"
+              },
+              "prev": {
+                "type": "object",
+                "properties": {
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 0
+                  }
+                }
+              },
+              "next": {
+                "type": "object",
+                "properties": {
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string"
+              },
+              "prev": {
+                "type": "string"
+              },
+              "next": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "AttributeNotFoundError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "422"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "attribute_resource_not_found"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Attribute Resource Not Found"
+                  ]
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "parameter": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "InvalidEnumValueError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "422"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "invalid_enum_value"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Invalid Enum Value"
+                  ]
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "parameter": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "DeleteRestrictionError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "delete_restriction"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "Your request could not be processed"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Bad Request"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ForbiddenError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "403"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "You do not have access to this resource"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Forbidden"
+                  ]
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ForbiddenAttributeError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "422"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Forbidden Attribute"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "InternalServerError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "500"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "An internal server error occurred on our end and we've been notified.  Please contact support if the issue persists."
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Internal Server Error"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "InvalidPayloadError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "422"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "invalid_payload"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Invalid Payload"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "MissingParameterError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "missing_parameter"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "A required parameter wasn't supplied"
+                  ]
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "param": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFoundError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "404"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "The resource you requested could not be found"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Not Found"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotUniqueError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "409"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "The record you are trying to create/update already exists"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Duplicate Record"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ParseJsonError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "invalid_json"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "Your request could not be processed"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Bad Request"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ParsePayloadError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "invalid_resource_payload"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Bad Request"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "RangeError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "integer_out_of_range"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "Your request could not be processed"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Bad Request"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "SaveFailedError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "invalid_data"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "enum": [
+                    "Your request could not be processed"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Bad Request"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnauthorizedError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "401"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnknownAttributeError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "400"
+                  ]
+                },
+                "code": {
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Invalid Version"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "422"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "Validation Error"
+                  ]
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "resource": {
+                      "type": "string"
+                    },
+                    "associated_resources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "attributes": {
+                            "type": "object"
+                          },
+                          "errors": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "parameter": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://api.planningcenteronline.com/oauth/authorize",
+            "tokenUrl": "https://api.planningcenteronline.com/oauth/token",
+            "refreshUrl": "https://api.planningcenteronline.com/oauth/refresh",
+            "scopes": {
+              "api": "Required scope for accessing via OAuth 2"
+            }
+          }
+        }
+      },
+      "personal_access_token": {
+        "type": "http",
+        "scheme": "basic",
+        "description": "Provide your Personal Access Token Client ID as the HTTP Basic username\nand your Secret as the HTTP Basic password.\n\nExample header:\nAuthorization: Basic BASE64(client_id:secret)\"\n"
+      }
+    }
+  }
+}
