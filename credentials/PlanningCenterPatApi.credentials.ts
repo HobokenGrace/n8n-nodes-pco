@@ -43,8 +43,10 @@ export class PlanningCenterPatApi implements ICredentialType {
   authenticate: IAuthenticateGeneric = {
     type: 'generic',
     properties: {
-      headers: {
-        Authorization: '=Basic {{$base64($credentials.applicationId + ":" + $credentials.secret)}}',
+      auth: {
+        username: '={{$credentials.applicationId}}',
+        password: '={{$credentials.secret}}',
+        sendImmediately: true,
       },
     },
   };
@@ -52,8 +54,42 @@ export class PlanningCenterPatApi implements ICredentialType {
   test: ICredentialTestRequest = {
     request: {
       baseURL: '={{$credentials.baseUrl}}',
-      url: '/people/v2/me',
+      url: '/api/v2/personal_access_tokens',
       method: 'GET',
     },
+    rules: [
+      {
+        type: 'responseCode',
+        properties: {
+          value: 401,
+          message:
+            'Planning Center returned 401 Unauthorized while testing /api/v2/personal_access_tokens. Check that Application ID and Secret were copied from the same Personal Access Token with no extra whitespace.',
+        },
+      },
+      {
+        type: 'responseCode',
+        properties: {
+          value: 403,
+          message:
+            'Planning Center returned 403 Forbidden while testing /api/v2/personal_access_tokens. The PAT authenticated, but this user or token cannot access the API app personal access token endpoint.',
+        },
+      },
+      {
+        type: 'responseCode',
+        properties: {
+          value: 404,
+          message:
+            'Planning Center returned 404 Not Found while testing /api/v2/personal_access_tokens. Check the Base URL; it should usually be https://api.planningcenteronline.com.',
+        },
+      },
+      {
+        type: 'responseCode',
+        properties: {
+          value: 429,
+          message:
+            'Planning Center returned 429 Too Many Requests while testing credentials. Wait and retry after the rate-limit window resets.',
+        },
+      },
+    ],
   };
 }
