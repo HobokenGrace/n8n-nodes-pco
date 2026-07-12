@@ -68,27 +68,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsCampus",
-        "sourceName": "fields[Campus]",
-        "displayName": "Fields[Campus]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -112,15 +91,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsCampus",
-        "sourceName": "fields[Campus]",
-        "displayName": "Fields[Campus]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -144,13 +115,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -161,20 +125,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -191,48 +141,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -270,34 +178,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -333,34 +213,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -522,41 +374,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -569,55 +386,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -646,41 +414,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
         "required": false,
         "type": "string"
       }
@@ -715,27 +448,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "whererole",
-        "sourceName": "where[role]",
-        "displayName": "Where[role]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonfirstName",
-        "sourceName": "where[person][first_name]",
-        "displayName": "Where[person][first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonlastName",
-        "sourceName": "where[person][last_name]",
-        "displayName": "Where[person][last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -748,34 +460,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsAttendance",
-        "sourceName": "fields[Attendance]",
-        "displayName": "Fields[Attendance]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -808,46 +492,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherefirstName",
-        "sourceName": "where[first_name]",
-        "displayName": "Where[first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelastName",
-        "sourceName": "where[last_name]",
-        "displayName": "Where[last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -885,15 +534,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -917,13 +558,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -934,20 +568,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -964,48 +584,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -1043,34 +621,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -1096,74 +646,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -1201,34 +688,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -1261,13 +720,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -1278,20 +730,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -1308,48 +746,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -1394,34 +790,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -1452,34 +820,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEventNote",
-        "sourceName": "fields[EventNote]",
-        "displayName": "Fields[Event Note]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsOwner",
-        "sourceName": "fields[Owner]",
-        "displayName": "Fields[Owner]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -1510,29 +850,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsOwner",
-        "sourceName": "fields[Owner]",
-        "displayName": "Fields[Owner]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -1568,15 +886,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsOwner",
-        "sourceName": "fields[Owner]",
-        "displayName": "Fields[Owner]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -1612,20 +922,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEventNote",
-        "sourceName": "fields[EventNote]",
-        "displayName": "Fields[Event Note]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsOwner",
-        "sourceName": "fields[Owner]",
-        "displayName": "Fields[Owner]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -1651,39 +947,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "whereresponse",
-        "sourceName": "where[response]",
-        "displayName": "Where[response]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsRsvp",
-        "sourceName": "fields[Rsvp]",
-        "displayName": "Fields[Rsvp]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -1719,34 +987,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -1849,34 +1089,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -1989,48 +1201,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wherestatus",
-        "sourceName": "where[status]",
-        "displayName": "Where[status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonfirstName",
-        "sourceName": "where[person][first_name]",
-        "displayName": "Where[person][first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonlastName",
-        "sourceName": "where[person][last_name]",
-        "displayName": "Where[person][last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -2043,62 +1213,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroupApplication",
-        "sourceName": "fields[GroupApplication]",
-        "displayName": "Fields[Group Application]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -2129,48 +1243,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroupApplication",
-        "sourceName": "fields[GroupApplication]",
-        "displayName": "Fields[Group Application]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -2196,13 +1268,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -2213,20 +1278,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -2243,48 +1294,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -2322,34 +1331,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -2375,46 +1356,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherefirstName",
-        "sourceName": "where[first_name]",
-        "displayName": "Where[first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelastName",
-        "sourceName": "where[last_name]",
-        "displayName": "Where[last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -2445,15 +1391,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -2487,34 +1425,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -2655,27 +1565,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -2699,15 +1588,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -2815,41 +1696,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -2862,55 +1708,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -2948,41 +1745,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -3008,37 +1770,9 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupTypeid",
-        "sourceName": "where[group_type][id]",
-        "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -3055,48 +1789,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -3134,34 +1826,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -3192,27 +1856,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -3243,15 +1886,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -3287,27 +1922,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -3345,15 +1959,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -3389,27 +1995,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -3447,15 +2032,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -3489,34 +2066,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -3659,13 +2208,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -3676,20 +2218,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -3706,48 +2234,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -3776,34 +2262,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -3866,48 +2324,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wherestatus",
-        "sourceName": "where[status]",
-        "displayName": "Where[status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonfirstName",
-        "sourceName": "where[person][first_name]",
-        "displayName": "Where[person][first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonlastName",
-        "sourceName": "where[person][last_name]",
-        "displayName": "Where[person][last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -3920,62 +2336,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroupApplication",
-        "sourceName": "fields[GroupApplication]",
-        "displayName": "Fields[Group Application]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -4011,48 +2371,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupApplication",
-        "sourceName": "fields[GroupApplication]",
-        "displayName": "Fields[Group Application]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -4099,27 +2417,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsCampus",
-        "sourceName": "fields[Campus]",
-        "displayName": "Fields[Campus]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -4150,15 +2447,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsCampus",
-        "sourceName": "fields[Campus]",
-        "displayName": "Fields[Campus]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -4180,15 +2469,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -4296,41 +2577,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -4343,55 +2589,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -4427,41 +2624,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
         "required": false,
         "type": "string"
       }
@@ -4501,27 +2663,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -4552,15 +2693,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -4584,74 +2717,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -4689,34 +2759,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -4742,27 +2784,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "whererole",
-        "sourceName": "where[role]",
-        "displayName": "Where[role]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonfirstName",
-        "sourceName": "where[person][first_name]",
-        "displayName": "Where[person][first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonlastName",
-        "sourceName": "where[person][last_name]",
-        "displayName": "Where[person][last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -4775,34 +2796,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -4840,20 +2833,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -4886,13 +2865,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -4903,20 +2875,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -4933,48 +2891,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5012,34 +2928,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -5072,46 +2960,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherefirstName",
-        "sourceName": "where[first_name]",
-        "displayName": "Where[first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelastName",
-        "sourceName": "where[last_name]",
-        "displayName": "Where[last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5149,15 +3002,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -5181,27 +3026,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "whererole",
-        "sourceName": "where[role]",
-        "displayName": "Where[role]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonfirstName",
-        "sourceName": "where[person][first_name]",
-        "displayName": "Where[person][first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonlastName",
-        "sourceName": "where[person][last_name]",
-        "displayName": "Where[person][last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -5214,34 +3038,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5279,20 +3075,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -5318,46 +3100,11 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherefirstName",
-        "sourceName": "where[first_name]",
-        "displayName": "Where[first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelastName",
-        "sourceName": "where[last_name]",
-        "displayName": "Where[last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5388,15 +3135,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -5432,27 +3171,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5483,15 +3201,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsResource",
-        "sourceName": "fields[Resource]",
-        "displayName": "Fields[Resource]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -5534,27 +3244,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsTag",
-        "sourceName": "fields[Tag]",
-        "displayName": "Fields[Tag]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5585,15 +3274,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsTag",
-        "sourceName": "fields[Tag]",
-        "displayName": "Fields[Tag]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -5624,13 +3305,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -5641,20 +3315,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -5671,48 +3331,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -5750,34 +3368,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -5806,34 +3396,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -5931,20 +3493,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [
@@ -5995,34 +3543,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -6120,20 +3640,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [
@@ -6184,34 +3690,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -6390,20 +3868,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [
@@ -6478,15 +3942,7 @@ const OPERATIONS: Operation[] = [
     "deprecated": false,
     "isList": true,
     "pathParameters": [],
-    "queryParameters": [
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -6502,46 +3958,11 @@ const OPERATIONS: Operation[] = [
     "pathParameters": [],
     "queryParameters": [
       {
-        "name": "wherefirstName",
-        "sourceName": "where[first_name]",
-        "displayName": "Where[first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelastName",
-        "sourceName": "where[last_name]",
-        "displayName": "Where[last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -6565,15 +3986,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -6681,41 +4094,6 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       },
       {
-        "name": "wheregrouparchiveStatus",
-        "sourceName": "where[group][archive_status]",
-        "displayName": "Where[group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupname",
-        "sourceName": "where[group][name]",
-        "displayName": "Where[group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wheregroupgroupTypeid",
-        "sourceName": "where[group][group_type][id]",
-        "displayName": "Where[group][group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -6728,55 +4106,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -6814,41 +4143,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsEvent",
-        "sourceName": "fields[Event]",
-        "displayName": "Fields[Event]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -6874,13 +4168,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "wherearchiveStatus",
-        "sourceName": "where[archive_status]",
-        "displayName": "Where[archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "wherename",
         "sourceName": "where[name]",
         "displayName": "Where[name]",
@@ -6891,20 +4178,6 @@ const OPERATIONS: Operation[] = [
         "name": "wheregroupTypeid",
         "sourceName": "where[group_type][id]",
         "displayName": "Where[group Type][id]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgrouparchiveStatus",
-        "sourceName": "where[location][group][archive_status]",
-        "displayName": "Where[location][group][archive Status]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherelocationgroupname",
-        "sourceName": "where[location][group][name]",
-        "displayName": "Where[location][group][name]",
         "required": false,
         "type": "string"
       },
@@ -6921,48 +4194,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -7000,34 +4231,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -7053,27 +4256,6 @@ const OPERATIONS: Operation[] = [
     ],
     "queryParameters": [
       {
-        "name": "whererole",
-        "sourceName": "where[role]",
-        "displayName": "Where[role]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonfirstName",
-        "sourceName": "where[person][first_name]",
-        "displayName": "Where[person][first Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "wherepersonlastName",
-        "sourceName": "where[person][last_name]",
-        "displayName": "Where[person][last Name]",
-        "required": false,
-        "type": "string"
-      },
-      {
         "name": "order",
         "sourceName": "order",
         "displayName": "Order",
@@ -7086,34 +4268,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -7151,20 +4305,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [],
@@ -7200,34 +4340,6 @@ const OPERATIONS: Operation[] = [
         "name": "include",
         "sourceName": "include",
         "displayName": "Include",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroup",
-        "sourceName": "fields[Group]",
-        "displayName": "Fields[Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsEnrollment",
-        "sourceName": "fields[Enrollment]",
-        "displayName": "Fields[Enrollment]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsGroupType",
-        "sourceName": "fields[GroupType]",
-        "displayName": "Fields[Group Type]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsLocation",
-        "sourceName": "fields[Location]",
-        "displayName": "Fields[Location]",
         "required": false,
         "type": "string"
       }
@@ -7325,20 +4437,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Include",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsMembership",
-        "sourceName": "fields[Membership]",
-        "displayName": "Fields[Membership]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "fieldsPerson",
-        "sourceName": "fields[Person]",
-        "displayName": "Fields[Person]",
-        "required": false,
-        "type": "string"
       }
     ],
     "attributeFields": [
@@ -7390,27 +4488,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsTagGroup",
-        "sourceName": "fields[TagGroup]",
-        "displayName": "Fields[Tag Group]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -7434,15 +4511,7 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsTagGroup",
-        "sourceName": "fields[TagGroup]",
-        "displayName": "Fields[Tag Group]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   },
@@ -7485,27 +4554,6 @@ const OPERATIONS: Operation[] = [
         "displayName": "Order",
         "required": false,
         "type": "string"
-      },
-      {
-        "name": "fieldsTag",
-        "sourceName": "fields[Tag]",
-        "displayName": "Fields[Tag]",
-        "required": false,
-        "type": "string"
-      },
-      {
-        "name": "perPage",
-        "sourceName": "per_page",
-        "displayName": "Per Page",
-        "required": false,
-        "type": "number"
-      },
-      {
-        "name": "offset",
-        "sourceName": "offset",
-        "displayName": "Offset",
-        "required": false,
-        "type": "number"
       }
     ],
     "attributeFields": [],
@@ -7536,21 +4584,13 @@ const OPERATIONS: Operation[] = [
         "type": "string"
       }
     ],
-    "queryParameters": [
-      {
-        "name": "fieldsTag",
-        "sourceName": "fields[Tag]",
-        "displayName": "Fields[Tag]",
-        "required": false,
-        "type": "string"
-      }
-    ],
+    "queryParameters": [],
     "attributeFields": [],
     "relationshipFields": []
   }
 ];
 
-const NODE_PROPERTIES = Function('return ' + "[\n    {\n      displayName: 'Resource',\n      name: 'resource',\n      type: 'options',\n      noDataExpression: true,\n      options: [{\"name\":\"Campus\",\"value\":\"Campus\"},{\"name\":\"Event\",\"value\":\"Event\"},{\"name\":\"Group\",\"value\":\"Group\"},{\"name\":\"Group Application\",\"value\":\"Group Application\"},{\"name\":\"Group Type\",\"value\":\"Group Type\"},{\"name\":\"Person\",\"value\":\"Person\"},{\"name\":\"Tag Group\",\"value\":\"Tag Group\"}],\n      default: \"Campus\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"]}},\n      options: [{\"name\":\"GET /campuses\",\"value\":\"getCampuses\",\"description\":\"GET /campuses\",\"action\":\"GET /campuses\"},{\"name\":\"GET /campuses/{campus_id}\",\"value\":\"getCampusesCampusId\",\"description\":\"GET /campuses/{campus_id}\",\"action\":\"GET /campuses/{campus_id}\"},{\"name\":\"GET /campuses/{campus_id}/groups\",\"value\":\"getCampusesCampusIdGroups\",\"description\":\"GET /campuses/{campus_id}/groups\",\"action\":\"GET /campuses/{campus_id}/groups\"},{\"name\":\"GET /campuses/{campus_id}/groups/{group_id}\",\"value\":\"getCampusesCampusIdGroupsGroupId\",\"description\":\"GET /campuses/{campus_id}/groups/{group_id}\",\"action\":\"GET /campuses/{campus_id}/groups/{group_id}\"},{\"name\":\"PATCH /campuses/{campus_id}/groups/{group_id}\",\"value\":\"patchCampusesCampusIdGroupsGroupId\",\"description\":\"PATCH /campuses/{campus_id}/groups/{group_id}\",\"action\":\"PATCH /campuses/{campus_id}/groups/{group_id}\"}],\n      default: \"getCampuses\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"]}},\n      options: [{\"name\":\"GET /events\",\"value\":\"getEvents\",\"description\":\"GET /events\",\"action\":\"GET /events\"},{\"name\":\"GET /events/{event_id}\",\"value\":\"getEventsEventId\",\"description\":\"GET /events/{event_id}\",\"action\":\"GET /events/{event_id}\"},{\"name\":\"GET /events/{event_id}/attendances\",\"value\":\"getEventsEventIdAttendances\",\"description\":\"GET /events/{event_id}/attendances\",\"action\":\"GET /events/{event_id}/attendances\"},{\"name\":\"GET /events/{event_id}/attendances/{attendance_id}/person\",\"value\":\"getEventsEventIdAttendancesAttendanceIdPerson\",\"description\":\"GET /events/{event_id}/attendances/{attendance_id}/person\",\"action\":\"GET /events/{event_id}/attendances/{attendance_id}/person\"},{\"name\":\"GET /events/{event_id}/attendances/{attendance_id}/person/{person_id}\",\"value\":\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\",\"description\":\"GET /events/{event_id}/attendances/{attendance_id}/person/{person_id}\",\"action\":\"GET /events/{event_id}/attendances/{attendance_id}/person/{person_id}\"},{\"name\":\"GET /events/{event_id}/group\",\"value\":\"getEventsEventIdGroup\",\"description\":\"GET /events/{event_id}/group\",\"action\":\"GET /events/{event_id}/group\"},{\"name\":\"GET /events/{event_id}/group/{group_id}\",\"value\":\"getEventsEventIdGroupGroupId\",\"description\":\"GET /events/{event_id}/group/{group_id}\",\"action\":\"GET /events/{event_id}/group/{group_id}\"},{\"name\":\"GET /events/{event_id}/location\",\"value\":\"getEventsEventIdLocation\",\"description\":\"GET /events/{event_id}/location\",\"action\":\"GET /events/{event_id}/location\"},{\"name\":\"GET /events/{event_id}/location/{location_id}\",\"value\":\"getEventsEventIdLocationLocationId\",\"description\":\"GET /events/{event_id}/location/{location_id}\",\"action\":\"GET /events/{event_id}/location/{location_id}\"},{\"name\":\"GET /events/{event_id}/location/{location_id}/group\",\"value\":\"getEventsEventIdLocationLocationIdGroup\",\"description\":\"GET /events/{event_id}/location/{location_id}/group\",\"action\":\"GET /events/{event_id}/location/{location_id}/group\"},{\"name\":\"GET /events/{event_id}/location/{location_id}/group/{group_id}\",\"value\":\"getEventsEventIdLocationLocationIdGroupGroupId\",\"description\":\"GET /events/{event_id}/location/{location_id}/group/{group_id}\",\"action\":\"GET /events/{event_id}/location/{location_id}/group/{group_id}\"},{\"name\":\"GET /events/{event_id}/notes\",\"value\":\"getEventsEventIdNotes\",\"description\":\"GET /events/{event_id}/notes\",\"action\":\"GET /events/{event_id}/notes\"},{\"name\":\"GET /events/{event_id}/notes/{event_note_id}/owner\",\"value\":\"getEventsEventIdNotesEventNoteIdOwner\",\"description\":\"GET /events/{event_id}/notes/{event_note_id}/owner\",\"action\":\"GET /events/{event_id}/notes/{event_note_id}/owner\"},{\"name\":\"GET /events/{event_id}/notes/{event_note_id}/owner/{owner_id}\",\"value\":\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\",\"description\":\"GET /events/{event_id}/notes/{event_note_id}/owner/{owner_id}\",\"action\":\"GET /events/{event_id}/notes/{event_note_id}/owner/{owner_id}\"},{\"name\":\"GET /events/{event_id}/notes/{note_id}\",\"value\":\"getEventsEventIdNotesNoteId\",\"description\":\"GET /events/{event_id}/notes/{note_id}\",\"action\":\"GET /events/{event_id}/notes/{note_id}\"},{\"name\":\"GET /events/{event_id}/rsvps\",\"value\":\"getEventsEventIdRsvps\",\"description\":\"GET /events/{event_id}/rsvps\",\"action\":\"GET /events/{event_id}/rsvps\"},{\"name\":\"PATCH /events/{event_id}/group/{group_id}\",\"value\":\"patchEventsEventIdGroupGroupId\",\"description\":\"PATCH /events/{event_id}/group/{group_id}\",\"action\":\"PATCH /events/{event_id}/group/{group_id}\"},{\"name\":\"PATCH /events/{event_id}/location/{location_id}/group/{group_id}\",\"value\":\"patchEventsEventIdLocationLocationIdGroupGroupId\",\"description\":\"PATCH /events/{event_id}/location/{location_id}/group/{group_id}\",\"action\":\"PATCH /events/{event_id}/location/{location_id}/group/{group_id}\"}],\n      default: \"getEvents\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"]}},\n      options: [{\"name\":\"DELETE /groups/{group_id}/memberships/{membership_id}\",\"value\":\"deleteGroupsGroupIdMembershipsMembershipId\",\"description\":\"DELETE /groups/{group_id}/memberships/{membership_id}\",\"action\":\"DELETE /groups/{group_id}/memberships/{membership_id}\"},{\"name\":\"DELETE /groups/{group_id}/my_membership/{my_membership_id}\",\"value\":\"deleteGroupsGroupIdMyMembershipMyMembershipId\",\"description\":\"DELETE /groups/{group_id}/my_membership/{my_membership_id}\",\"action\":\"DELETE /groups/{group_id}/my_membership/{my_membership_id}\"},{\"name\":\"GET /groups\",\"value\":\"getGroups\",\"description\":\"GET /groups\",\"action\":\"GET /groups\"},{\"name\":\"GET /groups/{group_id}\",\"value\":\"getGroupsGroupId\",\"description\":\"GET /groups/{group_id}\",\"action\":\"GET /groups/{group_id}\"},{\"name\":\"GET /groups/{group_id}/applications\",\"value\":\"getGroupsGroupIdApplications\",\"description\":\"GET /groups/{group_id}/applications\",\"action\":\"GET /groups/{group_id}/applications\"},{\"name\":\"GET /groups/{group_id}/applications/{application_id}\",\"value\":\"getGroupsGroupIdApplicationsApplicationId\",\"description\":\"GET /groups/{group_id}/applications/{application_id}\",\"action\":\"GET /groups/{group_id}/applications/{application_id}\"},{\"name\":\"GET /groups/{group_id}/campuses\",\"value\":\"getGroupsGroupIdCampuses\",\"description\":\"GET /groups/{group_id}/campuses\",\"action\":\"GET /groups/{group_id}/campuses\"},{\"name\":\"GET /groups/{group_id}/campuses/{campus_id}\",\"value\":\"getGroupsGroupIdCampusesCampusId\",\"description\":\"GET /groups/{group_id}/campuses/{campus_id}\",\"action\":\"GET /groups/{group_id}/campuses/{campus_id}\"},{\"name\":\"GET /groups/{group_id}/enrollment\",\"value\":\"getGroupsGroupIdEnrollment\",\"description\":\"GET /groups/{group_id}/enrollment\",\"action\":\"GET /groups/{group_id}/enrollment\"},{\"name\":\"GET /groups/{group_id}/events\",\"value\":\"getGroupsGroupIdEvents\",\"description\":\"GET /groups/{group_id}/events\",\"action\":\"GET /groups/{group_id}/events\"},{\"name\":\"GET /groups/{group_id}/events/{event_id}\",\"value\":\"getGroupsGroupIdEventsEventId\",\"description\":\"GET /groups/{group_id}/events/{event_id}\",\"action\":\"GET /groups/{group_id}/events/{event_id}\"},{\"name\":\"GET /groups/{group_id}/group_type\",\"value\":\"getGroupsGroupIdGroupType\",\"description\":\"GET /groups/{group_id}/group_type\",\"action\":\"GET /groups/{group_id}/group_type\"},{\"name\":\"GET /groups/{group_id}/group_type/{group_type_id}\",\"value\":\"getGroupsGroupIdGroupTypeGroupTypeId\",\"description\":\"GET /groups/{group_id}/group_type/{group_type_id}\",\"action\":\"GET /groups/{group_id}/group_type/{group_type_id}\"},{\"name\":\"GET /groups/{group_id}/location\",\"value\":\"getGroupsGroupIdLocation\",\"description\":\"GET /groups/{group_id}/location\",\"action\":\"GET /groups/{group_id}/location\"},{\"name\":\"GET /groups/{group_id}/location/{location_id}\",\"value\":\"getGroupsGroupIdLocationLocationId\",\"description\":\"GET /groups/{group_id}/location/{location_id}\",\"action\":\"GET /groups/{group_id}/location/{location_id}\"},{\"name\":\"GET /groups/{group_id}/memberships\",\"value\":\"getGroupsGroupIdMemberships\",\"description\":\"GET /groups/{group_id}/memberships\",\"action\":\"GET /groups/{group_id}/memberships\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}\",\"value\":\"getGroupsGroupIdMembershipsMembershipId\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/group\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdGroup\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/group\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/group\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/group/{group_id}\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/person\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdPerson\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/person\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/person\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/person/{person_id}\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/person/{person_id}\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/person/{person_id}\"},{\"name\":\"GET /groups/{group_id}/my_membership\",\"value\":\"getGroupsGroupIdMyMembership\",\"description\":\"GET /groups/{group_id}/my_membership\",\"action\":\"GET /groups/{group_id}/my_membership\"},{\"name\":\"GET /groups/{group_id}/my_membership/{my_membership_id}\",\"value\":\"getGroupsGroupIdMyMembershipMyMembershipId\",\"description\":\"GET /groups/{group_id}/my_membership/{my_membership_id}\",\"action\":\"GET /groups/{group_id}/my_membership/{my_membership_id}\"},{\"name\":\"GET /groups/{group_id}/people\",\"value\":\"getGroupsGroupIdPeople\",\"description\":\"GET /groups/{group_id}/people\",\"action\":\"GET /groups/{group_id}/people\"},{\"name\":\"GET /groups/{group_id}/people/{person_id}\",\"value\":\"getGroupsGroupIdPeoplePersonId\",\"description\":\"GET /groups/{group_id}/people/{person_id}\",\"action\":\"GET /groups/{group_id}/people/{person_id}\"},{\"name\":\"GET /groups/{group_id}/resources\",\"value\":\"getGroupsGroupIdResources\",\"description\":\"GET /groups/{group_id}/resources\",\"action\":\"GET /groups/{group_id}/resources\"},{\"name\":\"GET /groups/{group_id}/resources/{resource_id}\",\"value\":\"getGroupsGroupIdResourcesResourceId\",\"description\":\"GET /groups/{group_id}/resources/{resource_id}\",\"action\":\"GET /groups/{group_id}/resources/{resource_id}\"},{\"name\":\"GET /groups/{group_id}/tags\",\"value\":\"getGroupsGroupIdTags\",\"description\":\"GET /groups/{group_id}/tags\",\"action\":\"GET /groups/{group_id}/tags\"},{\"name\":\"GET /groups/{group_id}/tags/{tag_id}\",\"value\":\"getGroupsGroupIdTagsTagId\",\"description\":\"GET /groups/{group_id}/tags/{tag_id}\",\"action\":\"GET /groups/{group_id}/tags/{tag_id}\"},{\"name\":\"GET /groups/{group_id}/tags/{tag_id}/groups\",\"value\":\"getGroupsGroupIdTagsTagIdGroups\",\"description\":\"GET /groups/{group_id}/tags/{tag_id}/groups\",\"action\":\"GET /groups/{group_id}/tags/{tag_id}/groups\"},{\"name\":\"GET /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"value\":\"getGroupsGroupIdTagsTagIdGroupsGroupId\",\"description\":\"GET /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"action\":\"GET /groups/{group_id}/tags/{tag_id}/groups/{group_id}\"},{\"name\":\"PATCH /groups/{group_id}\",\"value\":\"patchGroupsGroupId\",\"description\":\"PATCH /groups/{group_id}\",\"action\":\"PATCH /groups/{group_id}\"},{\"name\":\"PATCH /groups/{group_id}/memberships/{membership_id}\",\"value\":\"patchGroupsGroupIdMembershipsMembershipId\",\"description\":\"PATCH /groups/{group_id}/memberships/{membership_id}\",\"action\":\"PATCH /groups/{group_id}/memberships/{membership_id}\"},{\"name\":\"PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"value\":\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\",\"description\":\"PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"action\":\"PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}\"},{\"name\":\"PATCH /groups/{group_id}/my_membership/{my_membership_id}\",\"value\":\"patchGroupsGroupIdMyMembershipMyMembershipId\",\"description\":\"PATCH /groups/{group_id}/my_membership/{my_membership_id}\",\"action\":\"PATCH /groups/{group_id}/my_membership/{my_membership_id}\"},{\"name\":\"PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"value\":\"patchGroupsGroupIdTagsTagIdGroupsGroupId\",\"description\":\"PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"action\":\"PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}\"},{\"name\":\"POST /groups/{group_id}/assign_campuses\",\"value\":\"postGroupsGroupIdAssignCampuses\",\"description\":\"POST /groups/{group_id}/assign_campuses\",\"action\":\"POST /groups/{group_id}/assign_campuses\"},{\"name\":\"POST /groups/{group_id}/disable_chat\",\"value\":\"postGroupsGroupIdDisableChat\",\"description\":\"POST /groups/{group_id}/disable_chat\",\"action\":\"POST /groups/{group_id}/disable_chat\"},{\"name\":\"POST /groups/{group_id}/duplicate\",\"value\":\"postGroupsGroupIdDuplicate\",\"description\":\"POST /groups/{group_id}/duplicate\",\"action\":\"POST /groups/{group_id}/duplicate\"},{\"name\":\"POST /groups/{group_id}/enable_chat\",\"value\":\"postGroupsGroupIdEnableChat\",\"description\":\"POST /groups/{group_id}/enable_chat\",\"action\":\"POST /groups/{group_id}/enable_chat\"},{\"name\":\"POST /groups/{group_id}/memberships\",\"value\":\"postGroupsGroupIdMemberships\",\"description\":\"POST /groups/{group_id}/memberships\",\"action\":\"POST /groups/{group_id}/memberships\"}],\n      default: \"deleteGroupsGroupIdMembershipsMembershipId\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"]}},\n      options: [{\"name\":\"GET /group_applications\",\"value\":\"getGroupApplications\",\"description\":\"GET /group_applications\",\"action\":\"GET /group_applications\"},{\"name\":\"GET /group_applications/{group_application_id}\",\"value\":\"getGroupApplicationsGroupApplicationId\",\"description\":\"GET /group_applications/{group_application_id}\",\"action\":\"GET /group_applications/{group_application_id}\"},{\"name\":\"GET /group_applications/{group_application_id}/group\",\"value\":\"getGroupApplicationsGroupApplicationIdGroup\",\"description\":\"GET /group_applications/{group_application_id}/group\",\"action\":\"GET /group_applications/{group_application_id}/group\"},{\"name\":\"GET /group_applications/{group_application_id}/group/{group_id}\",\"value\":\"getGroupApplicationsGroupApplicationIdGroupGroupId\",\"description\":\"GET /group_applications/{group_application_id}/group/{group_id}\",\"action\":\"GET /group_applications/{group_application_id}/group/{group_id}\"},{\"name\":\"GET /group_applications/{group_application_id}/person\",\"value\":\"getGroupApplicationsGroupApplicationIdPerson\",\"description\":\"GET /group_applications/{group_application_id}/person\",\"action\":\"GET /group_applications/{group_application_id}/person\"},{\"name\":\"GET /group_applications/{group_application_id}/person/{person_id}\",\"value\":\"getGroupApplicationsGroupApplicationIdPersonPersonId\",\"description\":\"GET /group_applications/{group_application_id}/person/{person_id}\",\"action\":\"GET /group_applications/{group_application_id}/person/{person_id}\"},{\"name\":\"PATCH /group_applications/{group_application_id}/group/{group_id}\",\"value\":\"patchGroupApplicationsGroupApplicationIdGroupGroupId\",\"description\":\"PATCH /group_applications/{group_application_id}/group/{group_id}\",\"action\":\"PATCH /group_applications/{group_application_id}/group/{group_id}\"},{\"name\":\"POST /group_applications/{group_application_id}/approve\",\"value\":\"postGroupApplicationsGroupApplicationIdApprove\",\"description\":\"POST /group_applications/{group_application_id}/approve\",\"action\":\"POST /group_applications/{group_application_id}/approve\"},{\"name\":\"POST /group_applications/{group_application_id}/reject\",\"value\":\"postGroupApplicationsGroupApplicationIdReject\",\"description\":\"POST /group_applications/{group_application_id}/reject\",\"action\":\"POST /group_applications/{group_application_id}/reject\"}],\n      default: \"getGroupApplications\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"]}},\n      options: [{\"name\":\"GET /group_types\",\"value\":\"getGroupTypes\",\"description\":\"GET /group_types\",\"action\":\"GET /group_types\"},{\"name\":\"GET /group_types/{group_type_id}\",\"value\":\"getGroupTypesGroupTypeId\",\"description\":\"GET /group_types/{group_type_id}\",\"action\":\"GET /group_types/{group_type_id}\"},{\"name\":\"GET /group_types/{group_type_id}/events\",\"value\":\"getGroupTypesGroupTypeIdEvents\",\"description\":\"GET /group_types/{group_type_id}/events\",\"action\":\"GET /group_types/{group_type_id}/events\"},{\"name\":\"GET /group_types/{group_type_id}/events/{event_id}\",\"value\":\"getGroupTypesGroupTypeIdEventsEventId\",\"description\":\"GET /group_types/{group_type_id}/events/{event_id}\",\"action\":\"GET /group_types/{group_type_id}/events/{event_id}\"},{\"name\":\"GET /group_types/{group_type_id}/groups\",\"value\":\"getGroupTypesGroupTypeIdGroups\",\"description\":\"GET /group_types/{group_type_id}/groups\",\"action\":\"GET /group_types/{group_type_id}/groups\"},{\"name\":\"GET /group_types/{group_type_id}/groups/{group_id}\",\"value\":\"getGroupTypesGroupTypeIdGroupsGroupId\",\"description\":\"GET /group_types/{group_type_id}/groups/{group_id}\",\"action\":\"GET /group_types/{group_type_id}/groups/{group_id}\"},{\"name\":\"GET /group_types/{group_type_id}/resources\",\"value\":\"getGroupTypesGroupTypeIdResources\",\"description\":\"GET /group_types/{group_type_id}/resources\",\"action\":\"GET /group_types/{group_type_id}/resources\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceId\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download/{download_id}\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download/{download_id}\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download/{download_id}\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit/{visit_id}\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit/{visit_id}\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit/{visit_id}\"},{\"name\":\"PATCH /group_types/{group_type_id}/groups/{group_id}\",\"value\":\"patchGroupTypesGroupTypeIdGroupsGroupId\",\"description\":\"PATCH /group_types/{group_type_id}/groups/{group_id}\",\"action\":\"PATCH /group_types/{group_type_id}/groups/{group_id}\"}],\n      default: \"getGroupTypes\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"]}},\n      options: [{\"name\":\"DELETE /people/{person_id}/memberships/{membership_id}\",\"value\":\"deletePeoplePersonIdMembershipsMembershipId\",\"description\":\"DELETE /people/{person_id}/memberships/{membership_id}\",\"action\":\"DELETE /people/{person_id}/memberships/{membership_id}\"},{\"name\":\"GET /me\",\"value\":\"getMe\",\"description\":\"GET /me\",\"action\":\"GET /me\"},{\"name\":\"GET /people\",\"value\":\"getPeople\",\"description\":\"GET /people\",\"action\":\"GET /people\"},{\"name\":\"GET /people/{person_id}\",\"value\":\"getPeoplePersonId\",\"description\":\"GET /people/{person_id}\",\"action\":\"GET /people/{person_id}\"},{\"name\":\"GET /people/{person_id}/events\",\"value\":\"getPeoplePersonIdEvents\",\"description\":\"GET /people/{person_id}/events\",\"action\":\"GET /people/{person_id}/events\"},{\"name\":\"GET /people/{person_id}/events/{event_id}\",\"value\":\"getPeoplePersonIdEventsEventId\",\"description\":\"GET /people/{person_id}/events/{event_id}\",\"action\":\"GET /people/{person_id}/events/{event_id}\"},{\"name\":\"GET /people/{person_id}/groups\",\"value\":\"getPeoplePersonIdGroups\",\"description\":\"GET /people/{person_id}/groups\",\"action\":\"GET /people/{person_id}/groups\"},{\"name\":\"GET /people/{person_id}/groups/{group_id}\",\"value\":\"getPeoplePersonIdGroupsGroupId\",\"description\":\"GET /people/{person_id}/groups/{group_id}\",\"action\":\"GET /people/{person_id}/groups/{group_id}\"},{\"name\":\"GET /people/{person_id}/memberships\",\"value\":\"getPeoplePersonIdMemberships\",\"description\":\"GET /people/{person_id}/memberships\",\"action\":\"GET /people/{person_id}/memberships\"},{\"name\":\"GET /people/{person_id}/memberships/{membership_id}\",\"value\":\"getPeoplePersonIdMembershipsMembershipId\",\"description\":\"GET /people/{person_id}/memberships/{membership_id}\",\"action\":\"GET /people/{person_id}/memberships/{membership_id}\"},{\"name\":\"PATCH /people/{person_id}/groups/{group_id}\",\"value\":\"patchPeoplePersonIdGroupsGroupId\",\"description\":\"PATCH /people/{person_id}/groups/{group_id}\",\"action\":\"PATCH /people/{person_id}/groups/{group_id}\"},{\"name\":\"PATCH /people/{person_id}/memberships/{membership_id}\",\"value\":\"patchPeoplePersonIdMembershipsMembershipId\",\"description\":\"PATCH /people/{person_id}/memberships/{membership_id}\",\"action\":\"PATCH /people/{person_id}/memberships/{membership_id}\"}],\n      default: \"deletePeoplePersonIdMembershipsMembershipId\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"]}},\n      options: [{\"name\":\"GET /tag_groups\",\"value\":\"getTagGroups\",\"description\":\"GET /tag_groups\",\"action\":\"GET /tag_groups\"},{\"name\":\"GET /tag_groups/{tag_group_id}\",\"value\":\"getTagGroupsTagGroupId\",\"description\":\"GET /tag_groups/{tag_group_id}\",\"action\":\"GET /tag_groups/{tag_group_id}\"},{\"name\":\"GET /tag_groups/{tag_group_id}/tags\",\"value\":\"getTagGroupsTagGroupIdTags\",\"description\":\"GET /tag_groups/{tag_group_id}/tags\",\"action\":\"GET /tag_groups/{tag_group_id}/tags\"},{\"name\":\"GET /tag_groups/{tag_group_id}/tags/{tag_id}\",\"value\":\"getTagGroupsTagGroupIdTagsTagId\",\"description\":\"GET /tag_groups/{tag_group_id}/tags/{tag_id}\",\"action\":\"GET /tag_groups/{tag_group_id}/tags/{tag_id}\"}],\n      default: \"getTagGroups\",\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getCampuses_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getCampuses_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getCampuses_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Fields[Campus]\",\n      name: \"getCampuses_fieldsCampus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getCampuses_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getCampuses_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getCampuses_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getCampuses_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"],\"getCampuses_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getCampusesCampusId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusId\"]}},\n    },\n    {\n      displayName: \"Fields[Campus]\",\n      name: \"getCampusesCampusId_fieldsCampus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getCampusesCampusIdGroups_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getCampusesCampusIdGroups_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getCampusesCampusIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getCampusesCampusIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getCampusesCampusIdGroups_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getCampusesCampusIdGroups_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getCampusesCampusIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getCampusesCampusIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getCampusesCampusIdGroups_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getCampusesCampusIdGroups_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getCampusesCampusIdGroups_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getCampusesCampusIdGroups_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getCampusesCampusIdGroups_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getCampusesCampusIdGroups_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getCampusesCampusIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getCampusesCampusIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"],\"getCampusesCampusIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getCampusesCampusIdGroupsGroupId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getCampusesCampusIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getCampusesCampusIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getCampusesCampusIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getCampusesCampusIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getCampusesCampusIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getCampusesCampusIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"patchCampusesCampusIdGroupsGroupId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchCampusesCampusIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchCampusesCampusIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchCampusesCampusIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchCampusesCampusIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchCampusesCampusIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchCampusesCampusIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchCampusesCampusIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchCampusesCampusIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchCampusesCampusIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchCampusesCampusIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchCampusesCampusIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchCampusesCampusIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchCampusesCampusIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchCampusesCampusIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getEvents_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getEvents_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getEvents_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getEvents_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getEvents_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getEvents_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEvents_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEvents_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEvents_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEvents_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEvents_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEvents_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"],\"getEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getEventsEventId_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdAttendances_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getEventsEventIdAttendances_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Where[role]\",\n      name: \"getEventsEventIdAttendances_whererole\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Where[person][first Name]\",\n      name: \"getEventsEventIdAttendances_wherepersonfirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Where[person][last Name]\",\n      name: \"getEventsEventIdAttendances_wherepersonlastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdAttendances_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdAttendances_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Fields[Attendance]\",\n      name: \"getEventsEventIdAttendances_fieldsAttendance\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getEventsEventIdAttendances_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdAttendances_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdAttendances_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdAttendances_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdAttendances_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"],\"getEventsEventIdAttendances_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Attendance Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_attendanceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Where[first Name]\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_wherefirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Where[last Name]\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_wherelastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"],\"getEventsEventIdAttendancesAttendanceIdPerson_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Attendance Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_attendanceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdGroup_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getEventsEventIdGroup_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getEventsEventIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getEventsEventIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getEventsEventIdGroup_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getEventsEventIdGroup_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventIdGroup_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventIdGroup_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventIdGroup_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventIdGroup_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdGroup_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdGroup_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"],\"getEventsEventIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getEventsEventIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocation_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getEventsEventIdLocation_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getEventsEventIdLocation_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getEventsEventIdLocation_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocation_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventIdLocation_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventIdLocation_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventIdLocation_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventIdLocation_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdLocation_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdLocation_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdLocation_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdLocation_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"],\"getEventsEventIdLocation_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocationLocationId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getEventsEventIdLocationLocationId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocationLocationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventIdLocationLocationId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventIdLocationLocationId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventIdLocationLocationId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventIdLocationLocationId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocationLocationIdGroup_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getEventsEventIdLocationLocationIdGroup_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdLocationLocationIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocationLocationIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdLocationLocationIdGroup_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdLocationLocationIdGroup_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdLocationLocationIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdLocationLocationIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"],\"getEventsEventIdLocationLocationIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotes_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdNotes_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: \"Fields[Event Note]\",\n      name: \"getEventsEventIdNotes_fieldsEventNote\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: \"Fields[Owner]\",\n      name: \"getEventsEventIdNotes_fieldsOwner\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdNotes_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdNotes_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdNotes_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdNotes_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"],\"getEventsEventIdNotes_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: \"Event Note Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_eventNoteId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: \"Fields[Owner]\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_fieldsOwner\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdNotesEventNoteIdOwner_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdNotesEventNoteIdOwner_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"],\"getEventsEventIdNotesEventNoteIdOwner_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: \"Event Note Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_eventNoteId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: \"Owner Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_ownerId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: \"Fields[Owner]\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_fieldsOwner\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotesNoteId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: \"Note Id\",\n      name: \"getEventsEventIdNotesNoteId_noteId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdNotesNoteId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: \"Fields[Event Note]\",\n      name: \"getEventsEventIdNotesNoteId_fieldsEventNote\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: \"Fields[Owner]\",\n      name: \"getEventsEventIdNotesNoteId_fieldsOwner\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdRsvps_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: \"Where[response]\",\n      name: \"getEventsEventIdRsvps_whereresponse\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdRsvps_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: \"Fields[Rsvp]\",\n      name: \"getEventsEventIdRsvps_fieldsRsvp\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getEventsEventIdRsvps_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getEventsEventIdRsvps_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdRsvps_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdRsvps_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"],\"getEventsEventIdRsvps_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"patchEventsEventIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchEventsEventIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchEventsEventIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchEventsEventIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchEventsEventIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchEventsEventIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchEventsEventIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchEventsEventIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchEventsEventIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchEventsEventIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchEventsEventIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchEventsEventIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchEventsEventIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchEventsEventIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchEventsEventIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Where[applied At]\",\n      name: \"getGroupApplications_whereappliedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gt]\",\n      name: \"getGroupApplications_whereappliedAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gte]\",\n      name: \"getGroupApplications_whereappliedAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lt]\",\n      name: \"getGroupApplications_whereappliedAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lte]\",\n      name: \"getGroupApplications_whereappliedAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[status]\",\n      name: \"getGroupApplications_wherestatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getGroupApplications_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getGroupApplications_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[person][first Name]\",\n      name: \"getGroupApplications_wherepersonfirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[person][last Name]\",\n      name: \"getGroupApplications_wherepersonlastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getGroupApplications_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupApplications_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplications_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Group Application]\",\n      name: \"getGroupApplications_fieldsGroupApplication\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupApplications_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupApplications_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupApplications_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupApplications_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupApplications_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupApplications_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupApplications_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"],\"getGroupApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplicationsGroupApplicationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Application]\",\n      name: \"getGroupApplicationsGroupApplicationId_fieldsGroupApplication\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupApplicationsGroupApplicationId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupApplicationsGroupApplicationId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupApplicationsGroupApplicationId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupApplicationsGroupApplicationId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupApplicationsGroupApplicationId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupApplicationsGroupApplicationIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupApplicationsGroupApplicationIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"],\"getGroupApplicationsGroupApplicationIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Where[first Name]\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_wherefirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Where[last Name]\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_wherelastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupApplicationsGroupApplicationIdPerson_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupApplicationsGroupApplicationIdPerson_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"],\"getGroupApplicationsGroupApplicationIdPerson_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdPersonPersonId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getGroupApplicationsGroupApplicationIdPersonPersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupApplicationsGroupApplicationIdPersonPersonId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"postGroupApplicationsGroupApplicationIdApprove_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"postGroupApplicationsGroupApplicationIdReject_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupTypes_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupTypes_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypes_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupTypes_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupTypes_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupTypes_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypes_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypes_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"],\"getGroupTypes_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupTypesGroupTypeId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdEvents_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupTypesGroupTypeIdEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getGroupTypesGroupTypeIdEvents_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupTypesGroupTypeIdEvents_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupTypesGroupTypeIdEvents_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupTypesGroupTypeIdEvents_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupTypesGroupTypeIdEvents_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupTypesGroupTypeIdEvents_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupTypesGroupTypeIdEvents_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"],\"getGroupTypesGroupTypeIdEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdGroups_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getGroupTypesGroupTypeIdGroups_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupTypesGroupTypeIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupTypesGroupTypeIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroupTypesGroupTypeIdGroups_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroupTypesGroupTypeIdGroups_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupTypesGroupTypeIdGroups_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupTypesGroupTypeIdGroups_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupTypesGroupTypeIdGroups_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupTypesGroupTypeIdGroups_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupTypesGroupTypeIdGroups_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupTypesGroupTypeIdGroups_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"],\"getGroupTypesGroupTypeIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResources_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdResources_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupTypesGroupTypeIdResources_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupTypesGroupTypeIdResources_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupTypesGroupTypeIdResources_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdResources_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdResources_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"],\"getGroupTypesGroupTypeIdResources_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceId_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"],\"getGroupTypesGroupTypeIdResourcesResourceIdDownload_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: \"Download Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_downloadId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"],\"getGroupTypesGroupTypeIdResourcesResourceIdVisit_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: \"Visit Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_visitId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"deleteGroupsGroupIdMembershipsMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"deleteGroupsGroupIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"deleteGroupsGroupIdMyMembershipMyMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"My Membership Id\",\n      name: \"deleteGroupsGroupIdMyMembershipMyMembershipId_myMembershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMyMembershipMyMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroups_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getGroups_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroups_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroups_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroups_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroups_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroups_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroups_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroups_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroups_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"],\"getGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdApplications_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gt]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gte]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lt]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lte]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[status]\",\n      name: \"getGroupsGroupIdApplications_wherestatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getGroupsGroupIdApplications_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getGroupsGroupIdApplications_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[person][first Name]\",\n      name: \"getGroupsGroupIdApplications_wherepersonfirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[person][last Name]\",\n      name: \"getGroupsGroupIdApplications_wherepersonlastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getGroupsGroupIdApplications_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdApplications_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdApplications_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Group Application]\",\n      name: \"getGroupsGroupIdApplications_fieldsGroupApplication\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdApplications_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdApplications_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdApplications_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdApplications_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdApplications_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdApplications_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdApplications_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"],\"getGroupsGroupIdApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Application Id\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_applicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Application]\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_fieldsGroupApplication\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdCampuses_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupsGroupIdCampuses_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdCampuses_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdCampuses_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Fields[Campus]\",\n      name: \"getGroupsGroupIdCampuses_fieldsCampus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdCampuses_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdCampuses_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdCampuses_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdCampuses_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"],\"getGroupsGroupIdCampuses_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdCampusesCampusId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getGroupsGroupIdCampusesCampusId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n    },\n    {\n      displayName: \"Fields[Campus]\",\n      name: \"getGroupsGroupIdCampusesCampusId_fieldsCampus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdEnrollment_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdEnrollment_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdEnrollment_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdEnrollment_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"],\"getGroupsGroupIdEnrollment_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdEvents_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupsGroupIdEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getGroupsGroupIdEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getGroupsGroupIdEvents_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getGroupsGroupIdEvents_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getGroupsGroupIdEvents_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroupsGroupIdEvents_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroupsGroupIdEvents_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getGroupsGroupIdEvents_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdEvents_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdEvents_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdEvents_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdEvents_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdEvents_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdEvents_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"],\"getGroupsGroupIdEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdEventsEventId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getGroupsGroupIdEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getGroupsGroupIdEventsEventId_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdEventsEventId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdEventsEventId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdEventsEventId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdEventsEventId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdGroupType_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupsGroupIdGroupType_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdGroupType_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdGroupType_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdGroupType_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdGroupType_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdGroupType_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdGroupType_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"],\"getGroupsGroupIdGroupType_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdGroupTypeGroupTypeId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupsGroupIdGroupTypeGroupTypeId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdGroupTypeGroupTypeId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdLocation_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getGroupsGroupIdLocation_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getGroupsGroupIdLocation_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getGroupsGroupIdLocation_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdLocation_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdLocation_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdLocation_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdLocation_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdLocation_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdLocation_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdLocation_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdLocation_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdLocation_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"],\"getGroupsGroupIdLocation_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdLocationLocationId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getGroupsGroupIdLocationLocationId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdLocationLocationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdLocationLocationId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdLocationLocationId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdLocationLocationId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdLocationLocationId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMemberships_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Where[role]\",\n      name: \"getGroupsGroupIdMemberships_whererole\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Where[person][first Name]\",\n      name: \"getGroupsGroupIdMemberships_wherepersonfirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Where[person][last Name]\",\n      name: \"getGroupsGroupIdMemberships_wherepersonlastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMemberships_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMemberships_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"getGroupsGroupIdMemberships_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdMemberships_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdMemberships_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdMemberships_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMemberships_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMemberships_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"],\"getGroupsGroupIdMemberships_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"],\"getGroupsGroupIdMembershipsMembershipIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Where[first Name]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_wherefirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Where[last Name]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_wherelastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"],\"getGroupsGroupIdMembershipsMembershipIdPerson_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMyMembership_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Where[role]\",\n      name: \"getGroupsGroupIdMyMembership_whererole\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Where[person][first Name]\",\n      name: \"getGroupsGroupIdMyMembership_wherepersonfirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Where[person][last Name]\",\n      name: \"getGroupsGroupIdMyMembership_wherepersonlastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMyMembership_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMyMembership_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"getGroupsGroupIdMyMembership_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdMyMembership_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdMyMembership_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdMyMembership_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMyMembership_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMyMembership_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"],\"getGroupsGroupIdMyMembership_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"My Membership Id\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_myMembershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdPeople_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Where[first Name]\",\n      name: \"getGroupsGroupIdPeople_wherefirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Where[last Name]\",\n      name: \"getGroupsGroupIdPeople_wherelastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdPeople_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdPeople_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdPeople_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdPeople_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdPeople_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdPeople_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"],\"getGroupsGroupIdPeople_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdPeoplePersonId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getGroupsGroupIdPeoplePersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getGroupsGroupIdPeoplePersonId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdResources_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupsGroupIdResources_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdResources_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupsGroupIdResources_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdResources_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdResources_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdResources_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdResources_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"],\"getGroupsGroupIdResources_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdResourcesResourceId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupsGroupIdResourcesResourceId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: \"Fields[Resource]\",\n      name: \"getGroupsGroupIdResourcesResourceId_fieldsResource\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTags_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupsGroupIdTags_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdTags_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdTags_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Fields[Tag]\",\n      name: \"getGroupsGroupIdTags_fieldsTag\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdTags_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdTags_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdTags_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdTags_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"],\"getGroupsGroupIdTags_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTagsTagId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getGroupsGroupIdTagsTagId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: \"Fields[Tag]\",\n      name: \"getGroupsGroupIdTagsTagId_fieldsTag\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdTagsTagIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdTagsTagIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"],\"getGroupsGroupIdTagsTagIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"My Membership Id\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_myMembershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdAssignCampuses_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdDisableChat_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdDuplicate_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdEnableChat_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdMemberships_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"postGroupsGroupIdMemberships_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"postGroupsGroupIdMemberships_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"postGroupsGroupIdMemberships_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"postGroupsGroupIdMemberships_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"postGroupsGroupIdMemberships_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"postGroupsGroupIdMemberships_personId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Person ID\",\n      name: \"postGroupsGroupIdMemberships_personIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"deletePeoplePersonIdMembershipsMembershipId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"deletePeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"deletePeoplePersonIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"deletePeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"deletePeoplePersonIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getMe_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getMe_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getMe_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"],\"getMe_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Where[first Name]\",\n      name: \"getPeople_wherefirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: \"Where[last Name]\",\n      name: \"getPeople_wherelastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeople_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getPeople_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getPeople_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getPeople_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeople_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeople_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"],\"getPeople_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getPeoplePersonId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdEvents_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getPeoplePersonIdEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getPeoplePersonIdEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getPeoplePersonIdEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][archive Status]\",\n      name: \"getPeoplePersonIdEvents_wheregrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][name]\",\n      name: \"getPeoplePersonIdEvents_wheregroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[group][group Type][id]\",\n      name: \"getPeoplePersonIdEvents_wheregroupgroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getPeoplePersonIdEvents_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getPeoplePersonIdEvents_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeoplePersonIdEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getPeoplePersonIdEvents_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getPeoplePersonIdEvents_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getPeoplePersonIdEvents_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getPeoplePersonIdEvents_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getPeoplePersonIdEvents_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getPeoplePersonIdEvents_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getPeoplePersonIdEvents_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeoplePersonIdEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeoplePersonIdEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"],\"getPeoplePersonIdEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdEventsEventId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getPeoplePersonIdEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Event]\",\n      name: \"getPeoplePersonIdEventsEventId_fieldsEvent\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getPeoplePersonIdEventsEventId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getPeoplePersonIdEventsEventId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getPeoplePersonIdEventsEventId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getPeoplePersonIdEventsEventId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdGroups_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[archive Status]\",\n      name: \"getPeoplePersonIdGroups_wherearchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getPeoplePersonIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getPeoplePersonIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][archive Status]\",\n      name: \"getPeoplePersonIdGroups_wherelocationgrouparchiveStatus\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[location][group][name]\",\n      name: \"getPeoplePersonIdGroups_wherelocationgroupname\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeoplePersonIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getPeoplePersonIdGroups_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getPeoplePersonIdGroups_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getPeoplePersonIdGroups_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getPeoplePersonIdGroups_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getPeoplePersonIdGroups_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getPeoplePersonIdGroups_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeoplePersonIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeoplePersonIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"],\"getPeoplePersonIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdGroupsGroupId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getPeoplePersonIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"getPeoplePersonIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"getPeoplePersonIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"getPeoplePersonIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"getPeoplePersonIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdMemberships_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Where[role]\",\n      name: \"getPeoplePersonIdMemberships_whererole\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Where[person][first Name]\",\n      name: \"getPeoplePersonIdMemberships_wherepersonfirstName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Where[person][last Name]\",\n      name: \"getPeoplePersonIdMemberships_wherepersonlastName\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeoplePersonIdMemberships_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdMemberships_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"getPeoplePersonIdMemberships_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getPeoplePersonIdMemberships_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getPeoplePersonIdMemberships_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getPeoplePersonIdMemberships_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeoplePersonIdMemberships_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeoplePersonIdMemberships_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"],\"getPeoplePersonIdMemberships_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"patchPeoplePersonIdGroupsGroupId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchPeoplePersonIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchPeoplePersonIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group]\",\n      name: \"patchPeoplePersonIdGroupsGroupId_fieldsGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Enrollment]\",\n      name: \"patchPeoplePersonIdGroupsGroupId_fieldsEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Group Type]\",\n      name: \"patchPeoplePersonIdGroupsGroupId_fieldsGroupType\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Location]\",\n      name: \"patchPeoplePersonIdGroupsGroupId_fieldsLocation\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchPeoplePersonIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchPeoplePersonIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchPeoplePersonIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchPeoplePersonIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchPeoplePersonIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchPeoplePersonIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchPeoplePersonIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchPeoplePersonIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Membership]\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_fieldsMembership\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Fields[Person]\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_fieldsPerson\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getTagGroups_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getTagGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getTagGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Fields[Tag Group]\",\n      name: \"getTagGroups_fieldsTagGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getTagGroups_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getTagGroups_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getTagGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getTagGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"],\"getTagGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Tag Group Id\",\n      name: \"getTagGroupsTagGroupId_tagGroupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupId\"]}},\n    },\n    {\n      displayName: \"Fields[Tag Group]\",\n      name: \"getTagGroupsTagGroupId_fieldsTagGroup\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Tag Group Id\",\n      name: \"getTagGroupsTagGroupIdTags_tagGroupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getTagGroupsTagGroupIdTags_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getTagGroupsTagGroupIdTags_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getTagGroupsTagGroupIdTags_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Fields[Tag]\",\n      name: \"getTagGroupsTagGroupIdTags_fieldsTag\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Per Page\",\n      name: \"getTagGroupsTagGroupIdTags_perPage\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Offset\",\n      name: \"getTagGroupsTagGroupIdTags_offset\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getTagGroupsTagGroupIdTags_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getTagGroupsTagGroupIdTags_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"],\"getTagGroupsTagGroupIdTags_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Tag Group Id\",\n      name: \"getTagGroupsTagGroupIdTagsTagId_tagGroupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getTagGroupsTagGroupIdTagsTagId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: \"Fields[Tag]\",\n      name: \"getTagGroupsTagGroupIdTagsTagId_fieldsTag\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n  ]")() as any;
+const NODE_PROPERTIES = Function('return ' + "[\n    {\n      displayName: 'Resource',\n      name: 'resource',\n      type: 'options',\n      noDataExpression: true,\n      options: [{\"name\":\"Campus\",\"value\":\"Campus\"},{\"name\":\"Event\",\"value\":\"Event\"},{\"name\":\"Group\",\"value\":\"Group\"},{\"name\":\"Group Application\",\"value\":\"Group Application\"},{\"name\":\"Group Type\",\"value\":\"Group Type\"},{\"name\":\"Person\",\"value\":\"Person\"},{\"name\":\"Tag Group\",\"value\":\"Tag Group\"}],\n      default: \"Campus\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"]}},\n      options: [{\"name\":\"GET /campuses\",\"value\":\"getCampuses\",\"description\":\"GET /campuses\",\"action\":\"GET /campuses\"},{\"name\":\"GET /campuses/{campus_id}\",\"value\":\"getCampusesCampusId\",\"description\":\"GET /campuses/{campus_id}\",\"action\":\"GET /campuses/{campus_id}\"},{\"name\":\"GET /campuses/{campus_id}/groups\",\"value\":\"getCampusesCampusIdGroups\",\"description\":\"GET /campuses/{campus_id}/groups\",\"action\":\"GET /campuses/{campus_id}/groups\"},{\"name\":\"GET /campuses/{campus_id}/groups/{group_id}\",\"value\":\"getCampusesCampusIdGroupsGroupId\",\"description\":\"GET /campuses/{campus_id}/groups/{group_id}\",\"action\":\"GET /campuses/{campus_id}/groups/{group_id}\"},{\"name\":\"PATCH /campuses/{campus_id}/groups/{group_id}\",\"value\":\"patchCampusesCampusIdGroupsGroupId\",\"description\":\"PATCH /campuses/{campus_id}/groups/{group_id}\",\"action\":\"PATCH /campuses/{campus_id}/groups/{group_id}\"}],\n      default: \"getCampuses\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"]}},\n      options: [{\"name\":\"GET /events\",\"value\":\"getEvents\",\"description\":\"GET /events\",\"action\":\"GET /events\"},{\"name\":\"GET /events/{event_id}\",\"value\":\"getEventsEventId\",\"description\":\"GET /events/{event_id}\",\"action\":\"GET /events/{event_id}\"},{\"name\":\"GET /events/{event_id}/attendances\",\"value\":\"getEventsEventIdAttendances\",\"description\":\"GET /events/{event_id}/attendances\",\"action\":\"GET /events/{event_id}/attendances\"},{\"name\":\"GET /events/{event_id}/attendances/{attendance_id}/person\",\"value\":\"getEventsEventIdAttendancesAttendanceIdPerson\",\"description\":\"GET /events/{event_id}/attendances/{attendance_id}/person\",\"action\":\"GET /events/{event_id}/attendances/{attendance_id}/person\"},{\"name\":\"GET /events/{event_id}/attendances/{attendance_id}/person/{person_id}\",\"value\":\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\",\"description\":\"GET /events/{event_id}/attendances/{attendance_id}/person/{person_id}\",\"action\":\"GET /events/{event_id}/attendances/{attendance_id}/person/{person_id}\"},{\"name\":\"GET /events/{event_id}/group\",\"value\":\"getEventsEventIdGroup\",\"description\":\"GET /events/{event_id}/group\",\"action\":\"GET /events/{event_id}/group\"},{\"name\":\"GET /events/{event_id}/group/{group_id}\",\"value\":\"getEventsEventIdGroupGroupId\",\"description\":\"GET /events/{event_id}/group/{group_id}\",\"action\":\"GET /events/{event_id}/group/{group_id}\"},{\"name\":\"GET /events/{event_id}/location\",\"value\":\"getEventsEventIdLocation\",\"description\":\"GET /events/{event_id}/location\",\"action\":\"GET /events/{event_id}/location\"},{\"name\":\"GET /events/{event_id}/location/{location_id}\",\"value\":\"getEventsEventIdLocationLocationId\",\"description\":\"GET /events/{event_id}/location/{location_id}\",\"action\":\"GET /events/{event_id}/location/{location_id}\"},{\"name\":\"GET /events/{event_id}/location/{location_id}/group\",\"value\":\"getEventsEventIdLocationLocationIdGroup\",\"description\":\"GET /events/{event_id}/location/{location_id}/group\",\"action\":\"GET /events/{event_id}/location/{location_id}/group\"},{\"name\":\"GET /events/{event_id}/location/{location_id}/group/{group_id}\",\"value\":\"getEventsEventIdLocationLocationIdGroupGroupId\",\"description\":\"GET /events/{event_id}/location/{location_id}/group/{group_id}\",\"action\":\"GET /events/{event_id}/location/{location_id}/group/{group_id}\"},{\"name\":\"GET /events/{event_id}/notes\",\"value\":\"getEventsEventIdNotes\",\"description\":\"GET /events/{event_id}/notes\",\"action\":\"GET /events/{event_id}/notes\"},{\"name\":\"GET /events/{event_id}/notes/{event_note_id}/owner\",\"value\":\"getEventsEventIdNotesEventNoteIdOwner\",\"description\":\"GET /events/{event_id}/notes/{event_note_id}/owner\",\"action\":\"GET /events/{event_id}/notes/{event_note_id}/owner\"},{\"name\":\"GET /events/{event_id}/notes/{event_note_id}/owner/{owner_id}\",\"value\":\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\",\"description\":\"GET /events/{event_id}/notes/{event_note_id}/owner/{owner_id}\",\"action\":\"GET /events/{event_id}/notes/{event_note_id}/owner/{owner_id}\"},{\"name\":\"GET /events/{event_id}/notes/{note_id}\",\"value\":\"getEventsEventIdNotesNoteId\",\"description\":\"GET /events/{event_id}/notes/{note_id}\",\"action\":\"GET /events/{event_id}/notes/{note_id}\"},{\"name\":\"GET /events/{event_id}/rsvps\",\"value\":\"getEventsEventIdRsvps\",\"description\":\"GET /events/{event_id}/rsvps\",\"action\":\"GET /events/{event_id}/rsvps\"},{\"name\":\"PATCH /events/{event_id}/group/{group_id}\",\"value\":\"patchEventsEventIdGroupGroupId\",\"description\":\"PATCH /events/{event_id}/group/{group_id}\",\"action\":\"PATCH /events/{event_id}/group/{group_id}\"},{\"name\":\"PATCH /events/{event_id}/location/{location_id}/group/{group_id}\",\"value\":\"patchEventsEventIdLocationLocationIdGroupGroupId\",\"description\":\"PATCH /events/{event_id}/location/{location_id}/group/{group_id}\",\"action\":\"PATCH /events/{event_id}/location/{location_id}/group/{group_id}\"}],\n      default: \"getEvents\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"]}},\n      options: [{\"name\":\"DELETE /groups/{group_id}/memberships/{membership_id}\",\"value\":\"deleteGroupsGroupIdMembershipsMembershipId\",\"description\":\"DELETE /groups/{group_id}/memberships/{membership_id}\",\"action\":\"DELETE /groups/{group_id}/memberships/{membership_id}\"},{\"name\":\"DELETE /groups/{group_id}/my_membership/{my_membership_id}\",\"value\":\"deleteGroupsGroupIdMyMembershipMyMembershipId\",\"description\":\"DELETE /groups/{group_id}/my_membership/{my_membership_id}\",\"action\":\"DELETE /groups/{group_id}/my_membership/{my_membership_id}\"},{\"name\":\"GET /groups\",\"value\":\"getGroups\",\"description\":\"GET /groups\",\"action\":\"GET /groups\"},{\"name\":\"GET /groups/{group_id}\",\"value\":\"getGroupsGroupId\",\"description\":\"GET /groups/{group_id}\",\"action\":\"GET /groups/{group_id}\"},{\"name\":\"GET /groups/{group_id}/applications\",\"value\":\"getGroupsGroupIdApplications\",\"description\":\"GET /groups/{group_id}/applications\",\"action\":\"GET /groups/{group_id}/applications\"},{\"name\":\"GET /groups/{group_id}/applications/{application_id}\",\"value\":\"getGroupsGroupIdApplicationsApplicationId\",\"description\":\"GET /groups/{group_id}/applications/{application_id}\",\"action\":\"GET /groups/{group_id}/applications/{application_id}\"},{\"name\":\"GET /groups/{group_id}/campuses\",\"value\":\"getGroupsGroupIdCampuses\",\"description\":\"GET /groups/{group_id}/campuses\",\"action\":\"GET /groups/{group_id}/campuses\"},{\"name\":\"GET /groups/{group_id}/campuses/{campus_id}\",\"value\":\"getGroupsGroupIdCampusesCampusId\",\"description\":\"GET /groups/{group_id}/campuses/{campus_id}\",\"action\":\"GET /groups/{group_id}/campuses/{campus_id}\"},{\"name\":\"GET /groups/{group_id}/enrollment\",\"value\":\"getGroupsGroupIdEnrollment\",\"description\":\"GET /groups/{group_id}/enrollment\",\"action\":\"GET /groups/{group_id}/enrollment\"},{\"name\":\"GET /groups/{group_id}/events\",\"value\":\"getGroupsGroupIdEvents\",\"description\":\"GET /groups/{group_id}/events\",\"action\":\"GET /groups/{group_id}/events\"},{\"name\":\"GET /groups/{group_id}/events/{event_id}\",\"value\":\"getGroupsGroupIdEventsEventId\",\"description\":\"GET /groups/{group_id}/events/{event_id}\",\"action\":\"GET /groups/{group_id}/events/{event_id}\"},{\"name\":\"GET /groups/{group_id}/group_type\",\"value\":\"getGroupsGroupIdGroupType\",\"description\":\"GET /groups/{group_id}/group_type\",\"action\":\"GET /groups/{group_id}/group_type\"},{\"name\":\"GET /groups/{group_id}/group_type/{group_type_id}\",\"value\":\"getGroupsGroupIdGroupTypeGroupTypeId\",\"description\":\"GET /groups/{group_id}/group_type/{group_type_id}\",\"action\":\"GET /groups/{group_id}/group_type/{group_type_id}\"},{\"name\":\"GET /groups/{group_id}/location\",\"value\":\"getGroupsGroupIdLocation\",\"description\":\"GET /groups/{group_id}/location\",\"action\":\"GET /groups/{group_id}/location\"},{\"name\":\"GET /groups/{group_id}/location/{location_id}\",\"value\":\"getGroupsGroupIdLocationLocationId\",\"description\":\"GET /groups/{group_id}/location/{location_id}\",\"action\":\"GET /groups/{group_id}/location/{location_id}\"},{\"name\":\"GET /groups/{group_id}/memberships\",\"value\":\"getGroupsGroupIdMemberships\",\"description\":\"GET /groups/{group_id}/memberships\",\"action\":\"GET /groups/{group_id}/memberships\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}\",\"value\":\"getGroupsGroupIdMembershipsMembershipId\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/group\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdGroup\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/group\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/group\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/group/{group_id}\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/person\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdPerson\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/person\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/person\"},{\"name\":\"GET /groups/{group_id}/memberships/{membership_id}/person/{person_id}\",\"value\":\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\",\"description\":\"GET /groups/{group_id}/memberships/{membership_id}/person/{person_id}\",\"action\":\"GET /groups/{group_id}/memberships/{membership_id}/person/{person_id}\"},{\"name\":\"GET /groups/{group_id}/my_membership\",\"value\":\"getGroupsGroupIdMyMembership\",\"description\":\"GET /groups/{group_id}/my_membership\",\"action\":\"GET /groups/{group_id}/my_membership\"},{\"name\":\"GET /groups/{group_id}/my_membership/{my_membership_id}\",\"value\":\"getGroupsGroupIdMyMembershipMyMembershipId\",\"description\":\"GET /groups/{group_id}/my_membership/{my_membership_id}\",\"action\":\"GET /groups/{group_id}/my_membership/{my_membership_id}\"},{\"name\":\"GET /groups/{group_id}/people\",\"value\":\"getGroupsGroupIdPeople\",\"description\":\"GET /groups/{group_id}/people\",\"action\":\"GET /groups/{group_id}/people\"},{\"name\":\"GET /groups/{group_id}/people/{person_id}\",\"value\":\"getGroupsGroupIdPeoplePersonId\",\"description\":\"GET /groups/{group_id}/people/{person_id}\",\"action\":\"GET /groups/{group_id}/people/{person_id}\"},{\"name\":\"GET /groups/{group_id}/resources\",\"value\":\"getGroupsGroupIdResources\",\"description\":\"GET /groups/{group_id}/resources\",\"action\":\"GET /groups/{group_id}/resources\"},{\"name\":\"GET /groups/{group_id}/resources/{resource_id}\",\"value\":\"getGroupsGroupIdResourcesResourceId\",\"description\":\"GET /groups/{group_id}/resources/{resource_id}\",\"action\":\"GET /groups/{group_id}/resources/{resource_id}\"},{\"name\":\"GET /groups/{group_id}/tags\",\"value\":\"getGroupsGroupIdTags\",\"description\":\"GET /groups/{group_id}/tags\",\"action\":\"GET /groups/{group_id}/tags\"},{\"name\":\"GET /groups/{group_id}/tags/{tag_id}\",\"value\":\"getGroupsGroupIdTagsTagId\",\"description\":\"GET /groups/{group_id}/tags/{tag_id}\",\"action\":\"GET /groups/{group_id}/tags/{tag_id}\"},{\"name\":\"GET /groups/{group_id}/tags/{tag_id}/groups\",\"value\":\"getGroupsGroupIdTagsTagIdGroups\",\"description\":\"GET /groups/{group_id}/tags/{tag_id}/groups\",\"action\":\"GET /groups/{group_id}/tags/{tag_id}/groups\"},{\"name\":\"GET /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"value\":\"getGroupsGroupIdTagsTagIdGroupsGroupId\",\"description\":\"GET /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"action\":\"GET /groups/{group_id}/tags/{tag_id}/groups/{group_id}\"},{\"name\":\"PATCH /groups/{group_id}\",\"value\":\"patchGroupsGroupId\",\"description\":\"PATCH /groups/{group_id}\",\"action\":\"PATCH /groups/{group_id}\"},{\"name\":\"PATCH /groups/{group_id}/memberships/{membership_id}\",\"value\":\"patchGroupsGroupIdMembershipsMembershipId\",\"description\":\"PATCH /groups/{group_id}/memberships/{membership_id}\",\"action\":\"PATCH /groups/{group_id}/memberships/{membership_id}\"},{\"name\":\"PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"value\":\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\",\"description\":\"PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}\",\"action\":\"PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}\"},{\"name\":\"PATCH /groups/{group_id}/my_membership/{my_membership_id}\",\"value\":\"patchGroupsGroupIdMyMembershipMyMembershipId\",\"description\":\"PATCH /groups/{group_id}/my_membership/{my_membership_id}\",\"action\":\"PATCH /groups/{group_id}/my_membership/{my_membership_id}\"},{\"name\":\"PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"value\":\"patchGroupsGroupIdTagsTagIdGroupsGroupId\",\"description\":\"PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}\",\"action\":\"PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}\"},{\"name\":\"POST /groups/{group_id}/assign_campuses\",\"value\":\"postGroupsGroupIdAssignCampuses\",\"description\":\"POST /groups/{group_id}/assign_campuses\",\"action\":\"POST /groups/{group_id}/assign_campuses\"},{\"name\":\"POST /groups/{group_id}/disable_chat\",\"value\":\"postGroupsGroupIdDisableChat\",\"description\":\"POST /groups/{group_id}/disable_chat\",\"action\":\"POST /groups/{group_id}/disable_chat\"},{\"name\":\"POST /groups/{group_id}/duplicate\",\"value\":\"postGroupsGroupIdDuplicate\",\"description\":\"POST /groups/{group_id}/duplicate\",\"action\":\"POST /groups/{group_id}/duplicate\"},{\"name\":\"POST /groups/{group_id}/enable_chat\",\"value\":\"postGroupsGroupIdEnableChat\",\"description\":\"POST /groups/{group_id}/enable_chat\",\"action\":\"POST /groups/{group_id}/enable_chat\"},{\"name\":\"POST /groups/{group_id}/memberships\",\"value\":\"postGroupsGroupIdMemberships\",\"description\":\"POST /groups/{group_id}/memberships\",\"action\":\"POST /groups/{group_id}/memberships\"}],\n      default: \"deleteGroupsGroupIdMembershipsMembershipId\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"]}},\n      options: [{\"name\":\"GET /group_applications\",\"value\":\"getGroupApplications\",\"description\":\"GET /group_applications\",\"action\":\"GET /group_applications\"},{\"name\":\"GET /group_applications/{group_application_id}\",\"value\":\"getGroupApplicationsGroupApplicationId\",\"description\":\"GET /group_applications/{group_application_id}\",\"action\":\"GET /group_applications/{group_application_id}\"},{\"name\":\"GET /group_applications/{group_application_id}/group\",\"value\":\"getGroupApplicationsGroupApplicationIdGroup\",\"description\":\"GET /group_applications/{group_application_id}/group\",\"action\":\"GET /group_applications/{group_application_id}/group\"},{\"name\":\"GET /group_applications/{group_application_id}/group/{group_id}\",\"value\":\"getGroupApplicationsGroupApplicationIdGroupGroupId\",\"description\":\"GET /group_applications/{group_application_id}/group/{group_id}\",\"action\":\"GET /group_applications/{group_application_id}/group/{group_id}\"},{\"name\":\"GET /group_applications/{group_application_id}/person\",\"value\":\"getGroupApplicationsGroupApplicationIdPerson\",\"description\":\"GET /group_applications/{group_application_id}/person\",\"action\":\"GET /group_applications/{group_application_id}/person\"},{\"name\":\"GET /group_applications/{group_application_id}/person/{person_id}\",\"value\":\"getGroupApplicationsGroupApplicationIdPersonPersonId\",\"description\":\"GET /group_applications/{group_application_id}/person/{person_id}\",\"action\":\"GET /group_applications/{group_application_id}/person/{person_id}\"},{\"name\":\"PATCH /group_applications/{group_application_id}/group/{group_id}\",\"value\":\"patchGroupApplicationsGroupApplicationIdGroupGroupId\",\"description\":\"PATCH /group_applications/{group_application_id}/group/{group_id}\",\"action\":\"PATCH /group_applications/{group_application_id}/group/{group_id}\"},{\"name\":\"POST /group_applications/{group_application_id}/approve\",\"value\":\"postGroupApplicationsGroupApplicationIdApprove\",\"description\":\"POST /group_applications/{group_application_id}/approve\",\"action\":\"POST /group_applications/{group_application_id}/approve\"},{\"name\":\"POST /group_applications/{group_application_id}/reject\",\"value\":\"postGroupApplicationsGroupApplicationIdReject\",\"description\":\"POST /group_applications/{group_application_id}/reject\",\"action\":\"POST /group_applications/{group_application_id}/reject\"}],\n      default: \"getGroupApplications\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"]}},\n      options: [{\"name\":\"GET /group_types\",\"value\":\"getGroupTypes\",\"description\":\"GET /group_types\",\"action\":\"GET /group_types\"},{\"name\":\"GET /group_types/{group_type_id}\",\"value\":\"getGroupTypesGroupTypeId\",\"description\":\"GET /group_types/{group_type_id}\",\"action\":\"GET /group_types/{group_type_id}\"},{\"name\":\"GET /group_types/{group_type_id}/events\",\"value\":\"getGroupTypesGroupTypeIdEvents\",\"description\":\"GET /group_types/{group_type_id}/events\",\"action\":\"GET /group_types/{group_type_id}/events\"},{\"name\":\"GET /group_types/{group_type_id}/events/{event_id}\",\"value\":\"getGroupTypesGroupTypeIdEventsEventId\",\"description\":\"GET /group_types/{group_type_id}/events/{event_id}\",\"action\":\"GET /group_types/{group_type_id}/events/{event_id}\"},{\"name\":\"GET /group_types/{group_type_id}/groups\",\"value\":\"getGroupTypesGroupTypeIdGroups\",\"description\":\"GET /group_types/{group_type_id}/groups\",\"action\":\"GET /group_types/{group_type_id}/groups\"},{\"name\":\"GET /group_types/{group_type_id}/groups/{group_id}\",\"value\":\"getGroupTypesGroupTypeIdGroupsGroupId\",\"description\":\"GET /group_types/{group_type_id}/groups/{group_id}\",\"action\":\"GET /group_types/{group_type_id}/groups/{group_id}\"},{\"name\":\"GET /group_types/{group_type_id}/resources\",\"value\":\"getGroupTypesGroupTypeIdResources\",\"description\":\"GET /group_types/{group_type_id}/resources\",\"action\":\"GET /group_types/{group_type_id}/resources\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceId\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download/{download_id}\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download/{download_id}\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/download/{download_id}\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit\"},{\"name\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit/{visit_id}\",\"value\":\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\",\"description\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit/{visit_id}\",\"action\":\"GET /group_types/{group_type_id}/resources/{resource_id}/visit/{visit_id}\"},{\"name\":\"PATCH /group_types/{group_type_id}/groups/{group_id}\",\"value\":\"patchGroupTypesGroupTypeIdGroupsGroupId\",\"description\":\"PATCH /group_types/{group_type_id}/groups/{group_id}\",\"action\":\"PATCH /group_types/{group_type_id}/groups/{group_id}\"}],\n      default: \"getGroupTypes\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"]}},\n      options: [{\"name\":\"DELETE /people/{person_id}/memberships/{membership_id}\",\"value\":\"deletePeoplePersonIdMembershipsMembershipId\",\"description\":\"DELETE /people/{person_id}/memberships/{membership_id}\",\"action\":\"DELETE /people/{person_id}/memberships/{membership_id}\"},{\"name\":\"GET /me\",\"value\":\"getMe\",\"description\":\"GET /me\",\"action\":\"GET /me\"},{\"name\":\"GET /people\",\"value\":\"getPeople\",\"description\":\"GET /people\",\"action\":\"GET /people\"},{\"name\":\"GET /people/{person_id}\",\"value\":\"getPeoplePersonId\",\"description\":\"GET /people/{person_id}\",\"action\":\"GET /people/{person_id}\"},{\"name\":\"GET /people/{person_id}/events\",\"value\":\"getPeoplePersonIdEvents\",\"description\":\"GET /people/{person_id}/events\",\"action\":\"GET /people/{person_id}/events\"},{\"name\":\"GET /people/{person_id}/events/{event_id}\",\"value\":\"getPeoplePersonIdEventsEventId\",\"description\":\"GET /people/{person_id}/events/{event_id}\",\"action\":\"GET /people/{person_id}/events/{event_id}\"},{\"name\":\"GET /people/{person_id}/groups\",\"value\":\"getPeoplePersonIdGroups\",\"description\":\"GET /people/{person_id}/groups\",\"action\":\"GET /people/{person_id}/groups\"},{\"name\":\"GET /people/{person_id}/groups/{group_id}\",\"value\":\"getPeoplePersonIdGroupsGroupId\",\"description\":\"GET /people/{person_id}/groups/{group_id}\",\"action\":\"GET /people/{person_id}/groups/{group_id}\"},{\"name\":\"GET /people/{person_id}/memberships\",\"value\":\"getPeoplePersonIdMemberships\",\"description\":\"GET /people/{person_id}/memberships\",\"action\":\"GET /people/{person_id}/memberships\"},{\"name\":\"GET /people/{person_id}/memberships/{membership_id}\",\"value\":\"getPeoplePersonIdMembershipsMembershipId\",\"description\":\"GET /people/{person_id}/memberships/{membership_id}\",\"action\":\"GET /people/{person_id}/memberships/{membership_id}\"},{\"name\":\"PATCH /people/{person_id}/groups/{group_id}\",\"value\":\"patchPeoplePersonIdGroupsGroupId\",\"description\":\"PATCH /people/{person_id}/groups/{group_id}\",\"action\":\"PATCH /people/{person_id}/groups/{group_id}\"},{\"name\":\"PATCH /people/{person_id}/memberships/{membership_id}\",\"value\":\"patchPeoplePersonIdMembershipsMembershipId\",\"description\":\"PATCH /people/{person_id}/memberships/{membership_id}\",\"action\":\"PATCH /people/{person_id}/memberships/{membership_id}\"}],\n      default: \"deletePeoplePersonIdMembershipsMembershipId\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"]}},\n      options: [{\"name\":\"GET /tag_groups\",\"value\":\"getTagGroups\",\"description\":\"GET /tag_groups\",\"action\":\"GET /tag_groups\"},{\"name\":\"GET /tag_groups/{tag_group_id}\",\"value\":\"getTagGroupsTagGroupId\",\"description\":\"GET /tag_groups/{tag_group_id}\",\"action\":\"GET /tag_groups/{tag_group_id}\"},{\"name\":\"GET /tag_groups/{tag_group_id}/tags\",\"value\":\"getTagGroupsTagGroupIdTags\",\"description\":\"GET /tag_groups/{tag_group_id}/tags\",\"action\":\"GET /tag_groups/{tag_group_id}/tags\"},{\"name\":\"GET /tag_groups/{tag_group_id}/tags/{tag_id}\",\"value\":\"getTagGroupsTagGroupIdTagsTagId\",\"description\":\"GET /tag_groups/{tag_group_id}/tags/{tag_id}\",\"action\":\"GET /tag_groups/{tag_group_id}/tags/{tag_id}\"}],\n      default: \"getTagGroups\",\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getCampuses_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getCampuses_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getCampuses_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getCampuses_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getCampuses_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"],\"getCampuses_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampuses\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getCampusesCampusId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getCampusesCampusIdGroups_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getCampusesCampusIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getCampusesCampusIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getCampusesCampusIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getCampusesCampusIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getCampusesCampusIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getCampusesCampusIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"],\"getCampusesCampusIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getCampusesCampusIdGroupsGroupId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getCampusesCampusIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getCampusesCampusIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"getCampusesCampusIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"patchCampusesCampusIdGroupsGroupId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchCampusesCampusIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchCampusesCampusIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchCampusesCampusIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchCampusesCampusIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchCampusesCampusIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchCampusesCampusIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchCampusesCampusIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchCampusesCampusIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchCampusesCampusIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchCampusesCampusIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Campus\"],\"operation\":[\"patchCampusesCampusIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"],\"getEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdAttendances_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getEventsEventIdAttendances_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdAttendances_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdAttendances_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdAttendances_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdAttendances_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"],\"getEventsEventIdAttendances_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendances\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Attendance Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_attendanceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdAttendancesAttendanceIdPerson_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"],\"getEventsEventIdAttendancesAttendanceIdPerson_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPerson\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Attendance Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_attendanceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getEventsEventIdAttendancesAttendanceIdPersonPersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdAttendancesAttendanceIdPersonPersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdGroup_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getEventsEventIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getEventsEventIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"],\"getEventsEventIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getEventsEventIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocation_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocation_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdLocation_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdLocation_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"],\"getEventsEventIdLocation_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocation\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocationLocationId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getEventsEventIdLocationLocationId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocationLocationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocationLocationIdGroup_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getEventsEventIdLocationLocationIdGroup_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getEventsEventIdLocationLocationIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdLocationLocationIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocationLocationIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdLocationLocationIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdLocationLocationIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"],\"getEventsEventIdLocationLocationIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdLocationLocationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdLocationLocationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotes_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdNotes_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdNotes_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdNotes_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"],\"getEventsEventIdNotes_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotes\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: \"Event Note Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwner_eventNoteId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdNotesEventNoteIdOwner_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdNotesEventNoteIdOwner_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"],\"getEventsEventIdNotesEventNoteIdOwner_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwner\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: \"Event Note Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_eventNoteId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: \"Owner Id\",\n      name: \"getEventsEventIdNotesEventNoteIdOwnerOwnerId_ownerId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesEventNoteIdOwnerOwnerId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdNotesNoteId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: \"Note Id\",\n      name: \"getEventsEventIdNotesNoteId_noteId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getEventsEventIdNotesNoteId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdNotesNoteId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getEventsEventIdRsvps_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getEventsEventIdRsvps_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getEventsEventIdRsvps_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getEventsEventIdRsvps_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"],\"getEventsEventIdRsvps_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"getEventsEventIdRsvps\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"patchEventsEventIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchEventsEventIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchEventsEventIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchEventsEventIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchEventsEventIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchEventsEventIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchEventsEventIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchEventsEventIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchEventsEventIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchEventsEventIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchEventsEventIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchEventsEventIdLocationLocationIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Event\"],\"operation\":[\"patchEventsEventIdLocationLocationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Where[applied At]\",\n      name: \"getGroupApplications_whereappliedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gt]\",\n      name: \"getGroupApplications_whereappliedAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gte]\",\n      name: \"getGroupApplications_whereappliedAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lt]\",\n      name: \"getGroupApplications_whereappliedAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lte]\",\n      name: \"getGroupApplications_whereappliedAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupApplications_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplications_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"],\"getGroupApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplicationsGroupApplicationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplicationsGroupApplicationIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupApplicationsGroupApplicationIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupApplicationsGroupApplicationIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"],\"getGroupApplicationsGroupApplicationIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupApplicationsGroupApplicationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupApplicationsGroupApplicationIdPerson_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupApplicationsGroupApplicationIdPerson_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupApplicationsGroupApplicationIdPerson_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"],\"getGroupApplicationsGroupApplicationIdPerson_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPerson\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"getGroupApplicationsGroupApplicationIdPersonPersonId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getGroupApplicationsGroupApplicationIdPersonPersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"getGroupApplicationsGroupApplicationIdPersonPersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupApplicationsGroupApplicationIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"patchGroupApplicationsGroupApplicationIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"postGroupApplicationsGroupApplicationIdApprove_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdApprove\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Application Id\",\n      name: \"postGroupApplicationsGroupApplicationIdReject_groupApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Application\"],\"operation\":[\"postGroupApplicationsGroupApplicationIdReject\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupTypes_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupTypes_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypes_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypes_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypes_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"],\"getGroupTypes_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypes\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdEvents_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupTypesGroupTypeIdEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getGroupTypesGroupTypeIdEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"],\"getGroupTypesGroupTypeIdEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdGroups_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupTypesGroupTypeIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"],\"getGroupTypesGroupTypeIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupTypesGroupTypeIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResources_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdResources_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdResources_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdResources_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"],\"getGroupTypesGroupTypeIdResources_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResources\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownload_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"],\"getGroupTypesGroupTypeIdResourcesResourceIdDownload_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownload\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: \"Download Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_downloadId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisit_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"],\"getGroupTypesGroupTypeIdResourcesResourceIdVisit_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisit\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: \"Visit Id\",\n      name: \"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_visitId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupTypesGroupTypeIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group Type\"],\"operation\":[\"patchGroupTypesGroupTypeIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"deleteGroupsGroupIdMembershipsMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"deleteGroupsGroupIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"deleteGroupsGroupIdMyMembershipMyMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"My Membership Id\",\n      name: \"deleteGroupsGroupIdMyMembershipMyMembershipId_myMembershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"deleteGroupsGroupIdMyMembershipMyMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroups_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"],\"getGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdApplications_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gt]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][gte]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lt]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Where[applied At][lte]\",\n      name: \"getGroupsGroupIdApplications_whereappliedAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdApplications_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdApplications_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"],\"getGroupsGroupIdApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Application Id\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_applicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdApplicationsApplicationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdApplicationsApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdCampuses_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupsGroupIdCampuses_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdCampuses_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdCampuses_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdCampuses_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdCampuses_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"],\"getGroupsGroupIdCampuses_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampuses\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdCampusesCampusId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n    },\n    {\n      displayName: \"Campus Id\",\n      name: \"getGroupsGroupIdCampusesCampusId_campusId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdCampusesCampusId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdEnrollment_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdEnrollment_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdEnrollment_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"],\"getGroupsGroupIdEnrollment_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEnrollment\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdEvents_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupsGroupIdEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getGroupsGroupIdEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getGroupsGroupIdEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getGroupsGroupIdEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"],\"getGroupsGroupIdEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdEventsEventId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getGroupsGroupIdEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdGroupType_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupsGroupIdGroupType_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdGroupType_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdGroupType_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdGroupType_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"],\"getGroupsGroupIdGroupType_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupType\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdGroupTypeGroupTypeId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"getGroupsGroupIdGroupTypeGroupTypeId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdGroupTypeGroupTypeId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdLocation_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdLocation_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdLocation_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdLocation_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"],\"getGroupsGroupIdLocation_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocation\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdLocationLocationId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Location Id\",\n      name: \"getGroupsGroupIdLocationLocationId_locationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdLocationLocationId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdLocationLocationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMemberships_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMemberships_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMemberships_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMemberships_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMemberships_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"],\"getGroupsGroupIdMemberships_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMemberships\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroup_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"],\"getGroupsGroupIdMembershipsMembershipIdGroup_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroup\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMembershipsMembershipIdPerson_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"],\"getGroupsGroupIdMembershipsMembershipIdPerson_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPerson\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getGroupsGroupIdMembershipsMembershipIdPersonPersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMembershipsMembershipIdPersonPersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMyMembership_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdMyMembership_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMyMembership_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdMyMembership_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdMyMembership_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"],\"getGroupsGroupIdMyMembership_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembership\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"My Membership Id\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_myMembershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdMyMembershipMyMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdMyMembershipMyMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdPeople_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdPeople_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdPeople_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdPeople_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"],\"getGroupsGroupIdPeople_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeople\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdPeoplePersonId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getGroupsGroupIdPeoplePersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdPeoplePersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdResources_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getGroupsGroupIdResources_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdResources_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdResources_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdResources_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"],\"getGroupsGroupIdResources_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResources\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdResourcesResourceId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: \"Resource Id\",\n      name: \"getGroupsGroupIdResourcesResourceId_resourceId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdResourcesResourceId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTags_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getGroupsGroupIdTags_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdTags_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdTags_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdTags_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdTags_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"],\"getGroupsGroupIdTags_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTags\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTagsTagId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getGroupsGroupIdTagsTagId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdTagsTagIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getGroupsGroupIdTagsTagIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getGroupsGroupIdTagsTagIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"],\"getGroupsGroupIdTagsTagIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getGroupsGroupIdTagsTagIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"getGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"patchGroupsGroupIdMembershipsMembershipId_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMembershipsMembershipIdGroupGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"My Membership Id\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_myMembershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"patchGroupsGroupIdMyMembershipMyMembershipId_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdMyMembershipMyMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchGroupsGroupIdTagsTagIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"patchGroupsGroupIdTagsTagIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdAssignCampuses_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdAssignCampuses\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdDisableChat_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDisableChat\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdDuplicate_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdDuplicate\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdEnableChat_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdEnableChat\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"postGroupsGroupIdMemberships_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"postGroupsGroupIdMemberships_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"postGroupsGroupIdMemberships_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"postGroupsGroupIdMemberships_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"postGroupsGroupIdMemberships_personId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Person ID\",\n      name: \"postGroupsGroupIdMemberships_personIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Group\"],\"operation\":[\"postGroupsGroupIdMemberships\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"deletePeoplePersonIdMembershipsMembershipId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"deletePeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"deletePeoplePersonIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"deletePeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"deletePeoplePersonIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: 'Return All',\n      name: \"getMe_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getMe_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"],\"getMe_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getMe\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeople_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeople_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeople_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"],\"getPeople_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeople\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdEvents_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getPeoplePersonIdEvents_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getPeoplePersonIdEvents_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gt]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][gte]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lt]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[starts At][lte]\",\n      name: \"getPeoplePersonIdEvents_wherestartsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At]\",\n      name: \"getPeoplePersonIdEvents_whereendsAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gt]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtgt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][gte]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtgte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lt]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtlt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Where[ends At][lte]\",\n      name: \"getPeoplePersonIdEvents_whereendsAtlte\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeoplePersonIdEvents_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdEvents_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeoplePersonIdEvents_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeoplePersonIdEvents_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"],\"getPeoplePersonIdEvents_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEvents\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdEventsEventId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Event Id\",\n      name: \"getPeoplePersonIdEventsEventId_eventId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdEventsEventId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdEventsEventId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdGroups_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getPeoplePersonIdGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Where[group Type][id]\",\n      name: \"getPeoplePersonIdGroups_wheregroupTypeid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeoplePersonIdGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdGroups_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeoplePersonIdGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeoplePersonIdGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"],\"getPeoplePersonIdGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdGroupsGroupId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"getPeoplePersonIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdMemberships_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getPeoplePersonIdMemberships_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdMemberships_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPeoplePersonIdMemberships_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPeoplePersonIdMemberships_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"],\"getPeoplePersonIdMemberships_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMemberships\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"getPeoplePersonIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"getPeoplePersonIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"patchPeoplePersonIdGroupsGroupId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Group Id\",\n      name: \"patchPeoplePersonIdGroupsGroupId_groupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchPeoplePersonIdGroupsGroupId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n    },\n    {\n      displayName: \"Name\",\n      name: \"patchPeoplePersonIdGroupsGroupId_name\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type Id\",\n      name: \"patchPeoplePersonIdGroupsGroupId_groupTypeId\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Public Enrollment\",\n      name: \"patchPeoplePersonIdGroupsGroupId_publicEnrollment\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Display Meeting Schedule\",\n      name: \"patchPeoplePersonIdGroupsGroupId_publiclyDisplayMeetingSchedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Publicly Visible\",\n      name: \"patchPeoplePersonIdGroupsGroupId_publiclyVisible\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Schedule\",\n      name: \"patchPeoplePersonIdGroupsGroupId_schedule\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Tag Ids\",\n      name: \"patchPeoplePersonIdGroupsGroupId_tagIds\",\n      type: \"number\",\n      default: undefined,\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Group Type ID\",\n      name: \"patchPeoplePersonIdGroupsGroupId_groupTypeIds\",\n      type: 'string',\n      default: '',\n      description: \"Relationship ID.\",\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdGroupsGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Person Id\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Membership Id\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_membershipId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Include\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_include\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: 'Body Mode',\n      name: 'bodyMode',\n      type: 'options',\n      options: [{\"name\":\"Fields\",\"value\":\"fields\"},{\"name\":\"Raw JSON\",\"value\":\"rawJson\"}],\n      default: 'fields',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n    },\n    {\n      displayName: \"Joined At\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_joinedAt\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: \"Role\",\n      name: \"patchPeoplePersonIdMembershipsMembershipId_role\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"],\"bodyMode\":[\"fields\"]}},\n    },\n    {\n      displayName: 'Raw JSON Body',\n      name: 'rawJsonBody',\n      type: 'json',\n      default: '{}',\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"],\"bodyMode\":[\"rawJson\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Person\"],\"operation\":[\"patchPeoplePersonIdMembershipsMembershipId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Filter\",\n      name: \"getTagGroups_filter\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getTagGroups_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getTagGroups_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getTagGroups_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getTagGroups_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"],\"getTagGroups_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroups\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Tag Group Id\",\n      name: \"getTagGroupsTagGroupId_tagGroupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Tag Group Id\",\n      name: \"getTagGroupsTagGroupIdTags_tagGroupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[id]\",\n      name: \"getTagGroupsTagGroupIdTags_whereid\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Where[name]\",\n      name: \"getTagGroupsTagGroupIdTags_wherename\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: \"Order\",\n      name: \"getTagGroupsTagGroupIdTags_order\",\n      type: \"string\",\n      default: '',\n      required: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getTagGroupsTagGroupIdTags_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getTagGroupsTagGroupIdTags_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"],\"getTagGroupsTagGroupIdTags_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTags\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Tag Group Id\",\n      name: \"getTagGroupsTagGroupIdTagsTagId_tagGroupId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: \"Tag Id\",\n      name: \"getTagGroupsTagGroupIdTagsTagId_tagId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Tag Group\"],\"operation\":[\"getTagGroupsTagGroupIdTagsTagId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n  ]")() as any;
 
 function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
   const additional = context.getNodeParameter('additionalQueryParameters', itemIndex, {}) as { parameters?: Array<{ name?: string; value?: unknown }> };

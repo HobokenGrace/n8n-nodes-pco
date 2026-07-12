@@ -8,6 +8,21 @@ export interface GeneratedField {
   type: 'boolean' | 'number' | 'string';
 }
 
+export interface GeneratedQueryOptionOperator {
+  name: string;
+  value: string;
+  sourceName: string;
+}
+
+export interface GeneratedQueryOption {
+  name: string;
+  displayName: string;
+  type: GeneratedField['type'];
+  kind: 'single' | 'operator';
+  sourceName?: string;
+  operators?: GeneratedQueryOptionOperator[];
+}
+
 export interface GeneratedRelationshipField {
   name: string;
   displayName: string;
@@ -27,6 +42,7 @@ export interface GeneratedOperation {
   isList: boolean;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
+  queryOptions: GeneratedQueryOption[];
   attributeFields: GeneratedField[];
   relationshipFields: GeneratedRelationshipField[];
 }

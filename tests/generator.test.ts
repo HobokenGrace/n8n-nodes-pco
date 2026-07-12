@@ -35,6 +35,33 @@ describe('generated Planning Center nodes', () => {
     }
   });
 
+  it('renders only useful query filters for form submission lists', async () => {
+    const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
+    expect(peopleConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(peopleConfig!);
+    const operation = summary.operations.find((candidate) => candidate.id === 'getFormsFormIdFormSubmissions');
+    expect(operation).toBeDefined();
+
+    const queryParameters = operation!.queryParameters.map((parameter) => parameter.sourceName);
+
+    expect(queryParameters).toContain('where[created_at]');
+    expect(queryParameters).toContain('where[created_at][gte]');
+    expect(queryParameters).toContain('where[updated_at][lte]');
+    expect(queryParameters).toContain('where[submitter_name]');
+    expect(queryParameters).toContain('where[person][id]');
+    expect(queryParameters).toContain('include');
+    expect(queryParameters).toContain('order');
+
+    expect(queryParameters).not.toContain('where[form][id]');
+    expect(queryParameters).not.toContain('where[person][addresses][city]');
+    expect(queryParameters).not.toContain('where[form][campus][updated_at]');
+    expect(queryParameters).not.toContain('fields[FormSubmission]');
+    expect(queryParameters).not.toContain('per_page');
+    expect(queryParameters).not.toContain('offset');
+    expect(queryParameters.length).toBeLessThan(20);
+  });
+
   it('executes form submission list when optional numeric query filters are unset', async () => {
     const node = new PlanningCenterPeople();
     const httpRequest = vi.fn().mockResolvedValue({ data: [] });

@@ -1,5 +1,5 @@
 import type { ProductConfig } from './config';
-import type { GeneratedField, GeneratedOperation, ProductGenerationResult } from './model';
+import type { GeneratedField, GeneratedOperation, GeneratedQueryOption, ProductGenerationResult } from './model';
 
 function q(value: unknown): string {
   return JSON.stringify(value);
@@ -26,6 +26,45 @@ function fieldProperty(field: GeneratedField, operation: GeneratedOperation, sou
 
 function renderOperations(operations: GeneratedOperation[]): string {
   return JSON.stringify(operations, null, 2);
+}
+
+function renderQueryOptionsProperty(operation: GeneratedOperation): string | undefined {
+  if (!operation.queryOptions.length) return undefined;
+
+  const displayOptions = { show: { resource: [operation.resource], operation: [operation.id] } };
+  const options = operation.queryOptions.map((option) => ({
+    displayName: option.displayName,
+    name: option.name,
+    values: [
+      ...(option.kind === 'operator'
+        ? [
+            {
+              displayName: 'Operator',
+              name: 'operator',
+              type: 'options',
+              options: option.operators?.map((operator) => ({ name: operator.name, value: operator.value })) ?? [],
+              default: option.operators?.[0]?.value ?? '',
+            },
+          ]
+        : []),
+      {
+        displayName: 'Value',
+        name: 'value',
+        type: option.type,
+        default: option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
+      },
+    ],
+  }));
+
+  return `    {
+      displayName: 'Options',
+      name: ${q(`${operation.id}_options`)},
+      type: 'fixedCollection',
+      default: {},
+      placeholder: 'Add Option',
+      displayOptions: ${q(displayOptions)},
+      options: ${q(options)},
+    },`;
 }
 
 function renderProperties(operations: GeneratedOperation[]): string {
@@ -56,8 +95,10 @@ function renderProperties(operations: GeneratedOperation[]): string {
     const displayOptions = { show: { resource: [operation.resource], operation: [operation.id] } };
     const fields = [
       ...operation.pathParameters.map((field) => fieldProperty(field, operation, 'path')),
-      ...operation.queryParameters.map((field) => fieldProperty(field, operation, 'query')),
     ];
+
+    const queryOptionsProperty = renderQueryOptionsProperty(operation);
+    if (queryOptionsProperty) fields.push(queryOptionsProperty);
 
     if (operation.isList) {
       fields.push(`    {

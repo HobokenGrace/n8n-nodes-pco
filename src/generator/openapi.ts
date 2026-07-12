@@ -6,6 +6,7 @@ import { snapshotPath } from './config';
 import type {
   GeneratedField,
   GeneratedOperation,
+  GeneratedQueryOption,
   GeneratedRelationshipField,
   HttpMethod,
   ProductGenerationResult,
@@ -13,8 +14,32 @@ import type {
 
 const HTTP_METHODS = new Set(['get', 'post', 'put', 'patch', 'delete']);
 const GENERIC_TAGS = new Set(['default', 'api', 'openapi']);
+const RANGE_OPERATORS = new Set(['gt', 'gte', 'lt', 'lte']);
+const USEFUL_STRING_FILTERS = new Set([
+  'address',
+  'email',
+  'name',
+  'search_name',
+  'search_name_or_email',
+  'search_name_or_email_or_phone_number',
+  'search_phone_number',
+  'subject',
+  'submitter_name',
+  'title',
+]);
 
 type JsonSchema = Record<string, any>;
+
+interface OperationQueryContext {
+  directRelationships: Set<string>;
+  pathRelationshipConstraints: Set<string>;
+}
+
+interface ParsedWhereParameter {
+  field: string;
+  operator?: string;
+  segments: string[];
+}
 
 function titleCase(value: string): string {
   return value
@@ -59,6 +84,168 @@ function schemaType(schema: JsonSchema | undefined): GeneratedField['type'] {
   return 'string';
 }
 
+function jsonApiResponseSchema(operation: any): JsonSchema | undefined {
+  return operation.responses?.['200']?.content?.['application/vnd.api+json']?.schema
+    ?? operation.responses?.['200']?.content?.['application/json']?.schema;
+}
+
+function responseResourceSchema(operation: any): JsonSchema | undefined {
+  const dataSchema = jsonApiResponseSchema(operation)?.properties?.data;
+  if (!dataSchema) return undefined;
+
+  return dataSchema.type === 'array' ? dataSchema.items : dataSchema;
+}
+
+function directRelationships(operation: any): Set<string> {
+  const relationships = responseResourceSchema(operation)?.properties?.relationships?.properties;
+  return new Set(Object.keys(relationships ?? {}));
+}
+
+function pathRelationshipConstraints(path: string): Set<string> {
+  const constraints = new Set<string>();
+  for (const match of path.matchAll(/\{([^}]+)_id\}/g)) {
+    constraints.add(match[1]);
+  }
+  return constraints;
+}
+
+function operationQueryContext(path: string, operation: any): OperationQueryContext {
+  return {
+    directRelationships: directRelationships(operation),
+    pathRelationshipConstraints: pathRelationshipConstraints(path),
+  };
+}
+
+function parseWhereParameter(name: string): ParsedWhereParameter | undefined {
+  if (!name.startsWith('where[')) return undefined;
+
+  const segments = [...name.matchAll(/\[([^\]]+)\]/g)].map((match) => match[1]);
+  if (!segments.length) return undefined;
+
+  const lastSegment = segments.at(-1) ?? '';
+  const operator = RANGE_OPERATORS.has(lastSegment) ? lastSegment : undefined;
+  const baseSegments = operator ? segments.slice(0, -1) : segments;
+  const field = baseSegments.at(-1);
+  if (!field) return undefined;
+
+  return { field, operator, segments: baseSegments };
+}
+
+function whereParameterName(segments: string[], operator?: string): string {
+  return `where${[...segments, ...(operator ? [operator] : [])].map((segment) => `[${segment}]`).join('')}`;
+}
+
+function queryOptionDisplayName(sourceName: string): string {
+  const parsed = parseWhereParameter(sourceName);
+  if (parsed) return titleCase(parsed.segments.join(' '));
+
+  return titleCase(sourceName);
+}
+
+function queryOptionName(sourceName: string, suffix = ''): string {
+  return `${camelCase(sourceName)}${suffix}`;
+}
+
+function operatorLabel(operator: string): string {
+  if (operator === 'eq') return 'Equals';
+  if (operator === 'gt') return 'Greater Than';
+  if (operator === 'gte') return 'Greater Than Or Equal';
+  if (operator === 'lt') return 'Less Than';
+  if (operator === 'lte') return 'Less Than Or Equal';
+  return titleCase(operator);
+}
+
+function isDateFilter(schema: JsonSchema | undefined): boolean {
+  return schema?.format === 'date' || schema?.format === 'date-time';
+}
+
+function isUsefulStringFilter(field: string, schema: JsonSchema | undefined): boolean {
+  return schemaType(schema) === 'string' && USEFUL_STRING_FILTERS.has(field);
+}
+
+function shouldRenderWhereParameter(parameter: any, context: OperationQueryContext): boolean {
+  const parsed = parseWhereParameter(parameter.name);
+  if (!parsed) return false;
+
+  const { field, segments } = parsed;
+  if (segments.length === 1) {
+    return field === 'id' || isDateFilter(parameter.schema) || isUsefulStringFilter(field, parameter.schema);
+  }
+
+  if (segments.length === 2) {
+    const relationship = segments[0];
+    if (context.pathRelationshipConstraints.has(relationship)) return false;
+    return context.directRelationships.has(relationship) && field === 'id';
+  }
+
+  return false;
+}
+
+function shouldRenderQueryParameter(parameter: any, context: OperationQueryContext): boolean {
+  const name = parameter.name;
+  if (!name) return false;
+  if (name === 'per_page' || name === 'offset') return false;
+  if (name.startsWith('fields[')) return false;
+  if (name.startsWith('where[')) return shouldRenderWhereParameter(parameter, context);
+
+  return true;
+}
+
+function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[] {
+  const dateRangeGroups = new Map<string, GeneratedField[]>();
+  const fieldsBySourceName = new Map(parameters.map((parameter) => [parameter.sourceName, parameter]));
+  const usedSourceNames = new Set<string>();
+
+  for (const parameter of parameters) {
+    const parsed = parseWhereParameter(parameter.sourceName);
+    if (!parsed?.operator) continue;
+
+    const baseSourceName = whereParameterName(parsed.segments);
+    dateRangeGroups.set(baseSourceName, [
+      ...(dateRangeGroups.get(baseSourceName) ?? []),
+      parameter,
+    ]);
+  }
+
+  const options: GeneratedQueryOption[] = [];
+  for (const [baseSourceName, rangeParameters] of dateRangeGroups) {
+    const baseParameter = fieldsBySourceName.get(baseSourceName);
+    const allParameters = [baseParameter, ...rangeParameters].filter((parameter): parameter is GeneratedField => Boolean(parameter));
+    const sourceNames = new Set(allParameters.map((parameter) => parameter.sourceName));
+    for (const sourceName of sourceNames) usedSourceNames.add(sourceName);
+
+    options.push({
+      name: queryOptionName(baseSourceName, 'Filter'),
+      displayName: queryOptionDisplayName(baseSourceName),
+      type: allParameters[0]?.type ?? 'string',
+      kind: 'operator',
+      operators: allParameters.map((parameter) => {
+        const parsed = parseWhereParameter(parameter.sourceName);
+        const operator = parsed?.operator ?? 'eq';
+        return {
+          name: operatorLabel(operator),
+          value: operator,
+          sourceName: parameter.sourceName,
+        };
+      }),
+    });
+  }
+
+  for (const parameter of parameters) {
+    if (usedSourceNames.has(parameter.sourceName)) continue;
+
+    options.push({
+      name: queryOptionName(parameter.sourceName),
+      displayName: queryOptionDisplayName(parameter.sourceName),
+      type: parameter.type,
+      kind: 'single',
+      sourceName: parameter.sourceName,
+    });
+  }
+
+  return options;
+}
+
 function parameterField(parameter: any): GeneratedField {
   return {
     name: camelCase(parameter.name),
@@ -69,15 +256,18 @@ function parameterField(parameter: any): GeneratedField {
   };
 }
 
-function collectParameters(pathItem: any, operation: any, where: 'path' | 'query'): GeneratedField[] {
+function collectParameters(path: string, pathItem: any, operation: any, where: 'path' | 'query'): GeneratedField[] {
   const parameters = [...(pathItem.parameters ?? []), ...(operation.parameters ?? [])];
   const seen = new Set<string>();
+  const context = operationQueryContext(path, operation);
   return parameters
-    .filter((parameter) => parameter?.in === where && parameter.name && !seen.has(parameter.name))
-    .map((parameter) => {
+    .filter((parameter) => {
+      if (parameter?.in !== where || !parameter.name || seen.has(parameter.name)) return false;
       seen.add(parameter.name);
-      return parameterField(parameter);
-    });
+      return true;
+    })
+    .filter((parameter) => where !== 'query' || shouldRenderQueryParameter(parameter, context))
+    .map((parameter) => parameterField(parameter));
 }
 
 function requestBodySchema(operation: any): JsonSchema | undefined {
@@ -164,6 +354,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
       }
 
       const id = operation.operationId ? camelCase(operation.operationId) : camelCase(`${method} ${path}`);
+      const queryParameters = collectParameters(path, pathItem, operation, 'query');
       operations.push({
         id,
         resource: resourceLabel(operation, path),
@@ -173,8 +364,9 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         path: requestPath(config, path),
         deprecated: Boolean(operation.deprecated),
         isList: isListOperation(method, path),
-        pathParameters: collectParameters(pathItem, operation, 'path'),
-        queryParameters: collectParameters(pathItem, operation, 'query'),
+        pathParameters: collectParameters(path, pathItem, operation, 'path'),
+        queryParameters,
+        queryOptions: buildQueryOptions(queryParameters),
         attributeFields: collectAttributeFields(operation),
         relationshipFields: collectRelationshipFields(operation),
       });
