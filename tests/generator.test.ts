@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { PlanningCenterGiving } from '../nodes/generated/giving/PlanningCenterGiving.node';
 import { PlanningCenterGroups } from '../nodes/generated/groups/PlanningCenterGroups.node';
@@ -33,5 +33,43 @@ describe('generated Planning Center nodes', () => {
       expect(summary.exclusions).toEqual([]);
       expect(summary.operations.some((operation) => operation.path.startsWith(`/${summary.product}/v2`))).toBe(true);
     }
+  });
+
+  it('executes form submission list when optional numeric query filters are unset', async () => {
+    const node = new PlanningCenterPeople();
+    const httpRequest = vi.fn().mockResolvedValue({ data: [] });
+    const missingNumberParameter = 'getFormsFormIdFormSubmissions_wherepersongrade';
+    const context: any = {
+      continueOnFail: () => false,
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getInputData: () => [{ json: {} }],
+      getNode: () => ({ name: 'Planning Center People', type: 'planningCenterPeople' }),
+      getNodeParameter: vi.fn((name: string, _itemIndex: number, fallback?: unknown) => {
+        if (name === 'resource') return 'Form';
+        if (name === 'operation') return 'getFormsFormIdFormSubmissions';
+        if (name === 'getFormsFormIdFormSubmissions_formId') return '123';
+        if (name === 'additionalQueryParameters') return fallback;
+        if (name === 'getFormsFormIdFormSubmissions_returnAll') return false;
+        if (name === 'getFormsFormIdFormSubmissions_limit') return 1;
+        if (name === missingNumberParameter && fallback === undefined) {
+          throw new Error(`Could not get parameter "${missingNumberParameter}"`);
+        }
+
+        return fallback;
+      }),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.execute.call(context)).resolves.toEqual([[]]);
+    expect(httpRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://api.example.test/people/v2/forms/123/form_submissions',
+        qs: {},
+      }),
+    );
   });
 });

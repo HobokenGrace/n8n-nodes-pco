@@ -7571,7 +7571,9 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   const attributes: Record<string, unknown> = {};
   for (const field of operation.attributeFields) {
-    const value = context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, undefined) as unknown;
+    const value = field.required
+      ? context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex)
+      : context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, '');
     if (value !== undefined && value !== '') {
       attributes[field.sourceName] = value;
     }
@@ -7610,7 +7612,9 @@ function buildPath(context: IExecuteFunctions, itemIndex: number, operation: Ope
 async function executeOperation(context: IExecuteFunctions, itemIndex: number, operation: Operation): Promise<INodeExecutionData[]> {
   const qs: IDataObject = {};
   for (const parameter of operation.queryParameters) {
-    const value = context.getNodeParameter(`${operation.id}_${parameter.name}`, itemIndex, undefined) as unknown;
+    const value = parameter.required
+      ? context.getNodeParameter(`${operation.id}_${parameter.name}`, itemIndex)
+      : context.getNodeParameter(`${operation.id}_${parameter.name}`, itemIndex, '');
     if (value !== undefined && value !== '') {
       qs[parameter.sourceName] = value;
     }
