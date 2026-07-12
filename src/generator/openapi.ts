@@ -7,6 +7,7 @@ import type {
   GeneratedField,
   GeneratedOperation,
   GeneratedQueryOption,
+  GeneratedValueOption,
   GeneratedRelationshipField,
   HttpMethod,
   ProductGenerationResult,
@@ -155,6 +156,40 @@ function operatorLabel(operator: string): string {
   return titleCase(operator);
 }
 
+function schemaEnumValues(schema: JsonSchema | undefined): Array<string | number | boolean> {
+  const values = schema?.enum ?? schema?.items?.enum;
+  if (!Array.isArray(values)) return [];
+  return values.filter((value): value is string | number | boolean => ['string', 'number', 'boolean'].includes(typeof value));
+}
+
+function uniqueValueOptions(options: GeneratedValueOption[]): GeneratedValueOption[] {
+  const seen = new Set<string>();
+  return options.filter((option) => {
+    const key = String(option.value);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function queryValueOptions(parameter: any): GeneratedValueOption[] | undefined {
+  const values = schemaEnumValues(parameter.schema);
+  if (!values.length) return undefined;
+
+  if (parameter.name === 'order') {
+    return uniqueValueOptions(values.flatMap((value) => {
+      const sourceValue = String(value);
+      const orderField = sourceValue.startsWith('-') ? sourceValue.slice(1) : sourceValue;
+      return [
+        { name: `${titleCase(orderField)} Ascending`, value: orderField },
+        { name: `${titleCase(orderField)} Descending`, value: `-${orderField}` },
+      ];
+    }));
+  }
+
+  return values.map((value) => ({ name: titleCase(String(value)), value }));
+}
+
 function isDateFilter(schema: JsonSchema | undefined): boolean {
   return schema?.format === 'date' || schema?.format === 'date-time';
 }
@@ -240,6 +275,7 @@ function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[]
       type: parameter.type,
       kind: 'single',
       sourceName: parameter.sourceName,
+      valueOptions: parameter.valueOptions,
     });
   }
 
@@ -253,6 +289,7 @@ function parameterField(parameter: any): GeneratedField {
     displayName: titleCase(parameter.name),
     required: Boolean(parameter.required),
     type: schemaType(parameter.schema),
+    valueOptions: parameter.in === 'query' ? queryValueOptions(parameter) : undefined,
   };
 }
 

@@ -6,6 +6,12 @@ export interface GeneratedField {
   displayName: string;
   required: boolean;
   type: 'boolean' | 'number' | 'string';
+  valueOptions?: GeneratedValueOption[];
+}
+
+export interface GeneratedValueOption {
+  name: string;
+  value: string | number | boolean;
 }
 
 export interface GeneratedQueryOptionOperator {
@@ -21,6 +27,7 @@ export interface GeneratedQueryOption {
   kind: 'single' | 'operator';
   sourceName?: string;
   operators?: GeneratedQueryOptionOperator[];
+  valueOptions?: GeneratedValueOption[];
 }
 
 export interface GeneratedRelationshipField {

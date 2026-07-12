@@ -78,6 +78,35 @@ describe('generated Planning Center nodes', () => {
       kind: 'single',
       sourceName: 'where[person][id]',
     });
+    expect(queryOptions.order).toMatchObject({
+      displayName: 'Order',
+      kind: 'single',
+      sourceName: 'order',
+      valueOptions: expect.arrayContaining([
+        { name: 'Created At Ascending', value: 'created_at' },
+        { name: 'Created At Descending', value: '-created_at' },
+      ]),
+    });
+  });
+
+  it('renders query option enums as n8n dropdown fields', () => {
+    const node = new PlanningCenterPeople();
+    const optionsProperty: any = node.description.properties.find(
+      (property) => property.name === 'getFormsFormIdFormSubmissions_options',
+    );
+    const orderOption = optionsProperty.options.find((option: any) => option.name === 'order');
+    const orderValue = orderOption.values.find((value: any) => value.name === 'value');
+
+    expect(orderValue).toMatchObject({
+      displayName: 'Value',
+      name: 'value',
+      type: 'options',
+      options: expect.arrayContaining([
+        { name: 'Created At Ascending', value: 'created_at' },
+        { name: 'Created At Descending', value: '-created_at' },
+      ]),
+      default: '',
+    });
   });
 
   it('executes form submission list when optional numeric query filters are unset', async () => {

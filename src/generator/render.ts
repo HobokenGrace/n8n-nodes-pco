@@ -25,7 +25,12 @@ function fieldProperty(field: GeneratedField, operation: GeneratedOperation, sou
 }
 
 function renderOperations(operations: GeneratedOperation[]): string {
-  return JSON.stringify(operations, null, 2);
+  const runtimeOperations = operations.map((operation) => ({
+    ...operation,
+    queryParameters: operation.queryParameters.map(({ valueOptions: _valueOptions, ...parameter }) => parameter),
+    queryOptions: operation.queryOptions.map(({ valueOptions: _valueOptions, ...option }) => option),
+  }));
+  return JSON.stringify(runtimeOperations, null, 2);
 }
 
 function renderQueryOptionsProperty(operation: GeneratedOperation): string | undefined {
@@ -50,8 +55,9 @@ function renderQueryOptionsProperty(operation: GeneratedOperation): string | und
       {
         displayName: 'Value',
         name: 'value',
-        type: option.type,
-        default: option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
+        type: option.valueOptions?.length ? 'options' : option.type,
+        ...(option.valueOptions?.length ? { options: option.valueOptions } : {}),
+        default: option.valueOptions?.length ? '' : option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
       },
     ],
   }));
