@@ -1,5 +1,5 @@
 import type { ProductConfig } from './config';
-import type { GeneratedField, GeneratedOperation, GeneratedQueryOption, ProductGenerationResult } from './model';
+import type { GeneratedField, GeneratedOperation, ProductGenerationResult } from './model';
 
 function q(value: unknown): string {
   return JSON.stringify(value);
@@ -198,6 +198,21 @@ interface GeneratedField {
   type: 'boolean' | 'number' | 'string';
 }
 
+interface GeneratedQueryOptionOperator {
+  name: string;
+  value: string;
+  sourceName: string;
+}
+
+interface GeneratedQueryOption {
+  name: string;
+  displayName: string;
+  type: 'boolean' | 'number' | 'string';
+  kind: 'single' | 'operator';
+  sourceName?: string;
+  operators?: GeneratedQueryOptionOperator[];
+}
+
 interface GeneratedRelationshipField {
   name: string;
   displayName: string;
@@ -217,6 +232,7 @@ interface Operation {
   isList: boolean;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
+  queryOptions: GeneratedQueryOption[];
   attributeFields: GeneratedField[];
   relationshipFields: GeneratedRelationshipField[];
 }
@@ -230,6 +246,25 @@ function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, opera
   for (const parameter of additional.parameters ?? []) {
     if (parameter.name) {
       qs[parameter.name] = parameter.value;
+    }
+  }
+}
+
+function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
+  const options = context.getNodeParameter(\`${'${operation.id}'}_options\`, itemIndex, {}) as Record<string, { operator?: string; value?: unknown } | undefined>;
+  for (const option of operation.queryOptions) {
+    const selected = options[option.name];
+    const value = selected?.value;
+    if (value === undefined || value === '') continue;
+
+    if (option.kind === 'operator') {
+      const operator = option.operators?.find((candidate) => candidate.value === selected?.operator) ?? option.operators?.[0];
+      if (operator) qs[operator.sourceName] = value;
+      continue;
+    }
+
+    if (option.sourceName) {
+      qs[option.sourceName] = value;
     }
   }
 }
@@ -284,14 +319,7 @@ function buildPath(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
 async function executeOperation(context: IExecuteFunctions, itemIndex: number, operation: Operation): Promise<INodeExecutionData[]> {
   const qs: IDataObject = {};
-  for (const parameter of operation.queryParameters) {
-    const value = parameter.required
-      ? context.getNodeParameter(\`${'${operation.id}'}_\${parameter.name}\`, itemIndex)
-      : context.getNodeParameter(\`${'${operation.id}'}_\${parameter.name}\`, itemIndex, '');
-    if (value !== undefined && value !== '') {
-      qs[parameter.sourceName] = value;
-    }
-  }
+  addQueryOptions(context, itemIndex, operation, qs);
   addAdditionalQuery(context, itemIndex, operation, qs);
 
   const request = {
