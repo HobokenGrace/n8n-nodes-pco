@@ -98,7 +98,7 @@ describe('Planning Center JSON:API normalization', () => {
 });
 
 describe('Planning Center pagination helper', () => {
-  it('follows next links when Return All is enabled and caps by Limit', async () => {
+  it('follows next links when Return All is enabled', async () => {
     const context = fakeContext({
       helpers: {
         httpRequest: vi
@@ -121,6 +121,35 @@ describe('Planning Center pagination helper', () => {
     );
 
     expect(results.map((item) => item.id)).toEqual(['1', '2']);
+    expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
+  });
+
+  it('does not cap Return All results by Limit', async () => {
+    const context = fakeContext({
+      helpers: {
+        httpRequest: vi
+          .fn()
+          .mockResolvedValueOnce({
+            data: [
+              { id: '1', type: 'Person', attributes: { name: 'One' } },
+              { id: '2', type: 'Person', attributes: { name: 'Two' } },
+            ],
+            links: { next: 'https://api.example.test/people/v2/people?page=2' },
+          })
+          .mockResolvedValueOnce({
+            data: [{ id: '3', type: 'Person', attributes: { name: 'Three' } }],
+            links: { next: null },
+          }),
+      },
+    });
+
+    const results = await collectPaginatedPlanningCenterResults.call(
+      context,
+      { method: 'GET', path: '/people/v2/people' },
+      { returnAll: true, limit: 2 },
+    );
+
+    expect(results.map((item) => item.id)).toEqual(['1', '2', '3']);
     expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
   });
 });

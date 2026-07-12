@@ -37,7 +37,7 @@ export async function collectPaginatedPlanningCenterResults(
     const response = (await planningCenterApiRequest.call(this, nextRequest)) as JsonApiPage;
     collected.push(...normalizeJsonApiResponse(response));
 
-    if (!options.returnAll || collected.length >= options.limit) {
+    if (!options.returnAll) {
       break;
     }
 
@@ -51,5 +51,5 @@ export async function collectPaginatedPlanningCenterResults(
       : undefined;
   }
 
-  return collected.slice(0, options.limit);
+  return options.returnAll ? collected : collected.slice(0, options.limit);
 }
