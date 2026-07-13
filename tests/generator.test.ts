@@ -37,10 +37,16 @@ describe('generated Planning Center nodes', () => {
 
   it('derives friendly operation labels from HTTP method and path shape', async () => {
     const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
+    const givingConfig = generatedProductConfigs.find((config) => config.product === 'giving');
     expect(peopleConfig).toBeDefined();
+    expect(givingConfig).toBeDefined();
 
-    const summary = await buildProductGeneration(peopleConfig!);
-    const operations = Object.fromEntries(summary.operations.map((operation) => [operation.id, operation.operation]));
+    const [peopleSummary, givingSummary] = await Promise.all([
+      buildProductGeneration(peopleConfig!),
+      buildProductGeneration(givingConfig!),
+    ]);
+    const operations = Object.fromEntries(peopleSummary.operations.map((operation) => [operation.id, operation.operation]));
+    const givingOperations = Object.fromEntries(givingSummary.operations.map((operation) => [operation.id, operation.operation]));
 
     expect(operations.getFormsFormIdFormSubmissions).toBe('List Form Submissions');
     expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe('Get Form Submission');
@@ -53,6 +59,9 @@ describe('generated Planning Center nodes', () => {
     expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValuesFormSubmissionValueId).toBe(
       'Get Form Submission Value',
     );
+    expect(operations.getPeoplePersonId).toBe('Get Person');
+    expect(operations.getMaritalStatusesMaritalStatusId).toBe('Get Marital Status');
+    expect(givingOperations.getCampusesCampusId).toBe('Get Campus');
   });
 
   it('renders only useful query filters for form submission lists', async () => {

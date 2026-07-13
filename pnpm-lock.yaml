@@ -26,6 +26,9 @@ importers:
       eslint-plugin-n8n-nodes-base:
         specifier: ^1.16.3
         version: 1.16.7(eslint@8.57.1)(typescript@5.9.3)
+      inflection:
+        specifier: ^3.0.2
+        version: 3.0.2
       n8n-workflow:
         specifier: '*'
         version: 2.16.0
@@ -1123,6 +1126,10 @@ packages:
   indefinite@2.5.2:
     resolution: {integrity: sha512-J3ELLIk835hmgDMUfNltTCrHz9+CteTnSuXJqvxZT18wo1U2M9/QeeJMw99QdZwPEEr1DE2aBYda101Ojjdw5g==}
     engines: {node: '>=6.0.0'}
+
+  inflection@3.0.2:
+    resolution: {integrity: sha512-+Bg3+kg+J6JUWn8J6bzFmOWkTQ6L/NHfDRSYU+EVvuKHDxUDHAXgqixHfVlzuBQaPOTac8hn43aPhMNk6rMe3g==}
+    engines: {node: '>=18.0.0'}
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
@@ -2708,6 +2715,8 @@ snapshots:
   imurmurhash@0.1.4: {}
 
   indefinite@2.5.2: {}
+
+  inflection@3.0.2: {}
 
   inflight@1.0.6:
     dependencies:

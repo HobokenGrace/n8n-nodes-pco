@@ -1,4 +1,5 @@
 import SwaggerParser from '@apidevtools/swagger-parser';
+import { singularize } from 'inflection';
 import { readFile } from 'node:fs/promises';
 
 import type { ProductConfig } from './config';
@@ -101,14 +102,7 @@ function singularizeLastWord(segment: string): string {
   }
   if (lastWordIndex === -1) return segment;
 
-  const word = parts[lastWordIndex];
-  if (/ies$/i.test(word) && word.length > 3) {
-    parts[lastWordIndex] = `${word.slice(0, -3)}y`;
-  } else if (/(ches|shes|sses|xes|zes)$/i.test(word)) {
-    parts[lastWordIndex] = word.slice(0, -2);
-  } else if (/s$/i.test(word) && !/(ss|us)$/i.test(word)) {
-    parts[lastWordIndex] = word.slice(0, -1);
-  }
+  parts[lastWordIndex] = singularize(parts[lastWordIndex]);
 
   return parts.join('');
 }
