@@ -63,9 +63,65 @@ function camelCase(value: string): string {
     .replace(/[^A-Za-z0-9]/g, '');
 }
 
+function pathSegments(path: string): string[] {
+  return path.split('/').filter(Boolean);
+}
+
+function isPathParameter(segment: string): boolean {
+  return segment.startsWith('{') && segment.endsWith('}');
+}
+
+function operationAction(method: string, path: string): string {
+  if (method === 'get') {
+    const lastSegment = pathSegments(path).at(-1) ?? '';
+    return isPathParameter(lastSegment) ? 'Get' : 'List';
+  }
+  if (method === 'post') return 'Create';
+  if (method === 'put' || method === 'patch') return 'Update';
+  if (method === 'delete') return 'Delete';
+  return titleCase(method);
+}
+
+function operationTargetSegment(path: string): string {
+  const segments = pathSegments(path);
+  for (let index = segments.length - 1; index >= 0; index--) {
+    if (!isPathParameter(segments[index])) return segments[index];
+  }
+  return 'item';
+}
+
+function singularizeLastWord(segment: string): string {
+  const parts = segment.split(/([_\-.\s]+)/);
+  let lastWordIndex = -1;
+  for (let index = parts.length - 1; index >= 0; index--) {
+    if (/[A-Za-z]/.test(parts[index])) {
+      lastWordIndex = index;
+      break;
+    }
+  }
+  if (lastWordIndex === -1) return segment;
+
+  const word = parts[lastWordIndex];
+  if (/ies$/i.test(word) && word.length > 3) {
+    parts[lastWordIndex] = `${word.slice(0, -3)}y`;
+  } else if (/(ches|shes|sses|xes|zes)$/i.test(word)) {
+    parts[lastWordIndex] = word.slice(0, -2);
+  } else if (/s$/i.test(word) && !/(ss|us)$/i.test(word)) {
+    parts[lastWordIndex] = word.slice(0, -1);
+  }
+
+  return parts.join('');
+}
+
+function operationTarget(path: string, action: string): string {
+  const segment = operationTargetSegment(path);
+  return titleCase(action === 'List' ? segment : singularizeLastWord(segment));
+}
+
 function operationLabel(operation: any, method: string, path: string): string {
   const source = operation.operationId ?? operation.summary;
-  const label = source ? titleCase(source) : `${method.toUpperCase()} ${path}`;
+  const action = operationAction(method, path);
+  const label = source ? titleCase(source) : `${action} ${operationTarget(path, action)}`;
   return operation.deprecated ? `${label} (Deprecated)` : label;
 }
 
@@ -364,8 +420,7 @@ function collectRelationshipFields(operation: any): GeneratedRelationshipField[]
 }
 
 function isListOperation(method: string, path: string): boolean {
-  const last = path.split('/').filter(Boolean).at(-1) ?? '';
-  return method === 'get' && !last.startsWith('{');
+  return operationAction(method, path) === 'List';
 }
 
 function requestPath(config: ProductConfig, path: string): string {

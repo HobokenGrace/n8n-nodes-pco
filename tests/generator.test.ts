@@ -35,6 +35,26 @@ describe('generated Planning Center nodes', () => {
     }
   });
 
+  it('derives friendly operation labels from HTTP method and path shape', async () => {
+    const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
+    expect(peopleConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(peopleConfig!);
+    const operations = Object.fromEntries(summary.operations.map((operation) => [operation.id, operation.operation]));
+
+    expect(operations.getFormsFormIdFormSubmissions).toBe('List Form Submissions');
+    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe('Get Form Submission');
+    expect(operations.postFormsFormIdFormSubmissions).toBe('Create Form Submission');
+    expect(operations.patchFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe('Update Person');
+    expect(operations.deleteFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe('Delete Person');
+    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValues).toBe(
+      'List Form Submission Values',
+    );
+    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValuesFormSubmissionValueId).toBe(
+      'Get Form Submission Value',
+    );
+  });
+
   it('renders only useful query filters for form submission lists', async () => {
     const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
     expect(peopleConfig).toBeDefined();
