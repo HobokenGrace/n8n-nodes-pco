@@ -1,45 +1,4 @@
-# pco-openapi-node-generation Specification
-
-## Purpose
-TBD - created by archiving change bootstrap-pco-n8n-node. Update Purpose after archive.
-## Requirements
-### Requirement: Product-specific node generation
-The system SHALL generate n8n node definitions from Planning Center OpenAPI specs using one product-specific node per Planning Center product included in the generation configuration.
-
-#### Scenario: Bootstrap products are generated
-- **WHEN** the generation command runs with the People, Groups, and Giving OpenAPI specs configured
-- **THEN** the package SHALL produce Planning Center People, Planning Center Groups, and Planning Center Giving nodes that expose operations derived from their respective specs
-
-#### Scenario: Additional products are configured
-- **WHEN** a contributor adds another Planning Center product spec to the generation configuration
-- **THEN** the generation command SHALL produce a corresponding product-specific node without requiring a new hand-written dispatcher for that product
-
-#### Scenario: Generated node contains execute path
-- **WHEN** a product-specific node is generated
-- **THEN** the node SHALL include generated `execute()` logic that dispatches selected operations through shared Planning Center helpers
-
-### Requirement: Operation coverage tracks OpenAPI specs
-The system SHALL expose generated operations for every technically mappable OpenAPI path and method, including DELETE and deprecated operations, unless an operation cannot be safely represented by the generator.
-
-#### Scenario: Spec operation is supported
-- **WHEN** a Planning Center OpenAPI path and method can be mapped to n8n node properties
-- **THEN** the generated product node SHALL include a callable operation for that path and method
-
-#### Scenario: Deprecated operation is technically mappable
-- **WHEN** a deprecated OpenAPI operation can be mapped to n8n node properties
-- **THEN** the generated product node SHALL include a callable operation for that path and method and mark the operation as deprecated in its generated label or description
-
-#### Scenario: DELETE operation is technically mappable
-- **WHEN** a DELETE OpenAPI operation can be mapped to n8n node properties
-- **THEN** the generated product node SHALL include a callable operation with clear destructive labeling or description text
-
-#### Scenario: Operation is excluded
-- **WHEN** an OpenAPI operation is excluded because it cannot be safely represented by the generator
-- **THEN** the exclusion SHALL be recorded in generation configuration or generator tests with the reason
-
-#### Scenario: Operation has complex request body
-- **WHEN** an OpenAPI create, update, or patch operation has a request body that cannot be modeled into standard generated fields but can be sent as JSON
-- **THEN** the generated operation SHALL remain callable through advanced raw JSON body mode rather than being excluded solely because standard fields cannot represent the body
+## MODIFIED Requirements
 
 ### Requirement: Generated operation usability
 The system SHALL post-process generated properties enough to satisfy n8n community-node requirements and provide usable, distinguishable operation/resource labels.
@@ -147,4 +106,3 @@ The system SHALL post-process generated properties enough to satisfy n8n communi
 #### Scenario: Flattened attribute collides with reserved key
 - **WHEN** a JSON:API resource attribute name collides with reserved output keys `id`, `type`, `relationships`, `links`, or `meta`
 - **THEN** the reserved key SHALL be preserved and the colliding attribute SHALL be emitted as `attribute_<name>`
-

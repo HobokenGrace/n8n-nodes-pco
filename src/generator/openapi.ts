@@ -91,6 +91,14 @@ function operationTargetSegment(path: string): string {
   return 'item';
 }
 
+function operationTargetSegmentIndex(path: string): number {
+  const segments = pathSegments(path);
+  for (let index = segments.length - 1; index >= 0; index--) {
+    if (!isPathParameter(segments[index])) return index;
+  }
+  return -1;
+}
+
 function singularizeLastWord(segment: string): string {
   const parts = segment.split(/([_\-.\s]+)/);
   let lastWordIndex = -1;
@@ -112,10 +120,35 @@ function operationTarget(path: string, action: string): string {
   return titleCase(action === 'List' ? segment : singularizeLastWord(segment));
 }
 
+function parameterName(segment: string | undefined): string | undefined {
+  return segment && isPathParameter(segment) ? segment.slice(1, -1) : undefined;
+}
+
+function relationshipContext(path: string): string | undefined {
+  const segments = pathSegments(path);
+  const targetIndex = operationTargetSegmentIndex(path);
+  if (targetIndex <= 0) return undefined;
+
+  const targetSegment = segments[targetIndex];
+  const targetParameter = parameterName(segments[targetIndex + 1]);
+  const repeatsTarget = segments.slice(0, targetIndex).includes(targetSegment)
+    || Boolean(targetParameter && segments.slice(0, targetIndex).some((segment) => parameterName(segment) === targetParameter));
+  if (!repeatsTarget) return undefined;
+
+  for (let index = targetIndex - 1; index >= 0; index--) {
+    if (!isPathParameter(segments[index])) return titleCase(singularizeLastWord(segments[index]));
+  }
+
+  return undefined;
+}
+
 function operationLabel(operation: any, method: string, path: string): string {
   const source = operation.operationId ?? operation.summary;
   const action = operationAction(method, path);
-  const label = source ? titleCase(source) : `${action} ${operationTarget(path, action)}`;
+  const context = source ? undefined : relationshipContext(path);
+  const label = source
+    ? titleCase(source)
+    : `${action} ${operationTarget(path, action)}${context ? ` (via ${context})` : ''}`;
   return operation.deprecated ? `${label} (Deprecated)` : label;
 }
 

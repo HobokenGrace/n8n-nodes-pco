@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { PlanningCenterGiving } from '../nodes/generated/giving/PlanningCenterGiving.node';
 import { PlanningCenterGroups } from '../nodes/generated/groups/PlanningCenterGroups.node';
 import { PlanningCenterPeople } from '../nodes/generated/people/PlanningCenterPeople.node';
-import { generatedProductConfigs } from '../src/generator/config';
+import { generatedProductConfigs, productConfigs } from '../src/generator/config';
 import { buildProductGeneration } from '../src/generator/openapi';
 
 describe('generated Planning Center nodes', () => {
@@ -38,15 +38,21 @@ describe('generated Planning Center nodes', () => {
   it('derives friendly operation labels from HTTP method and path shape', async () => {
     const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
     const givingConfig = generatedProductConfigs.find((config) => config.product === 'giving');
+    const servicesConfig = productConfigs.find((config) => config.product === 'services');
     expect(peopleConfig).toBeDefined();
     expect(givingConfig).toBeDefined();
+    expect(servicesConfig).toBeDefined();
 
-    const [peopleSummary, givingSummary] = await Promise.all([
+    const [peopleSummary, givingSummary, servicesSummary] = await Promise.all([
       buildProductGeneration(peopleConfig!),
       buildProductGeneration(givingConfig!),
+      buildProductGeneration(servicesConfig!),
     ]);
     const operations = Object.fromEntries(peopleSummary.operations.map((operation) => [operation.id, operation.operation]));
     const givingOperations = Object.fromEntries(givingSummary.operations.map((operation) => [operation.id, operation.operation]));
+    const servicesOperations = Object.fromEntries(
+      servicesSummary.operations.map((operation) => [operation.id, operation.operation]),
+    );
 
     expect(operations.getFormsFormIdFormSubmissions).toBe('List Form Submissions');
     expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe('Get Form Submission');
@@ -60,8 +66,10 @@ describe('generated Planning Center nodes', () => {
       'Get Form Submission Value',
     );
     expect(operations.getPeoplePersonId).toBe('Get Person');
+    expect(operations.getPeoplePersonIdWorkflowCardsWorkflowCardIdPersonPersonId).toBe('Get Person (via Workflow Card)');
     expect(operations.getMaritalStatusesMaritalStatusId).toBe('Get Marital Status');
     expect(givingOperations.getCampusesCampusId).toBe('Get Campus');
+    expect(servicesOperations.getFoldersFolderIdFoldersFolderId).toBe('Get Folder (via Folder)');
   });
 
   it('renders only useful query filters for form submission lists', async () => {
