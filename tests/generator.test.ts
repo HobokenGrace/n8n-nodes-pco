@@ -207,7 +207,7 @@ describe('generated Planning Center nodes', () => {
     expect(httpRequest).toHaveBeenCalledWith(
       expect.objectContaining({
         url: 'https://api.example.test/people/v2/forms/123/form_submissions',
-        qs: {},
+        qs: { per_page: 1 },
       }),
     );
   });
@@ -249,6 +249,7 @@ describe('generated Planning Center nodes', () => {
     expect(httpRequest).toHaveBeenCalledWith(
       expect.objectContaining({
         qs: {
+          per_page: 1,
           'where[created_at][gte]': '2026-01-01T00:00:00Z',
           'where[person][id]': '456',
           include: 'person',

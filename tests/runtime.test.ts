@@ -152,6 +152,55 @@ describe('Planning Center pagination helper', () => {
     expect(results.map((item) => item.id)).toEqual(['1', '2', '3']);
     expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
   });
+
+  it('splits limited requests into Planning Center page sizes of 100 or less', async () => {
+    const firstPage = Array.from({ length: 100 }, (_, index) => ({
+      id: String(index + 1),
+      type: 'Person',
+      attributes: { name: `Person ${index + 1}` },
+    }));
+    const secondPage = Array.from({ length: 80 }, (_, index) => ({
+      id: String(index + 101),
+      type: 'Person',
+      attributes: { name: `Person ${index + 101}` },
+    }));
+    const context = fakeContext({
+      helpers: {
+        httpRequest: vi
+          .fn()
+          .mockResolvedValueOnce({
+            data: firstPage,
+            links: { next: 'https://api.example.test/people/v2/people?offset=100&per_page=100' },
+          })
+          .mockResolvedValueOnce({
+            data: secondPage,
+            links: { next: null },
+          }),
+      },
+    });
+
+    const results = await collectPaginatedPlanningCenterResults.call(
+      context,
+      { method: 'GET', path: '/people/v2/people' },
+      { returnAll: false, limit: 180 },
+    );
+
+    expect(results).toHaveLength(180);
+    expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
+    expect(context.helpers.httpRequest).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        qs: { per_page: 100 },
+      }),
+    );
+    expect(context.helpers.httpRequest).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        url: 'https://api.example.test/people/v2/people?offset=100&per_page=80',
+        qs: undefined,
+      }),
+    );
+  });
 });
 
 describe('Continue On Fail execution wrapper', () => {
