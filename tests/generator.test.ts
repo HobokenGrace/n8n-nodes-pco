@@ -6,6 +6,20 @@ import { PlanningCenterPeople } from '../nodes/generated/people/PlanningCenterPe
 import { generatedProductConfigs, productConfigs } from '../src/generator/config';
 import { buildProductGeneration } from '../src/generator/openapi';
 
+function collectDisplayNames(value: unknown, labels: string[] = []): string[] {
+  if (Array.isArray(value)) {
+    for (const item of value) collectDisplayNames(item, labels);
+    return labels;
+  }
+
+  if (!value || typeof value !== 'object') return labels;
+
+  const record = value as Record<string, unknown>;
+  if (typeof record.displayName === 'string') labels.push(record.displayName);
+  for (const nestedValue of Object.values(record)) collectDisplayNames(nestedValue, labels);
+  return labels;
+}
+
 describe('generated Planning Center nodes', () => {
   it('exposes required n8n descriptions for bootstrap products', () => {
     const nodes = [new PlanningCenterPeople(), new PlanningCenterGroups(), new PlanningCenterGiving()];
@@ -138,7 +152,7 @@ describe('generated Planning Center nodes', () => {
       { name: 'Less Than Or Equal', value: 'lte', sourceName: 'where[created_at][lte]' },
     ]);
     expect(queryOptions.wherepersonid).toMatchObject({
-      displayName: 'Person Id',
+      displayName: 'Person ID',
       kind: 'single',
       sourceName: 'where[person][id]',
     });
@@ -185,6 +199,27 @@ describe('generated Planning Center nodes', () => {
       patchFieldDataFieldDatumId_fieldDefinitionId: 'Attribute: Field Definition ID',
       patchFieldDataFieldDatumId_fieldDefinitionIds: 'Relationship: Field Definition ID',
     });
+  });
+
+  it('normalizes identifier acronym capitalization across generated labels', async () => {
+    const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+    const mixedCaseIdentifierToken = /\bId(?:s)?\b/;
+    const summaryLabels = summaries.flatMap((summary) => summary.operations.flatMap((operation) => [
+      ...operation.pathParameters.map((field) => `${summary.product}:${operation.id}:path:${field.displayName}`),
+      ...operation.queryParameters.map((field) => `${summary.product}:${operation.id}:query:${field.displayName}`),
+      ...operation.attributeFields.map((field) => `${summary.product}:${operation.id}:attribute:${field.displayName}`),
+      ...operation.relationshipFields.map((field) => `${summary.product}:${operation.id}:relationship:${field.displayName}`),
+      ...operation.queryOptions.map((option) => `${summary.product}:${operation.id}:option:${option.displayName}`),
+      ...operation.queryOptions.flatMap((option) =>
+        (option.valueOptions ?? []).map((valueOption) => `${summary.product}:${operation.id}:value-option:${valueOption.name}`),
+      ),
+    ]));
+    const nodeLabels = [new PlanningCenterPeople(), new PlanningCenterGroups(), new PlanningCenterGiving()]
+      .flatMap((node) => collectDisplayNames(node.description.properties).map((label) => `${node.description.name}:${label}`));
+
+    const mixedCaseLabels = [...summaryLabels, ...nodeLabels].filter((entry) => mixedCaseIdentifierToken.test(entry));
+
+    expect(mixedCaseLabels).toEqual([]);
   });
 
   it('executes form submission list when optional numeric query filters are unset', async () => {

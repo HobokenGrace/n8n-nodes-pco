@@ -1,4 +1,5 @@
 import type { ProductConfig } from './config';
+import { normalizeIdentifierDisplayLabel } from './labels';
 import type { GeneratedField, GeneratedOperation, ProductGenerationResult } from './model';
 
 function q(value: unknown): string {
@@ -6,7 +7,7 @@ function q(value: unknown): string {
 }
 
 function bodyFieldDisplayName(prefix: 'Attribute' | 'Relationship', displayName: string): string {
-  return `${prefix}: ${displayName.replace(/\bIds\b/g, 'IDs').replace(/\bId\b/g, 'ID')}`;
+  return `${prefix}: ${normalizeIdentifierDisplayLabel(displayName)}`;
 }
 
 function fieldProperty(field: GeneratedField, operation: GeneratedOperation, source: 'path' | 'query' | 'attribute'): string {

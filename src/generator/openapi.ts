@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 import type { ProductConfig } from './config';
 import { snapshotPath } from './config';
+import { displayLabel, normalizeIdentifierDisplayLabel, titleCase } from './labels';
 import type {
   GeneratedField,
   GeneratedOperation,
@@ -41,18 +42,6 @@ interface ParsedWhereParameter {
   field: string;
   operator?: string;
   segments: string[];
-}
-
-function titleCase(value: string): string {
-  return value
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
-    .replace(/[_\-/.{}]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .split(' ')
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
 }
 
 function camelCase(value: string): string {
@@ -122,7 +111,7 @@ function singularizeLastWord(segment: string): string {
 
 function operationTarget(path: string, action: string): string {
   const segment = operationTargetSegment(path);
-  return titleCase(action === 'List' ? segment : singularizeLastWord(segment));
+  return displayLabel(action === 'List' ? segment : singularizeLastWord(segment));
 }
 
 function relationshipContext(path: string, depth = 1): string | undefined {
@@ -132,7 +121,7 @@ function relationshipContext(path: string, depth = 1): string | undefined {
 
   const contexts: string[] = [];
   for (let index = targetIndex - 1; index >= 0; index--) {
-    if (!isPathParameter(segments[index])) contexts.unshift(titleCase(singularizeLastWord(segments[index])));
+    if (!isPathParameter(segments[index])) contexts.unshift(displayLabel(singularizeLastWord(segments[index])));
   }
 
   return contexts.slice(-depth).join(' ') || undefined;
@@ -147,7 +136,7 @@ function fallbackOperationLabel(method: string, path: string, deprecated: boolea
 
 function operationLabel(operation: any, method: string, path: string): string {
   const source = operation.operationId ?? operation.summary;
-  const label = source ? titleCase(source) : fallbackOperationLabel(method, path, Boolean(operation.deprecated));
+  const label = source ? displayLabel(source) : fallbackOperationLabel(method, path, Boolean(operation.deprecated));
   return operation.deprecated && source ? `${label} (Deprecated)` : label;
 }
 
@@ -196,10 +185,10 @@ function resourceLabel(operation: any, path: string): string {
   const tag = Array.isArray(operation.tags)
     ? operation.tags.find((candidate: string) => !GENERIC_TAGS.has(String(candidate).toLowerCase()))
     : undefined;
-  if (tag) return titleCase(tag);
+  if (tag) return displayLabel(tag);
 
   const segment = path.split('/').find((part) => part && !part.startsWith('{') && part !== 'v2');
-  return titleCase(segment ?? 'General');
+  return displayLabel(segment ?? 'General');
 }
 
 function schemaType(schema: JsonSchema | undefined): GeneratedField['type'] {
@@ -261,9 +250,9 @@ function whereParameterName(segments: string[], operator?: string): string {
 
 function queryOptionDisplayName(sourceName: string): string {
   const parsed = parseWhereParameter(sourceName);
-  if (parsed) return titleCase(parsed.segments.join(' '));
+  if (parsed) return displayLabel(parsed.segments.join(' '));
 
-  return titleCase(sourceName);
+  return displayLabel(sourceName);
 }
 
 function queryOptionName(sourceName: string, suffix = ''): string {
@@ -304,13 +293,13 @@ function queryValueOptions(parameter: any): GeneratedValueOption[] | undefined {
       const sourceValue = String(value);
       const orderField = sourceValue.startsWith('-') ? sourceValue.slice(1) : sourceValue;
       return [
-        { name: `${titleCase(orderField)} Ascending`, value: orderField },
-        { name: `${titleCase(orderField)} Descending`, value: `-${orderField}` },
+        { name: `${displayLabel(orderField)} Ascending`, value: orderField },
+        { name: `${displayLabel(orderField)} Descending`, value: `-${orderField}` },
       ];
     }));
   }
 
-  return values.map((value) => ({ name: titleCase(String(value)), value }));
+  return values.map((value) => ({ name: displayLabel(String(value)), value }));
 }
 
 function isDateFilter(schema: JsonSchema | undefined): boolean {
@@ -409,7 +398,7 @@ function parameterField(parameter: any): GeneratedField {
   return {
     name: camelCase(parameter.name),
     sourceName: parameter.name,
-    displayName: titleCase(parameter.name),
+    displayName: displayLabel(parameter.name),
     required: Boolean(parameter.required),
     type: schemaType(parameter.schema),
     valueOptions: parameter.in === 'query' ? queryValueOptions(parameter) : undefined,
@@ -446,7 +435,7 @@ function collectAttributeFields(operation: any): GeneratedField[] {
     .map(([name, schema]: [string, any]) => ({
       name: camelCase(name),
       sourceName: name,
-      displayName: titleCase(name),
+      displayName: displayLabel(name),
       required: required.has(name),
       type: schemaType(schema),
     }));
@@ -477,7 +466,7 @@ function collectRelationshipFields(operation: any): GeneratedRelationshipField[]
     return [
       {
         name: `${camelCase(name)}Ids`,
-        displayName: `${titleCase(name)} ID${multiple ? 's' : ''}`,
+        displayName: normalizeIdentifierDisplayLabel(`${titleCase(name)} ID${multiple ? 's' : ''}`),
         relationshipName: name,
         relationshipType,
         multiple,
