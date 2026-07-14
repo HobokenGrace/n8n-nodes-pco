@@ -173,6 +173,20 @@ describe('generated Planning Center nodes', () => {
     });
   });
 
+  it('labels assignable attributes and relationships explicitly in body fields', () => {
+    const node = new PlanningCenterPeople();
+    const labelsByName = Object.fromEntries(
+      node.description.properties
+        .filter((property) => String(property.name).startsWith('patchFieldDataFieldDatumId_fieldDefinition'))
+        .map((property) => [property.name, property.displayName]),
+    );
+
+    expect(labelsByName).toMatchObject({
+      patchFieldDataFieldDatumId_fieldDefinitionId: 'Attribute: Field Definition ID',
+      patchFieldDataFieldDatumId_fieldDefinitionIds: 'Relationship: Field Definition ID',
+    });
+  });
+
   it('executes form submission list when optional numeric query filters are unset', async () => {
     const node = new PlanningCenterPeople();
     const httpRequest = vi.fn().mockResolvedValue({ data: [] });

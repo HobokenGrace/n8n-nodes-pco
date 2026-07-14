@@ -5,6 +5,10 @@ function q(value: unknown): string {
   return JSON.stringify(value);
 }
 
+function bodyFieldDisplayName(prefix: 'Attribute' | 'Relationship', displayName: string): string {
+  return `${prefix}: ${displayName.replace(/\bIds\b/g, 'IDs').replace(/\bId\b/g, 'ID')}`;
+}
+
 function fieldProperty(field: GeneratedField, operation: GeneratedOperation, source: 'path' | 'query' | 'attribute'): string {
   const displayOptions = {
     show: {
@@ -15,7 +19,7 @@ function fieldProperty(field: GeneratedField, operation: GeneratedOperation, sou
   };
 
   return `    {
-      displayName: ${q(field.displayName)},
+      displayName: ${q(source === 'attribute' ? bodyFieldDisplayName('Attribute', field.displayName) : field.displayName)},
       name: ${q(`${operation.id}_${field.name}`)},
       type: ${q(field.type)},
       default: ${field.type === 'number' ? 'undefined' : field.type === 'boolean' ? 'false' : "''"},
@@ -136,7 +140,7 @@ function renderProperties(operations: GeneratedOperation[]): string {
       fields.push(...operation.attributeFields.map((field) => fieldProperty(field, operation, 'attribute')));
       for (const relationship of operation.relationshipFields) {
         fields.push(`    {
-      displayName: ${q(relationship.displayName)},
+      displayName: ${q(bodyFieldDisplayName('Relationship', relationship.displayName))},
       name: ${q(`${operation.id}_${relationship.name}`)},
       type: 'string',
       default: '',
