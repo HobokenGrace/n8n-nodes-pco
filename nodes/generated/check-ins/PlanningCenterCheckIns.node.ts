@@ -12732,7 +12732,7 @@ export class PlanningCenterCheckIns implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Check-Ins",
     name: "planningCenterCheckIns",
-    icon: 'file:pco.svg',
+    icon: 'file:check-ins.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

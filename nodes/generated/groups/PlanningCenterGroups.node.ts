@@ -6146,7 +6146,7 @@ export class PlanningCenterGroups implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Groups",
     name: "planningCenterGroups",
-    icon: 'file:pco.svg',
+    icon: 'file:groups.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

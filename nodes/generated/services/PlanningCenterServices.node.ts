@@ -28290,7 +28290,7 @@ export class PlanningCenterServices implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Services",
     name: "planningCenterServices",
-    icon: 'file:pco.svg',
+    icon: 'file:services.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

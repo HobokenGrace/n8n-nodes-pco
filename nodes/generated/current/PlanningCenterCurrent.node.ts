@@ -313,7 +313,7 @@ export class PlanningCenterCurrent implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Current",
     name: "planningCenterCurrent",
-    icon: 'file:pco.svg',
+    icon: 'file:current.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

@@ -354,7 +354,7 @@ export class ${config.className} implements INodeType {
   description: INodeTypeDescription = {
     displayName: ${q(config.displayName)},
     name: ${q(config.nodeName)},
-    icon: 'file:pco.svg',
+    icon: 'file:${config.product}.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

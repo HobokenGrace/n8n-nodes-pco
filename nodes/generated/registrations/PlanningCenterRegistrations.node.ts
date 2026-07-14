@@ -1508,7 +1508,7 @@ export class PlanningCenterRegistrations implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Registrations",
     name: "planningCenterRegistrations",
-    icon: 'file:pco.svg',
+    icon: 'file:registrations.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

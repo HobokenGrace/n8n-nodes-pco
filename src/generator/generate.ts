@@ -11,7 +11,7 @@ async function writeGeneratedNode(configIndex: number): Promise<void> {
   const target = generatedNodePath(config);
   await mkdir(dirname(target), { recursive: true });
   await writeFile(target, renderNode(config, result));
-  await writeFile(`${dirname(target)}/pco.svg`, await readFile('nodes/assets/pco.svg', 'utf8'));
+  await writeFile(`${dirname(target)}/${config.product}.svg`, await readFile(`nodes/assets/${config.product}.svg`, 'utf8'));
   console.log(`${config.displayName}: ${result.operationCount} operations across ${result.resourceCount} resources`);
 }
 

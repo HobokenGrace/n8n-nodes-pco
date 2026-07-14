@@ -18906,7 +18906,7 @@ export class PlanningCenterCalendar implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Calendar",
     name: "planningCenterCalendar",
-    icon: 'file:pco.svg',
+    icon: 'file:calendar.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

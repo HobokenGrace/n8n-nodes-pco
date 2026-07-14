@@ -9970,7 +9970,7 @@ export class PlanningCenterGiving implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Giving",
     name: "planningCenterGiving",
-    icon: 'file:pco.svg',
+    icon: 'file:giving.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

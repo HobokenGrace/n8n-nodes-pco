@@ -33,12 +33,14 @@ describe('generated Planning Center nodes', () => {
     expect(nodes.map((node) => node.description.displayName)).toEqual(
       generatedProductConfigs.map((config) => config.displayName),
     );
-    for (const node of nodes) {
+    nodes.forEach((node, index) => {
+      const config = generatedProductConfigs[index];
+
       expect(node.description.credentials).toEqual([{ name: 'planningCenterPatApi', required: true }]);
-      expect(node.description.icon).toBe('file:pco.svg');
+      expect(node.description.icon).toBe(`file:${config.product}.svg`);
       expect(node.description.properties.some((property) => property.name === 'resource')).toBe(true);
       expect(node.description.properties.some((property) => property.name === 'operation')).toBe(true);
-    }
+    });
   });
 
   it('records metadata summaries for generated products', async () => {

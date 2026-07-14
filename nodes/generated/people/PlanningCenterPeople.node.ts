@@ -53192,7 +53192,7 @@ export class PlanningCenterPeople implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center People",
     name: "planningCenterPeople",
-    icon: 'file:pco.svg',
+    icon: 'file:people.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

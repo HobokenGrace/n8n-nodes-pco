@@ -538,7 +538,7 @@ export class PlanningCenterWebhooks implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Webhooks",
     name: "planningCenterWebhooks",
-    icon: 'file:pco.svg',
+    icon: 'file:webhooks.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

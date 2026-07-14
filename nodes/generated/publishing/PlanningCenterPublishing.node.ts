@@ -4864,7 +4864,7 @@ export class PlanningCenterPublishing implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center Publishing",
     name: "planningCenterPublishing",
-    icon: 'file:pco.svg',
+    icon: 'file:publishing.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

@@ -379,7 +379,7 @@ export class PlanningCenterApi implements INodeType {
   description: INodeTypeDescription = {
     displayName: "Planning Center API",
     name: "planningCenterApi",
-    icon: 'file:pco.svg',
+    icon: 'file:api.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',
