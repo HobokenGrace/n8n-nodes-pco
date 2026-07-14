@@ -185,6 +185,7 @@ describe('generated Planning Center nodes', () => {
     const queryOptions = Object.fromEntries(operation!.queryOptions.map((option) => [option.name, option]));
     expect(queryOptions.wherecreatedAtFilter).toMatchObject({
       displayName: 'Created At',
+      group: 'filter',
       kind: 'operator',
     });
     expect(queryOptions.wherecreatedAtFilter.operators).toEqual([
@@ -196,11 +197,19 @@ describe('generated Planning Center nodes', () => {
     ]);
     expect(queryOptions.wherepersonid).toMatchObject({
       displayName: 'Person ID',
+      group: 'filter',
       kind: 'single',
       sourceName: 'where[person][id]',
     });
+    expect(queryOptions.include).toMatchObject({
+      displayName: 'Include',
+      group: 'include',
+      kind: 'single',
+      sourceName: 'include',
+    });
     expect(queryOptions.order).toMatchObject({
       displayName: 'Order',
+      group: 'order',
       kind: 'single',
       sourceName: 'order',
       valueOptions: expect.arrayContaining([
@@ -210,12 +219,35 @@ describe('generated Planning Center nodes', () => {
     });
   });
 
-  it('renders query option enums as n8n dropdown fields', () => {
+  it('renders grouped query options as multi-value fixed collections', () => {
     const node = new entrypoint.PlanningCenterPeople();
-    const optionsProperty: any = node.description.properties.find(
-      (property) => property.name === 'getFormsFormIdFormSubmissions_options',
+    const filterProperty: any = node.description.properties.find(
+      (property) => property.name === 'getFormsFormIdFormSubmissions_filter',
     );
-    const orderOption = optionsProperty.options.find((option: any) => option.name === 'order');
+    const orderProperty: any = node.description.properties.find(
+      (property) => property.name === 'getFormsFormIdFormSubmissions_order',
+    );
+    const includeProperty: any = node.description.properties.find(
+      (property) => property.name === 'getFormsFormIdFormSubmissions_include',
+    );
+
+    expect(filterProperty).toMatchObject({
+      displayName: 'Filter',
+      placeholder: 'Filter by',
+      typeOptions: { multipleValues: true },
+    });
+    expect(orderProperty).toMatchObject({
+      displayName: 'Order',
+      placeholder: 'Order by',
+      typeOptions: { multipleValues: true },
+    });
+    expect(includeProperty).toMatchObject({
+      displayName: 'Include',
+      placeholder: 'Include data',
+      typeOptions: { multipleValues: true },
+    });
+
+    const orderOption = orderProperty.options.find((option: any) => option.name === 'order');
     const orderValue = orderOption.values.find((value: any) => value.name === 'value');
 
     expect(orderValue).toMatchObject({
@@ -283,7 +315,9 @@ describe('generated Planning Center nodes', () => {
         if (name === 'resource') return 'Form';
         if (name === 'operation') return 'getFormsFormIdFormSubmissions';
         if (name === 'getFormsFormIdFormSubmissions_formId') return '123';
-        if (name === 'getFormsFormIdFormSubmissions_options') return fallback;
+        if (name === 'getFormsFormIdFormSubmissions_filter') return fallback;
+        if (name === 'getFormsFormIdFormSubmissions_order') return fallback;
+        if (name === 'getFormsFormIdFormSubmissions_include') return fallback;
         if (name === 'additionalQueryParameters') return fallback;
         if (name === 'getFormsFormIdFormSubmissions_returnAll') return false;
         if (name === 'getFormsFormIdFormSubmissions_limit') return 1;
@@ -321,14 +355,17 @@ describe('generated Planning Center nodes', () => {
         if (name === 'resource') return 'Form';
         if (name === 'operation') return 'getFormsFormIdFormSubmissions';
         if (name === 'getFormsFormIdFormSubmissions_formId') return '123';
-        if (name === 'getFormsFormIdFormSubmissions_options') {
+        if (name === 'getFormsFormIdFormSubmissions_filter') {
           return {
-            wherecreatedAtFilter: { operator: 'gte', value: '2026-01-01T00:00:00Z' },
-            wherepersonid: { value: '456' },
-            include: { value: 'person' },
-            order: { value: '-created_at' },
+            wherecreatedAtFilter: [
+              { operator: 'gte', value: '2026-01-01T00:00:00Z' },
+              { operator: 'lte', value: '2026-01-31T23:59:59Z' },
+            ],
+            wherepersonid: [{ value: '456' }],
           };
         }
+        if (name === 'getFormsFormIdFormSubmissions_order') return { order: [{ value: '-created_at' }] };
+        if (name === 'getFormsFormIdFormSubmissions_include') return { include: [{ value: 'person' }] };
         if (name === 'additionalQueryParameters') return fallback;
         if (name === 'getFormsFormIdFormSubmissions_returnAll') return false;
         if (name === 'getFormsFormIdFormSubmissions_limit') return 1;
@@ -344,6 +381,7 @@ describe('generated Planning Center nodes', () => {
         qs: {
           per_page: 1,
           'where[created_at][gte]': '2026-01-01T00:00:00Z',
+          'where[created_at][lte]': '2026-01-31T23:59:59Z',
           'where[person][id]': '456',
           include: 'person',
           order: '-created_at',

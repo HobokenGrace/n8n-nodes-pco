@@ -22,10 +22,16 @@ interface GeneratedQueryOptionOperator {
 interface GeneratedQueryOption {
   name: string;
   displayName: string;
+  group: 'filter' | 'order' | 'include';
   type: 'boolean' | 'number' | 'string';
   kind: 'single' | 'operator';
   sourceName?: string;
   operators?: GeneratedQueryOptionOperator[];
+}
+
+interface QueryOptionSelection {
+  operator?: string;
+  value?: unknown;
 }
 
 interface GeneratedRelationshipField {
@@ -286,21 +292,40 @@ function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, opera
   }
 }
 
+function queryOptionSelections(
+  groupOptions: Record<string, QueryOptionSelection | QueryOptionSelection[] | undefined>,
+  optionName: string,
+): QueryOptionSelection[] {
+  const selected = groupOptions[optionName];
+  if (Array.isArray(selected)) return selected;
+  return selected ? [selected] : [];
+}
+
+function addQueryStringValue(qs: Record<string, unknown>, sourceName: string, value: unknown): void {
+  if (qs[sourceName] === undefined) {
+    qs[sourceName] = value;
+    return;
+  }
+
+  qs[sourceName] = String(qs[sourceName]) + ',' + String(value);
+}
+
 function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
-  const options = context.getNodeParameter(`${operation.id}_options`, itemIndex, {}) as Record<string, { operator?: string; value?: unknown } | undefined>;
   for (const option of operation.queryOptions) {
-    const selected = options[option.name];
-    const value = selected?.value;
-    if (value === undefined || value === '') continue;
+    const options = context.getNodeParameter(`${operation.id}_${option.group}`, itemIndex, {}) as Record<string, QueryOptionSelection | QueryOptionSelection[] | undefined>;
+    for (const selected of queryOptionSelections(options, option.name)) {
+      const value = selected.value;
+      if (value === undefined || value === '') continue;
 
-    if (option.kind === 'operator') {
-      const operator = option.operators?.find((candidate) => candidate.value === selected?.operator) ?? option.operators?.[0];
-      if (operator) qs[operator.sourceName] = value;
-      continue;
-    }
+      if (option.kind === 'operator') {
+        const operator = option.operators?.find((candidate) => candidate.value === selected.operator) ?? option.operators?.[0];
+        if (operator) addQueryStringValue(qs, operator.sourceName, value);
+        continue;
+      }
 
-    if (option.sourceName) {
-      qs[option.sourceName] = value;
+      if (option.sourceName) {
+        addQueryStringValue(qs, option.sourceName, value);
+      }
     }
   }
 }

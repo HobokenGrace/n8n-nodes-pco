@@ -6,9 +6,9 @@ TBD - created by archiving change bootstrap-pco-n8n-node. Update Purpose after a
 ### Requirement: Product-specific node generation
 The system SHALL generate n8n node definitions from Planning Center OpenAPI specs using one product-specific node per Planning Center product included in the generation configuration.
 
-#### Scenario: Bootstrap products are generated
-- **WHEN** the generation command runs with the People, Groups, and Giving OpenAPI specs configured
-- **THEN** the package SHALL produce Planning Center People, Planning Center Groups, and Planning Center Giving nodes that expose operations derived from their respective specs
+#### Scenario: All OpenAPI-backed products are generated
+- **WHEN** the generation command runs with Planning Center API, Calendar, Check-Ins, Current, Giving, Groups, People, Publishing, Registrations, Services, and Webhooks OpenAPI specs configured for generation
+- **THEN** the package SHALL produce Planning Center API, Planning Center Calendar, Planning Center Check-Ins, Planning Center Current, Planning Center Giving, Planning Center Groups, Planning Center People, Planning Center Publishing, Planning Center Registrations, Planning Center Services, and Planning Center Webhooks nodes that expose operations derived from their respective specs
 
 #### Scenario: Additional products are configured
 - **WHEN** a contributor adds another Planning Center product spec to the generation configuration
@@ -147,4 +147,45 @@ The system SHALL post-process generated properties enough to satisfy n8n communi
 #### Scenario: Flattened attribute collides with reserved key
 - **WHEN** a JSON:API resource attribute name collides with reserved output keys `id`, `type`, `relationships`, `links`, or `meta`
 - **THEN** the reserved key SHALL be preserved and the colliding attribute SHALL be emitted as `attribute_<name>`
+
+### Requirement: Generated product nodes are package-registered
+The system SHALL register every generated Planning Center product node with the n8n package metadata and package entry point.
+
+#### Scenario: Generated node appears in n8n package metadata
+- **WHEN** a Planning Center product is included in generated product configuration
+- **THEN** `package.json` SHALL include the built generated node path for that product in the n8n node registration list
+
+#### Scenario: Generated node is exported from the package entry point
+- **WHEN** a Planning Center product is included in generated product configuration
+- **THEN** the package entry point SHALL export that product's generated node class
+
+#### Scenario: Package metadata tracks generated products
+- **WHEN** generated product configuration changes
+- **THEN** tests SHALL fail if package metadata or entry-point exports omit any generated product node
+
+### Requirement: Generated query option groups
+The system SHALL render generated Filter, Order, and Include query controls as separate multi-selection parameter groups for each operation that exposes those query options.
+
+#### Scenario: Operation has filter query options
+- **WHEN** a generated operation exposes one or more supported `where[...]` query options
+- **THEN** the generated node SHALL expose those options in a Filter parameter group with the placeholder `Filter by`
+- **AND** the Filter group SHALL allow multiple selected filter entries
+
+#### Scenario: Operation has order query options
+- **WHEN** a generated operation exposes an `order` query option
+- **THEN** the generated node SHALL expose ordering values in an Order parameter group with the placeholder `Order by`
+- **AND** the Order group SHALL allow multiple selected order entries
+
+#### Scenario: Operation has include query options
+- **WHEN** a generated operation exposes an `include` query option
+- **THEN** the generated node SHALL expose include values in an Include parameter group with the placeholder `Include data`
+- **AND** the Include group SHALL allow multiple selected include entries
+
+#### Scenario: Selected query option groups are executed
+- **WHEN** a user runs a generated operation with selected Filter, Order, or Include entries
+- **THEN** the generated node SHALL serialize those selections to the original Planning Center query parameter names and values
+
+#### Scenario: Operation lacks a query option group
+- **WHEN** a generated operation has no supported query options for a Filter, Order, or Include group
+- **THEN** the generated node SHALL NOT render an empty parameter group for that missing query option type
 

@@ -290,6 +290,13 @@ function queryOptionName(sourceName: string, suffix = ''): string {
   return `${camelCase(sourceName)}${suffix}`;
 }
 
+function queryOptionGroup(sourceName: string): GeneratedQueryOption['group'] | undefined {
+  if (sourceName.startsWith('where[')) return 'filter';
+  if (sourceName === 'order') return 'order';
+  if (sourceName === 'include') return 'include';
+  return undefined;
+}
+
 function operatorLabel(operator: string): string {
   if (operator === 'eq') return 'Equals';
   if (operator === 'gt') return 'Greater Than';
@@ -395,6 +402,7 @@ function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[]
     options.push({
       name: queryOptionName(baseSourceName, 'Filter'),
       displayName: queryOptionDisplayName(baseSourceName),
+      group: 'filter',
       type: allParameters[0]?.type ?? 'string',
       kind: 'operator',
       operators: allParameters.map((parameter) => {
@@ -411,10 +419,13 @@ function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[]
 
   for (const parameter of parameters) {
     if (usedSourceNames.has(parameter.sourceName)) continue;
+    const group = queryOptionGroup(parameter.sourceName);
+    if (!group) continue;
 
     options.push({
       name: queryOptionName(parameter.sourceName),
       displayName: queryOptionDisplayName(parameter.sourceName),
+      group,
       type: parameter.type,
       kind: 'single',
       sourceName: parameter.sourceName,

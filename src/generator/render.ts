@@ -1,6 +1,18 @@
 import type { ProductConfig } from './config';
 import { normalizeIdentifierDisplayLabel } from './labels';
-import type { GeneratedField, GeneratedOperation, ProductGenerationResult } from './model';
+import type { GeneratedField, GeneratedOperation, GeneratedQueryOption, ProductGenerationResult } from './model';
+
+type QueryOptionGroup = GeneratedQueryOption['group'];
+
+const QUERY_OPTION_GROUPS: Array<{
+  group: QueryOptionGroup;
+  displayName: string;
+  placeholder: string;
+}> = [
+  { group: 'filter', displayName: 'Filter', placeholder: 'Filter by' },
+  { group: 'order', displayName: 'Order', placeholder: 'Order by' },
+  { group: 'include', displayName: 'Include', placeholder: 'Include data' },
+];
 
 function q(value: unknown): string {
   return JSON.stringify(value);
@@ -38,41 +50,50 @@ function renderOperations(operations: GeneratedOperation[]): string {
   return JSON.stringify(runtimeOperations, null, 2);
 }
 
-function renderQueryOptionsProperty(operation: GeneratedOperation): string | undefined {
-  if (!operation.queryOptions.length) return undefined;
+function renderQueryOptionValues(option: GeneratedQueryOption): unknown[] {
+  return [
+    ...(option.kind === 'operator'
+      ? [
+          {
+            displayName: 'Operator',
+            name: 'operator',
+            type: 'options',
+            options: option.operators?.map((operator) => ({ name: operator.name, value: operator.value })) ?? [],
+            default: option.operators?.[0]?.value ?? '',
+          },
+        ]
+      : []),
+    {
+      displayName: 'Value',
+      name: 'value',
+      type: option.valueOptions?.length ? 'options' : option.type,
+      ...(option.valueOptions?.length ? { options: option.valueOptions } : {}),
+      default: option.valueOptions?.length ? '' : option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
+    },
+  ];
+}
+
+function renderQueryOptionsProperty(
+  operation: GeneratedOperation,
+  definition: { group: QueryOptionGroup; displayName: string; placeholder: string },
+): string | undefined {
+  const groupOptions = operation.queryOptions.filter((option) => option.group === definition.group);
+  if (!groupOptions.length) return undefined;
 
   const displayOptions = { show: { resource: [operation.resource], operation: [operation.id] } };
-  const options = operation.queryOptions.map((option) => ({
+  const options = groupOptions.map((option) => ({
     displayName: option.displayName,
     name: option.name,
-    values: [
-      ...(option.kind === 'operator'
-        ? [
-            {
-              displayName: 'Operator',
-              name: 'operator',
-              type: 'options',
-              options: option.operators?.map((operator) => ({ name: operator.name, value: operator.value })) ?? [],
-              default: option.operators?.[0]?.value ?? '',
-            },
-          ]
-        : []),
-      {
-        displayName: 'Value',
-        name: 'value',
-        type: option.valueOptions?.length ? 'options' : option.type,
-        ...(option.valueOptions?.length ? { options: option.valueOptions } : {}),
-        default: option.valueOptions?.length ? '' : option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
-      },
-    ],
+    values: renderQueryOptionValues(option),
   }));
 
   return `    {
-      displayName: 'Options',
-      name: ${q(`${operation.id}_options`)},
+      displayName: ${q(definition.displayName)},
+      name: ${q(`${operation.id}_${definition.group}`)},
       type: 'fixedCollection',
       default: {},
-      placeholder: 'Add Option',
+      placeholder: ${q(definition.placeholder)},
+      typeOptions: { multipleValues: true },
       displayOptions: ${q(displayOptions)},
       options: ${q(options)},
     },`;
@@ -108,8 +129,7 @@ function renderProperties(operations: GeneratedOperation[]): string {
       ...operation.pathParameters.map((field) => fieldProperty(field, operation, 'path')),
     ];
 
-    const queryOptionsProperty = renderQueryOptionsProperty(operation);
-    if (queryOptionsProperty) fields.push(queryOptionsProperty);
+    fields.push(...QUERY_OPTION_GROUPS.flatMap((definition) => renderQueryOptionsProperty(operation, definition) ?? []));
 
     if (operation.isList) {
       fields.push(`    {
@@ -218,10 +238,16 @@ interface GeneratedQueryOptionOperator {
 interface GeneratedQueryOption {
   name: string;
   displayName: string;
+  group: 'filter' | 'order' | 'include';
   type: 'boolean' | 'number' | 'string';
   kind: 'single' | 'operator';
   sourceName?: string;
   operators?: GeneratedQueryOptionOperator[];
+}
+
+interface QueryOptionSelection {
+  operator?: string;
+  value?: unknown;
 }
 
 interface GeneratedRelationshipField {
@@ -261,21 +287,40 @@ function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, opera
   }
 }
 
+function queryOptionSelections(
+  groupOptions: Record<string, QueryOptionSelection | QueryOptionSelection[] | undefined>,
+  optionName: string,
+): QueryOptionSelection[] {
+  const selected = groupOptions[optionName];
+  if (Array.isArray(selected)) return selected;
+  return selected ? [selected] : [];
+}
+
+function addQueryStringValue(qs: Record<string, unknown>, sourceName: string, value: unknown): void {
+  if (qs[sourceName] === undefined) {
+    qs[sourceName] = value;
+    return;
+  }
+
+  qs[sourceName] = String(qs[sourceName]) + ',' + String(value);
+}
+
 function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
-  const options = context.getNodeParameter(\`${'${operation.id}'}_options\`, itemIndex, {}) as Record<string, { operator?: string; value?: unknown } | undefined>;
   for (const option of operation.queryOptions) {
-    const selected = options[option.name];
-    const value = selected?.value;
-    if (value === undefined || value === '') continue;
+    const options = context.getNodeParameter(\`${'${operation.id}'}_${'${option.group}'}\`, itemIndex, {}) as Record<string, QueryOptionSelection | QueryOptionSelection[] | undefined>;
+    for (const selected of queryOptionSelections(options, option.name)) {
+      const value = selected.value;
+      if (value === undefined || value === '') continue;
 
-    if (option.kind === 'operator') {
-      const operator = option.operators?.find((candidate) => candidate.value === selected?.operator) ?? option.operators?.[0];
-      if (operator) qs[operator.sourceName] = value;
-      continue;
-    }
+      if (option.kind === 'operator') {
+        const operator = option.operators?.find((candidate) => candidate.value === selected.operator) ?? option.operators?.[0];
+        if (operator) addQueryStringValue(qs, operator.sourceName, value);
+        continue;
+      }
 
-    if (option.sourceName) {
-      qs[option.sourceName] = value;
+      if (option.sourceName) {
+        addQueryStringValue(qs, option.sourceName, value);
+      }
     }
   }
 }

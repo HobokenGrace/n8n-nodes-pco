@@ -23,6 +23,7 @@ export interface GeneratedQueryOptionOperator {
 export interface GeneratedQueryOption {
   name: string;
   displayName: string;
+  group: 'filter' | 'order' | 'include';
   type: GeneratedField['type'];
   kind: 'single' | 'operator';
   sourceName?: string;
