@@ -54,22 +54,49 @@ describe('generated Planning Center nodes', () => {
       servicesSummary.operations.map((operation) => [operation.id, operation.operation]),
     );
 
-    expect(operations.getFormsFormIdFormSubmissions).toBe('List Form Submissions');
-    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe('Get Form Submission');
-    expect(operations.postFormsFormIdFormSubmissions).toBe('Create Form Submission');
-    expect(operations.patchFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe('Update Person');
-    expect(operations.deleteFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe('Delete Person');
+    expect(operations.getFormsFormIdFormSubmissions).toBe('List Form Submissions (via Form)');
+    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe('Get Form Submission (via Form)');
+    expect(operations.postFormsFormIdFormSubmissions).toBe('Create Form Submission (via Form)');
+    expect(operations.patchFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe(
+      'Update Person (via Form Submission)',
+    );
+    expect(operations.deleteFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe(
+      'Delete Person (via Form Submission)',
+    );
     expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValues).toBe(
-      'List Form Submission Values',
+      'List Form Submission Values (via Form Submission)',
     );
     expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValuesFormSubmissionValueId).toBe(
-      'Get Form Submission Value',
+      'Get Form Submission Value (via Form Submission)',
     );
+    expect(operations.getPeople).toBe('List People');
+    expect(operations.getHouseholdsHouseholdIdPeople).toBe('List People (via Household)');
+    expect(operations.getListsListIdPeople).toBe('List People (via List)');
     expect(operations.getPeoplePersonId).toBe('Get Person');
     expect(operations.getPeoplePersonIdWorkflowCardsWorkflowCardIdPersonPersonId).toBe('Get Person (via Workflow Card)');
     expect(operations.getMaritalStatusesMaritalStatusId).toBe('Get Marital Status');
     expect(givingOperations.getCampusesCampusId).toBe('Get Campus');
     expect(servicesOperations.getFoldersFolderIdFoldersFolderId).toBe('Get Folder (via Folder)');
+  });
+
+  it('does not emit duplicate operation labels within a product', async () => {
+    const summaries = await Promise.all(productConfigs.map(buildProductGeneration));
+
+    for (const summary of summaries) {
+      const operationsByLabel = new Map<string, string[]>();
+      for (const operation of summary.operations) {
+        operationsByLabel.set(operation.operation, [
+          ...(operationsByLabel.get(operation.operation) ?? []),
+          `${operation.method} ${operation.path}`,
+        ]);
+      }
+
+      const duplicateLabels = [...operationsByLabel.entries()]
+        .filter(([, paths]) => paths.length > 1)
+        .map(([label, paths]) => `${label}: ${paths.join(', ')}`);
+
+      expect(duplicateLabels, summary.product).toEqual([]);
+    }
   });
 
   it('renders only useful query filters for form submission lists', async () => {

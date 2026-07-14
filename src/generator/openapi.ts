@@ -68,6 +68,11 @@ function pathSegments(path: string): string[] {
   return path.split('/').filter(Boolean);
 }
 
+function routeSegments(path: string): string[] {
+  const segments = pathSegments(path);
+  return segments[1] === 'v2' && !isPathParameter(segments[0]) ? segments.slice(2) : segments;
+}
+
 function isPathParameter(segment: string): boolean {
   return segment.startsWith('{') && segment.endsWith('}');
 }
@@ -120,36 +125,71 @@ function operationTarget(path: string, action: string): string {
   return titleCase(action === 'List' ? segment : singularizeLastWord(segment));
 }
 
-function parameterName(segment: string | undefined): string | undefined {
-  return segment && isPathParameter(segment) ? segment.slice(1, -1) : undefined;
-}
-
-function relationshipContext(path: string): string | undefined {
-  const segments = pathSegments(path);
-  const targetIndex = operationTargetSegmentIndex(path);
+function relationshipContext(path: string, depth = 1): string | undefined {
+  const segments = routeSegments(path);
+  const targetIndex = operationTargetSegmentIndex(`/${segments.join('/')}`);
   if (targetIndex <= 0) return undefined;
 
-  const targetSegment = segments[targetIndex];
-  const targetParameter = parameterName(segments[targetIndex + 1]);
-  const repeatsTarget = segments.slice(0, targetIndex).includes(targetSegment)
-    || Boolean(targetParameter && segments.slice(0, targetIndex).some((segment) => parameterName(segment) === targetParameter));
-  if (!repeatsTarget) return undefined;
-
+  const contexts: string[] = [];
   for (let index = targetIndex - 1; index >= 0; index--) {
-    if (!isPathParameter(segments[index])) return titleCase(singularizeLastWord(segments[index]));
+    if (!isPathParameter(segments[index])) contexts.unshift(titleCase(singularizeLastWord(segments[index])));
   }
 
-  return undefined;
+  return contexts.slice(-depth).join(' ') || undefined;
+}
+
+function fallbackOperationLabel(method: string, path: string, deprecated: boolean, contextDepth = 1): string {
+  const action = operationAction(method, path);
+  const context = relationshipContext(path, contextDepth);
+  const label = `${action} ${operationTarget(path, action)}${context ? ` (via ${context})` : ''}`;
+  return deprecated ? `${label} (Deprecated)` : label;
 }
 
 function operationLabel(operation: any, method: string, path: string): string {
   const source = operation.operationId ?? operation.summary;
-  const action = operationAction(method, path);
-  const context = source ? undefined : relationshipContext(path);
-  const label = source
-    ? titleCase(source)
-    : `${action} ${operationTarget(path, action)}${context ? ` (via ${context})` : ''}`;
-  return operation.deprecated ? `${label} (Deprecated)` : label;
+  const label = source ? titleCase(source) : fallbackOperationLabel(method, path, Boolean(operation.deprecated));
+  return operation.deprecated && source ? `${label} (Deprecated)` : label;
+}
+
+function duplicateFallbackLabelGroups(
+  operations: GeneratedOperation[],
+  fallbackOperationIds: Set<string>,
+): GeneratedOperation[][] {
+  const operationsByLabel = new Map<string, GeneratedOperation[]>();
+  for (const operation of operations) {
+    if (!fallbackOperationIds.has(operation.id)) continue;
+    operationsByLabel.set(operation.operation, [...(operationsByLabel.get(operation.operation) ?? []), operation]);
+  }
+
+  return [...operationsByLabel.values()].filter((group) => group.length > 1);
+}
+
+function disambiguateFallbackOperationLabels(
+  operations: GeneratedOperation[],
+  fallbackOperationIds: Set<string>,
+): void {
+  for (let contextDepth = 2; contextDepth <= 10; contextDepth++) {
+    const duplicateGroups = duplicateFallbackLabelGroups(operations, fallbackOperationIds);
+    if (!duplicateGroups.length) return;
+
+    let changed = false;
+    for (const group of duplicateGroups) {
+      for (const operation of group) {
+        const nextLabel = fallbackOperationLabel(
+          operation.method.toLowerCase(),
+          operation.path,
+          operation.deprecated,
+          contextDepth,
+        );
+        if (nextLabel === operation.operation) continue;
+
+        operation.operation = nextLabel;
+        changed = true;
+      }
+    }
+
+    if (!changed) return;
+  }
 }
 
 function resourceLabel(operation: any, path: string): string {
@@ -463,6 +503,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
   const api = (await SwaggerParser.dereference(spec)) as any;
   const operations: GeneratedOperation[] = [];
   const exclusions: string[] = [];
+  const fallbackOperationIds = new Set<string>();
 
   for (const [path, pathItem] of Object.entries<any>(api.paths ?? {})) {
     for (const [method, operation] of Object.entries<any>(pathItem)) {
@@ -473,6 +514,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
       }
 
       const id = operation.operationId ? camelCase(operation.operationId) : camelCase(`${method} ${path}`);
+      if (!operation.operationId && !operation.summary) fallbackOperationIds.add(id);
       const queryParameters = collectParameters(path, pathItem, operation, 'query');
       operations.push({
         id,
@@ -491,6 +533,8 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
       });
     }
   }
+
+  disambiguateFallbackOperationLabels(operations, fallbackOperationIds);
 
   const resources = new Set(operations.map((operation) => operation.resource));
   operations.sort((a, b) => `${a.resource}:${a.operation}:${a.id}`.localeCompare(`${b.resource}:${b.operation}:${b.id}`));
