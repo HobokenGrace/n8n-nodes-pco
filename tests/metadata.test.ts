@@ -2,7 +2,15 @@ import { readFileSync } from 'node:fs';
 
 import { describe, expect, it } from 'vitest';
 
+import * as entrypoint from '../index';
 import { PlanningCenterPatApi } from '../credentials/PlanningCenterPatApi.credentials';
+import { generatedProductConfigs } from '../src/generator/config';
+
+type GeneratedNodeClass = new () => { description: { displayName: string; name: string } };
+
+const expectedGeneratedNodePaths = generatedProductConfigs.map(
+  (config) => `dist/nodes/generated/${config.product}/${config.className}.node.js`,
+);
 
 describe('package metadata', () => {
   it('declares n8n community node metadata and flexible n8n workflow compatibility', () => {
@@ -14,11 +22,19 @@ describe('package metadata', () => {
     expect(pkg.peerDependencies['n8n-workflow']).toBe('*');
     expect(pkg.devDependencies['n8n-workflow']).toBe('*');
     expect(pkg.n8n.credentials).toContain('dist/credentials/PlanningCenterPatApi.credentials.js');
-    expect(pkg.n8n.nodes).toEqual([
-      'dist/nodes/generated/people/PlanningCenterPeople.node.js',
-      'dist/nodes/generated/groups/PlanningCenterGroups.node.js',
-      'dist/nodes/generated/giving/PlanningCenterGiving.node.js',
-    ]);
+    expect(pkg.n8n.nodes).toEqual(expectedGeneratedNodePaths);
+  });
+
+  it('exports every generated node class from the package entry point', () => {
+    for (const config of generatedProductConfigs) {
+      const ExportedNodeClass = (entrypoint as unknown as Record<string, GeneratedNodeClass>)[config.className];
+
+      expect(ExportedNodeClass).toBeDefined();
+      expect(new ExportedNodeClass().description).toMatchObject({
+        displayName: config.displayName,
+        name: config.nodeName,
+      });
+    }
   });
 });
 

@@ -1,10 +1,16 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { PlanningCenterGiving } from '../nodes/generated/giving/PlanningCenterGiving.node';
-import { PlanningCenterGroups } from '../nodes/generated/groups/PlanningCenterGroups.node';
-import { PlanningCenterPeople } from '../nodes/generated/people/PlanningCenterPeople.node';
+import * as entrypoint from '../index';
 import { generatedProductConfigs, productConfigs } from '../src/generator/config';
 import { buildProductGeneration } from '../src/generator/openapi';
+
+type GeneratedNodeClass = new () => {
+  description: { credentials?: unknown; displayName: string; icon?: string; name: string; properties: any[] };
+};
+
+const generatedNodeClasses = generatedProductConfigs.map(
+  (config) => (entrypoint as unknown as Record<string, GeneratedNodeClass>)[config.className],
+);
 
 function collectDisplayNames(value: unknown, labels: string[] = []): string[] {
   if (Array.isArray(value)) {
@@ -21,14 +27,12 @@ function collectDisplayNames(value: unknown, labels: string[] = []): string[] {
 }
 
 describe('generated Planning Center nodes', () => {
-  it('exposes required n8n descriptions for bootstrap products', () => {
-    const nodes = [new PlanningCenterPeople(), new PlanningCenterGroups(), new PlanningCenterGiving()];
+  it('exposes required n8n descriptions for generated products', () => {
+    const nodes = generatedNodeClasses.map((NodeClass) => new NodeClass());
 
-    expect(nodes.map((node) => node.description.displayName)).toEqual([
-      'Planning Center People',
-      'Planning Center Groups',
-      'Planning Center Giving',
-    ]);
+    expect(nodes.map((node) => node.description.displayName)).toEqual(
+      generatedProductConfigs.map((config) => config.displayName),
+    );
     for (const node of nodes) {
       expect(node.description.credentials).toEqual([{ name: 'planningCenterPatApi', required: true }]);
       expect(node.description.icon).toBe('file:pco.svg');
@@ -40,7 +44,9 @@ describe('generated Planning Center nodes', () => {
   it('records metadata summaries for generated products', async () => {
     const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
 
-    expect(summaries.map((summary) => summary.product).sort()).toEqual(['giving', 'groups', 'people']);
+    expect(summaries.map((summary) => summary.product).sort()).toEqual(
+      generatedProductConfigs.map((config) => config.product).sort(),
+    );
     for (const summary of summaries) {
       expect(summary.operationCount).toBeGreaterThan(0);
       expect(summary.resourceCount).toBeGreaterThan(0);
@@ -49,10 +55,45 @@ describe('generated Planning Center nodes', () => {
     }
   });
 
+  it('defaults each generated resource to a read operation when one exists', async () => {
+    const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+
+    for (const summary of summaries) {
+      const operationsByResource = new Map<string, typeof summary.operations>();
+      for (const operation of summary.operations) {
+        operationsByResource.set(operation.resource, [...(operationsByResource.get(operation.resource) ?? []), operation]);
+      }
+
+      for (const [resource, operations] of operationsByResource) {
+        if (operations.some((operation) => operation.method === 'GET')) {
+          expect(operations[0].method, `${summary.product}:${resource}`).toBe('GET');
+        }
+      }
+    }
+  });
+
+  it('does not treat singleton GET responses as paginated lists', async () => {
+    const currentConfig = generatedProductConfigs.find((config) => config.product === 'current');
+    expect(currentConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(currentConfig!);
+    const getMeOperation = summary.operations.find((operation) => operation.id === 'getMe');
+    const currentNode = new entrypoint.PlanningCenterCurrent();
+    const propertyNames = currentNode.description.properties.map((property) => property.name);
+
+    expect(getMeOperation).toMatchObject({
+      isList: false,
+      operation: 'Get Me',
+      path: '/current/v2/me',
+    });
+    expect(propertyNames).not.toContain('getMe_returnAll');
+    expect(propertyNames).not.toContain('getMe_limit');
+  });
+
   it('derives friendly operation labels from HTTP method and path shape', async () => {
     const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
     const givingConfig = generatedProductConfigs.find((config) => config.product === 'giving');
-    const servicesConfig = productConfigs.find((config) => config.product === 'services');
+    const servicesConfig = generatedProductConfigs.find((config) => config.product === 'services');
     expect(peopleConfig).toBeDefined();
     expect(givingConfig).toBeDefined();
     expect(servicesConfig).toBeDefined();
@@ -168,7 +209,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('renders query option enums as n8n dropdown fields', () => {
-    const node = new PlanningCenterPeople();
+    const node = new entrypoint.PlanningCenterPeople();
     const optionsProperty: any = node.description.properties.find(
       (property) => property.name === 'getFormsFormIdFormSubmissions_options',
     );
@@ -188,7 +229,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('labels assignable attributes and relationships explicitly in body fields', () => {
-    const node = new PlanningCenterPeople();
+    const node = new entrypoint.PlanningCenterPeople();
     const labelsByName = Object.fromEntries(
       node.description.properties
         .filter((property) => String(property.name).startsWith('patchFieldDataFieldDatumId_fieldDefinition'))
@@ -214,7 +255,8 @@ describe('generated Planning Center nodes', () => {
         (option.valueOptions ?? []).map((valueOption) => `${summary.product}:${operation.id}:value-option:${valueOption.name}`),
       ),
     ]));
-    const nodeLabels = [new PlanningCenterPeople(), new PlanningCenterGroups(), new PlanningCenterGiving()]
+    const nodeLabels = generatedNodeClasses
+      .map((NodeClass) => new NodeClass())
       .flatMap((node) => collectDisplayNames(node.description.properties).map((label) => `${node.description.name}:${label}`));
 
     const mixedCaseLabels = [...summaryLabels, ...nodeLabels].filter((entry) => mixedCaseIdentifierToken.test(entry));
@@ -223,7 +265,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('executes form submission list when optional numeric query filters are unset', async () => {
-    const node = new PlanningCenterPeople();
+    const node = new entrypoint.PlanningCenterPeople();
     const httpRequest = vi.fn().mockResolvedValue({ data: [] });
     const missingNumberParameter = 'getFormsFormIdFormSubmissions_wherepersongrade';
     const context: any = {
@@ -262,7 +304,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('maps selected query options to Planning Center query parameters', async () => {
-    const node = new PlanningCenterPeople();
+    const node = new entrypoint.PlanningCenterPeople();
     const httpRequest = vi.fn().mockResolvedValue({ data: [] });
     const context: any = {
       continueOnFail: () => false,

@@ -66,8 +66,10 @@ function isPathParameter(segment: string): boolean {
   return segment.startsWith('{') && segment.endsWith('}');
 }
 
-function operationAction(method: string, path: string): string {
+function operationAction(method: string, path: string, responseIsList?: boolean): string {
   if (method === 'get') {
+    if (responseIsList !== undefined) return responseIsList ? 'List' : 'Get';
+
     const lastSegment = pathSegments(path).at(-1) ?? '';
     return isPathParameter(lastSegment) ? 'Get' : 'List';
   }
@@ -127,8 +129,14 @@ function relationshipContext(path: string, depth = 1): string | undefined {
   return contexts.slice(-depth).join(' ') || undefined;
 }
 
-function fallbackOperationLabel(method: string, path: string, deprecated: boolean, contextDepth = 1): string {
-  const action = operationAction(method, path);
+function fallbackOperationLabel(
+  method: string,
+  path: string,
+  deprecated: boolean,
+  contextDepth = 1,
+  responseIsList?: boolean,
+): string {
+  const action = operationAction(method, path, responseIsList);
   const context = relationshipContext(path, contextDepth);
   const label = `${action} ${operationTarget(path, action)}${context ? ` (via ${context})` : ''}`;
   return deprecated ? `${label} (Deprecated)` : label;
@@ -136,8 +144,19 @@ function fallbackOperationLabel(method: string, path: string, deprecated: boolea
 
 function operationLabel(operation: any, method: string, path: string): string {
   const source = operation.operationId ?? operation.summary;
-  const label = source ? displayLabel(source) : fallbackOperationLabel(method, path, Boolean(operation.deprecated));
+  const label = source
+    ? displayLabel(source)
+    : fallbackOperationLabel(method, path, Boolean(operation.deprecated), 1, responseIsList(operation));
   return operation.deprecated && source ? `${label} (Deprecated)` : label;
+}
+
+function operationSortPriority(operation: GeneratedOperation): number {
+  if (operation.isList) return 0;
+  if (operation.method === 'GET') return 1;
+  if (operation.method === 'POST') return 2;
+  if (operation.method === 'PUT' || operation.method === 'PATCH') return 3;
+  if (operation.method === 'DELETE') return 4;
+  return 5;
 }
 
 function duplicateFallbackLabelGroups(
@@ -169,6 +188,7 @@ function disambiguateFallbackOperationLabels(
           operation.path,
           operation.deprecated,
           contextDepth,
+          operation.isList,
         );
         if (nextLabel === operation.operation) continue;
 
@@ -202,8 +222,19 @@ function jsonApiResponseSchema(operation: any): JsonSchema | undefined {
     ?? operation.responses?.['200']?.content?.['application/json']?.schema;
 }
 
+function responseDataSchema(operation: any): JsonSchema | undefined {
+  return jsonApiResponseSchema(operation)?.properties?.data;
+}
+
+function responseIsList(operation: any): boolean | undefined {
+  const dataSchema = responseDataSchema(operation);
+  if (!dataSchema) return undefined;
+
+  return dataSchema.type === 'array';
+}
+
 function responseResourceSchema(operation: any): JsonSchema | undefined {
-  const dataSchema = jsonApiResponseSchema(operation)?.properties?.data;
+  const dataSchema = responseDataSchema(operation);
   if (!dataSchema) return undefined;
 
   return dataSchema.type === 'array' ? dataSchema.items : dataSchema;
@@ -475,8 +506,8 @@ function collectRelationshipFields(operation: any): GeneratedRelationshipField[]
   });
 }
 
-function isListOperation(method: string, path: string): boolean {
-  return operationAction(method, path) === 'List';
+function isListOperation(method: string, path: string, operation: any): boolean {
+  return operationAction(method, path, responseIsList(operation)) === 'List';
 }
 
 function requestPath(config: ProductConfig, path: string): string {
@@ -513,7 +544,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         method: method.toUpperCase() as HttpMethod,
         path: requestPath(config, path),
         deprecated: Boolean(operation.deprecated),
-        isList: isListOperation(method, path),
+        isList: isListOperation(method, path, operation),
         pathParameters: collectParameters(path, pathItem, operation, 'path'),
         queryParameters,
         queryOptions: buildQueryOptions(queryParameters),
@@ -526,7 +557,11 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
   disambiguateFallbackOperationLabels(operations, fallbackOperationIds);
 
   const resources = new Set(operations.map((operation) => operation.resource));
-  operations.sort((a, b) => `${a.resource}:${a.operation}:${a.id}`.localeCompare(`${b.resource}:${b.operation}:${b.id}`));
+  operations.sort((a, b) =>
+    `${a.resource}:${operationSortPriority(a)}:${a.operation}:${a.id}`.localeCompare(
+      `${b.resource}:${operationSortPriority(b)}:${b.operation}:${b.id}`,
+    ),
+  );
 
   return {
     product: config.product,

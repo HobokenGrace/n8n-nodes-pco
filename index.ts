@@ -1,4 +1,12 @@
 export { PlanningCenterPatApi } from './credentials/PlanningCenterPatApi.credentials';
-export { PlanningCenterPeople } from './nodes/generated/people/PlanningCenterPeople.node';
-export { PlanningCenterGroups } from './nodes/generated/groups/PlanningCenterGroups.node';
+export { PlanningCenterApi } from './nodes/generated/api/PlanningCenterApi.node';
+export { PlanningCenterCalendar } from './nodes/generated/calendar/PlanningCenterCalendar.node';
+export { PlanningCenterCheckIns } from './nodes/generated/check-ins/PlanningCenterCheckIns.node';
+export { PlanningCenterCurrent } from './nodes/generated/current/PlanningCenterCurrent.node';
 export { PlanningCenterGiving } from './nodes/generated/giving/PlanningCenterGiving.node';
+export { PlanningCenterGroups } from './nodes/generated/groups/PlanningCenterGroups.node';
+export { PlanningCenterPeople } from './nodes/generated/people/PlanningCenterPeople.node';
+export { PlanningCenterPublishing } from './nodes/generated/publishing/PlanningCenterPublishing.node';
+export { PlanningCenterRegistrations } from './nodes/generated/registrations/PlanningCenterRegistrations.node';
+export { PlanningCenterServices } from './nodes/generated/services/PlanningCenterServices.node';
+export { PlanningCenterWebhooks } from './nodes/generated/webhooks/PlanningCenterWebhooks.node';

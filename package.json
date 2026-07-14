@@ -34,9 +34,17 @@
       "dist/credentials/PlanningCenterPatApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/generated/people/PlanningCenterPeople.node.js",
+      "dist/nodes/generated/api/PlanningCenterApi.node.js",
+      "dist/nodes/generated/calendar/PlanningCenterCalendar.node.js",
+      "dist/nodes/generated/check-ins/PlanningCenterCheckIns.node.js",
+      "dist/nodes/generated/current/PlanningCenterCurrent.node.js",
+      "dist/nodes/generated/giving/PlanningCenterGiving.node.js",
       "dist/nodes/generated/groups/PlanningCenterGroups.node.js",
-      "dist/nodes/generated/giving/PlanningCenterGiving.node.js"
+      "dist/nodes/generated/people/PlanningCenterPeople.node.js",
+      "dist/nodes/generated/publishing/PlanningCenterPublishing.node.js",
+      "dist/nodes/generated/registrations/PlanningCenterRegistrations.node.js",
+      "dist/nodes/generated/services/PlanningCenterServices.node.js",
+      "dist/nodes/generated/webhooks/PlanningCenterWebhooks.node.js"
     ]
   },
   "peerDependencies": {

@@ -16,7 +16,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterApi',
     sourceUrl: 'https://api.planningcenteronline.com/api/v2/open_api/2025-09-30',
     snapshotDate: '2025-09-30',
-    generate: false,
+    generate: true,
   },
   {
     product: 'calendar',
@@ -25,7 +25,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterCalendar',
     sourceUrl: 'https://api.planningcenteronline.com/calendar/v2/open_api/2022-07-07',
     snapshotDate: '2022-07-07',
-    generate: false,
+    generate: true,
   },
   {
     product: 'check-ins',
@@ -34,7 +34,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterCheckIns',
     sourceUrl: 'https://api.planningcenteronline.com/check-ins/v2/open_api/2025-05-28',
     snapshotDate: '2025-05-28',
-    generate: false,
+    generate: true,
   },
   {
     product: 'current',
@@ -43,7 +43,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterCurrent',
     sourceUrl: 'https://api.planningcenteronline.com/current/v2/open_api/2018-08-01',
     snapshotDate: '2018-08-01',
-    generate: false,
+    generate: true,
   },
   {
     product: 'giving',
@@ -79,7 +79,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterPublishing',
     sourceUrl: 'https://api.planningcenteronline.com/publishing/v2/open_api/2024-03-25',
     snapshotDate: '2024-03-25',
-    generate: false,
+    generate: true,
   },
   {
     product: 'registrations',
@@ -88,7 +88,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterRegistrations',
     sourceUrl: 'https://api.planningcenteronline.com/registrations/v2/open_api/2025-05-01',
     snapshotDate: '2025-05-01',
-    generate: false,
+    generate: true,
   },
   {
     product: 'services',
@@ -97,7 +97,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterServices',
     sourceUrl: 'https://api.planningcenteronline.com/services/v2/open_api/2018-11-01',
     snapshotDate: '2018-11-01',
-    generate: false,
+    generate: true,
   },
   {
     product: 'webhooks',
@@ -106,7 +106,7 @@ export const productConfigs: ProductConfig[] = [
     nodeName: 'planningCenterWebhooks',
     sourceUrl: 'https://api.planningcenteronline.com/webhooks/v2/open_api/2022-10-20',
     snapshotDate: '2022-10-20',
-    generate: false,
+    generate: true,
   },
 ];
 
