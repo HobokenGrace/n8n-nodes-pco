@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { executeItemWithContinueOnFail } from '../src/runtime/execute';
 import { normalizeJsonApiResponse } from '../src/runtime/jsonApi';
 import { collectPaginatedPlanningCenterResults } from '../src/runtime/pagination';
+import { extractResourceLocatorId } from '../src/runtime/resourceLocator';
 import {
   buildBasicAuthHeader,
   planningCenterApiRequest,
@@ -200,6 +201,15 @@ describe('Planning Center pagination helper', () => {
         qs: undefined,
       }),
     );
+  });
+});
+
+describe('Planning Center resource locator helper', () => {
+  it('extracts IDs from locator selections and primitive values', () => {
+    expect(extractResourceLocatorId({ __rl: true, mode: 'list', value: '123' })).toBe('123');
+    expect(extractResourceLocatorId({ __rl: true, mode: 'id', value: 456 })).toBe('456');
+    expect(extractResourceLocatorId('789')).toBe('789');
+    expect(extractResourceLocatorId(101)).toBe('101');
   });
 });
 

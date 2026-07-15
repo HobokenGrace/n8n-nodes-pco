@@ -1,6 +1,6 @@
 import type { ProductConfig } from './config';
 import { normalizeIdentifierDisplayLabel } from './labels';
-import type { GeneratedField, GeneratedOperation, GeneratedQueryOption, ProductGenerationResult } from './model';
+import type { GeneratedField, GeneratedLookup, GeneratedOperation, GeneratedQueryOption, ProductGenerationResult } from './model';
 
 type QueryOptionGroup = GeneratedQueryOption['group'];
 
@@ -22,6 +22,30 @@ function bodyFieldDisplayName(prefix: 'Attribute' | 'Relationship', displayName:
   return `${prefix}: ${normalizeIdentifierDisplayLabel(displayName)}`;
 }
 
+function locatorDefault(): string {
+  return q({ mode: 'list', value: '' });
+}
+
+function locatorModes(lookup: GeneratedLookup): Array<Record<string, unknown>> {
+  return [
+    {
+      displayName: 'List',
+      name: 'list',
+      type: 'list',
+      typeOptions: {
+        searchListMethod: lookup.methodName,
+        searchable: true,
+      },
+    },
+    {
+      displayName: 'ID',
+      name: 'id',
+      type: 'string',
+      placeholder: 'e.g. 12345',
+    },
+  ];
+}
+
 function fieldProperty(field: GeneratedField, operation: GeneratedOperation, source: 'path' | 'query' | 'attribute'): string {
   const displayOptions = {
     show: {
@@ -34,10 +58,10 @@ function fieldProperty(field: GeneratedField, operation: GeneratedOperation, sou
   return `    {
       displayName: ${q(source === 'attribute' ? bodyFieldDisplayName('Attribute', field.displayName) : field.displayName)},
       name: ${q(`${operation.id}_${field.name}`)},
-      type: ${q(field.type)},
-      default: ${field.type === 'number' ? 'undefined' : field.type === 'boolean' ? 'false' : "''"},
+      type: ${q(field.lookup ? 'resourceLocator' : field.type)},
+      default: ${field.lookup ? locatorDefault() : field.type === 'number' ? 'undefined' : field.type === 'boolean' ? 'false' : "''"},
       required: ${field.required},
-      displayOptions: ${q(displayOptions)},
+      ${field.lookup ? `modes: ${q(locatorModes(field.lookup))},\n      ` : ''}displayOptions: ${q(displayOptions)},
     },`;
 }
 
@@ -66,11 +90,41 @@ function renderQueryOptionValues(option: GeneratedQueryOption): unknown[] {
     {
       displayName: 'Value',
       name: 'value',
-      type: option.valueOptions?.length ? 'options' : option.type,
+      type: option.lookup ? 'resourceLocator' : option.valueOptions?.length ? 'options' : option.type,
       ...(option.valueOptions?.length ? { options: option.valueOptions } : {}),
-      default: option.valueOptions?.length ? '' : option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
+      ...(option.lookup ? { modes: locatorModes(option.lookup) } : {}),
+      default: option.lookup ? { mode: 'list', value: '' } : option.valueOptions?.length ? '' : option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
     },
   ];
+}
+
+function operationLookups(operations: GeneratedOperation[]): GeneratedLookup[] {
+  const lookups = new Map<string, GeneratedLookup>();
+
+  for (const operation of operations) {
+    for (const field of operation.pathParameters) if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
+    for (const option of operation.queryOptions) if (option.lookup) lookups.set(option.lookup.methodName, option.lookup);
+    for (const field of operation.attributeFields) if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
+    for (const field of operation.relationshipFields) if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
+  }
+
+  return [...lookups.values()].sort((a, b) => a.methodName.localeCompare(b.methodName));
+}
+
+function renderLookupSources(operations: GeneratedOperation[]): string {
+  const sources = Object.fromEntries(operationLookups(operations).map((lookup) => [lookup.methodName, lookup]));
+  return JSON.stringify(sources, null, 2);
+}
+
+function renderListSearchMethods(operations: GeneratedOperation[]): string {
+  const lookups = operationLookups(operations);
+  if (!lookups.length) return '{}';
+
+  return `{
+${lookups.map((lookup) => `      ${lookup.methodName}: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES[${q(lookup.methodName)}], filter);
+      },`).join('\n')}
+    }`;
 }
 
 function renderQueryOptionsProperty(
@@ -163,9 +217,9 @@ function renderProperties(operations: GeneratedOperation[]): string {
         fields.push(`    {
       displayName: ${q(bodyFieldDisplayName('Relationship', relationship.displayName))},
       name: ${q(`${operation.id}_${relationship.name}`)},
-      type: 'string',
-      default: '',
-      description: ${q(relationship.multiple ? 'Comma-separated relationship IDs.' : 'Relationship ID.')},
+      type: ${q(relationship.lookup ? 'resourceLocator' : 'string')},
+      default: ${relationship.lookup ? locatorDefault() : "''"},
+      ${relationship.lookup ? `modes: ${q(locatorModes(relationship.lookup))},\n      ` : ''}description: ${q(relationship.multiple ? 'Comma-separated relationship IDs.' : 'Relationship ID.')},
       displayOptions: ${q({ show: { resource: [operation.resource], operation: [operation.id], bodyMode: ['fields'] } })},
     },`);
       }
@@ -214,12 +268,27 @@ ${extraFields.join('\n')}
 }
 
 export function renderNode(config: ProductConfig, result: ProductGenerationResult): string {
-  return `import type { IDataObject, IExecuteFunctions, IHttpRequestMethods, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
+  return `import type { IDataObject, IExecuteFunctions, IHttpRequestMethods, ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, INodeType, INodeTypeDescription } from 'n8n-workflow';
 
 import { executeItemWithContinueOnFail } from '../../../src/runtime/execute';
 import { normalizeJsonApiResponse } from '../../../src/runtime/jsonApi';
 import { collectPaginatedPlanningCenterResults } from '../../../src/runtime/pagination';
 import { planningCenterApiRequest } from '../../../src/runtime/request';
+import { extractResourceLocatorId } from '../../../src/runtime/resourceLocator';
+
+interface GeneratedLookupParentBinding {
+  sourceName: string;
+  fieldName: string;
+}
+
+interface GeneratedLookup {
+  methodName: string;
+  sourcePath: string;
+  parentBindings: GeneratedLookupParentBinding[];
+  searchFilter?: string;
+  labelFields: string[];
+  resultLimit: number;
+}
 
 interface GeneratedField {
   name: string;
@@ -227,6 +296,7 @@ interface GeneratedField {
   displayName: string;
   required: boolean;
   type: 'boolean' | 'number' | 'string';
+  lookup?: GeneratedLookup;
 }
 
 interface GeneratedQueryOptionOperator {
@@ -243,6 +313,7 @@ interface GeneratedQueryOption {
   kind: 'single' | 'operator';
   sourceName?: string;
   operators?: GeneratedQueryOptionOperator[];
+  lookup?: GeneratedLookup;
 }
 
 interface QueryOptionSelection {
@@ -256,6 +327,7 @@ interface GeneratedRelationshipField {
   relationshipName: string;
   relationshipType: string;
   multiple: boolean;
+  lookup?: GeneratedLookup;
 }
 
 interface Operation {
@@ -267,6 +339,7 @@ interface Operation {
   path: string;
   deprecated: boolean;
   isList: boolean;
+  lookupTarget: string;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
   queryOptions: GeneratedQueryOption[];
@@ -276,7 +349,40 @@ interface Operation {
 
 const OPERATIONS: Operation[] = ${renderOperations(result.operations)};
 
+const LOOKUP_SOURCES: Record<string, GeneratedLookup> = ${renderLookupSources(result.operations)};
+
 const NODE_PROPERTIES = Function('return ' + ${q(renderProperties(result.operations))})() as any;
+
+function lookupResultName(item: any, lookup: GeneratedLookup): string {
+  const id = item?.id === undefined || item?.id === null ? '' : String(item.id);
+  const attributes = item?.attributes && typeof item.attributes === 'object' ? item.attributes as Record<string, unknown> : {};
+  const display = lookup.labelFields
+    .map((field) => attributes[field])
+    .find((value) => typeof value === 'string' && value.trim());
+
+  return display ? String(display) + ' (' + id + ')' : id;
+}
+
+async function searchLookup(context: ILoadOptionsFunctions, lookup: GeneratedLookup, filter?: string): Promise<INodeListSearchResult> {
+  const qs: IDataObject = { per_page: lookup.resultLimit };
+  if (filter && lookup.searchFilter) qs[lookup.searchFilter] = filter;
+
+  let path = lookup.sourcePath;
+  for (const binding of lookup.parentBindings) {
+    const id = extractResourceLocatorId(context.getNodeParameter(binding.fieldName, ''));
+    if (!id) return { results: [] };
+    path = path.replace('{' + binding.sourceName + '}', encodeURIComponent(id));
+  }
+
+  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs });
+  const data: any[] = Array.isArray((response as any)?.data) ? (response as any).data : [];
+
+  return {
+    results: data
+      .map((item: any) => ({ name: lookupResultName(item, lookup), value: item?.id === undefined || item?.id === null ? '' : String(item.id) }))
+      .filter((item: { value: string }) => item.value),
+  };
+}
 
 function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
   const additional = context.getNodeParameter('additionalQueryParameters', itemIndex, {}) as { parameters?: Array<{ name?: string; value?: unknown }> };
@@ -309,7 +415,7 @@ function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operatio
   for (const option of operation.queryOptions) {
     const options = context.getNodeParameter(\`${'${operation.id}'}_${'${option.group}'}\`, itemIndex, {}) as Record<string, QueryOptionSelection | QueryOptionSelection[] | undefined>;
     for (const selected of queryOptionSelections(options, option.name)) {
-      const value = selected.value;
+      const value = option.lookup ? extractResourceLocatorId(selected.value) : selected.value;
       if (value === undefined || value === '') continue;
 
       if (option.kind === 'operator') {
@@ -338,14 +444,16 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
     const value = field.required
       ? context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex)
       : context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex, '');
-    if (value !== undefined && value !== '') {
-      attributes[field.sourceName] = value;
+    const attributeValue = field.lookup ? extractResourceLocatorId(value) : value;
+    if (attributeValue !== undefined && attributeValue !== '') {
+      attributes[field.sourceName] = attributeValue;
     }
   }
 
   const relationships: Record<string, unknown> = {};
   for (const field of operation.relationshipFields) {
-    const value = context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex, '') as string;
+    const rawValue = context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex, '');
+    const value = field.lookup ? extractResourceLocatorId(rawValue) : String(rawValue);
     if (!value) continue;
     const ids = field.multiple ? value.split(',').map((id) => id.trim()).filter(Boolean) : [value];
     relationships[field.relationshipName] = {
@@ -367,7 +475,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 function buildPath(context: IExecuteFunctions, itemIndex: number, operation: Operation): string {
   let path = operation.path;
   for (const parameter of operation.pathParameters) {
-    const value = context.getNodeParameter(\`${'${operation.id}'}_\${parameter.name}\`, itemIndex) as string;
+    const value = extractResourceLocatorId(context.getNodeParameter(\`${'${operation.id}'}_\${parameter.name}\`, itemIndex));
     path = path.replace(\`{\${parameter.sourceName}}\`, encodeURIComponent(value));
   }
   return path;
@@ -416,6 +524,10 @@ export class ${config.className} implements INodeType {
       },
     ],
     properties: NODE_PROPERTIES,
+  };
+
+  methods = {
+    listSearch: ${renderListSearchMethods(result.operations)},
   };
 
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {

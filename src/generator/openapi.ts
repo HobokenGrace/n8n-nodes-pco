@@ -7,6 +7,7 @@ import { snapshotPath } from './config';
 import { displayLabel, normalizeIdentifierDisplayLabel, titleCase } from './labels';
 import type {
   GeneratedField,
+  GeneratedLookup,
   GeneratedOperation,
   GeneratedQueryOption,
   GeneratedValueOption,
@@ -21,6 +22,7 @@ const RANGE_OPERATORS = new Set(['gt', 'gte', 'lt', 'lte']);
 const USEFUL_STRING_FILTERS = new Set([
   'address',
   'email',
+  'label',
   'name',
   'search_name',
   'search_name_or_email',
@@ -30,6 +32,17 @@ const USEFUL_STRING_FILTERS = new Set([
   'submitter_name',
   'title',
 ]);
+const LOOKUP_RESULT_LIMIT = 25;
+const LOOKUP_LABEL_FIELDS = ['name', 'title', 'subject', 'label'];
+const LOOKUP_SEARCH_FILTER_PRIORITY = [
+  'search_name',
+  'name',
+  'search_name_or_email',
+  'search_name_or_email_or_phone_number',
+  'title',
+  'subject',
+  'label',
+];
 
 type JsonSchema = Record<string, any>;
 
@@ -42,6 +55,13 @@ interface ParsedWhereParameter {
   field: string;
   operator?: string;
   segments: string[];
+}
+
+interface LookupSource {
+  operation: GeneratedOperation;
+  pathParameters: GeneratedField[];
+  target: string;
+  searchFilter?: string;
 }
 
 function camelCase(value: string): string {
@@ -240,6 +260,20 @@ function responseResourceSchema(operation: any): JsonSchema | undefined {
   return dataSchema.type === 'array' ? dataSchema.items : dataSchema;
 }
 
+function responseResourceType(operation: any): string | undefined {
+  const type = responseResourceSchema(operation)?.properties?.type;
+  const value = Array.isArray(type?.enum) ? type.enum[0] : undefined;
+  return typeof value === 'string' ? value : undefined;
+}
+
+function lookupTargetKey(value: string): string {
+  return displayLabel(singularizeLastWord(value)).toLowerCase();
+}
+
+function lookupTargetFromResponse(operation: any, path: string): string {
+  return lookupTargetKey(responseResourceType(operation) ?? operationTargetSegment(path));
+}
+
 function directRelationships(operation: any): Set<string> {
   const relationships = responseResourceSchema(operation)?.properties?.relationships?.properties;
   return new Set(Object.keys(relationships ?? {}));
@@ -277,6 +311,16 @@ function parseWhereParameter(name: string): ParsedWhereParameter | undefined {
 
 function whereParameterName(segments: string[], operator?: string): string {
   return `where${[...segments, ...(operator ? [operator] : [])].map((segment) => `[${segment}]`).join('')}`;
+}
+
+function lookupTargetFromWhereParameter(sourceName: string, operation: GeneratedOperation): string | undefined {
+  const parsed = parseWhereParameter(sourceName);
+  if (!parsed || parsed.operator || parsed.field !== 'id') return undefined;
+
+  if (parsed.segments.length === 1) return operation.lookupTarget;
+  if (parsed.segments.length === 2) return lookupTargetKey(parsed.segments[0]);
+
+  return undefined;
 }
 
 function queryOptionDisplayName(sourceName: string): string {
@@ -447,6 +491,101 @@ function parameterField(parameter: any): GeneratedField {
   };
 }
 
+function lookupTargetFromIdName(sourceName: string): string | undefined {
+  if (!sourceName.endsWith('_id') || sourceName.endsWith('_ids')) return undefined;
+  return lookupTargetKey(sourceName.slice(0, -3));
+}
+
+function lookupSearchFilter(parameters: GeneratedQueryOption[]): string | undefined {
+  const sourceNames = new Set(parameters.map((parameter) => parameter.sourceName).filter(Boolean));
+  return LOOKUP_SEARCH_FILTER_PRIORITY
+    .map((field) => `where[${field}]`)
+    .find((sourceName) => sourceNames.has(sourceName));
+}
+
+function buildLookupCatalog(operations: GeneratedOperation[]): Map<string, LookupSource[]> {
+  const catalog = new Map<string, LookupSource[]>();
+
+  for (const operation of operations) {
+    if (!operation.isList) continue;
+
+    const source: LookupSource = {
+      operation,
+      pathParameters: operation.pathParameters,
+      target: operation.lookupTarget,
+      searchFilter: lookupSearchFilter(operation.queryOptions),
+    };
+    catalog.set(source.target, [...(catalog.get(source.target) ?? []), source]);
+  }
+
+  for (const sources of catalog.values()) {
+    sources.sort((a, b) =>
+      b.pathParameters.length - a.pathParameters.length
+      || a.operation.path.localeCompare(b.operation.path)
+      || a.operation.id.localeCompare(b.operation.id),
+    );
+  }
+
+  return catalog;
+}
+
+function compatibleLookupSource(
+  catalog: Map<string, LookupSource[]>,
+  target: string | undefined,
+  operation: GeneratedOperation,
+): LookupSource | undefined {
+  if (!target) return undefined;
+
+  const operationPathNames = new Set(operation.pathParameters.map((parameter) => parameter.sourceName));
+  return catalog.get(target)?.find((source) =>
+    source.pathParameters.every((parameter) => operationPathNames.has(parameter.sourceName)),
+  );
+}
+
+function lookupForSource(operation: GeneratedOperation, fieldName: string, source: LookupSource): GeneratedLookup {
+  const operationFields = new Map(operation.pathParameters.map((parameter) => [parameter.sourceName, parameter.name]));
+
+  return {
+    methodName: camelCase(`search ${operation.id} ${fieldName}`),
+    sourcePath: source.operation.path,
+    parentBindings: source.pathParameters.map((parameter) => ({
+      sourceName: parameter.sourceName,
+      fieldName: `${operation.id}_${operationFields.get(parameter.sourceName) ?? parameter.name}`,
+    })),
+    searchFilter: source.searchFilter,
+    labelFields: LOOKUP_LABEL_FIELDS,
+    resultLimit: LOOKUP_RESULT_LIMIT,
+  };
+}
+
+function addLookupMetadata(operations: GeneratedOperation[]): void {
+  const catalog = buildLookupCatalog(operations);
+
+  for (const operation of operations) {
+    for (const field of operation.pathParameters) {
+      const source = compatibleLookupSource(catalog, lookupTargetFromIdName(field.sourceName), operation);
+      if (source) field.lookup = lookupForSource(operation, field.name, source);
+    }
+
+    for (const option of operation.queryOptions) {
+      if (option.kind !== 'single' || !option.sourceName) continue;
+      const source = compatibleLookupSource(catalog, lookupTargetFromWhereParameter(option.sourceName, operation), operation);
+      if (source) option.lookup = lookupForSource(operation, option.name, source);
+    }
+
+    for (const field of operation.attributeFields) {
+      const source = compatibleLookupSource(catalog, lookupTargetFromIdName(field.sourceName), operation);
+      if (source) field.lookup = lookupForSource(operation, field.name, source);
+    }
+
+    for (const field of operation.relationshipFields) {
+      if (field.multiple) continue;
+      const source = compatibleLookupSource(catalog, lookupTargetKey(field.relationshipType), operation);
+      if (source) field.lookup = lookupForSource(operation, field.name, source);
+    }
+  }
+}
+
 function collectParameters(path: string, pathItem: any, operation: any, where: 'path' | 'query'): GeneratedField[] {
   const parameters = [...(pathItem.parameters ?? []), ...(operation.parameters ?? [])];
   const seen = new Set<string>();
@@ -556,6 +695,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         path: requestPath(config, path),
         deprecated: Boolean(operation.deprecated),
         isList: isListOperation(method, path, operation),
+        lookupTarget: lookupTargetFromResponse(operation, path),
         pathParameters: collectParameters(path, pathItem, operation, 'path'),
         queryParameters,
         queryOptions: buildQueryOptions(queryParameters),
@@ -566,6 +706,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
   }
 
   disambiguateFallbackOperationLabels(operations, fallbackOperationIds);
+  addLookupMetadata(operations);
 
   const resources = new Set(operations.map((operation) => operation.resource));
   operations.sort((a, b) =>

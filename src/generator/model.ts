@@ -7,6 +7,21 @@ export interface GeneratedField {
   required: boolean;
   type: 'boolean' | 'number' | 'string';
   valueOptions?: GeneratedValueOption[];
+  lookup?: GeneratedLookup;
+}
+
+export interface GeneratedLookupParentBinding {
+  sourceName: string;
+  fieldName: string;
+}
+
+export interface GeneratedLookup {
+  methodName: string;
+  sourcePath: string;
+  parentBindings: GeneratedLookupParentBinding[];
+  searchFilter?: string;
+  labelFields: string[];
+  resultLimit: number;
 }
 
 export interface GeneratedValueOption {
@@ -29,6 +44,7 @@ export interface GeneratedQueryOption {
   sourceName?: string;
   operators?: GeneratedQueryOptionOperator[];
   valueOptions?: GeneratedValueOption[];
+  lookup?: GeneratedLookup;
 }
 
 export interface GeneratedRelationshipField {
@@ -37,6 +53,7 @@ export interface GeneratedRelationshipField {
   relationshipName: string;
   relationshipType: string;
   multiple: boolean;
+  lookup?: GeneratedLookup;
 }
 
 export interface GeneratedOperation {
@@ -48,6 +65,7 @@ export interface GeneratedOperation {
   path: string;
   deprecated: boolean;
   isList: boolean;
+  lookupTarget: string;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
   queryOptions: GeneratedQueryOption[];

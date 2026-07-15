@@ -262,6 +262,144 @@ describe('generated Planning Center nodes', () => {
     });
   });
 
+  it('renders lookup-enabled fields as searchable resource locators with manual ID mode', () => {
+    const node = new entrypoint.PlanningCenterGroups();
+    const groupTypeProperty: any = node.description.properties.find(
+      (property) => property.name === 'getGroupTypesGroupTypeIdGroups_groupTypeId',
+    );
+
+    expect(groupTypeProperty).toMatchObject({
+      displayName: 'Group Type ID',
+      type: 'resourceLocator',
+      default: { mode: 'list', value: '' },
+      modes: [
+        expect.objectContaining({
+          displayName: 'List',
+          name: 'list',
+          type: 'list',
+          typeOptions: expect.objectContaining({ searchable: true, searchListMethod: expect.any(String) }),
+        }),
+        expect.objectContaining({ displayName: 'ID', name: 'id', type: 'string' }),
+      ],
+    });
+  });
+
+  it('infers lookup metadata for supported single-ID fields and defers multi-ID fields', async () => {
+    const groupsConfig = generatedProductConfigs.find((config) => config.product === 'groups');
+    expect(groupsConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(groupsConfig!);
+    const operations = Object.fromEntries(summary.operations.map((operation) => [operation.id, operation]));
+    const groupTypeGroups = operations.getGroupTypesGroupTypeIdGroups;
+    const campusGroups = operations.getCampusesCampusIdGroups;
+    const campusGroupPatch = operations.patchCampusesCampusIdGroupsGroupId;
+
+    expect(groupTypeGroups.pathParameters.find((field) => field.sourceName === 'group_type_id')?.lookup).toMatchObject({
+      sourcePath: '/groups/v2/group_types',
+      parentBindings: [],
+      resultLimit: 25,
+    });
+    expect(operations.getCampuses.queryOptions.find((option) => option.sourceName === 'where[id]')?.lookup).toMatchObject({
+      sourcePath: '/groups/v2/campuses',
+      searchFilter: 'where[name]',
+    });
+    expect(campusGroups.queryOptions.find((option) => option.sourceName === 'where[group_type][id]')?.lookup).toMatchObject({
+      sourcePath: '/groups/v2/group_types',
+    });
+    expect(campusGroupPatch.attributeFields.find((field) => field.sourceName === 'group_type_id')?.lookup).toBeDefined();
+    expect(campusGroupPatch.relationshipFields.find((field) => field.relationshipName === 'group_type')?.lookup).toBeDefined();
+    expect(campusGroupPatch.attributeFields.find((field) => field.sourceName === 'tag_ids')?.lookup).toBeUndefined();
+    expect(summary.operations.flatMap((operation) => operation.relationshipFields).filter((field) => field.multiple && field.lookup)).toEqual([]);
+  });
+
+  it('uses generated list-search methods with limits, search filters, labels, and parent bindings', async () => {
+    const node: any = new entrypoint.PlanningCenterGroups();
+    const httpRequest = vi.fn().mockResolvedValue({
+      data: [
+        { id: '1', type: 'Campus', attributes: { name: 'North' } },
+        { id: '2', type: 'Campus', attributes: { title: 'Fallback Title' } },
+      ],
+    });
+    const context: any = {
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getNode: () => ({ name: 'Planning Center Groups', type: 'planningCenterGroups' }),
+      getNodeParameter: vi.fn((name: string, fallback?: unknown) => {
+        if (name === 'getCampusesCampusIdGroupsGroupId_campusId') return { __rl: true, mode: 'list', value: '12' };
+        return fallback;
+      }),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.methods.listSearch.searchGetCampusesCampusIdGroupsGroupIdGroupId.call(context, 'small')).resolves.toEqual({
+      results: [
+        { name: 'North (1)', value: '1' },
+        { name: 'Fallback Title (2)', value: '2' },
+      ],
+    });
+    expect(httpRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://api.example.test/groups/v2/campuses/12/groups',
+        qs: { per_page: 25, 'where[name]': 'small' },
+      }),
+    );
+
+    context.getNodeParameter = vi.fn((_name: string, fallback?: unknown) => fallback);
+    httpRequest.mockClear();
+
+    await expect(node.methods.listSearch.searchGetCampusesCampusIdGroupsGroupIdGroupId.call(context, 'small')).resolves.toEqual({
+      results: [],
+    });
+    expect(httpRequest).not.toHaveBeenCalled();
+  });
+
+  it('executes lookup-enabled path, query, attribute, and relationship fields as IDs', async () => {
+    const node = new entrypoint.PlanningCenterGroups();
+    const httpRequest = vi.fn().mockResolvedValue({ data: { id: '34', type: 'Group' } });
+    const context: any = {
+      continueOnFail: () => false,
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getInputData: () => [{ json: {} }],
+      getNode: () => ({ name: 'Planning Center Groups', type: 'planningCenterGroups' }),
+      getNodeParameter: vi.fn((name: string, _itemIndex: number, fallback?: unknown) => {
+        if (name === 'resource') return 'Campus';
+        if (name === 'operation') return 'patchCampusesCampusIdGroupsGroupId';
+        if (name === 'patchCampusesCampusIdGroupsGroupId_campusId') return { __rl: true, mode: 'list', value: '12' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_groupId') return { __rl: true, mode: 'id', value: '34' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_include') return { include: [{ value: 'group_type' }] };
+        if (name === 'bodyMode') return 'fields';
+        if (name === 'patchCampusesCampusIdGroupsGroupId_groupTypeId') return { __rl: true, mode: 'list', value: '56' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_groupTypeIds') return { __rl: true, mode: 'list', value: '78' };
+        if (name === 'additionalQueryParameters') return fallback;
+        return fallback;
+      }),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.execute.call(context)).resolves.toEqual([[expect.objectContaining({ json: expect.any(Object) })]]);
+    expect(httpRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        method: 'PATCH',
+        url: 'https://api.example.test/groups/v2/campuses/12/groups/34',
+        qs: { include: 'group_type' },
+        body: {
+          data: {
+            type: 'Campus',
+            attributes: { group_type_id: '56' },
+            relationships: { group_type: { data: { type: 'GroupType', id: '78' } } },
+          },
+        },
+      }),
+    );
+  });
+
   it('labels assignable attributes and relationships explicitly in body fields', () => {
     const node = new entrypoint.PlanningCenterPeople();
     const labelsByName = Object.fromEntries(

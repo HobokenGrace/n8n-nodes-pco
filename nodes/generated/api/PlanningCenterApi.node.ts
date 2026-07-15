@@ -1,9 +1,24 @@
-import type { IDataObject, IExecuteFunctions, IHttpRequestMethods, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, IHttpRequestMethods, ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, INodeType, INodeTypeDescription } from 'n8n-workflow';
 
 import { executeItemWithContinueOnFail } from '../../../src/runtime/execute';
 import { normalizeJsonApiResponse } from '../../../src/runtime/jsonApi';
 import { collectPaginatedPlanningCenterResults } from '../../../src/runtime/pagination';
 import { planningCenterApiRequest } from '../../../src/runtime/request';
+import { extractResourceLocatorId } from '../../../src/runtime/resourceLocator';
+
+interface GeneratedLookupParentBinding {
+  sourceName: string;
+  fieldName: string;
+}
+
+interface GeneratedLookup {
+  methodName: string;
+  sourcePath: string;
+  parentBindings: GeneratedLookupParentBinding[];
+  searchFilter?: string;
+  labelFields: string[];
+  resultLimit: number;
+}
 
 interface GeneratedField {
   name: string;
@@ -11,6 +26,7 @@ interface GeneratedField {
   displayName: string;
   required: boolean;
   type: 'boolean' | 'number' | 'string';
+  lookup?: GeneratedLookup;
 }
 
 interface GeneratedQueryOptionOperator {
@@ -27,6 +43,7 @@ interface GeneratedQueryOption {
   kind: 'single' | 'operator';
   sourceName?: string;
   operators?: GeneratedQueryOptionOperator[];
+  lookup?: GeneratedLookup;
 }
 
 interface QueryOptionSelection {
@@ -40,6 +57,7 @@ interface GeneratedRelationshipField {
   relationshipName: string;
   relationshipType: string;
   multiple: boolean;
+  lookup?: GeneratedLookup;
 }
 
 interface Operation {
@@ -51,6 +69,7 @@ interface Operation {
   path: string;
   deprecated: boolean;
   isList: boolean;
+  lookupTarget: string;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
   queryOptions: GeneratedQueryOption[];
@@ -68,6 +87,7 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/connected_applications",
     "deprecated": false,
     "isList": true,
+    "lookupTarget": "connected application",
     "pathParameters": [],
     "queryParameters": [],
     "queryOptions": [],
@@ -83,13 +103,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/connected_applications/{connected_application_id}/people",
     "deprecated": false,
     "isList": true,
+    "lookupTarget": "connected application person",
     "pathParameters": [
       {
         "name": "connectedApplicationId",
         "sourceName": "connected_application_id",
         "displayName": "Connected Application ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetConnectedApplicationsConnectedApplicationIdPeopleConnectedApplicationId",
+          "sourcePath": "/api/v2/connected_applications",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       }
     ],
     "queryParameters": [],
@@ -106,13 +139,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/connected_applications/{connected_application_id}",
     "deprecated": false,
     "isList": false,
+    "lookupTarget": "connected application",
     "pathParameters": [
       {
         "name": "connectedApplicationId",
         "sourceName": "connected_application_id",
         "displayName": "Connected Application ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetConnectedApplicationsConnectedApplicationIdConnectedApplicationId",
+          "sourcePath": "/api/v2/connected_applications",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       }
     ],
     "queryParameters": [],
@@ -129,13 +175,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/connected_applications/{connected_application_id}/people/{person_id}",
     "deprecated": false,
     "isList": false,
+    "lookupTarget": "connected application person",
     "pathParameters": [
       {
         "name": "connectedApplicationId",
         "sourceName": "connected_application_id",
         "displayName": "Connected Application ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetConnectedApplicationsConnectedApplicationIdPeoplePersonIdConnectedApplicationId",
+          "sourcePath": "/api/v2/connected_applications",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       },
       {
         "name": "personId",
@@ -159,13 +218,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/oauth_applications/{oauth_application_id}/mau",
     "deprecated": false,
     "isList": true,
+    "lookupTarget": "oauth application mau",
     "pathParameters": [
       {
         "name": "oauthApplicationId",
         "sourceName": "oauth_application_id",
         "displayName": "Oauth Application ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetOauthApplicationsOauthApplicationIdMauOauthApplicationId",
+          "sourcePath": "/api/v2/oauth_applications",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       }
     ],
     "queryParameters": [],
@@ -182,6 +254,7 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/oauth_applications",
     "deprecated": false,
     "isList": true,
+    "lookupTarget": "oauth application",
     "pathParameters": [],
     "queryParameters": [],
     "queryOptions": [],
@@ -197,13 +270,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/oauth_applications/{oauth_application_id}/mau/{mau_id}",
     "deprecated": false,
     "isList": false,
+    "lookupTarget": "oauth application mau",
     "pathParameters": [
       {
         "name": "oauthApplicationId",
         "sourceName": "oauth_application_id",
         "displayName": "Oauth Application ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetOauthApplicationsOauthApplicationIdMauMauIdOauthApplicationId",
+          "sourcePath": "/api/v2/oauth_applications",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       },
       {
         "name": "mauId",
@@ -227,13 +313,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/oauth_applications/{oauth_application_id}",
     "deprecated": false,
     "isList": false,
+    "lookupTarget": "oauth application",
     "pathParameters": [
       {
         "name": "oauthApplicationId",
         "sourceName": "oauth_application_id",
         "displayName": "Oauth Application ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetOauthApplicationsOauthApplicationIdOauthApplicationId",
+          "sourcePath": "/api/v2/oauth_applications",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       }
     ],
     "queryParameters": [],
@@ -250,6 +349,7 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/personal_access_tokens",
     "deprecated": false,
     "isList": true,
+    "lookupTarget": "personal access token",
     "pathParameters": [],
     "queryParameters": [],
     "queryOptions": [],
@@ -265,13 +365,26 @@ const OPERATIONS: Operation[] = [
     "path": "/api/v2/personal_access_tokens/{personal_access_token_id}",
     "deprecated": false,
     "isList": false,
+    "lookupTarget": "personal access token",
     "pathParameters": [
       {
         "name": "personalAccessTokenId",
         "sourceName": "personal_access_token_id",
         "displayName": "Personal Access Token ID",
         "required": true,
-        "type": "string"
+        "type": "string",
+        "lookup": {
+          "methodName": "searchGetPersonalAccessTokensPersonalAccessTokenIdPersonalAccessTokenId",
+          "sourcePath": "/api/v2/personal_access_tokens",
+          "parentBindings": [],
+          "labelFields": [
+            "name",
+            "title",
+            "subject",
+            "label"
+          ],
+          "resultLimit": 25
+        }
       }
     ],
     "queryParameters": [],
@@ -281,7 +394,125 @@ const OPERATIONS: Operation[] = [
   }
 ];
 
-const NODE_PROPERTIES = Function('return ' + "[\n    {\n      displayName: 'Resource',\n      name: 'resource',\n      type: 'options',\n      noDataExpression: true,\n      options: [{\"name\":\"Connected Application\",\"value\":\"Connected Application\"},{\"name\":\"Oauth Application\",\"value\":\"Oauth Application\"},{\"name\":\"Personal Access Token\",\"value\":\"Personal Access Token\"}],\n      default: \"Connected Application\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"]}},\n      options: [{\"name\":\"List Connected Applications\",\"value\":\"getConnectedApplications\",\"description\":\"GET /connected_applications\",\"action\":\"List Connected Applications\"},{\"name\":\"List People (via Connected Application)\",\"value\":\"getConnectedApplicationsConnectedApplicationIdPeople\",\"description\":\"GET /connected_applications/{connected_application_id}/people\",\"action\":\"List People (via Connected Application)\"},{\"name\":\"Get Connected Application\",\"value\":\"getConnectedApplicationsConnectedApplicationId\",\"description\":\"GET /connected_applications/{connected_application_id}\",\"action\":\"Get Connected Application\"},{\"name\":\"Get Person (via Connected Application)\",\"value\":\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\",\"description\":\"GET /connected_applications/{connected_application_id}/people/{person_id}\",\"action\":\"Get Person (via Connected Application)\"}],\n      default: \"getConnectedApplications\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"]}},\n      options: [{\"name\":\"List Mau (via Oauth Application)\",\"value\":\"getOauthApplicationsOauthApplicationIdMau\",\"description\":\"GET /oauth_applications/{oauth_application_id}/mau\",\"action\":\"List Mau (via Oauth Application)\"},{\"name\":\"List Oauth Applications\",\"value\":\"getOauthApplications\",\"description\":\"GET /oauth_applications\",\"action\":\"List Oauth Applications\"},{\"name\":\"Get Mau (via Oauth Application)\",\"value\":\"getOauthApplicationsOauthApplicationIdMauMauId\",\"description\":\"GET /oauth_applications/{oauth_application_id}/mau/{mau_id}\",\"action\":\"Get Mau (via Oauth Application)\"},{\"name\":\"Get Oauth Application\",\"value\":\"getOauthApplicationsOauthApplicationId\",\"description\":\"GET /oauth_applications/{oauth_application_id}\",\"action\":\"Get Oauth Application\"}],\n      default: \"getOauthApplicationsOauthApplicationIdMau\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"]}},\n      options: [{\"name\":\"List Personal Access Tokens\",\"value\":\"getPersonalAccessTokens\",\"description\":\"GET /personal_access_tokens\",\"action\":\"List Personal Access Tokens\"},{\"name\":\"Get Personal Access Token\",\"value\":\"getPersonalAccessTokensPersonalAccessTokenId\",\"description\":\"GET /personal_access_tokens/{personal_access_token_id}\",\"action\":\"Get Personal Access Token\"}],\n      default: \"getPersonalAccessTokens\",\n    },\n    {\n      displayName: 'Return All',\n      name: \"getConnectedApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getConnectedApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplications\"],\"getConnectedApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Connected Application ID\",\n      name: \"getConnectedApplicationsConnectedApplicationIdPeople_connectedApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getConnectedApplicationsConnectedApplicationIdPeople_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getConnectedApplicationsConnectedApplicationIdPeople_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"],\"getConnectedApplicationsConnectedApplicationIdPeople_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Connected Application ID\",\n      name: \"getConnectedApplicationsConnectedApplicationId_connectedApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Connected Application ID\",\n      name: \"getConnectedApplicationsConnectedApplicationIdPeoplePersonId_connectedApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: \"Person ID\",\n      name: \"getConnectedApplicationsConnectedApplicationIdPeoplePersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Oauth Application ID\",\n      name: \"getOauthApplicationsOauthApplicationIdMau_oauthApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getOauthApplicationsOauthApplicationIdMau_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getOauthApplicationsOauthApplicationIdMau_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"],\"getOauthApplicationsOauthApplicationIdMau_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: 'Return All',\n      name: \"getOauthApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getOauthApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplications\"],\"getOauthApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Oauth Application ID\",\n      name: \"getOauthApplicationsOauthApplicationIdMauMauId_oauthApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMauMauId\"]}},\n    },\n    {\n      displayName: \"Mau ID\",\n      name: \"getOauthApplicationsOauthApplicationIdMauMauId_mauId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMauMauId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMauMauId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Oauth Application ID\",\n      name: \"getOauthApplicationsOauthApplicationId_oauthApplicationId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPersonalAccessTokens_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokens\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPersonalAccessTokens_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokens\"],\"getPersonalAccessTokens_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokens\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Personal Access Token ID\",\n      name: \"getPersonalAccessTokensPersonalAccessTokenId_personalAccessTokenId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokensPersonalAccessTokenId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokensPersonalAccessTokenId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n  ]")() as any;
+const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
+  "searchGetConnectedApplicationsConnectedApplicationIdConnectedApplicationId": {
+    "methodName": "searchGetConnectedApplicationsConnectedApplicationIdConnectedApplicationId",
+    "sourcePath": "/api/v2/connected_applications",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  },
+  "searchGetConnectedApplicationsConnectedApplicationIdPeopleConnectedApplicationId": {
+    "methodName": "searchGetConnectedApplicationsConnectedApplicationIdPeopleConnectedApplicationId",
+    "sourcePath": "/api/v2/connected_applications",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  },
+  "searchGetConnectedApplicationsConnectedApplicationIdPeoplePersonIdConnectedApplicationId": {
+    "methodName": "searchGetConnectedApplicationsConnectedApplicationIdPeoplePersonIdConnectedApplicationId",
+    "sourcePath": "/api/v2/connected_applications",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  },
+  "searchGetOauthApplicationsOauthApplicationIdMauMauIdOauthApplicationId": {
+    "methodName": "searchGetOauthApplicationsOauthApplicationIdMauMauIdOauthApplicationId",
+    "sourcePath": "/api/v2/oauth_applications",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  },
+  "searchGetOauthApplicationsOauthApplicationIdMauOauthApplicationId": {
+    "methodName": "searchGetOauthApplicationsOauthApplicationIdMauOauthApplicationId",
+    "sourcePath": "/api/v2/oauth_applications",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  },
+  "searchGetOauthApplicationsOauthApplicationIdOauthApplicationId": {
+    "methodName": "searchGetOauthApplicationsOauthApplicationIdOauthApplicationId",
+    "sourcePath": "/api/v2/oauth_applications",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  },
+  "searchGetPersonalAccessTokensPersonalAccessTokenIdPersonalAccessTokenId": {
+    "methodName": "searchGetPersonalAccessTokensPersonalAccessTokenIdPersonalAccessTokenId",
+    "sourcePath": "/api/v2/personal_access_tokens",
+    "parentBindings": [],
+    "labelFields": [
+      "name",
+      "title",
+      "subject",
+      "label"
+    ],
+    "resultLimit": 25
+  }
+};
+
+const NODE_PROPERTIES = Function('return ' + "[\n    {\n      displayName: 'Resource',\n      name: 'resource',\n      type: 'options',\n      noDataExpression: true,\n      options: [{\"name\":\"Connected Application\",\"value\":\"Connected Application\"},{\"name\":\"Oauth Application\",\"value\":\"Oauth Application\"},{\"name\":\"Personal Access Token\",\"value\":\"Personal Access Token\"}],\n      default: \"Connected Application\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"]}},\n      options: [{\"name\":\"List Connected Applications\",\"value\":\"getConnectedApplications\",\"description\":\"GET /connected_applications\",\"action\":\"List Connected Applications\"},{\"name\":\"List People (via Connected Application)\",\"value\":\"getConnectedApplicationsConnectedApplicationIdPeople\",\"description\":\"GET /connected_applications/{connected_application_id}/people\",\"action\":\"List People (via Connected Application)\"},{\"name\":\"Get Connected Application\",\"value\":\"getConnectedApplicationsConnectedApplicationId\",\"description\":\"GET /connected_applications/{connected_application_id}\",\"action\":\"Get Connected Application\"},{\"name\":\"Get Person (via Connected Application)\",\"value\":\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\",\"description\":\"GET /connected_applications/{connected_application_id}/people/{person_id}\",\"action\":\"Get Person (via Connected Application)\"}],\n      default: \"getConnectedApplications\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"]}},\n      options: [{\"name\":\"List Mau (via Oauth Application)\",\"value\":\"getOauthApplicationsOauthApplicationIdMau\",\"description\":\"GET /oauth_applications/{oauth_application_id}/mau\",\"action\":\"List Mau (via Oauth Application)\"},{\"name\":\"List Oauth Applications\",\"value\":\"getOauthApplications\",\"description\":\"GET /oauth_applications\",\"action\":\"List Oauth Applications\"},{\"name\":\"Get Mau (via Oauth Application)\",\"value\":\"getOauthApplicationsOauthApplicationIdMauMauId\",\"description\":\"GET /oauth_applications/{oauth_application_id}/mau/{mau_id}\",\"action\":\"Get Mau (via Oauth Application)\"},{\"name\":\"Get Oauth Application\",\"value\":\"getOauthApplicationsOauthApplicationId\",\"description\":\"GET /oauth_applications/{oauth_application_id}\",\"action\":\"Get Oauth Application\"}],\n      default: \"getOauthApplicationsOauthApplicationIdMau\",\n    },\n    {\n      displayName: 'Operation',\n      name: 'operation',\n      type: 'options',\n      noDataExpression: true,\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"]}},\n      options: [{\"name\":\"List Personal Access Tokens\",\"value\":\"getPersonalAccessTokens\",\"description\":\"GET /personal_access_tokens\",\"action\":\"List Personal Access Tokens\"},{\"name\":\"Get Personal Access Token\",\"value\":\"getPersonalAccessTokensPersonalAccessTokenId\",\"description\":\"GET /personal_access_tokens/{personal_access_token_id}\",\"action\":\"Get Personal Access Token\"}],\n      default: \"getPersonalAccessTokens\",\n    },\n    {\n      displayName: 'Return All',\n      name: \"getConnectedApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getConnectedApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplications\"],\"getConnectedApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Connected Application ID\",\n      name: \"getConnectedApplicationsConnectedApplicationIdPeople_connectedApplicationId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetConnectedApplicationsConnectedApplicationIdPeopleConnectedApplicationId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getConnectedApplicationsConnectedApplicationIdPeople_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getConnectedApplicationsConnectedApplicationIdPeople_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"],\"getConnectedApplicationsConnectedApplicationIdPeople_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeople\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Connected Application ID\",\n      name: \"getConnectedApplicationsConnectedApplicationId_connectedApplicationId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetConnectedApplicationsConnectedApplicationIdConnectedApplicationId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Connected Application ID\",\n      name: \"getConnectedApplicationsConnectedApplicationIdPeoplePersonId_connectedApplicationId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetConnectedApplicationsConnectedApplicationIdPeoplePersonIdConnectedApplicationId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: \"Person ID\",\n      name: \"getConnectedApplicationsConnectedApplicationIdPeoplePersonId_personId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Connected Application\"],\"operation\":[\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Oauth Application ID\",\n      name: \"getOauthApplicationsOauthApplicationIdMau_oauthApplicationId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetOauthApplicationsOauthApplicationIdMauOauthApplicationId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"]}},\n    },\n    {\n      displayName: 'Return All',\n      name: \"getOauthApplicationsOauthApplicationIdMau_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getOauthApplicationsOauthApplicationIdMau_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"],\"getOauthApplicationsOauthApplicationIdMau_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMau\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: 'Return All',\n      name: \"getOauthApplications_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplications\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getOauthApplications_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplications\"],\"getOauthApplications_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplications\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Oauth Application ID\",\n      name: \"getOauthApplicationsOauthApplicationIdMauMauId_oauthApplicationId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetOauthApplicationsOauthApplicationIdMauMauIdOauthApplicationId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMauMauId\"]}},\n    },\n    {\n      displayName: \"Mau ID\",\n      name: \"getOauthApplicationsOauthApplicationIdMauMauId_mauId\",\n      type: \"string\",\n      default: '',\n      required: true,\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMauMauId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationIdMauMauId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Oauth Application ID\",\n      name: \"getOauthApplicationsOauthApplicationId_oauthApplicationId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetOauthApplicationsOauthApplicationIdOauthApplicationId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Oauth Application\"],\"operation\":[\"getOauthApplicationsOauthApplicationId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: 'Return All',\n      name: \"getPersonalAccessTokens_returnAll\",\n      type: 'boolean',\n      default: false,\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokens\"]}},\n    },\n    {\n      displayName: 'Limit',\n      name: \"getPersonalAccessTokens_limit\",\n      type: 'number',\n      default: 100,\n      typeOptions: { minValue: 1 },\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokens\"],\"getPersonalAccessTokens_returnAll\":[false]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokens\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n    {\n      displayName: \"Personal Access Token ID\",\n      name: \"getPersonalAccessTokensPersonalAccessTokenId_personalAccessTokenId\",\n      type: \"resourceLocator\",\n      default: {\"mode\":\"list\",\"value\":\"\"},\n      required: true,\n      modes: [{\"displayName\":\"List\",\"name\":\"list\",\"type\":\"list\",\"typeOptions\":{\"searchListMethod\":\"searchGetPersonalAccessTokensPersonalAccessTokenIdPersonalAccessTokenId\",\"searchable\":true}},{\"displayName\":\"ID\",\"name\":\"id\",\"type\":\"string\",\"placeholder\":\"e.g. 12345\"}],\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokensPersonalAccessTokenId\"]}},\n    },\n    {\n      displayName: 'Additional Query Parameters',\n      name: 'additionalQueryParameters',\n      type: 'fixedCollection',\n      default: {},\n      placeholder: 'Add Parameter',\n      typeOptions: { multipleValues: true },\n      displayOptions: {\"show\":{\"resource\":[\"Personal Access Token\"],\"operation\":[\"getPersonalAccessTokensPersonalAccessTokenId\"]}},\n      options: [{\n        displayName: 'Parameter',\n        name: 'parameters',\n        values: [\n          { displayName: 'Name', name: 'name', type: 'string', default: '' },\n          { displayName: 'Value', name: 'value', type: 'string', default: '' },\n        ],\n      }],\n    },\n  ]")() as any;
+
+function lookupResultName(item: any, lookup: GeneratedLookup): string {
+  const id = item?.id === undefined || item?.id === null ? '' : String(item.id);
+  const attributes = item?.attributes && typeof item.attributes === 'object' ? item.attributes as Record<string, unknown> : {};
+  const display = lookup.labelFields
+    .map((field) => attributes[field])
+    .find((value) => typeof value === 'string' && value.trim());
+
+  return display ? String(display) + ' (' + id + ')' : id;
+}
+
+async function searchLookup(context: ILoadOptionsFunctions, lookup: GeneratedLookup, filter?: string): Promise<INodeListSearchResult> {
+  const qs: IDataObject = { per_page: lookup.resultLimit };
+  if (filter && lookup.searchFilter) qs[lookup.searchFilter] = filter;
+
+  let path = lookup.sourcePath;
+  for (const binding of lookup.parentBindings) {
+    const id = extractResourceLocatorId(context.getNodeParameter(binding.fieldName, ''));
+    if (!id) return { results: [] };
+    path = path.replace('{' + binding.sourceName + '}', encodeURIComponent(id));
+  }
+
+  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs });
+  const data: any[] = Array.isArray((response as any)?.data) ? (response as any).data : [];
+
+  return {
+    results: data
+      .map((item: any) => ({ name: lookupResultName(item, lookup), value: item?.id === undefined || item?.id === null ? '' : String(item.id) }))
+      .filter((item: { value: string }) => item.value),
+  };
+}
 
 function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
   const additional = context.getNodeParameter('additionalQueryParameters', itemIndex, {}) as { parameters?: Array<{ name?: string; value?: unknown }> };
@@ -314,7 +545,7 @@ function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operatio
   for (const option of operation.queryOptions) {
     const options = context.getNodeParameter(`${operation.id}_${option.group}`, itemIndex, {}) as Record<string, QueryOptionSelection | QueryOptionSelection[] | undefined>;
     for (const selected of queryOptionSelections(options, option.name)) {
-      const value = selected.value;
+      const value = option.lookup ? extractResourceLocatorId(selected.value) : selected.value;
       if (value === undefined || value === '') continue;
 
       if (option.kind === 'operator') {
@@ -343,14 +574,16 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
     const value = field.required
       ? context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex)
       : context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, '');
-    if (value !== undefined && value !== '') {
-      attributes[field.sourceName] = value;
+    const attributeValue = field.lookup ? extractResourceLocatorId(value) : value;
+    if (attributeValue !== undefined && attributeValue !== '') {
+      attributes[field.sourceName] = attributeValue;
     }
   }
 
   const relationships: Record<string, unknown> = {};
   for (const field of operation.relationshipFields) {
-    const value = context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, '') as string;
+    const rawValue = context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, '');
+    const value = field.lookup ? extractResourceLocatorId(rawValue) : String(rawValue);
     if (!value) continue;
     const ids = field.multiple ? value.split(',').map((id) => id.trim()).filter(Boolean) : [value];
     relationships[field.relationshipName] = {
@@ -372,7 +605,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 function buildPath(context: IExecuteFunctions, itemIndex: number, operation: Operation): string {
   let path = operation.path;
   for (const parameter of operation.pathParameters) {
-    const value = context.getNodeParameter(`${operation.id}_${parameter.name}`, itemIndex) as string;
+    const value = extractResourceLocatorId(context.getNodeParameter(`${operation.id}_${parameter.name}`, itemIndex));
     path = path.replace(`{${parameter.sourceName}}`, encodeURIComponent(value));
   }
   return path;
@@ -421,6 +654,32 @@ export class PlanningCenterApi implements INodeType {
       },
     ],
     properties: NODE_PROPERTIES,
+  };
+
+  methods = {
+    listSearch: {
+      searchGetConnectedApplicationsConnectedApplicationIdConnectedApplicationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetConnectedApplicationsConnectedApplicationIdConnectedApplicationId"], filter);
+      },
+      searchGetConnectedApplicationsConnectedApplicationIdPeopleConnectedApplicationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetConnectedApplicationsConnectedApplicationIdPeopleConnectedApplicationId"], filter);
+      },
+      searchGetConnectedApplicationsConnectedApplicationIdPeoplePersonIdConnectedApplicationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetConnectedApplicationsConnectedApplicationIdPeoplePersonIdConnectedApplicationId"], filter);
+      },
+      searchGetOauthApplicationsOauthApplicationIdMauMauIdOauthApplicationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetOauthApplicationsOauthApplicationIdMauMauIdOauthApplicationId"], filter);
+      },
+      searchGetOauthApplicationsOauthApplicationIdMauOauthApplicationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetOauthApplicationsOauthApplicationIdMauOauthApplicationId"], filter);
+      },
+      searchGetOauthApplicationsOauthApplicationIdOauthApplicationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetOauthApplicationsOauthApplicationIdOauthApplicationId"], filter);
+      },
+      searchGetPersonalAccessTokensPersonalAccessTokenIdPersonalAccessTokenId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+        return searchLookup(this, LOOKUP_SOURCES["searchGetPersonalAccessTokensPersonalAccessTokenIdPersonalAccessTokenId"], filter);
+      },
+    },
   };
 
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
