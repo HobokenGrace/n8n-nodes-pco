@@ -15,11 +15,17 @@ export interface GeneratedLookupParentBinding {
   fieldName: string;
 }
 
+export interface GeneratedLookupSplitNameSearch {
+  firstNameFilter: string;
+  lastNameFilter: string;
+}
+
 export interface GeneratedLookup {
   methodName: string;
   sourcePath: string;
   parentBindings: GeneratedLookupParentBinding[];
   searchFilter?: string;
+  splitNameSearch?: GeneratedLookupSplitNameSearch;
   labelFields: string[];
   resultLimit: number;
 }
@@ -66,6 +72,7 @@ export interface GeneratedOperation {
   deprecated: boolean;
   isList: boolean;
   lookupTarget: string;
+  lookupQueryParameterNames: string[];
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
   queryOptions: GeneratedQueryOption[];

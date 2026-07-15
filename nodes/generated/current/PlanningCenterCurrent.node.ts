@@ -11,11 +11,17 @@ interface GeneratedLookupParentBinding {
   fieldName: string;
 }
 
+interface GeneratedLookupSplitNameSearch {
+  firstNameFilter: string;
+  lastNameFilter: string;
+}
+
 interface GeneratedLookup {
   methodName: string;
   sourcePath: string;
   parentBindings: GeneratedLookupParentBinding[];
   searchFilter?: string;
+  splitNameSearch?: GeneratedLookupSplitNameSearch;
   labelFields: string[];
   resultLimit: number;
 }
@@ -101,6 +107,13 @@ const OPERATIONS: Operation[] = [
           "parentBindings": [],
           "labelFields": [
             "name",
+            "full_name",
+            "display_name",
+            "search_name",
+            "path_name",
+            "first_name last_name",
+            "given_name last_name",
+            "nickname last_name",
             "title",
             "subject",
             "label"
@@ -203,6 +216,13 @@ const OPERATIONS: Operation[] = [
           "parentBindings": [],
           "labelFields": [
             "name",
+            "full_name",
+            "display_name",
+            "search_name",
+            "path_name",
+            "first_name last_name",
+            "given_name last_name",
+            "nickname last_name",
             "title",
             "subject",
             "label"
@@ -227,6 +247,13 @@ const OPERATIONS: Operation[] = [
           ],
           "labelFields": [
             "name",
+            "full_name",
+            "display_name",
+            "search_name",
+            "path_name",
+            "first_name last_name",
+            "given_name last_name",
+            "nickname last_name",
             "title",
             "subject",
             "label"
@@ -263,6 +290,13 @@ const OPERATIONS: Operation[] = [
           "parentBindings": [],
           "labelFields": [
             "name",
+            "full_name",
+            "display_name",
+            "search_name",
+            "path_name",
+            "first_name last_name",
+            "given_name last_name",
+            "nickname last_name",
             "title",
             "subject",
             "label"
@@ -307,6 +341,13 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
     ],
     "labelFields": [
       "name",
+      "full_name",
+      "display_name",
+      "search_name",
+      "path_name",
+      "first_name last_name",
+      "given_name last_name",
+      "nickname last_name",
       "title",
       "subject",
       "label"
@@ -319,6 +360,13 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
     "parentBindings": [],
     "labelFields": [
       "name",
+      "full_name",
+      "display_name",
+      "search_name",
+      "path_name",
+      "first_name last_name",
+      "given_name last_name",
+      "nickname last_name",
       "title",
       "subject",
       "label"
@@ -331,6 +379,13 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
     "parentBindings": [],
     "labelFields": [
       "name",
+      "full_name",
+      "display_name",
+      "search_name",
+      "path_name",
+      "first_name last_name",
+      "given_name last_name",
+      "nickname last_name",
       "title",
       "subject",
       "label"
@@ -343,6 +398,13 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
     "parentBindings": [],
     "labelFields": [
       "name",
+      "full_name",
+      "display_name",
+      "search_name",
+      "path_name",
+      "first_name last_name",
+      "given_name last_name",
+      "nickname last_name",
       "title",
       "subject",
       "label"
@@ -357,31 +419,74 @@ function lookupResultName(item: any, lookup: GeneratedLookup): string {
   const id = item?.id === undefined || item?.id === null ? '' : String(item.id);
   const attributes = item?.attributes && typeof item.attributes === 'object' ? item.attributes as Record<string, unknown> : {};
   const display = lookup.labelFields
-    .map((field) => attributes[field])
-    .find((value) => typeof value === 'string' && value.trim());
+    .map((field) => {
+      const values = field.split(' ').map((part) => attributes[part]);
+      if (values.some((value) => typeof value !== 'string' || !value.trim())) return '';
+      return values.map((value) => String(value).trim()).join(' ');
+    })
+    .find((value) => value.trim());
 
   return display ? String(display) + ' (' + id + ')' : id;
 }
 
-async function searchLookup(context: ILoadOptionsFunctions, lookup: GeneratedLookup, filter?: string): Promise<INodeListSearchResult> {
-  const qs: IDataObject = { per_page: lookup.resultLimit };
-  if (filter && lookup.searchFilter) qs[lookup.searchFilter] = filter;
-
+function lookupPath(context: ILoadOptionsFunctions, lookup: GeneratedLookup): string | undefined {
   let path = lookup.sourcePath;
   for (const binding of lookup.parentBindings) {
     const id = extractResourceLocatorId(context.getNodeParameter(binding.fieldName, ''));
-    if (!id) return { results: [] };
+    if (!id) return undefined;
     path = path.replace('{' + binding.sourceName + '}', encodeURIComponent(id));
   }
 
-  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs });
-  const data: any[] = Array.isArray((response as any)?.data) ? (response as any).data : [];
+  return path;
+}
 
-  return {
-    results: data
-      .map((item: any) => ({ name: lookupResultName(item, lookup), value: item?.id === undefined || item?.id === null ? '' : String(item.id) }))
-      .filter((item: { value: string }) => item.value),
-  };
+async function requestLookup(context: ILoadOptionsFunctions, path: string, qs: IDataObject): Promise<any[]> {
+  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs });
+  return Array.isArray((response as any)?.data) ? (response as any).data : [];
+}
+
+function lookupResults(dataSets: any[][], lookup: GeneratedLookup): INodeListSearchResult {
+  const seen = new Set<string>();
+  const results: INodeListSearchResult['results'] = [];
+
+  for (const data of dataSets) {
+    for (const item of data) {
+      const value = item?.id === undefined || item?.id === null ? '' : String(item.id);
+      if (!value || seen.has(value)) continue;
+      seen.add(value);
+      results.push({ name: lookupResultName(item, lookup), value });
+      if (results.length >= lookup.resultLimit) return { results };
+    }
+  }
+
+  return { results };
+}
+
+function splitNameRequests(lookup: GeneratedLookup, filter: string): IDataObject[] {
+  const terms = filter.trim().split(/\s+/).filter(Boolean);
+  const splitNameSearch = lookup.splitNameSearch;
+  if (!terms.length || !splitNameSearch) return [];
+
+  return [
+    { per_page: lookup.resultLimit, [splitNameSearch.firstNameFilter]: terms[0] },
+    { per_page: lookup.resultLimit, [splitNameSearch.lastNameFilter]: terms[terms.length - 1] },
+  ];
+}
+
+async function searchLookup(context: ILoadOptionsFunctions, lookup: GeneratedLookup, filter?: string): Promise<INodeListSearchResult> {
+  const path = lookupPath(context, lookup);
+  if (!path) return { results: [] };
+
+  const trimmedFilter = filter?.trim() ?? '';
+  let requests: IDataObject[] = [{ per_page: lookup.resultLimit }];
+  if (trimmedFilter && lookup.searchFilter) {
+    requests = [{ per_page: lookup.resultLimit, [lookup.searchFilter]: trimmedFilter }];
+  } else if (trimmedFilter && lookup.splitNameSearch) {
+    requests = splitNameRequests(lookup, trimmedFilter);
+  }
+
+  const dataSets = await Promise.all(requests.map((qs) => requestLookup(context, path, qs)));
+  return lookupResults(dataSets, lookup);
 }
 
 function addAdditionalQuery(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {

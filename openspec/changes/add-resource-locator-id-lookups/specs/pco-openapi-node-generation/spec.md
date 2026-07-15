@@ -77,6 +77,14 @@ The system SHALL limit generated lookup result lists to 25 records per request a
 - **WHEN** n8n searches a generated Planning Center resource locator and the lookup endpoint exposes one or more safe server-side search filters
 - **THEN** the generated lookup method SHALL send the search term using the first available filter in this priority order: `where[search_name]`, `where[name]`, `where[search_name_or_email]`, `where[search_name_or_email_or_phone_number]`, `where[title]`, `where[subject]`, `where[label]`, and limit the response to 25 records
 
+#### Scenario: Split-name person search is available
+- **WHEN** n8n searches a generated Planning Center resource locator for a person-like lookup endpoint that does not expose a combined safe search filter but does expose `where[first_name]` and `where[last_name]`
+- **THEN** the generated lookup method SHALL issue at most one bounded first-name request and one bounded last-name request, deduplicate returned records by Planning Center ID, and return at most 25 merged lookup options
+
+#### Scenario: Multi-word split-name search is available
+- **WHEN** n8n searches a split-name person lookup with multiple words
+- **THEN** the generated lookup method SHALL use the first word for the first-name request and the last word for the last-name request rather than sending the full search term to both filters
+
 #### Scenario: Server-side search is unavailable
 - **WHEN** n8n searches a generated Planning Center resource locator and no safe server-side search filter is known for that lookup endpoint
 - **THEN** the generated lookup method SHALL return the first 25 list results without guessing unsupported Planning Center filters
@@ -85,9 +93,13 @@ The system SHALL limit generated lookup result lists to 25 records per request a
 - **WHEN** a lookup result includes `id` and `attributes.name`
 - **THEN** the generated lookup option label SHALL be formatted as `<attributes.name> (<id>)`
 
+#### Scenario: Lookup label uses split person name
+- **WHEN** a lookup result includes `id`, `attributes.first_name`, and `attributes.last_name` but does not include a higher-priority display-name attribute
+- **THEN** the generated lookup option label SHALL be formatted as `<attributes.first_name> <attributes.last_name> (<id>)`
+
 #### Scenario: Lookup label falls back when name is missing
 - **WHEN** a lookup result does not include `attributes.name`
-- **THEN** the generated lookup option label SHALL use another known label-like attribute when available and otherwise fall back to the resource ID
+- **THEN** the generated lookup option label SHALL use another known safe human-readable label when available, including `full_name`, `display_name`, `search_name`, `path_name`, `first_name` plus `last_name`, `given_name` plus `last_name`, `nickname` plus `last_name`, `title`, `subject`, or `label`, and otherwise fall back to the resource ID
 
 ### Requirement: Generated lookup behavior remains shared and deterministic
 The system SHALL generate lookup metadata and helper behavior from shared generator logic rather than hand-writing product-specific lookup implementations.

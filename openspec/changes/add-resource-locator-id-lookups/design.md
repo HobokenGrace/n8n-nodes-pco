@@ -12,7 +12,8 @@ Simple dynamic dropdowns are not a good fit for most Planning Center resources b
 - Preserve manual ID and expression input for every lookup-enabled field.
 - Limit initial lookup results to 25 records.
 - Prefer server-side Planning Center search/name filters where the generator knows a safe filter for the lookup endpoint, using the fixed priority `search_name`, `name`, `search_name_or_email`, `search_name_or_email_or_phone_number`, `title`, `subject`, `label`.
-- Label lookup results as `<display name> (<id>)`, with `attributes.name` as the first display-name choice.
+- Support bounded split-name person lookup search when no combined safe search filter exists.
+- Label lookup results as `<display name> (<id>)`, with `attributes.name` as the first display-name choice and safe person/display-name fallbacks when `name` is unavailable.
 - Use shared generated lookup metadata and helpers rather than product-specific hand-written lookup code.
 
 **Non-Goals:**
@@ -67,15 +68,21 @@ Alternative considered: store richer selected-resource objects through execution
 
 Lookup search methods should apply known Planning Center query filters using this priority when available on the lookup endpoint: `where[search_name]`, `where[name]`, `where[search_name_or_email]`, `where[search_name_or_email_or_phone_number]`, `where[title]`, `where[subject]`, `where[label]`. If no safe search filter is known, the lookup returns the first 25 list results.
 
+For person-like endpoints that expose `where[first_name]` and `where[last_name]` but no combined safe search filter, lookup search should use a bounded split-name strategy instead of falling back to unfiltered IDs. For a single-word search, issue at most one request for `where[first_name]` and one request for `where[last_name]`. For a multi-word search, use the first word for the first-name request and the last word for the last-name request. Merge results by Planning Center ID, preserve stable response order, and cap the final dropdown at 25 results.
+
 Rationale: Large datasets need search, but generating unsafe or guessed filters would create broken lookups. First-page fallback preserves a usable initial browse experience without overpromising search coverage.
+
+The split-name strategy is intentionally bounded to at most two lookup requests per user search event and applies only when both split-name filters are explicitly present. This improves Giving/Calendar-style person lookups without introducing unbounded fan-out or guessing across arbitrary filters.
 
 Alternative considered: only generate lookups for endpoints with known search filters. That would be stricter but would skip useful stable lookups such as small administrative lists.
 
 ### Label lookup options with name and ID
 
-Lookup results should format labels as `<display name> (<id>)`. Display-name selection should prefer `attributes.name`, then other common label-like attributes such as `title`, `subject`, or `label`, then fall back to the resource ID.
+Lookup results should format labels as `<display name> (<id>)`. Display-name selection should prefer `attributes.name`, then safe human-readable fields such as `full_name`, `display_name`, `search_name`, `path_name`, split-name combinations (`first_name` plus `last_name`, `given_name` plus `last_name`, `nickname` plus `last_name`), then other common label-like attributes such as `title`, `subject`, or `label`, then fall back to the resource ID.
 
 Rationale: Users want readable setup fields while still being able to cross-reference IDs in Planning Center app URLs.
+
+Fields such as timestamps, status values, amounts, and descriptions should not be promoted as generic primary labels even if they are present in many schemas; they are useful context in specific resources but produce confusing generic lookup labels.
 
 Alternative considered: show only names. That is cleaner visually but loses the ID reference that users need when comparing workflow configuration to Planning Center URLs.
 

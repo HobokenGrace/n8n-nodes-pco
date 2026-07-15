@@ -8,6 +8,7 @@ import { displayLabel, normalizeIdentifierDisplayLabel, titleCase } from './labe
 import type {
   GeneratedField,
   GeneratedLookup,
+  GeneratedLookupSplitNameSearch,
   GeneratedOperation,
   GeneratedQueryOption,
   GeneratedValueOption,
@@ -33,7 +34,19 @@ const USEFUL_STRING_FILTERS = new Set([
   'title',
 ]);
 const LOOKUP_RESULT_LIMIT = 25;
-const LOOKUP_LABEL_FIELDS = ['name', 'title', 'subject', 'label'];
+const LOOKUP_LABEL_FIELDS = [
+  'name',
+  'full_name',
+  'display_name',
+  'search_name',
+  'path_name',
+  'first_name last_name',
+  'given_name last_name',
+  'nickname last_name',
+  'title',
+  'subject',
+  'label',
+];
 const LOOKUP_SEARCH_FILTER_PRIORITY = [
   'search_name',
   'name',
@@ -62,6 +75,7 @@ interface LookupSource {
   pathParameters: GeneratedField[];
   target: string;
   searchFilter?: string;
+  splitNameSearch?: GeneratedLookupSplitNameSearch;
 }
 
 function camelCase(value: string): string {
@@ -496,11 +510,21 @@ function lookupTargetFromIdName(sourceName: string): string | undefined {
   return lookupTargetKey(sourceName.slice(0, -3));
 }
 
-function lookupSearchFilter(parameters: GeneratedQueryOption[]): string | undefined {
-  const sourceNames = new Set(parameters.map((parameter) => parameter.sourceName).filter(Boolean));
+function lookupSearchFilter(sourceNames: string[]): string | undefined {
+  const sourceNameSet = new Set(sourceNames);
   return LOOKUP_SEARCH_FILTER_PRIORITY
     .map((field) => `where[${field}]`)
-    .find((sourceName) => sourceNames.has(sourceName));
+    .find((sourceName) => sourceNameSet.has(sourceName));
+}
+
+function lookupSplitNameSearch(sourceNames: string[]): GeneratedLookupSplitNameSearch | undefined {
+  const sourceNameSet = new Set(sourceNames);
+  const firstNameFilter = 'where[first_name]';
+  const lastNameFilter = 'where[last_name]';
+
+  if (!sourceNameSet.has(firstNameFilter) || !sourceNameSet.has(lastNameFilter)) return undefined;
+
+  return { firstNameFilter, lastNameFilter };
 }
 
 function buildLookupCatalog(operations: GeneratedOperation[]): Map<string, LookupSource[]> {
@@ -509,11 +533,13 @@ function buildLookupCatalog(operations: GeneratedOperation[]): Map<string, Looku
   for (const operation of operations) {
     if (!operation.isList) continue;
 
+    const searchFilter = lookupSearchFilter(operation.lookupQueryParameterNames);
     const source: LookupSource = {
       operation,
       pathParameters: operation.pathParameters,
       target: operation.lookupTarget,
-      searchFilter: lookupSearchFilter(operation.queryOptions),
+      searchFilter,
+      splitNameSearch: searchFilter ? undefined : lookupSplitNameSearch(operation.lookupQueryParameterNames),
     };
     catalog.set(source.target, [...(catalog.get(source.target) ?? []), source]);
   }
@@ -553,6 +579,7 @@ function lookupForSource(operation: GeneratedOperation, fieldName: string, sourc
       fieldName: `${operation.id}_${operationFields.get(parameter.sourceName) ?? parameter.name}`,
     })),
     searchFilter: source.searchFilter,
+    splitNameSearch: source.splitNameSearch,
     labelFields: LOOKUP_LABEL_FIELDS,
     resultLimit: LOOKUP_RESULT_LIMIT,
   };
@@ -598,6 +625,17 @@ function collectParameters(path: string, pathItem: any, operation: any, where: '
     })
     .filter((parameter) => where !== 'query' || shouldRenderQueryParameter(parameter, context))
     .map((parameter) => parameterField(parameter));
+}
+
+function collectParameterSourceNames(pathItem: any, operation: any, where: 'path' | 'query'): string[] {
+  const parameters = [...(pathItem.parameters ?? []), ...(operation.parameters ?? [])];
+  const seen = new Set<string>();
+
+  return parameters.flatMap((parameter) => {
+    if (parameter?.in !== where || !parameter.name || seen.has(parameter.name)) return [];
+    seen.add(parameter.name);
+    return [parameter.name];
+  });
 }
 
 function requestBodySchema(operation: any): JsonSchema | undefined {
@@ -686,6 +724,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
       const id = operation.operationId ? camelCase(operation.operationId) : camelCase(`${method} ${path}`);
       if (!operation.operationId && !operation.summary) fallbackOperationIds.add(id);
       const queryParameters = collectParameters(path, pathItem, operation, 'query');
+      const lookupQueryParameterNames = collectParameterSourceNames(pathItem, operation, 'query');
       operations.push({
         id,
         resource: resourceLabel(operation, path),
@@ -696,6 +735,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         deprecated: Boolean(operation.deprecated),
         isList: isListOperation(method, path, operation),
         lookupTarget: lookupTargetFromResponse(operation, path),
+        lookupQueryParameterNames,
         pathParameters: collectParameters(path, pathItem, operation, 'path'),
         queryParameters,
         queryOptions: buildQueryOptions(queryParameters),

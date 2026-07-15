@@ -312,6 +312,38 @@ describe('generated Planning Center nodes', () => {
     expect(summary.operations.flatMap((operation) => operation.relationshipFields).filter((field) => field.multiple && field.lookup)).toEqual([]);
   });
 
+  it('infers split-name lookup metadata for Giving people without a combined search filter', async () => {
+    const givingConfig = generatedProductConfigs.find((config) => config.product === 'giving');
+    expect(givingConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(givingConfig!);
+    const operation = summary.operations.find((candidate) => candidate.id === 'getPeoplePersonIdDonations');
+    const lookup = operation?.pathParameters.find((field) => field.sourceName === 'person_id')?.lookup;
+
+    expect(operation?.operation).toBe('List Donations (via Person)');
+    expect(lookup).toMatchObject({
+      sourcePath: '/giving/v2/people',
+      searchFilter: undefined,
+      splitNameSearch: {
+        firstNameFilter: 'where[first_name]',
+        lastNameFilter: 'where[last_name]',
+      },
+    });
+    expect(lookup?.labelFields).toEqual([
+      'name',
+      'full_name',
+      'display_name',
+      'search_name',
+      'path_name',
+      'first_name last_name',
+      'given_name last_name',
+      'nickname last_name',
+      'title',
+      'subject',
+      'label',
+    ]);
+  });
+
   it('uses generated list-search methods with limits, search filters, labels, and parent bindings', async () => {
     const node: any = new entrypoint.PlanningCenterGroups();
     const httpRequest = vi.fn().mockResolvedValue({
@@ -354,6 +386,89 @@ describe('generated Planning Center nodes', () => {
       results: [],
     });
     expect(httpRequest).not.toHaveBeenCalled();
+  });
+
+  it('uses bounded split-name lookup search for Giving person locators', async () => {
+    const node: any = new entrypoint.PlanningCenterGiving();
+    const firstNamePeople = Array.from({ length: 24 }, (_, index) => ({
+      id: String(index + 1),
+      type: 'Person',
+      attributes: { first_name: `First${index + 1}`, last_name: 'Match' },
+    }));
+    const httpRequest = vi.fn((request: any) => {
+      if (request.qs?.['where[first_name]']) {
+        return Promise.resolve({ data: firstNamePeople });
+      }
+      if (request.qs?.['where[last_name]']) {
+        return Promise.resolve({
+          data: [
+            { id: '2', type: 'Person', attributes: { first_name: 'Duplicate', last_name: 'Match' } },
+            { id: '25', type: 'Person', attributes: { first_name: 'Last25', last_name: 'Match' } },
+            { id: '26', type: 'Person', attributes: { first_name: 'Last26', last_name: 'Match' } },
+          ],
+        });
+      }
+      return Promise.resolve({ data: [] });
+    });
+    const context: any = {
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getNode: () => ({ name: 'Planning Center Giving', type: 'planningCenterGiving' }),
+      getNodeParameter: vi.fn((_name: string, fallback?: unknown) => fallback),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, 'Ada Lovelace')).resolves.toEqual({
+      results: [
+        ...firstNamePeople.map((person) => ({ name: `${person.attributes.first_name} ${person.attributes.last_name} (${person.id})`, value: person.id })),
+        { name: 'Last25 Match (25)', value: '25' },
+      ],
+    });
+
+    expect(httpRequest).toHaveBeenCalledTimes(2);
+    expect(httpRequest).toHaveBeenNthCalledWith(1, expect.objectContaining({
+      url: 'https://api.example.test/giving/v2/people',
+      qs: { per_page: 25, 'where[first_name]': 'Ada' },
+    }));
+    expect(httpRequest).toHaveBeenNthCalledWith(2, expect.objectContaining({
+      url: 'https://api.example.test/giving/v2/people',
+      qs: { per_page: 25, 'where[last_name]': 'Lovelace' },
+    }));
+
+    httpRequest.mockClear();
+    await node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, 'Ada');
+    expect(httpRequest).toHaveBeenCalledTimes(2);
+    expect(httpRequest).toHaveBeenNthCalledWith(1, expect.objectContaining({ qs: { per_page: 25, 'where[first_name]': 'Ada' } }));
+    expect(httpRequest).toHaveBeenNthCalledWith(2, expect.objectContaining({ qs: { per_page: 25, 'where[last_name]': 'Ada' } }));
+  });
+
+  it('uses one unfiltered request for initial Giving person locator results', async () => {
+    const node: any = new entrypoint.PlanningCenterGiving();
+    const httpRequest = vi.fn().mockResolvedValue({
+      data: [{ id: '1', type: 'Person', attributes: { first_name: 'Ada', last_name: 'Lovelace' } }],
+    });
+    const context: any = {
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getNode: () => ({ name: 'Planning Center Giving', type: 'planningCenterGiving' }),
+      getNodeParameter: vi.fn((_name: string, fallback?: unknown) => fallback),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, '')).resolves.toEqual({
+      results: [{ name: 'Ada Lovelace (1)', value: '1' }],
+    });
+    expect(httpRequest).toHaveBeenCalledTimes(1);
+    expect(httpRequest).toHaveBeenCalledWith(expect.objectContaining({
+      url: 'https://api.example.test/giving/v2/people',
+      qs: { per_page: 25 },
+    }));
   });
 
   it('executes lookup-enabled path, query, attribute, and relationship fields as IDs', async () => {
