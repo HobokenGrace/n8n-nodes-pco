@@ -615,7 +615,7 @@ export class PlanningCenterCurrent implements INodeType {
     icon: 'file:current.svg',
     group: ['transform'],
     version: 1,
-    subtitle: '={{$parameter["operation"]}}',
+    subtitle: "={{({\"getPeoplePersonIdOrganization\":\"GET /people/{person_id}/organization\",\"getPeople\":\"GET /people\",\"getMe\":\"GET /me\",\"getPeoplePersonIdOrganizationOrganizationId\":\"GET /people/{person_id}/organization/{organization_id}\",\"getPeoplePersonId\":\"GET /people/{person_id}\"})[$parameter[\"operation\"]] || $parameter[\"operation\"]}}",
     description: "Planning Center Current generated from the Planning Center OpenAPI snapshot.",
     defaults: {
       name: "Planning Center Current",

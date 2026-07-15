@@ -74,6 +74,11 @@ function renderOperations(operations: GeneratedOperation[]): string {
   return JSON.stringify(runtimeOperations, null, 2);
 }
 
+function renderOperationSubtitle(operations: GeneratedOperation[]): string {
+  const descriptions = Object.fromEntries(operations.map((operation) => [operation.id, operation.description]));
+  return `={{(${JSON.stringify(descriptions)})[$parameter["operation"]] || $parameter["operation"]}}`;
+}
+
 function renderQueryOptionValues(option: GeneratedQueryOption): unknown[] {
   return [
     ...(option.kind === 'operator'
@@ -559,7 +564,7 @@ export class ${config.className} implements INodeType {
     icon: 'file:${config.product}.svg',
     group: ['transform'],
     version: 1,
-    subtitle: '={{$parameter["operation"]}}',
+    subtitle: ${q(renderOperationSubtitle(result.operations))},
     description: ${q(`${config.displayName} generated from the Planning Center OpenAPI snapshot.`)},
     defaults: {
       name: ${q(config.displayName)},

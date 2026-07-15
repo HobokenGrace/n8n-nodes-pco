@@ -5,7 +5,7 @@ import { generatedProductConfigs, productConfigs } from '../src/generator/config
 import { buildProductGeneration } from '../src/generator/openapi';
 
 type GeneratedNodeClass = new () => {
-  description: { credentials?: unknown; displayName: string; icon?: string; name: string; properties: any[] };
+  description: { credentials?: unknown; displayName: string; icon?: string; name: string; properties: any[]; subtitle?: string };
 };
 
 const generatedNodeClasses = generatedProductConfigs.map(
@@ -134,6 +134,26 @@ describe('generated Planning Center nodes', () => {
     expect(operations.getMaritalStatusesMaritalStatusId).toBe('Get Marital Status');
     expect(givingOperations.getCampusesCampusId).toBe('Get Campus');
     expect(servicesOperations.getFoldersFolderIdFoldersFolderId).toBe('Get Folder (via Folder)');
+  });
+
+  it('renders selected operation subtitles from endpoint descriptions while preserving operation IDs', () => {
+    const node = new entrypoint.PlanningCenterPeople();
+    const operationProperty = node.description.properties.find(
+      (property) => property.name === 'operation' && property.options?.some((option: any) => option.value === 'getPeople'),
+    );
+
+    expect(node.description.subtitle).not.toBe('={{$parameter["operation"]}}');
+    expect(node.description.subtitle).toContain('$parameter["operation"]');
+    expect(node.description.subtitle).toContain('"getPeople":"GET /people"');
+    expect(operationProperty?.options).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          name: 'List People',
+          value: 'getPeople',
+          description: 'GET /people',
+        }),
+      ]),
+    );
   });
 
   it('does not emit duplicate operation labels within a product', async () => {

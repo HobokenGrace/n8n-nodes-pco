@@ -787,7 +787,7 @@ export class PlanningCenterApi implements INodeType {
     icon: 'file:api.svg',
     group: ['transform'],
     version: 1,
-    subtitle: '={{$parameter["operation"]}}',
+    subtitle: "={{({\"getConnectedApplications\":\"GET /connected_applications\",\"getConnectedApplicationsConnectedApplicationIdPeople\":\"GET /connected_applications/{connected_application_id}/people\",\"getConnectedApplicationsConnectedApplicationId\":\"GET /connected_applications/{connected_application_id}\",\"getConnectedApplicationsConnectedApplicationIdPeoplePersonId\":\"GET /connected_applications/{connected_application_id}/people/{person_id}\",\"getOauthApplicationsOauthApplicationIdMau\":\"GET /oauth_applications/{oauth_application_id}/mau\",\"getOauthApplications\":\"GET /oauth_applications\",\"getOauthApplicationsOauthApplicationIdMauMauId\":\"GET /oauth_applications/{oauth_application_id}/mau/{mau_id}\",\"getOauthApplicationsOauthApplicationId\":\"GET /oauth_applications/{oauth_application_id}\",\"getPersonalAccessTokens\":\"GET /personal_access_tokens\",\"getPersonalAccessTokensPersonalAccessTokenId\":\"GET /personal_access_tokens/{personal_access_token_id}\"})[$parameter[\"operation\"]] || $parameter[\"operation\"]}}",
     description: "Planning Center API generated from the Planning Center OpenAPI snapshot.",
     defaults: {
       name: "Planning Center API",
