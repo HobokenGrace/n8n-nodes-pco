@@ -51,9 +51,10 @@ Complete these setup steps before publishing with provenance from GitHub Actions
 1. Sign in to npmjs.org with the account that will publish the package.
 2. Confirm the account can publish under the `@hobokengrace` scope. If `@hobokengrace` is an npm organization, confirm the account has publish or admin permission for that organization.
 3. Confirm `@hobokengrace/n8n-nodes-pco` can be published publicly. Scoped npm packages default to private unless public access is selected or `--access public` is used.
-4. In GitHub, create an environment named exactly `npm` in `HobokenGrace/n8n-nodes-pco` under Settings -> Environments. Add required reviewers if maintainers want an approval gate before publishing.
-5. In npmjs.org, configure a GitHub Actions Trusted Publisher for this package. If npm does not allow this before the package exists, publish only the bootstrap package needed to create the npm package, then configure Trusted Publishing before the next release.
-6. Do not create or rely on a long-lived `NPM_TOKEN` secret for this release path. The workflow uses npm Trusted Publishing through GitHub OIDC.
+4. Confirm the GitHub repository is public before publishing with provenance. npm rejects provenance for public packages built from private GitHub repositories.
+5. In GitHub, create an environment named exactly `npm` in `HobokenGrace/n8n-nodes-pco` under Settings -> Environments. Add required reviewers if maintainers want an approval gate before publishing.
+6. In npmjs.org, configure a GitHub Actions Trusted Publisher for this package. If npm does not allow this before the package exists, publish only the bootstrap package needed to create the npm package, then configure Trusted Publishing before the next release.
+7. Do not create or rely on a long-lived `NPM_TOKEN` secret for this release path. The workflow uses npm Trusted Publishing through GitHub OIDC.
 
 Use these Trusted Publisher values in npmjs.org:
 
@@ -72,7 +73,7 @@ Use these Trusted Publisher values in npmjs.org:
 pnpm release
 ```
 
-In GitHub Actions, `n8n-node release` sets `NPM_CONFIG_PROVENANCE=true` before invoking `npm publish`. npm Trusted Publishing requires npm CLI 11.5.1 or newer and Node.js 22.14.0 or newer, so the workflow upgrades npm before publishing. Public scoped package access comes from `publishConfig.access` in `package.json`. Because no explicit npm dist-tag is supplied, npm publishes the release version to the default `latest` dist-tag.
+In GitHub Actions, `n8n-node release` sets `NPM_CONFIG_PROVENANCE=true` before invoking `npm publish`. npm Trusted Publishing requires npm CLI 11.5.1 or newer and Node.js 22.14.0 or newer, so the workflow upgrades npm before publishing. npm provenance also requires the source GitHub repository to be public. Public scoped package access comes from `publishConfig.access` in `package.json`. Because no explicit npm dist-tag is supplied, npm publishes the release version to the default `latest` dist-tag.
 
 ## n8n Creator Portal Verification
 
