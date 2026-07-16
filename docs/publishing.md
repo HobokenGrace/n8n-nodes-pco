@@ -66,13 +66,13 @@ Use these Trusted Publisher values in npmjs.org:
 
 ## Publish Workflow
 
-`.github/workflows/publish.yml` runs when a GitHub Release is published. It installs dependencies with pnpm 10.30.2 and the committed lockfile on Node.js 22, runs generation drift checks, tests, linting, build, package inspection, verifies the release tag matches `package.json`, then runs:
+`.github/workflows/publish.yml` runs when a GitHub Release is published. It installs npm 11 for npm Trusted Publishing support, installs dependencies with pnpm 10.30.2 and the committed lockfile on Node.js 22, runs generation drift checks, tests, linting, build, package inspection, verifies the release tag matches `package.json`, then runs:
 
 ```sh
 pnpm release
 ```
 
-In GitHub Actions, `n8n-node release` sets `NPM_CONFIG_PROVENANCE=true` before invoking `npm publish`. Public scoped package access comes from `publishConfig.access` in `package.json`. Because no explicit npm dist-tag is supplied, npm publishes the release version to the default `latest` dist-tag.
+In GitHub Actions, `n8n-node release` sets `NPM_CONFIG_PROVENANCE=true` before invoking `npm publish`. npm Trusted Publishing requires npm CLI 11.5.1 or newer and Node.js 22.14.0 or newer, so the workflow upgrades npm before publishing. Public scoped package access comes from `publishConfig.access` in `package.json`. Because no explicit npm dist-tag is supplied, npm publishes the release version to the default `latest` dist-tag.
 
 ## n8n Creator Portal Verification
 
