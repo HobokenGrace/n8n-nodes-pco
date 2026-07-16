@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { readdirSync } from 'node:fs';
-import { dirname, join, posix } from 'node:path';
+import { join, posix } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
 function packagePath(filePath) {

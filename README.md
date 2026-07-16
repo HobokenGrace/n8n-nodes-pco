@@ -67,6 +67,22 @@ pnpm build
 `pnpm build` compiles committed source and copies assets. It does not run
 generation.
 
+This package includes a prototype of the newer `@n8n/node-cli` workflow:
+
+```sh
+pnpm dev
+pnpm lint:n8n
+pnpm release
+```
+
+`pnpm build` already uses `n8n-node build`, followed by the package-specific
+asset copy step. `pnpm lint` intentionally uses `eslint.config.repo.mjs` for the
+current generated-node and generator/test layout. `pnpm lint:n8n` is stricter
+and currently represents follow-up compliance work for n8n Cloud-style rules,
+including generated-node `usableAsTool`, connection type constants,
+Continue On Fail handling, themed icons, and keeping generator/test sources out
+of the strict community-node lint surface.
+
 ## Publishing
 
 Maintainers can follow the release checklist in [docs/publishing.md](docs/publishing.md)

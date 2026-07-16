@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: https://registry.npmjs.org
 
       - run: pnpm install --frozen-lockfile
@@ -36,4 +36,4 @@ jobs:
         run: |
           node -e "const pkg = require('./package.json'); const tag = process.env.GITHUB_REF_NAME || ''; const expected = `v${pkg.version}`; if (tag !== expected) { console.error(`Release tag ${tag} does not match package version ${pkg.version}; expected ${expected}.`); process.exit(1); }"
 
-      - run: npm publish --provenance --access public
+      - run: pnpm release

@@ -18,7 +18,7 @@
 - [x] 3.3 Run `pnpm generate:check`, `pnpm test`, `pnpm lint`, `pnpm build`, and the scripted package inspection before publishing.
 - [x] 3.4 Fail before publishing unless the GitHub Release tag `vX.Y.Z` matches `package.json` version `X.Y.Z`.
 - [x] 3.5 Configure the publish job with GitHub Environment `npm`, `id-token: write`, and `npm publish --provenance --access public` using npm Trusted Publishing.
-- [ ] 3.6 Publish the initial `0.1.0` release to npm's default `latest` dist-tag.
+- [x] 3.6 Publish the initial `0.1.0` release to npm's default `latest` dist-tag.
 
 ## 4. Publishing Documentation
 
@@ -32,30 +32,30 @@
 
 These steps require maintainer-owned GitHub and npmjs.org permissions and cannot be completed by repository code alone. Complete them before publishing `0.1.0`.
 
-- [ ] 5.1 Confirm npm account access for `@hobokengrace/n8n-nodes-pco`.
+- [x] 5.1 Confirm npm account access for `@hobokengrace/n8n-nodes-pco`.
   - Sign in to npmjs.org with the npm account that will publish the package.
   - Confirm the account can publish under the `@hobokengrace` scope.
   - If `@hobokengrace` is an npm organization, confirm the npm account has publish/admin permission for that organization.
   - Confirm the package can be published publicly as `@hobokengrace/n8n-nodes-pco`; do not configure it as a private scoped package.
-  - Record completion: npm account/organization checked: `TODO`, completed by: `TODO`, date: `TODO`.
-- [ ] 5.2 Create the GitHub Environment `npm`.
+  - Record completion: npm account/organization checked: `@hobokengrace/n8n-nodes-pco@0.1.0` published publicly to npm, completed by: `ntcho`, date: `2026-07-16`.
+- [x] 5.2 Create the GitHub Environment `npm`.
   - In GitHub, open `HobokenGrace/n8n-nodes-pco`.
   - Go to Settings -> Environments.
   - Create an environment named exactly `npm`.
   - Optionally configure required reviewers if maintainers want a final manual approval gate before `npm publish` runs.
-  - Record completion: required reviewers configured: `TODO`, completed by: `TODO`, date: `TODO`.
-- [ ] 5.3 Configure npm Trusted Publishing for GitHub Actions.
+  - Record completion: required reviewers configured: `none`, completed by: `ntcho`, date: `2026-07-16`.
+- [x] 5.3 Configure npm Trusted Publishing for GitHub Actions.
   - In npmjs.org, open the package or organization publishing settings for `@hobokengrace/n8n-nodes-pco`.
   - Add a GitHub Actions Trusted Publisher.
   - Set repository owner to `HobokenGrace`.
   - Set repository name to `n8n-nodes-pco`.
   - Set workflow filename to `publish.yml`.
   - Set environment to `npm`.
-  - Record completion: npm Trusted Publisher configured: `TODO`, completed by: `TODO`, date: `TODO`.
-- [ ] 5.4 Confirm no long-lived npm token fallback is configured.
+  - Record completion: npm Trusted Publisher configured: GitHub Actions publisher for `HobokenGrace/n8n-nodes-pco`, workflow `publish.yml`, environment `npm`, allowed action `npm publish`, completed by: `ntcho`, date: `2026-07-16`.
+- [x] 5.4 Confirm no long-lived npm token fallback is configured.
   - Do not create a GitHub Actions secret named `NPM_TOKEN` for this change.
   - If an existing `NPM_TOKEN` repository or environment secret exists, confirm the publish workflow does not reference it.
-  - Record completion: `NPM_TOKEN` not configured or not used: `TODO`, completed by: `TODO`, date: `TODO`.
+  - Record completion: `NPM_TOKEN` not configured or not used: `.github/workflows/publish.yml` only runs `npm publish --provenance --access public` and does not reference `NPM_TOKEN` or `NODE_AUTH_TOKEN`, completed by: `ntcho`, date: `2026-07-16`.
 - [ ] 5.5 Complete the first release from GitHub after implementation is merged.
   - Confirm `package.json` version is `0.1.0` on the commit being released.
   - Create a GitHub Release from the released commit with tag `v0.1.0`.

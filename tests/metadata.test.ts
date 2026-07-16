@@ -17,7 +17,7 @@ describe('package metadata', () => {
     const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
 
     expect(pkg.name).toBe('@hobokengrace/n8n-nodes-pco');
-    expect(pkg.engines.node).toBe('>=20.0.0');
+    expect(pkg.engines.node).toBe('>=22.0.0');
     expect(pkg.packageManager).toMatch(/^pnpm@/);
     expect(pkg.peerDependencies['n8n-workflow']).toBe('*');
     expect(pkg.devDependencies['n8n-workflow']).toBe('*');
