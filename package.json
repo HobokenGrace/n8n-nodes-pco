@@ -1,6 +1,6 @@
 {
   "name": "@hobokengrace/n8n-nodes-pco",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "n8n nodes for Planning Center Online",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
