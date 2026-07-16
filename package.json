@@ -1,7 +1,7 @@
 {
   "name": "@hobokengrace/n8n-nodes-pco",
   "version": "0.0.0",
-  "description": "Generated n8n community nodes for Planning Center Online.",
+  "description": "n8n nodes for Planning Center Online",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -15,6 +15,8 @@
     "generate:check": "tsx src/generator/checkGenerated.ts",
     "lint": "eslint . --ext .ts",
     "openapi:refresh": "tsx src/generator/refreshSnapshots.ts",
+    "package:inspect": "node scripts/inspect-package.mjs",
+    "release:draft": "node scripts/draft-release.mjs",
     "test": "vitest run"
   },
   "keywords": [
@@ -25,6 +27,17 @@
   ],
   "license": "MIT",
   "author": "ntcho <ntcho13@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HobokenGrace/n8n-nodes-pco.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HobokenGrace/n8n-nodes-pco/issues"
+  },
+  "homepage": "https://github.com/HobokenGrace/n8n-nodes-pco#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20.0.0"
   },

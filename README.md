@@ -67,6 +67,11 @@ pnpm build
 `pnpm build` compiles committed source and copies assets. It does not run
 generation.
 
+## Publishing
+
+Maintainers can follow the release checklist in [docs/publishing.md](docs/publishing.md)
+to publish the package from GitHub Actions with npm provenance.
+
 ## OAuth Later
 
 The bootstrap intentionally ships PAT authentication first. Generated operations
