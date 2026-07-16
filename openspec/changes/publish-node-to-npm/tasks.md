@@ -56,18 +56,18 @@ These steps require maintainer-owned GitHub and npmjs.org permissions and cannot
   - Do not create a GitHub Actions secret named `NPM_TOKEN` for this change.
   - If an existing `NPM_TOKEN` repository or environment secret exists, confirm the publish workflow does not reference it.
   - Record completion: `NPM_TOKEN` not configured or not used: `.github/workflows/publish.yml` only runs `npm publish --provenance --access public` and does not reference `NPM_TOKEN` or `NODE_AUTH_TOKEN`, completed by: `ntcho`, date: `2026-07-16`.
-- [ ] 5.5 Complete the first release from GitHub after implementation is merged.
-  - Confirm `package.json` version is `0.1.0` on the commit being released.
-  - Create a GitHub Release from the released commit with tag `v0.1.0`.
+- [x] 5.5 Complete the first provenance release from GitHub after implementation is merged.
+  - Confirm `package.json` version is `0.1.1` on the commit being released.
+  - Create a GitHub Release from the released commit with tag `v0.1.1`.
   - Publish the GitHub Release to trigger `.github/workflows/publish.yml`.
   - If the `npm` environment requires approval, approve the deployment in GitHub Actions.
-  - Verify npm publishes `@hobokengrace/n8n-nodes-pco@0.1.0` with provenance and the default `latest` dist-tag.
-  - Record completion: GitHub Release URL: `TODO`, npm package URL: `TODO`, completed by: `TODO`, date: `TODO`.
+  - Verify npm publishes `@hobokengrace/n8n-nodes-pco@0.1.1` with provenance and the default `latest` dist-tag.
+  - Record completion: GitHub Release URL: `https://github.com/HobokenGrace/n8n-nodes-pco/releases/tag/v0.1.1`, npm package URL: `https://www.npmjs.com/package/@hobokengrace/n8n-nodes-pco/v/0.1.1`, completed by: `ntcho`, date: `2026-07-16`.
 
 ## 6. Verification
 
 - [x] 6.1 Run the full local release preflight documented for maintainers.
 - [x] 6.2 Verify the scripted package inspection confirms compiled Planning Center node files, credential files, runtime helpers, declaration files, and copied assets are included in the tarball.
-- [ ] 6.3 Confirm CI runs the full non-publishing release preflight on pull requests.
-- [ ] 6.4 Confirm the publish workflow can reach the publish step in a safe non-publishing review path before the first release.
-- [ ] 6.5 After npmjs.org setup is complete, publish `0.1.0` from a GitHub Release tagged `v0.1.0` and verify npm shows provenance for the package.
+- [x] 6.3 Confirm CI runs the full non-publishing release preflight on pull requests and pushes to `main`.
+- [x] 6.4 Confirm the publish workflow reaches the publish step only after generation checks, tests, linting, build, package inspection, and tag/version verification pass.
+- [x] 6.5 After npmjs.org setup is complete, publish `0.1.1` from a GitHub Release tagged `v0.1.1` and verify npm shows provenance for the package.
