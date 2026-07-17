@@ -10620,17 +10620,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -10659,19 +10650,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -11136,17 +11119,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdJointGiverPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiver_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiver_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -11294,17 +11268,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaign_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaign_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -11803,17 +11768,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -11842,19 +11798,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -12604,17 +12552,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -12643,19 +12582,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -12874,17 +12805,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdJointGiverJointGiverIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -13109,17 +13031,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -13213,17 +13126,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -13252,19 +13156,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -13360,17 +13256,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -13399,19 +13286,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -14550,17 +14429,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -14589,19 +14459,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -15105,17 +14967,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -15264,17 +15117,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -15377,17 +15221,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -15416,19 +15251,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -15533,17 +15360,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -15572,19 +15390,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -16048,17 +15858,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -16087,19 +15888,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -16301,17 +16094,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -16388,17 +16172,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -16427,19 +16202,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -16518,17 +16285,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -16557,19 +16315,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId",
-          "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+          "sourcePath": "/giving/v2/people/{person_id}/pledges",
           "parentBindings": [
             {
               "sourceName": "person_id",
               "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-            },
-            {
-              "sourceName": "pledge_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-            },
-            {
-              "sourceName": "pledge_campaign_id",
-              "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeCampaignId"
             }
           ],
           "labelFields": [
@@ -18199,17 +17949,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -18264,17 +18005,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -18324,19 +18056,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -18356,17 +18080,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -18416,19 +18131,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -18448,17 +18155,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -18508,19 +18206,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId": {
     "methodName": "searchDeletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "deletePeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -20593,17 +20283,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdJointGiverJointGiverIdPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdJointGiverJointGiverIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20649,17 +20330,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdJointGiverPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdJointGiverPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiver_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdJointGiver_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20705,17 +20377,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20737,17 +20400,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaign_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaign_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20802,17 +20456,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20862,19 +20507,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -20894,17 +20531,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20954,19 +20582,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundPledgeId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFund_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -21019,17 +20639,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -21079,19 +20690,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -21111,17 +20714,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -21171,19 +20765,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -21203,17 +20789,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -21263,19 +20840,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId": {
     "methodName": "searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -23594,17 +23163,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -23650,17 +23210,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -23715,17 +23266,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -23775,19 +23317,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -23873,17 +23407,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -23933,19 +23458,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId_pledgeCampaignId"
       }
     ],
     "labelFields": [
@@ -23965,17 +23482,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPersonId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/joint_giver",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -24025,19 +23533,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId": {
     "methodName": "searchPatchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeIdPledgeId",
-    "sourcePath": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
+    "sourcePath": "/giving/v2/people/{person_id}/pledges",
     "parentBindings": [
       {
         "sourceName": "person_id",
         "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_personId"
-      },
-      {
-        "sourceName": "pledge_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeId"
-      },
-      {
-        "sourceName": "pledge_campaign_id",
-        "fieldName": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId_pledgeCampaignId"
       }
     ],
     "labelFields": [

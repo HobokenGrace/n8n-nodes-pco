@@ -3559,15 +3559,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdDownloadResourceId",
-          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
           "parentBindings": [
             {
               "sourceName": "group_type_id",
               "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownload_groupTypeId"
-            },
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownload_resourceId"
             }
           ],
           "labelFields": [
@@ -4113,15 +4109,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdVisitResourceId",
-          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
           "parentBindings": [
             {
               "sourceName": "group_type_id",
               "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisit_groupTypeId"
-            },
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisit_resourceId"
             }
           ],
           "labelFields": [
@@ -4208,15 +4200,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadIdResourceId",
-          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
           "parentBindings": [
             {
               "sourceName": "group_type_id",
               "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_groupTypeId"
-            },
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_resourceId"
             }
           ],
           "labelFields": [
@@ -4525,15 +4513,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdResourceId",
-          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
           "parentBindings": [
             {
               "sourceName": "group_type_id",
               "fieldName": "getGroupTypesGroupTypeIdResourcesResourceId_groupTypeId"
-            },
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getGroupTypesGroupTypeIdResourcesResourceId_resourceId"
             }
           ],
           "labelFields": [
@@ -4603,15 +4587,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdVisitVisitIdResourceId",
-          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+          "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
           "parentBindings": [
             {
               "sourceName": "group_type_id",
               "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_groupTypeId"
-            },
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_resourceId"
             }
           ],
           "labelFields": [
@@ -5363,17 +5343,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdGroupGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroup_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroup_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -5633,17 +5604,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdTagsTagIdGroupsGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdTagsTagIdGroups_groupId"
-            },
-            {
-              "sourceName": "tag_id",
-              "fieldName": "getGroupsGroupIdTagsTagIdGroups_tagId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -6182,17 +6144,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdPersonGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdPerson_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdPerson_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -6758,17 +6711,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdGroupGroupIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -6859,17 +6803,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdTagsTagIdGroupsGroupIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdTagsTagIdGroupsGroupId_groupId"
-            },
-            {
-              "sourceName": "tag_id",
-              "fieldName": "getGroupsGroupIdTagsTagIdGroupsGroupId_tagId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -7194,17 +7129,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipId_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipId_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -7447,15 +7373,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdPersonPersonIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
+          "sourcePath": "/groups/v2/people/{person_id}/groups",
           "parentBindings": [
             {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdPersonPersonId_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "getGroupsGroupIdMembershipsMembershipIdPersonPersonId_membershipId"
+              "sourceName": "person_id",
+              "fieldName": "getGroupsGroupIdMembershipsMembershipIdPersonPersonId_personId"
             }
           ],
           "searchFilter": "where[name]",
@@ -7645,17 +7567,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetGroupsGroupIdTagsTagIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "getGroupsGroupIdTagsTagId_groupId"
-            },
-            {
-              "sourceName": "tag_id",
-              "fieldName": "getGroupsGroupIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -8055,17 +7968,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchGroupsGroupIdMembershipsMembershipIdGroupGroupIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -8263,17 +8167,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchGroupsGroupIdTagsTagIdGroupsGroupIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "patchGroupsGroupIdTagsTagIdGroupsGroupId_groupId"
-            },
-            {
-              "sourceName": "tag_id",
-              "fieldName": "patchGroupsGroupIdTagsTagIdGroupsGroupId_tagId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -8640,17 +8535,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchGroupsGroupIdMembershipsMembershipIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "patchGroupsGroupIdMembershipsMembershipId_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "patchGroupsGroupIdMembershipsMembershipId_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -8840,17 +8726,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteGroupsGroupIdMembershipsMembershipIdGroupId",
-          "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-          "parentBindings": [
-            {
-              "sourceName": "group_id",
-              "fieldName": "deleteGroupsGroupIdMembershipsMembershipId_groupId"
-            },
-            {
-              "sourceName": "membership_id",
-              "fieldName": "deleteGroupsGroupIdMembershipsMembershipId_membershipId"
-            }
-          ],
+          "sourcePath": "/groups/v2/groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -10483,17 +10360,8 @@ const OPERATIONS: Operation[] = [
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   "searchDeleteGroupsGroupIdMembershipsMembershipIdGroupId": {
     "methodName": "searchDeleteGroupsGroupIdMembershipsMembershipIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "deleteGroupsGroupIdMembershipsMembershipId_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "deleteGroupsGroupIdMembershipsMembershipId_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -11961,17 +11829,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdMembershipsMembershipIdGroupGroupId": {
     "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdGroupGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroup_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroup_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -11990,17 +11849,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdMembershipsMembershipIdGroupGroupIdGroupId": {
     "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdGroupGroupIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -12043,17 +11893,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdMembershipsMembershipIdGroupId": {
     "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipId_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipId_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -12144,17 +11985,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdMembershipsMembershipIdPersonGroupId": {
     "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdPersonGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdPerson_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdPerson_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -12197,15 +12029,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdMembershipsMembershipIdPersonPersonIdGroupId": {
     "methodName": "searchGetGroupsGroupIdMembershipsMembershipIdPersonPersonIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
+    "sourcePath": "/groups/v2/people/{person_id}/groups",
     "parentBindings": [
       {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdPersonPersonId_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "getGroupsGroupIdMembershipsMembershipIdPersonPersonId_membershipId"
+        "sourceName": "person_id",
+        "fieldName": "getGroupsGroupIdMembershipsMembershipIdPersonPersonId_personId"
       }
     ],
     "searchFilter": "where[name]",
@@ -12479,17 +12307,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdTagsTagIdGroupId": {
     "methodName": "searchGetGroupsGroupIdTagsTagIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdTagsTagId_groupId"
-      },
-      {
-        "sourceName": "tag_id",
-        "fieldName": "getGroupsGroupIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -12508,17 +12327,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdTagsTagIdGroupsGroupId": {
     "methodName": "searchGetGroupsGroupIdTagsTagIdGroupsGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdTagsTagIdGroups_groupId"
-      },
-      {
-        "sourceName": "tag_id",
-        "fieldName": "getGroupsGroupIdTagsTagIdGroups_tagId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -12537,17 +12347,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupsGroupIdTagsTagIdGroupsGroupIdGroupId": {
     "methodName": "searchGetGroupsGroupIdTagsTagIdGroupsGroupIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "getGroupsGroupIdTagsTagIdGroupsGroupId_groupId"
-      },
-      {
-        "sourceName": "tag_id",
-        "fieldName": "getGroupsGroupIdTagsTagIdGroupsGroupId_tagId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -12897,15 +12698,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadIdResourceId": {
     "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadIdResourceId",
-    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
     "parentBindings": [
       {
         "sourceName": "group_type_id",
         "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_groupTypeId"
-      },
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownloadDownloadId_resourceId"
       }
     ],
     "labelFields": [
@@ -12944,15 +12741,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupTypesGroupTypeIdResourcesResourceIdDownloadResourceId": {
     "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdDownloadResourceId",
-    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
     "parentBindings": [
       {
         "sourceName": "group_type_id",
         "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownload_groupTypeId"
-      },
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdDownload_resourceId"
       }
     ],
     "labelFields": [
@@ -12991,15 +12784,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupTypesGroupTypeIdResourcesResourceIdResourceId": {
     "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdResourceId",
-    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
     "parentBindings": [
       {
         "sourceName": "group_type_id",
         "fieldName": "getGroupTypesGroupTypeIdResourcesResourceId_groupTypeId"
-      },
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getGroupTypesGroupTypeIdResourcesResourceId_resourceId"
       }
     ],
     "labelFields": [
@@ -13038,15 +12827,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupTypesGroupTypeIdResourcesResourceIdVisitResourceId": {
     "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdVisitResourceId",
-    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
     "parentBindings": [
       {
         "sourceName": "group_type_id",
         "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisit_groupTypeId"
-      },
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisit_resourceId"
       }
     ],
     "labelFields": [
@@ -13085,15 +12870,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetGroupTypesGroupTypeIdResourcesResourceIdVisitVisitIdResourceId": {
     "methodName": "searchGetGroupTypesGroupTypeIdResourcesResourceIdVisitVisitIdResourceId",
-    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources/{resource_id}/download",
+    "sourcePath": "/groups/v2/group_types/{group_type_id}/resources",
     "parentBindings": [
       {
         "sourceName": "group_type_id",
         "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_groupTypeId"
-      },
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getGroupTypesGroupTypeIdResourcesResourceIdVisitVisitId_resourceId"
       }
     ],
     "labelFields": [
@@ -13988,17 +13769,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchGroupsGroupIdMembershipsMembershipIdGroupGroupIdGroupId": {
     "methodName": "searchPatchGroupsGroupIdMembershipsMembershipIdGroupGroupIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "patchGroupsGroupIdMembershipsMembershipIdGroupGroupId_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -14089,17 +13861,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchGroupsGroupIdMembershipsMembershipIdGroupId": {
     "methodName": "searchPatchGroupsGroupIdMembershipsMembershipIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/memberships/{membership_id}/group",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "patchGroupsGroupIdMembershipsMembershipId_groupId"
-      },
-      {
-        "sourceName": "membership_id",
-        "fieldName": "patchGroupsGroupIdMembershipsMembershipId_membershipId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -14162,17 +13925,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchGroupsGroupIdTagsTagIdGroupsGroupIdGroupId": {
     "methodName": "searchPatchGroupsGroupIdTagsTagIdGroupsGroupIdGroupId",
-    "sourcePath": "/groups/v2/groups/{group_id}/tags/{tag_id}/groups",
-    "parentBindings": [
-      {
-        "sourceName": "group_id",
-        "fieldName": "patchGroupsGroupIdTagsTagIdGroupsGroupId_groupId"
-      },
-      {
-        "sourceName": "tag_id",
-        "fieldName": "patchGroupsGroupIdTagsTagIdGroupsGroupId_tagId"
-      }
-    ],
+    "sourcePath": "/groups/v2/groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",

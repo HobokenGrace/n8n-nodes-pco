@@ -207,17 +207,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_eventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -467,21 +458,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -506,19 +484,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -774,17 +744,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -809,15 +770,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_locationId"
             }
           ],
           "labelFields": [
@@ -1601,17 +1558,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEvent_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEvent_eventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -1775,17 +1723,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -1810,15 +1749,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_locationId"
             }
           ],
           "labelFields": [
@@ -2206,21 +2141,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2245,19 +2167,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -2803,17 +2717,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimes_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimes_eventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3107,17 +3012,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3142,15 +3038,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_locationId"
             }
           ],
           "labelFields": [
@@ -3194,21 +3086,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3233,19 +3112,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -3356,17 +3227,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriods_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriods_eventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3456,17 +3318,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3491,15 +3344,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_locationId"
             }
           ],
           "labelFields": [
@@ -3560,17 +3409,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3595,15 +3435,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_locationId"
             }
           ],
           "labelFields": [
@@ -3802,17 +3638,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3837,15 +3664,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_locationId"
             }
           ],
           "labelFields": [
@@ -3981,17 +3804,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4016,15 +3830,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_locationId"
             }
           ],
           "labelFields": [
@@ -4160,17 +3970,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4195,15 +3996,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_locationId"
             }
           ],
           "labelFields": [
@@ -4264,17 +4061,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4299,15 +4087,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_locationId"
             }
           ],
           "labelFields": [
@@ -4473,17 +4257,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId_eventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4573,21 +4348,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4612,19 +4374,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInIdEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -4720,17 +4474,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4755,15 +4500,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_locationId"
             }
           ],
           "labelFields": [
@@ -5347,15 +5088,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventEventIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
+          "sourcePath": "/check-ins/v2/events/{event_id}/check_ins",
           "parentBindings": [
             {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventEventId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventEventId_eventPeriodId"
+              "sourceName": "event_id",
+              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventEventId_eventId"
             }
           ],
           "labelFields": [
@@ -5483,15 +5220,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventEventIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
+          "sourcePath": "/check-ins/v2/events/{event_id}/check_ins",
           "parentBindings": [
             {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_locationId"
+              "sourceName": "event_id",
+              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_eventId"
             }
           ],
           "labelFields": [
@@ -5518,15 +5251,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventEventIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_locationId"
             }
           ],
           "labelFields": [
@@ -5623,17 +5352,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodId_eventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -5723,21 +5443,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -5762,19 +5469,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodIdEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -5966,15 +5665,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
+          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/check_ins",
           "parentBindings": [
             {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeId_eventPeriodId"
+              "sourceName": "event_time_id",
+              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeId_eventTimeId"
             }
           ],
           "labelFields": [
@@ -6101,17 +5796,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6136,15 +5822,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_locationId"
             }
           ],
           "labelFields": [
@@ -6223,17 +5905,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6258,15 +5931,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationId_locationId"
             }
           ],
           "labelFields": [
@@ -6327,21 +5996,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6366,19 +6022,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationIdEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -6513,17 +6161,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6548,15 +6187,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_locationId"
             }
           ],
           "labelFields": [
@@ -6617,21 +6252,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_locationEventPeriodId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6656,19 +6278,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_eventPeriodId"
-            },
-            {
-              "sourceName": "location_event_period_id",
-              "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_locationEventPeriodId"
             }
           ],
           "labelFields": [
@@ -6764,17 +6378,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6799,15 +6404,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_locationId"
             }
           ],
           "labelFields": [
@@ -6903,17 +6504,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6938,15 +6530,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_locationId"
             }
           ],
           "labelFields": [
@@ -7042,17 +6630,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7077,15 +6656,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_locationId"
             }
           ],
           "labelFields": [
@@ -7277,15 +6852,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsOptionIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
+          "sourcePath": "/check-ins/v2/options/{option_id}/check_ins",
           "parentBindings": [
             {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_locationId"
+              "sourceName": "option_id",
+              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_optionId"
             }
           ],
           "labelFields": [
@@ -7312,15 +6883,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsOptionIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_locationId"
             }
           ],
           "labelFields": [
@@ -7416,17 +6983,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentParentIdCheckInId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-          "parentBindings": [
-            {
-              "sourceName": "check_in_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_locationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/check_ins",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7451,15 +7009,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentParentIdLocationId",
-          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
           "parentBindings": [
             {
               "sourceName": "check_in_id",
               "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_checkInId"
-            },
-            {
-              "sourceName": "location_id",
-              "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_locationId"
             }
           ],
           "labelFields": [
@@ -7926,17 +7480,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-          "parentBindings": [
-            {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_locationEventTimeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/event_times",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -8569,17 +8114,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-          "parentBindings": [
-            {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTime_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTime_locationEventTimeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/event_times",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -9311,17 +8847,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-          "parentBindings": [
-            {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocation_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocation_locationEventTimeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/event_times",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -9787,15 +9314,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInIdEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_times",
           "parentBindings": [
             {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInId_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInId_locationEventTimeId"
+              "sourceName": "check_in_id",
+              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInId_checkInId"
             }
           ],
           "labelFields": [
@@ -10110,17 +9633,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeIdEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-          "parentBindings": [
-            {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId_locationEventTimeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/event_times",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -10366,17 +9880,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationIdEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-          "parentBindings": [
-            {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationId_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationId_locationEventTimeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/event_times",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -10501,17 +10006,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeId",
-          "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-          "parentBindings": [
-            {
-              "sourceName": "event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeId_eventTimeId"
-            },
-            {
-              "sourceName": "location_event_time_id",
-              "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeId_locationEventTimeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/event_times",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -11152,17 +10648,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEvent_eventId"
-            },
-            {
-              "sourceName": "attendance_type_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEvent_attendanceTypeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -11328,17 +10815,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdEventEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdEvent_eventId"
-            },
-            {
-              "sourceName": "event_label_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdEvent_eventLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -11503,17 +10981,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdEventEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdEvent_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdEvent_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -12058,17 +11527,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -12312,17 +11772,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_eventId"
-            },
-            {
-              "sourceName": "attendance_type_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_attendanceTypeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -12611,17 +12062,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdLabelEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabel_eventId"
-            },
-            {
-              "sourceName": "event_label_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabel_eventLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -12695,17 +12137,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -13032,17 +12465,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdPersonEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdPerson_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdPerson_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -13224,17 +12648,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeId_eventId"
-            },
-            {
-              "sourceName": "attendance_type_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeId_attendanceTypeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -13491,17 +12906,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventEventIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId_eventId"
-            },
-            {
-              "sourceName": "attendance_type_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId_attendanceTypeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -13593,17 +12999,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdEventEventIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdEventEventId_eventId"
-            },
-            {
-              "sourceName": "event_label_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdEventEventId_eventLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -13694,17 +13091,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdEventEventIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdEventEventId_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdEventEventId_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -13795,17 +13183,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelId_eventId"
-            },
-            {
-              "sourceName": "event_label_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelId_eventLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14049,17 +13428,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInId_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInId_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14157,17 +13527,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountId_eventId"
-            },
-            {
-              "sourceName": "attendance_type_id",
-              "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountId_attendanceTypeId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14369,17 +13730,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdLabelLabelIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabelLabelId_eventId"
-            },
-            {
-              "sourceName": "event_label_id",
-              "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabelLabelId_eventLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14488,17 +13840,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInId_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInId_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14688,17 +14031,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdPersonPersonIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdPersonPersonId_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventIdPersonPersonId_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14825,17 +14159,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdEventId",
-          "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventId_eventId"
-            },
-            {
-              "sourceName": "person_event_id",
-              "fieldName": "getEventsEventIdPersonEventsPersonEventId_personEventId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -15892,17 +15217,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId",
-          "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-          "parentBindings": [
-            {
-              "sourceName": "label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabel_labelId"
-            },
-            {
-              "sourceName": "location_label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabel_locationLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/labels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -15991,17 +15307,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLocationLabelId",
-          "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-          "parentBindings": [
-            {
-              "sourceName": "label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLocation_labelId"
-            },
-            {
-              "sourceName": "location_label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLocation_locationLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/labels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16257,17 +15564,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelIdLabelId",
-          "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-          "parentBindings": [
-            {
-              "sourceName": "label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId_labelId"
-            },
-            {
-              "sourceName": "location_label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId_locationLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/labels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16383,17 +15681,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationIdLabelId",
-          "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-          "parentBindings": [
-            {
-              "sourceName": "label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationId_labelId"
-            },
-            {
-              "sourceName": "location_label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationId_locationLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/labels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16518,17 +15807,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelId",
-          "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-          "parentBindings": [
-            {
-              "sourceName": "label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelId_labelId"
-            },
-            {
-              "sourceName": "location_label_id",
-              "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelId_locationLabelId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/labels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -18322,13 +17602,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroups_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -18394,17 +17669,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_checkInGroupId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -18647,13 +17913,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckedInAtCheckInsStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckedInAtCheckIns_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -18872,13 +18133,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdEventStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdEvent_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19007,17 +18263,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriod_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriod_checkInGroupId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19300,13 +18547,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdLocationStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdLocation_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19380,17 +18622,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdPrintStationStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStation_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStation_checkInGroupId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19480,13 +18713,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdPrintStationStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdPrintStation_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19578,13 +18806,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdThemeStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdTheme_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19626,15 +18849,11 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
+          "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/checked_in_at",
           "parentBindings": [
             {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInId_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInId_checkInGroupId"
+              "sourceName": "check_in_id",
+              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInId_checkInId"
             }
           ],
           "labelFields": [
@@ -19761,17 +18980,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupId_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupId_checkInGroupId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19861,13 +19071,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckedInAtCheckInsCheckedInAtCheckInIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckedInAtCheckInsCheckedInAtCheckInId_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -19933,13 +19138,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdEventEventIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdEventEventId_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20030,17 +19230,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodId_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodId_checkInGroupId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20165,13 +19356,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdLocationLocationIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdLocationLocationId_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20261,17 +19447,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationId_stationId"
-            },
-            {
-              "sourceName": "check_in_group_id",
-              "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationId_checkInGroupId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20368,13 +19545,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdPrintStationPrintStationIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdPrintStationPrintStationId_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20440,13 +19612,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationId_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20505,13 +19672,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetStationsStationIdThemeThemeIdStationId",
-          "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-          "parentBindings": [
-            {
-              "sourceName": "station_id",
-              "fieldName": "getStationsStationIdThemeThemeId_stationId"
-            }
-          ],
+          "sourcePath": "/check-ins/v2/stations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -20973,17 +20135,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodId_eventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21001,17 +20154,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_eventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21029,17 +20173,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId_eventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21105,17 +20240,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEvent_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEvent_eventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21133,15 +20259,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventEventIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventEventIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
+    "sourcePath": "/check-ins/v2/events/{event_id}/check_ins",
     "parentBindings": [
       {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventEventId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventEventId_eventPeriodId"
+        "sourceName": "event_id",
+        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventEventId_eventId"
       }
     ],
     "labelFields": [
@@ -21262,17 +20384,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimes_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimes_eventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21314,15 +20427,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
+    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/check_ins",
     "parentBindings": [
       {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeId_eventPeriodId"
+        "sourceName": "event_time_id",
+        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdEventTimesEventTimeId_eventTimeId"
       }
     ],
     "labelFields": [
@@ -21452,17 +20561,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriods_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriods_eventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21504,21 +20604,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21536,21 +20623,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21568,21 +20642,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21600,19 +20661,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInIdEventPeriodId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInIdEventPeriodId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId_locationEventPeriodId"
       }
     ],
     "labelFields": [
@@ -21660,19 +20713,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsEventPeriodId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsEventPeriodId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_locationEventPeriodId"
       }
     ],
     "labelFields": [
@@ -21720,21 +20765,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21752,19 +20784,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriod_locationEventPeriodId"
       }
     ],
     "labelFields": [
@@ -21784,21 +20808,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -21816,19 +20827,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodIdEventPeriodId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodIdEventPeriodId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodEventPeriodId_locationEventPeriodId"
       }
     ],
     "labelFields": [
@@ -21876,19 +20879,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdEventPeriodId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodId_locationEventPeriodId"
       }
     ],
     "labelFields": [
@@ -21965,21 +20960,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocation_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22053,21 +21035,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_locationEventPeriodId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22085,19 +21054,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationIdEventPeriodId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationIdEventPeriodId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/event_period",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_period",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_checkInId"
-      },
-      {
-        "sourceName": "event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_eventPeriodId"
-      },
-      {
-        "sourceName": "location_event_period_id",
-        "fieldName": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdLocationLocationId_locationEventPeriodId"
       }
     ],
     "labelFields": [
@@ -22338,17 +21299,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22366,17 +21318,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22394,17 +21337,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22422,15 +21356,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId_locationId"
       }
     ],
     "labelFields": [
@@ -22450,15 +21380,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdCheckInsLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdCheckIns_locationId"
       }
     ],
     "labelFields": [
@@ -22478,17 +21404,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdEventCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22506,15 +21423,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdEventEventIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventEventIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
+    "sourcePath": "/check-ins/v2/events/{event_id}/check_ins",
     "parentBindings": [
       {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_locationId"
+        "sourceName": "event_id",
+        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_eventId"
       }
     ],
     "labelFields": [
@@ -22563,15 +21476,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdEventEventIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventEventIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEventEventId_locationId"
       }
     ],
     "labelFields": [
@@ -22591,15 +21500,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdEventLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdEventLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdEvent_locationId"
       }
     ],
     "labelFields": [
@@ -22648,17 +21553,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22676,17 +21572,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22732,15 +21619,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinksIntegrationLinkId_locationId"
       }
     ],
     "labelFields": [
@@ -22760,15 +21643,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdIntegrationLinksLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdIntegrationLinks_locationId"
       }
     ],
     "labelFields": [
@@ -22788,17 +21667,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22816,17 +21686,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22872,15 +21733,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationEventPeriodId_locationId"
       }
     ],
     "labelFields": [
@@ -22900,15 +21757,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventPeriodsLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventPeriods_locationId"
       }
     ],
     "labelFields": [
@@ -22928,17 +21781,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22956,17 +21800,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23012,15 +21847,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationEventTimeId_locationId"
       }
     ],
     "labelFields": [
@@ -23040,15 +21871,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationEventTimesLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationEventTimes_locationId"
       }
     ],
     "labelFields": [
@@ -23068,15 +21895,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationId_locationId"
       }
     ],
     "labelFields": [
@@ -23096,17 +21919,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23124,15 +21938,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabels_locationId"
       }
     ],
     "labelFields": [
@@ -23152,17 +21962,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23180,15 +21981,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationLabelsLocationLabelId_locationId"
       }
     ],
     "labelFields": [
@@ -23236,17 +22033,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23264,15 +22052,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocations_locationId"
       }
     ],
     "labelFields": [
@@ -23292,17 +22076,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23320,15 +22095,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdLocationsLocationIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdLocationsLocationId_locationId"
       }
     ],
     "labelFields": [
@@ -23348,17 +22119,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdOptionsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23376,15 +22138,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdOptionsLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptions_locationId"
       }
     ],
     "labelFields": [
@@ -23404,15 +22162,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdOptionsOptionIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsOptionIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
+    "sourcePath": "/check-ins/v2/options/{option_id}/check_ins",
     "parentBindings": [
       {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_locationId"
+        "sourceName": "option_id",
+        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_optionId"
       }
     ],
     "labelFields": [
@@ -23432,15 +22186,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdOptionsOptionIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdOptionsOptionIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdOptionsOptionId_locationId"
       }
     ],
     "labelFields": [
@@ -23488,17 +22238,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdParentCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23516,15 +22257,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdParentLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdParent_locationId"
       }
     ],
     "labelFields": [
@@ -23544,17 +22281,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdParentParentIdCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentParentIdCheckInId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
-    "parentBindings": [
-      {
-        "sourceName": "check_in_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_locationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/check_ins",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -23572,15 +22300,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCheckInsCheckInIdLocationsLocationIdParentParentIdLocationId": {
     "methodName": "searchGetCheckInsCheckInIdLocationsLocationIdParentParentIdLocationId",
-    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/locations",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/locations",
     "parentBindings": [
       {
         "sourceName": "check_in_id",
         "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_checkInId"
-      },
-      {
-        "sourceName": "location_id",
-        "fieldName": "getCheckInsCheckInIdLocationsLocationIdParentParentId_locationId"
       }
     ],
     "labelFields": [
@@ -23785,17 +22509,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId": {
     "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEvent_eventId"
-      },
-      {
-        "sourceName": "attendance_type_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEvent_attendanceTypeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -23839,17 +22554,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventEventIdEventId": {
     "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventEventIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId_eventId"
-      },
-      {
-        "sourceName": "attendance_type_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdEventEventId_attendanceTypeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -23868,17 +22574,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventId": {
     "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeId_eventId"
-      },
-      {
-        "sourceName": "attendance_type_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeId_attendanceTypeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -23951,17 +22648,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsEventId": {
     "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_eventId"
-      },
-      {
-        "sourceName": "attendance_type_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_attendanceTypeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24005,17 +22693,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountIdEventId": {
     "methodName": "searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountId_eventId"
-      },
-      {
-        "sourceName": "attendance_type_id",
-        "fieldName": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsHeadcountId_attendanceTypeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24256,17 +22935,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventLabelsEventLabelIdEventEventId": {
     "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdEventEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdEvent_eventId"
-      },
-      {
-        "sourceName": "event_label_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdEvent_eventLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24285,17 +22955,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventLabelsEventLabelIdEventEventIdEventId": {
     "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdEventEventIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdEventEventId_eventId"
-      },
-      {
-        "sourceName": "event_label_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdEventEventId_eventLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24362,17 +23023,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventLabelsEventLabelIdEventId": {
     "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelId_eventId"
-      },
-      {
-        "sourceName": "event_label_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelId_eventLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24444,17 +23096,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventLabelsEventLabelIdLabelEventId": {
     "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdLabelEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabel_eventId"
-      },
-      {
-        "sourceName": "event_label_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabel_eventLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24497,17 +23140,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventLabelsEventLabelIdLabelLabelIdEventId": {
     "methodName": "searchGetEventsEventIdEventLabelsEventLabelIdLabelLabelIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/event_labels/{event_label_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabelLabelId_eventId"
-      },
-      {
-        "sourceName": "event_label_id",
-        "fieldName": "getEventsEventIdEventLabelsEventLabelIdLabelLabelId_eventLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24790,17 +23424,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdEventEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdEventEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdEvent_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdEvent_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24819,17 +23444,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdEventEventIdEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdEventEventIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdEventEventId_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdEventEventId_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24872,17 +23488,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventId_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventId_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24954,17 +23561,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -24983,17 +23581,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInIdEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInId_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdFirstCheckInFirstCheckInId_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -25060,17 +23649,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -25089,17 +23669,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInIdEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInId_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdLastCheckInLastCheckInId_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -25214,17 +23785,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdPersonEventsPersonEventIdPersonPersonIdEventId": {
     "methodName": "searchGetEventsEventIdPersonEventsPersonEventIdPersonPersonIdEventId",
-    "sourcePath": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdPersonPersonId_eventId"
-      },
-      {
-        "sourceName": "person_event_id",
-        "fieldName": "getEventsEventIdPersonEventsPersonEventIdPersonPersonId_personEventId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -25734,15 +24296,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInIdEventTimeId": {
     "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInIdEventTimeId",
-    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/event_times",
     "parentBindings": [
       {
-        "sourceName": "event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInId_eventTimeId"
-      },
-      {
-        "sourceName": "location_event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInId_locationEventTimeId"
+        "sourceName": "check_in_id",
+        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsCheckInId_checkInId"
       }
     ],
     "labelFields": [
@@ -25786,17 +24344,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsEventTimeId": {
     "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsEventTimeId",
-    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-    "parentBindings": [
-      {
-        "sourceName": "event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_eventTimeId"
-      },
-      {
-        "sourceName": "location_event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_locationEventTimeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/event_times",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -25838,17 +24387,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId": {
     "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId",
-    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-    "parentBindings": [
-      {
-        "sourceName": "event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTime_eventTimeId"
-      },
-      {
-        "sourceName": "location_event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTime_locationEventTimeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/event_times",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -25866,17 +24406,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeIdEventTimeId": {
     "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeIdEventTimeId",
-    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-    "parentBindings": [
-      {
-        "sourceName": "event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId_eventTimeId"
-      },
-      {
-        "sourceName": "location_event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeEventTimeId_locationEventTimeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/event_times",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -25918,17 +24449,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeId": {
     "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdEventTimeId",
-    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-    "parentBindings": [
-      {
-        "sourceName": "event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeId_eventTimeId"
-      },
-      {
-        "sourceName": "location_event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeId_locationEventTimeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/event_times",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26043,17 +24565,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationIdEventTimeId": {
     "methodName": "searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationIdEventTimeId",
-    "sourcePath": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/event_time",
-    "parentBindings": [
-      {
-        "sourceName": "event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationId_eventTimeId"
-      },
-      {
-        "sourceName": "location_event_time_id",
-        "fieldName": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdLocationLocationId_locationEventTimeId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/event_times",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26476,17 +24989,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelId": {
     "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelId",
-    "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-    "parentBindings": [
-      {
-        "sourceName": "label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelId_labelId"
-      },
-      {
-        "sourceName": "location_label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelId_locationLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/labels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26504,17 +25008,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId": {
     "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId",
-    "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-    "parentBindings": [
-      {
-        "sourceName": "label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabel_labelId"
-      },
-      {
-        "sourceName": "location_label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabel_locationLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/labels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26532,17 +25027,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelIdLabelId": {
     "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelIdLabelId",
-    "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-    "parentBindings": [
-      {
-        "sourceName": "label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId_labelId"
-      },
-      {
-        "sourceName": "location_label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLabelLabelId_locationLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/labels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26632,17 +25118,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationIdLabelId": {
     "methodName": "searchGetLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationIdLabelId",
-    "sourcePath": "/check-ins/v2/labels/{label_id}/location_labels/{location_label_id}/label",
-    "parentBindings": [
-      {
-        "sourceName": "label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationId_labelId"
-      },
-      {
-        "sourceName": "location_label_id",
-        "fieldName": "getLabelsLabelIdLocationLabelsLocationLabelIdLocationLocationId_locationLabelId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/labels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27257,13 +25734,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckedInAtCheckInsCheckedInAtCheckInIdStationId": {
     "methodName": "searchGetStationsStationIdCheckedInAtCheckInsCheckedInAtCheckInIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckedInAtCheckInsCheckedInAtCheckInId_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27281,13 +25753,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckedInAtCheckInsStationId": {
     "methodName": "searchGetStationsStationIdCheckedInAtCheckInsStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckedInAtCheckIns_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27405,15 +25872,11 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInIdStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
+    "sourcePath": "/check-ins/v2/check_ins/{check_in_id}/checked_in_at",
     "parentBindings": [
       {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInId_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInId_checkInGroupId"
+        "sourceName": "check_in_id",
+        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInId_checkInId"
       }
     ],
     "labelFields": [
@@ -27433,17 +25896,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_checkInGroupId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27537,17 +25991,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodIdStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodId_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodEventPeriodId_checkInGroupId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27565,17 +26010,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdEventPeriodStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriod_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdEventPeriod_checkInGroupId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27666,17 +26102,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationIdStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationId_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStationPrintStationId_checkInGroupId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27694,17 +26121,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdPrintStationStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdPrintStationStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStation_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupIdPrintStation_checkInGroupId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27722,17 +26140,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsCheckInGroupIdStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsCheckInGroupIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupId_stationId"
-      },
-      {
-        "sourceName": "check_in_group_id",
-        "fieldName": "getStationsStationIdCheckInGroupsCheckInGroupId_checkInGroupId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27750,13 +26159,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdCheckInGroupsStationId": {
     "methodName": "searchGetStationsStationIdCheckInGroupsStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdCheckInGroups_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27799,13 +26203,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdEventEventIdStationId": {
     "methodName": "searchGetStationsStationIdEventEventIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdEventEventId_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27823,13 +26222,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdEventStationId": {
     "methodName": "searchGetStationsStationIdEventStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdEvent_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27896,13 +26290,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdLocationLocationIdStationId": {
     "methodName": "searchGetStationsStationIdLocationLocationIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdLocationLocationId_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27920,13 +26309,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdLocationStationId": {
     "methodName": "searchGetStationsStationIdLocationStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdLocation_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27944,13 +26328,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdPrintStationPrintStationIdStationId": {
     "methodName": "searchGetStationsStationIdPrintStationPrintStationIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdPrintStationPrintStationId_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27968,13 +26347,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdPrintStationStationId": {
     "methodName": "searchGetStationsStationIdPrintStationStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdPrintStation_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27992,13 +26366,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdStationId": {
     "methodName": "searchGetStationsStationIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationId_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -28016,13 +26385,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdThemeStationId": {
     "methodName": "searchGetStationsStationIdThemeStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdTheme_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -28040,13 +26404,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetStationsStationIdThemeThemeIdStationId": {
     "methodName": "searchGetStationsStationIdThemeThemeIdStationId",
-    "sourcePath": "/check-ins/v2/stations/{station_id}/print_station",
-    "parentBindings": [
-      {
-        "sourceName": "station_id",
-        "fieldName": "getStationsStationIdThemeThemeId_stationId"
-      }
-    ],
+    "sourcePath": "/check-ins/v2/stations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",

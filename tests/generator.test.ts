@@ -332,6 +332,20 @@ describe('generated Planning Center nodes', () => {
     expect(summary.operations.flatMap((operation) => operation.relationshipFields).filter((field) => field.multiple && field.lookup)).toEqual([]);
   });
 
+  it('does not make path parameter lookups depend on their own selected value', async () => {
+    const servicesConfig = generatedProductConfigs.find((config) => config.product === 'services');
+    expect(servicesConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(servicesConfig!);
+    const folderServiceTypes = summary.operations.find((operation) => operation.id === 'getFoldersFolderIdServiceTypes');
+    const folderId = folderServiceTypes?.pathParameters.find((field) => field.sourceName === 'folder_id');
+
+    expect(folderId?.lookup).toMatchObject({
+      sourcePath: '/services/v2/folders',
+      parentBindings: [],
+    });
+  });
+
   it('infers split-name lookup metadata for Giving people without a combined search filter', async () => {
     const givingConfig = generatedProductConfigs.find((config) => config.product === 'giving');
     expect(givingConfig).toBeDefined();
