@@ -69,6 +69,7 @@ interface GeneratedRelationshipField {
 interface Operation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: IHttpRequestMethods;
@@ -687,6 +688,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postWebhookSubscriptions",
     "resource": "Webhook Subscription",
+    "jsonApiType": "WebhookSubscription",
     "operation": "Create Webhook Subscription",
     "description": "POST /webhook_subscriptions",
     "method": "POST",
@@ -725,6 +727,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchWebhookSubscriptionsWebhookSubscriptionId",
     "resource": "Webhook Subscription",
+    "jsonApiType": "WebhookSubscription",
     "operation": "Update Webhook Subscription",
     "description": "PATCH /webhook_subscriptions/{webhook_subscription_id}",
     "method": "PATCH",
@@ -1316,7 +1319,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.resource,
+      type: operation.jsonApiType ?? operation.resource,
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },

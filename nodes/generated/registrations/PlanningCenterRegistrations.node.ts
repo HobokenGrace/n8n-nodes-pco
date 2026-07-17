@@ -69,6 +69,7 @@ interface GeneratedRelationshipField {
 interface Operation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: IHttpRequestMethods;
@@ -3520,7 +3521,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.resource,
+      type: operation.jsonApiType ?? operation.resource,
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },

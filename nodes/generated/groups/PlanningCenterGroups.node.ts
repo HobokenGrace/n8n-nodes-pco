@@ -69,6 +69,7 @@ interface GeneratedRelationshipField {
 interface Operation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: IHttpRequestMethods;
@@ -437,6 +438,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchCampusesCampusIdGroupsGroupId",
     "resource": "Campus",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Campus)",
     "description": "PATCH /campuses/{campus_id}/groups/{group_id}",
     "method": "PATCH",
@@ -2244,6 +2246,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEventsEventIdGroupGroupId",
     "resource": "Event",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Event)",
     "description": "PATCH /events/{event_id}/group/{group_id}",
     "method": "PATCH",
@@ -2448,6 +2451,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEventsEventIdLocationLocationIdGroupGroupId",
     "resource": "Event",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Location)",
     "description": "PATCH /events/{event_id}/location/{location_id}/group/{group_id}",
     "method": "PATCH",
@@ -3309,6 +3313,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupApplicationsGroupApplicationIdGroupGroupId",
     "resource": "Group Application",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Group Application)",
     "description": "PATCH /group_applications/{group_application_id}/group/{group_id}",
     "method": "PATCH",
@@ -4641,6 +4646,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupTypesGroupTypeIdGroupsGroupId",
     "resource": "Group Type",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Group Type)",
     "description": "PATCH /group_types/{group_type_id}/groups/{group_id}",
     "method": "PATCH",
@@ -7884,6 +7890,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postGroupsGroupIdMemberships",
     "resource": "Group",
+    "jsonApiType": "Membership",
     "operation": "Create Membership (via Group)",
     "description": "POST /groups/{group_id}/memberships",
     "method": "POST",
@@ -8031,6 +8038,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupsGroupIdMembershipsMembershipIdGroupGroupId",
     "resource": "Group",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Membership)",
     "description": "PATCH /groups/{group_id}/memberships/{membership_id}/group/{group_id}",
     "method": "PATCH",
@@ -8238,6 +8246,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupsGroupIdTagsTagIdGroupsGroupId",
     "resource": "Group",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Tag)",
     "description": "PATCH /groups/{group_id}/tags/{tag_id}/groups/{group_id}",
     "method": "PATCH",
@@ -8446,6 +8455,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupsGroupId",
     "resource": "Group",
+    "jsonApiType": "Group",
     "operation": "Update Group",
     "description": "PATCH /groups/{group_id}",
     "method": "PATCH",
@@ -8613,6 +8623,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupsGroupIdMembershipsMembershipId",
     "resource": "Group",
+    "jsonApiType": "Membership",
     "operation": "Update Membership (via Group)",
     "description": "PATCH /groups/{group_id}/memberships/{membership_id}",
     "method": "PATCH",
@@ -8729,6 +8740,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchGroupsGroupIdMyMembershipMyMembershipId",
     "resource": "Group",
+    "jsonApiType": "Membership",
     "operation": "Update My Membership (via Group)",
     "description": "PATCH /groups/{group_id}/my_membership/{my_membership_id}",
     "method": "PATCH",
@@ -9781,6 +9793,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdGroupsGroupId",
     "resource": "Person",
+    "jsonApiType": "Group",
     "operation": "Update Group (via Person)",
     "description": "PATCH /people/{person_id}/groups/{group_id}",
     "method": "PATCH",
@@ -9988,6 +10001,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdMembershipsMembershipId",
     "resource": "Person",
+    "jsonApiType": "Membership",
     "operation": "Update Membership (via Person)",
     "description": "PATCH /people/{person_id}/memberships/{membership_id}",
     "method": "PATCH",
@@ -14822,7 +14836,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.resource,
+      type: operation.jsonApiType ?? operation.resource,
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },

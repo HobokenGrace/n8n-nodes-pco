@@ -69,6 +69,7 @@ interface GeneratedRelationshipField {
 interface Operation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: IHttpRequestMethods;
@@ -1247,6 +1248,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postChannelsChannelIdChannelDefaultTimes",
     "resource": "Channel",
+    "jsonApiType": "ChannelDefaultTime",
     "operation": "Create Channel Default Time (via Channel)",
     "description": "POST /channels/{channel_id}/channel_default_times",
     "method": "POST",
@@ -1333,6 +1335,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postChannels",
     "resource": "Channel",
+    "jsonApiType": "Channel",
     "operation": "Create Channel",
     "description": "POST /channels",
     "method": "POST",
@@ -1500,6 +1503,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postChannelsChannelIdCurrentEpisode",
     "resource": "Channel",
+    "jsonApiType": "Episode",
     "operation": "Create Current Episode (via Channel)",
     "description": "POST /channels/{channel_id}/current_episode",
     "method": "POST",
@@ -1713,6 +1717,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postChannelsChannelIdEpisodes",
     "resource": "Channel",
+    "jsonApiType": "Episode",
     "operation": "Create Episode (via Channel)",
     "description": "POST /channels/{channel_id}/episodes",
     "method": "POST",
@@ -1926,6 +1931,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postChannelsChannelIdSeries",
     "resource": "Channel",
+    "jsonApiType": "Series",
     "operation": "Create Series (via Channel)",
     "description": "POST /channels/{channel_id}/series",
     "method": "POST",
@@ -2015,6 +2021,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchChannelsChannelIdChannelDefaultTimesChannelDefaultTimeId",
     "resource": "Channel",
+    "jsonApiType": "ChannelDefaultTime",
     "operation": "Update Channel Default Time (via Channel)",
     "description": "PATCH /channels/{channel_id}/channel_default_times/{channel_default_time_id}",
     "method": "PATCH",
@@ -2132,6 +2139,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchChannelsChannelId",
     "resource": "Channel",
+    "jsonApiType": "Channel",
     "operation": "Update Channel",
     "description": "PATCH /channels/{channel_id}",
     "method": "PATCH",
@@ -2326,6 +2334,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchChannelsChannelIdCurrentEpisodeCurrentEpisodeId",
     "resource": "Channel",
+    "jsonApiType": "Episode",
     "operation": "Update Current Episode (via Channel)",
     "description": "PATCH /channels/{channel_id}/current_episode/{current_episode_id}",
     "method": "PATCH",
@@ -2546,6 +2555,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchChannelsChannelIdEpisodesEpisodeId",
     "resource": "Channel",
+    "jsonApiType": "Episode",
     "operation": "Update Episode (via Channel)",
     "description": "PATCH /channels/{channel_id}/episodes/{episode_id}",
     "method": "PATCH",
@@ -2800,6 +2810,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchChannelsChannelIdSeriesSeriesId",
     "resource": "Channel",
+    "jsonApiType": "Series",
     "operation": "Update Series (via Channel)",
     "description": "PATCH /channels/{channel_id}/series/{series_id}",
     "method": "PATCH",
@@ -4437,6 +4448,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEpisodesEpisodeIdChannel",
     "resource": "Episode",
+    "jsonApiType": "Channel",
     "operation": "Create Channel (via Episode)",
     "description": "POST /episodes/{episode_id}/channel",
     "method": "POST",
@@ -4631,6 +4643,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEpisodesEpisodeIdEpisodeResources",
     "resource": "Episode",
+    "jsonApiType": "EpisodeResource",
     "operation": "Create Episode Resource (via Episode)",
     "description": "POST /episodes/{episode_id}/episode_resources",
     "method": "POST",
@@ -4724,6 +4737,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEpisodesEpisodeIdEpisodeTimes",
     "resource": "Episode",
+    "jsonApiType": "EpisodeTime",
     "operation": "Create Episode Time (via Episode)",
     "description": "POST /episodes/{episode_id}/episode_times",
     "method": "POST",
@@ -4796,6 +4810,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEpisodes",
     "resource": "Episode",
+    "jsonApiType": "Episode",
     "operation": "Create Episode",
     "description": "POST /episodes",
     "method": "POST",
@@ -5015,6 +5030,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEpisodesEpisodeIdSeries",
     "resource": "Episode",
+    "jsonApiType": "Series",
     "operation": "Create Series (via Episode)",
     "description": "POST /episodes/{episode_id}/series",
     "method": "POST",
@@ -5104,6 +5120,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeIdChannelChannelId",
     "resource": "Episode",
+    "jsonApiType": "Channel",
     "operation": "Update Channel (via Episode)",
     "description": "PATCH /episodes/{episode_id}/channel/{channel_id}",
     "method": "PATCH",
@@ -5334,6 +5351,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeIdEpisodeResourcesEpisodeResourceId",
     "resource": "Episode",
+    "jsonApiType": "EpisodeResource",
     "operation": "Update Episode Resource (via Episode)",
     "description": "PATCH /episodes/{episode_id}/episode_resources/{episode_resource_id}",
     "method": "PATCH",
@@ -5458,6 +5476,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeIdEpisodeTimesEpisodeTimeId",
     "resource": "Episode",
+    "jsonApiType": "EpisodeTime",
     "operation": "Update Episode Time (via Episode)",
     "description": "PATCH /episodes/{episode_id}/episode_times/{episode_time_id}",
     "method": "PATCH",
@@ -5561,6 +5580,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeId",
     "resource": "Episode",
+    "jsonApiType": "Episode",
     "operation": "Update Episode",
     "description": "PATCH /episodes/{episode_id}",
     "method": "PATCH",
@@ -5779,6 +5799,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeIdNoteTemplate",
     "resource": "Episode",
+    "jsonApiType": "NoteTemplate",
     "operation": "Update Note Template (via Episode)",
     "description": "PATCH /episodes/{episode_id}/note_template",
     "method": "PATCH",
@@ -5844,6 +5865,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeIdSeriesSeriesId",
     "resource": "Episode",
+    "jsonApiType": "Series",
     "operation": "Update Series (via Episode)",
     "description": "PATCH /episodes/{episode_id}/series/{series_id}",
     "method": "PATCH",
@@ -5964,6 +5986,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEpisodesEpisodeIdSpeakershipsSpeakershipId",
     "resource": "Episode",
+    "jsonApiType": "Speakership",
     "operation": "Update Speakership (via Episode)",
     "description": "PATCH /episodes/{episode_id}/speakerships/{speakership_id}",
     "method": "PATCH",
@@ -6801,6 +6824,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postSeriesSeriesIdChannel",
     "resource": "Series",
+    "jsonApiType": "Channel",
     "operation": "Create Channel (via Series)",
     "description": "POST /series/{series_id}/channel",
     "method": "POST",
@@ -6995,6 +7019,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postSeries",
     "resource": "Series",
+    "jsonApiType": "Series",
     "operation": "Create Series",
     "description": "POST /series",
     "method": "POST",
@@ -7057,6 +7082,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchSeriesSeriesIdChannelChannelId",
     "resource": "Series",
+    "jsonApiType": "Channel",
     "operation": "Update Channel (via Series)",
     "description": "PATCH /series/{series_id}/channel/{channel_id}",
     "method": "PATCH",
@@ -7287,6 +7313,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchSeriesSeriesId",
     "resource": "Series",
+    "jsonApiType": "Series",
     "operation": "Update Series",
     "description": "PATCH /series/{series_id}",
     "method": "PATCH",
@@ -10326,7 +10353,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.resource,
+      type: operation.jsonApiType ?? operation.resource,
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },

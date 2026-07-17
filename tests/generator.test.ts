@@ -408,6 +408,71 @@ describe('generated Planning Center nodes', () => {
     expect(httpRequest).not.toHaveBeenCalled();
   });
 
+  it('preserves canonical JSON:API request types separately from display resource labels', async () => {
+    const webhooksConfig = generatedProductConfigs.find((config) => config.product === 'webhooks');
+    expect(webhooksConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(webhooksConfig!);
+    const operation = summary.operations.find((candidate) => candidate.id === 'postWebhookSubscriptions');
+
+    expect(operation).toMatchObject({
+      resource: 'Webhook Subscription',
+      jsonApiType: 'WebhookSubscription',
+    });
+  });
+
+  it('uses canonical JSON:API request types in standard bodies and preserves raw JSON bodies', async () => {
+    const node = new entrypoint.PlanningCenterWebhooks();
+    const httpRequest = vi.fn().mockResolvedValue({ data: { id: '1', type: 'WebhookSubscription' } });
+    const context: any = {
+      continueOnFail: () => false,
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getInputData: () => [{ json: {} }, { json: {} }],
+      getNode: () => ({ name: 'Planning Center Webhooks', type: 'planningCenterWebhooks' }),
+      getNodeParameter: vi.fn((name: string, itemIndex: number, fallback?: unknown) => {
+        if (name === 'resource') return 'Webhook Subscription';
+        if (name === 'operation') return 'postWebhookSubscriptions';
+        if (name === 'bodyMode') return itemIndex === 0 ? 'fields' : 'rawJson';
+        if (name === 'postWebhookSubscriptions_name') return 'Member Updates';
+        if (name === 'postWebhookSubscriptions_url') return 'https://example.test/webhook';
+        if (name === 'postWebhookSubscriptions_active') return true;
+        if (name === 'rawJsonBody') {
+          return JSON.stringify({ data: { type: 'CustomRawType', attributes: { name: 'Raw' } } });
+        }
+        if (name === 'additionalQueryParameters') return fallback;
+
+        return fallback;
+      }),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.execute.call(context)).resolves.toEqual([[
+      expect.objectContaining({ json: expect.any(Object) }),
+      expect.objectContaining({ json: expect.any(Object) }),
+    ]]);
+    expect(httpRequest).toHaveBeenNthCalledWith(1, expect.objectContaining({
+      method: 'POST',
+      url: 'https://api.example.test/webhooks/v2/webhook_subscriptions',
+      body: {
+        data: {
+          type: 'WebhookSubscription',
+          attributes: {
+            name: 'Member Updates',
+            url: 'https://example.test/webhook',
+            active: true,
+          },
+        },
+      },
+    }));
+    expect(httpRequest).toHaveBeenNthCalledWith(2, expect.objectContaining({
+      body: { data: { type: 'CustomRawType', attributes: { name: 'Raw' } } },
+    }));
+  });
+
   it('uses bounded split-name lookup search for Giving person locators', async () => {
     const node: any = new entrypoint.PlanningCenterGiving();
     const firstNamePeople = Array.from({ length: 24 }, (_, index) => ({
@@ -526,7 +591,7 @@ describe('generated Planning Center nodes', () => {
         qs: { include: 'group_type' },
         body: {
           data: {
-            type: 'Campus',
+            type: 'Group',
             attributes: { group_type_id: '56' },
             relationships: { group_type: { data: { type: 'GroupType', id: '78' } } },
           },

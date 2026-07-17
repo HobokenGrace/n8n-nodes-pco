@@ -65,6 +65,7 @@ export interface GeneratedRelationshipField {
 export interface GeneratedOperation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: HttpMethod;

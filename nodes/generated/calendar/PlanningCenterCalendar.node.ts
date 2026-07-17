@@ -69,6 +69,7 @@ interface GeneratedRelationshipField {
 interface Operation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: IHttpRequestMethods;
@@ -2122,6 +2123,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchConflictsConflictIdResourceResourceId",
     "resource": "Conflict",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Conflict)",
     "description": "PATCH /conflicts/{conflict_id}/resource/{resource_id}",
     "method": "PATCH",
@@ -4520,6 +4522,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEventInstancesEventInstanceIdTags",
     "resource": "Event Instance",
+    "jsonApiType": "Tag",
     "operation": "Create Tag (via Event Instance)",
     "description": "POST /event_instances/{event_instance_id}/tags",
     "method": "POST",
@@ -4643,6 +4646,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEventInstancesEventInstanceIdTagsTagId",
     "resource": "Event Instance",
+    "jsonApiType": "Tag",
     "operation": "Update Tag (via Event Instance)",
     "description": "PATCH /event_instances/{event_instance_id}/tags/{tag_id}",
     "method": "PATCH",
@@ -7296,6 +7300,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEventResourceRequestsEventResourceRequestIdResourceResourceId",
     "resource": "Event Resource Request",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Event Resource Request)",
     "description": "PATCH /event_resource_requests/{event_resource_request_id}/resource/{resource_id}",
     "method": "PATCH",
@@ -10662,6 +10667,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEventsEventIdEventConnections",
     "resource": "Event",
+    "jsonApiType": "EventConnection",
     "operation": "Create Event Connection (via Event)",
     "description": "POST /events/{event_id}/event_connections",
     "method": "POST",
@@ -10742,6 +10748,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postEventsEventIdTags",
     "resource": "Event",
+    "jsonApiType": "Tag",
     "operation": "Create Tag (via Event)",
     "description": "POST /events/{event_id}/tags",
     "method": "POST",
@@ -10866,6 +10873,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEventsEventIdEventConnectionsEventConnectionId",
     "resource": "Event",
+    "jsonApiType": "EventConnection",
     "operation": "Update Event Connection (via Event)",
     "description": "PATCH /events/{event_id}/event_connections/{event_connection_id}",
     "method": "PATCH",
@@ -10977,6 +10985,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchEventsEventIdTagsTagId",
     "resource": "Event",
+    "jsonApiType": "Tag",
     "operation": "Update Tag (via Event)",
     "description": "PATCH /events/{event_id}/tags/{tag_id}",
     "method": "PATCH",
@@ -12252,6 +12261,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postReportTemplates",
     "resource": "Report Template",
+    "jsonApiType": "ReportTemplate",
     "operation": "Create Report Template",
     "description": "POST /report_templates",
     "method": "POST",
@@ -12290,6 +12300,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchReportTemplatesReportTemplateId",
     "resource": "Report Template",
+    "jsonApiType": "ReportTemplate",
     "operation": "Update Report Template",
     "description": "PATCH /report_templates/{report_template_id}",
     "method": "PATCH",
@@ -14314,6 +14325,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId",
     "resource": "Resource Approval Group",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Required Approval)",
     "description": "PATCH /resource_approval_groups/{resource_approval_group_id}/required_approvals/{required_approval_id}/resource/{resource_id}",
     "method": "PATCH",
@@ -14529,6 +14541,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId",
     "resource": "Resource Approval Group",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Resource Approval Group)",
     "description": "PATCH /resource_approval_groups/{resource_approval_group_id}/resources/{resource_id}",
     "method": "PATCH",
@@ -16031,6 +16044,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourceBookingsResourceBookingIdResourceResourceId",
     "resource": "Resource Booking",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Resource Booking)",
     "description": "PATCH /resource_bookings/{resource_booking_id}/resource/{resource_id}",
     "method": "PATCH",
@@ -16926,6 +16940,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postResourceFolders",
     "resource": "Resource Folder",
+    "jsonApiType": "ResourceFolder",
     "operation": "Create Resource Folder",
     "description": "POST /resource_folders",
     "method": "POST",
@@ -17001,6 +17016,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourceFoldersResourceFolderIdResourcesResourceId",
     "resource": "Resource Folder",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Resource Folder)",
     "description": "PATCH /resource_folders/{resource_folder_id}/resources/{resource_id}",
     "method": "PATCH",
@@ -17181,6 +17197,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourceFoldersResourceFolderId",
     "resource": "Resource Folder",
+    "jsonApiType": "ResourceFolder",
     "operation": "Update Resource Folder",
     "description": "PATCH /resource_folders/{resource_folder_id}",
     "method": "PATCH",
@@ -17601,6 +17618,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourceQuestionsResourceQuestionId",
     "resource": "Resource Question",
+    "jsonApiType": "ResourceQuestion",
     "operation": "Update Resource Question",
     "description": "PATCH /resource_questions/{resource_question_id}",
     "method": "PATCH",
@@ -20394,6 +20412,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postResourcesResourceIdResourceFolder",
     "resource": "Resource",
+    "jsonApiType": "ResourceFolder",
     "operation": "Create Resource Folder (via Resource)",
     "description": "POST /resources/{resource_id}/resource_folder",
     "method": "POST",
@@ -20502,6 +20521,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postResourcesResourceIdResourceQuestions",
     "resource": "Resource",
+    "jsonApiType": "ResourceQuestion",
     "operation": "Create Resource Question (via Resource)",
     "description": "POST /resources/{resource_id}/resource_questions",
     "method": "POST",
@@ -20596,6 +20616,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postResources",
     "resource": "Resource",
+    "jsonApiType": "Resource",
     "operation": "Create Resource",
     "description": "POST /resources",
     "method": "POST",
@@ -20720,6 +20741,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourcesResourceIdResourceFolderResourceFolderId",
     "resource": "Resource",
+    "jsonApiType": "ResourceFolder",
     "operation": "Update Resource Folder (via Resource)",
     "description": "PATCH /resources/{resource_id}/resource_folder/{resource_folder_id}",
     "method": "PATCH",
@@ -20858,6 +20880,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourcesResourceIdResourceQuestionsResourceQuestionId",
     "resource": "Resource",
+    "jsonApiType": "ResourceQuestion",
     "operation": "Update Resource Question (via Resource)",
     "description": "PATCH /resources/{resource_id}/resource_questions/{resource_question_id}",
     "method": "PATCH",
@@ -20983,6 +21006,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchResourcesResourceId",
     "resource": "Resource",
+    "jsonApiType": "Resource",
     "operation": "Update Resource",
     "description": "PATCH /resources/{resource_id}",
     "method": "PATCH",
@@ -22339,6 +22363,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId",
     "resource": "Room Setup",
+    "jsonApiType": "Resource",
     "operation": "Update Resource (via Resource Suggestion)",
     "description": "PATCH /room_setups/{room_setup_id}/resource_suggestions/{resource_suggestion_id}/resource/{resource_id}",
     "method": "PATCH",
@@ -23613,6 +23638,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postTagGroupsTagGroupIdTags",
     "resource": "Tag Group",
+    "jsonApiType": "Tag",
     "operation": "Create Tag (via Tag Group)",
     "description": "POST /tag_groups/{tag_group_id}/tags",
     "method": "POST",
@@ -23737,6 +23763,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postTagGroups",
     "resource": "Tag Group",
+    "jsonApiType": "TagGroup",
     "operation": "Create Tag Group",
     "description": "POST /tag_groups",
     "method": "POST",
@@ -23785,6 +23812,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchTagGroupsTagGroupIdTagsTagId",
     "resource": "Tag Group",
+    "jsonApiType": "Tag",
     "operation": "Update Tag (via Tag Group)",
     "description": "PATCH /tag_groups/{tag_group_id}/tags/{tag_id}",
     "method": "PATCH",
@@ -23951,6 +23979,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchTagGroupsTagGroupId",
     "resource": "Tag Group",
+    "jsonApiType": "TagGroup",
     "operation": "Update Tag Group",
     "description": "PATCH /tag_groups/{tag_group_id}",
     "method": "PATCH",
@@ -25544,6 +25573,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postTagsTagIdTagGroup",
     "resource": "Tags",
+    "jsonApiType": "TagGroup",
     "operation": "Create Tag Group (via Tag)",
     "description": "POST /tags/{tag_id}/tag_group",
     "method": "POST",
@@ -25620,6 +25650,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postTags",
     "resource": "Tags",
+    "jsonApiType": "Tag",
     "operation": "Create Tag",
     "description": "POST /tags",
     "method": "POST",
@@ -25716,6 +25747,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchTagsTagIdTagGroupTagGroupId",
     "resource": "Tags",
+    "jsonApiType": "TagGroup",
     "operation": "Update Tag Group (via Tag)",
     "description": "PATCH /tags/{tag_id}/tag_group/{tag_group_id}",
     "method": "PATCH",
@@ -25829,6 +25861,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchTagsTagId",
     "resource": "Tags",
+    "jsonApiType": "Tag",
     "operation": "Update Tag",
     "description": "PATCH /tags/{tag_id}",
     "method": "PATCH",
@@ -32943,7 +32976,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.resource,
+      type: operation.jsonApiType ?? operation.resource,
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },

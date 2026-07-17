@@ -643,6 +643,13 @@ function requestBodySchema(operation: any): JsonSchema | undefined {
     ?? operation.requestBody?.content?.['application/json']?.schema;
 }
 
+function jsonApiTypeFromRequestBody(operation: any): string | undefined {
+  const typeValues = requestBodySchema(operation)?.properties?.data?.properties?.type?.enum;
+  return Array.isArray(typeValues) && typeValues.length === 1 && typeof typeValues[0] === 'string'
+    ? typeValues[0]
+    : undefined;
+}
+
 function collectAttributeFields(operation: any): GeneratedField[] {
   const attributes = requestBodySchema(operation)?.properties?.data?.properties?.attributes;
   const properties = attributes?.properties;
@@ -728,6 +735,7 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
       operations.push({
         id,
         resource: resourceLabel(operation, path),
+        jsonApiType: jsonApiTypeFromRequestBody(operation),
         operation: operationLabel(operation, method, path),
         description: operation.description ?? operation.summary ?? `${method.toUpperCase()} ${path}`,
         method: method.toUpperCase() as HttpMethod,

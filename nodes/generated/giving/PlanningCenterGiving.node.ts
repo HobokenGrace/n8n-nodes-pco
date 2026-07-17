@@ -69,6 +69,7 @@ interface GeneratedRelationshipField {
 interface Operation {
   id: string;
   resource: string;
+  jsonApiType?: string;
   operation: string;
   description: string;
   method: IHttpRequestMethods;
@@ -611,6 +612,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postBatchGroupsBatchGroupIdBatches",
     "resource": "Batch Group",
+    "jsonApiType": "Batch",
     "operation": "Create Batch (via Batch Group)",
     "description": "POST /batch_groups/{batch_group_id}/batches",
     "method": "POST",
@@ -705,6 +707,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postBatchGroups",
     "resource": "Batch Group",
+    "jsonApiType": "BatchGroup",
     "operation": "Create Batch Group",
     "description": "POST /batch_groups",
     "method": "POST",
@@ -789,6 +792,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchGroupsBatchGroupIdBatchesBatchId",
     "resource": "Batch Group",
+    "jsonApiType": "Batch",
     "operation": "Update Batch (via Batch Group)",
     "description": "PATCH /batch_groups/{batch_group_id}/batches/{batch_id}",
     "method": "PATCH",
@@ -924,6 +928,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchGroupsBatchGroupId",
     "resource": "Batch Group",
+    "jsonApiType": "BatchGroup",
     "operation": "Update Batch Group",
     "description": "PATCH /batch_groups/{batch_group_id}",
     "method": "PATCH",
@@ -992,6 +997,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchGroupsBatchGroupIdOwnerOwnerId",
     "resource": "Batch Group",
+    "jsonApiType": "Person",
     "operation": "Update Owner (via Batch Group)",
     "description": "PATCH /batch_groups/{batch_group_id}/owner/{owner_id}",
     "method": "PATCH",
@@ -2131,6 +2137,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postBatches",
     "resource": "Batch",
+    "jsonApiType": "Batch",
     "operation": "Create Batch",
     "description": "POST /batches",
     "method": "POST",
@@ -2241,6 +2248,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postBatchesBatchIdDonations",
     "resource": "Batch",
+    "jsonApiType": "Donation",
     "operation": "Create Donation (via Batch)",
     "description": "POST /batches/{batch_id}/donations",
     "method": "POST",
@@ -2566,6 +2574,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchesBatchIdBatchGroupBatchGroupId",
     "resource": "Batch",
+    "jsonApiType": "BatchGroup",
     "operation": "Update Batch Group (via Batch)",
     "description": "PATCH /batches/{batch_id}/batch_group/{batch_group_id}",
     "method": "PATCH",
@@ -2670,6 +2679,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchesBatchId",
     "resource": "Batch",
+    "jsonApiType": "Batch",
     "operation": "Update Batch",
     "description": "PATCH /batches/{batch_id}",
     "method": "PATCH",
@@ -2769,6 +2779,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchesBatchIdDonationsDonationId",
     "resource": "Batch",
+    "jsonApiType": "Donation",
     "operation": "Update Donation (via Batch)",
     "description": "PATCH /batches/{batch_id}/donations/{donation_id}",
     "method": "PATCH",
@@ -3135,6 +3146,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchBatchesBatchIdOwnerOwnerId",
     "resource": "Batch",
+    "jsonApiType": "Person",
     "operation": "Update Owner (via Batch)",
     "description": "PATCH /batches/{batch_id}/owner/{owner_id}",
     "method": "PATCH",
@@ -3895,6 +3907,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchCampusesCampusIdDonationsDonationId",
     "resource": "Campus",
+    "jsonApiType": "Donation",
     "operation": "Update Donation (via Campus)",
     "description": "PATCH /campuses/{campus_id}/donations/{donation_id}",
     "method": "PATCH",
@@ -5945,6 +5958,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchDonationsDonationId",
     "resource": "Donation",
+    "jsonApiType": "Donation",
     "operation": "Update Donation",
     "description": "PATCH /donations/{donation_id}",
     "method": "PATCH",
@@ -6270,6 +6284,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchDonationsDonationIdDesignationsDesignationIdFundFundId",
     "resource": "Donation",
+    "jsonApiType": "Fund",
     "operation": "Update Fund (via Donation Designation)",
     "description": "PATCH /donations/{donation_id}/designations/{designation_id}/fund/{fund_id}",
     "method": "PATCH",
@@ -6416,6 +6431,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchDonationsDonationIdLabelsLabelId",
     "resource": "Donation",
+    "jsonApiType": "Label",
     "operation": "Update Label (via Donation)",
     "description": "PATCH /donations/{donation_id}/labels/{label_id}",
     "method": "PATCH",
@@ -6837,6 +6853,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postFunds",
     "resource": "Fund",
+    "jsonApiType": "Fund",
     "operation": "Create Fund",
     "description": "POST /funds",
     "method": "POST",
@@ -6889,6 +6906,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchFundsFundId",
     "resource": "Fund",
+    "jsonApiType": "Fund",
     "operation": "Update Fund",
     "description": "PATCH /funds/{fund_id}",
     "method": "PATCH",
@@ -7781,6 +7799,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postInKindDonations",
     "resource": "In Kind Donation",
+    "jsonApiType": "InKindDonation",
     "operation": "Create In Kind Donation",
     "description": "POST /in_kind_donations",
     "method": "POST",
@@ -8031,6 +8050,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchInKindDonationsInKindDonationIdFundFundId",
     "resource": "In Kind Donation",
+    "jsonApiType": "Fund",
     "operation": "Update Fund (via In Kind Donation)",
     "description": "PATCH /in_kind_donations/{in_kind_donation_id}/fund/{fund_id}",
     "method": "PATCH",
@@ -8142,6 +8162,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchInKindDonationsInKindDonationId",
     "resource": "In Kind Donation",
+    "jsonApiType": "InKindDonation",
     "operation": "Update In Kind Donation",
     "description": "PATCH /in_kind_donations/{in_kind_donation_id}",
     "method": "PATCH",
@@ -8449,6 +8470,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchInKindDonationsInKindDonationIdPersonPersonId",
     "resource": "In Kind Donation",
+    "jsonApiType": "Person",
     "operation": "Update Person (via In Kind Donation)",
     "description": "PATCH /in_kind_donations/{in_kind_donation_id}/person/{person_id}",
     "method": "PATCH",
@@ -8717,6 +8739,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postLabels",
     "resource": "Label",
+    "jsonApiType": "Label",
     "operation": "Create Label",
     "description": "POST /labels",
     "method": "POST",
@@ -8741,6 +8764,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchLabelsLabelId",
     "resource": "Label",
+    "jsonApiType": "Label",
     "operation": "Update Label",
     "description": "PATCH /labels/{label_id}",
     "method": "PATCH",
@@ -9336,6 +9360,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postPaymentSources",
     "resource": "Payment Source",
+    "jsonApiType": "PaymentSource",
     "operation": "Create Payment Source",
     "description": "POST /payment_sources",
     "method": "POST",
@@ -9374,6 +9399,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPaymentSourcesPaymentSourceIdDonationsDonationId",
     "resource": "Payment Source",
+    "jsonApiType": "Donation",
     "operation": "Update Donation (via Payment Source)",
     "description": "PATCH /payment_sources/{payment_source_id}/donations/{donation_id}",
     "method": "PATCH",
@@ -9730,6 +9756,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPaymentSourcesPaymentSourceId",
     "resource": "Payment Source",
+    "jsonApiType": "PaymentSource",
     "operation": "Update Payment Source",
     "description": "PATCH /payment_sources/{payment_source_id}",
     "method": "PATCH",
@@ -13743,6 +13770,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "postPeoplePersonIdPledges",
     "resource": "Person",
+    "jsonApiType": "Pledge",
     "operation": "Create Pledge (via Person)",
     "description": "POST /people/{person_id}/pledges",
     "method": "POST",
@@ -13890,6 +13918,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdBatchesBatchId",
     "resource": "Person",
+    "jsonApiType": "Batch",
     "operation": "Update Batch (via Person)",
     "description": "PATCH /people/{person_id}/batches/{batch_id}",
     "method": "PATCH",
@@ -14029,6 +14058,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdBatchGroupsBatchGroupId",
     "resource": "Person",
+    "jsonApiType": "BatchGroup",
     "operation": "Update Batch Group (via Person)",
     "description": "PATCH /people/{person_id}/batch_groups/{batch_group_id}",
     "method": "PATCH",
@@ -14137,6 +14167,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdDonationsDonationId",
     "resource": "Person",
+    "jsonApiType": "Donation",
     "operation": "Update Donation (via Person)",
     "description": "PATCH /people/{person_id}/donations/{donation_id}",
     "method": "PATCH",
@@ -14502,6 +14533,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdFundFundId",
     "resource": "Person",
+    "jsonApiType": "Fund",
     "operation": "Update Fund (via Pledge Campaign)",
     "description": "PATCH /people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/fund/{fund_id}",
     "method": "PATCH",
@@ -14708,6 +14740,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdInKindDonationsInKindDonationId",
     "resource": "Person",
+    "jsonApiType": "InKindDonation",
     "operation": "Update In Kind Donation (via Person)",
     "description": "PATCH /people/{person_id}/in_kind_donations/{in_kind_donation_id}",
     "method": "PATCH",
@@ -15055,6 +15088,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdPledgesPledgeIdJointGiverJointGiverId",
     "resource": "Person",
+    "jsonApiType": "Person",
     "operation": "Update Joint Giver (via Pledge)",
     "description": "PATCH /people/{person_id}/pledges/{pledge_id}/joint_giver/{joint_giver_id}",
     "method": "PATCH",
@@ -15157,6 +15191,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonId",
     "resource": "Person",
+    "jsonApiType": "Person",
     "operation": "Update Person",
     "description": "PATCH /people/{person_id}",
     "method": "PATCH",
@@ -15212,6 +15247,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdPledgesPledgeId",
     "resource": "Person",
+    "jsonApiType": "Pledge",
     "operation": "Update Pledge (via Person)",
     "description": "PATCH /people/{person_id}/pledges/{pledge_id}",
     "method": "PATCH",
@@ -15324,6 +15360,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId",
     "resource": "Person",
+    "jsonApiType": "Pledge",
     "operation": "Update Pledge (via Pledge Campaign)",
     "description": "PATCH /people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges/{pledge_id}",
     "method": "PATCH",
@@ -15479,6 +15516,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignId",
     "resource": "Person",
+    "jsonApiType": "PledgeCampaign",
     "operation": "Update Pledge Campaign (via Pledge)",
     "description": "PATCH /people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}",
     "method": "PATCH",
@@ -17176,6 +17214,7 @@ const OPERATIONS: Operation[] = [
   {
     "id": "patchRecurringDonationsRecurringDonationIdDesignationsRecurringDonationDesignationIdFundFundId",
     "resource": "Recurring Donation",
+    "jsonApiType": "Fund",
     "operation": "Update Fund (via Recurring Donation Designation)",
     "description": "PATCH /recurring_donations/{recurring_donation_id}/designations/{recurring_donation_designation_id}/fund/{fund_id}",
     "method": "PATCH",
@@ -24687,7 +24726,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.resource,
+      type: operation.jsonApiType ?? operation.resource,
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },
