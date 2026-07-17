@@ -35,6 +35,15 @@ The `n8n` service should show as `healthy`, then open `http://localhost:5678`.
 
 Open n8n at `http://localhost:5678`.
 
+## Update n8n
+
+```sh
+cd .docker
+docker compose pull # pulls the latest n8n image
+docker compose up -d --remove-orphans # restarts n8n in detached mode
+docker image prune # removes old n8n images
+```
+
 ## Test the Nodes
 
 1. Create or sign in to the local n8n owner account.
