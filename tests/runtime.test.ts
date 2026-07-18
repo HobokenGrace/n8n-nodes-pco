@@ -64,10 +64,10 @@ describe('Planning Center request helper', () => {
   });
 
   it('redacts credential values from package-created error text', () => {
-    const message = sanitizePlanningCenterError(
-      new Error('failed for app-id using super-secret'),
-      { applicationId: 'app-id', secret: 'super-secret' },
-    );
+    const message = sanitizePlanningCenterError(new Error('failed for app-id using super-secret'), {
+      applicationId: 'app-id',
+      secret: 'super-secret',
+    });
 
     expect(message).toBe('failed for [redacted] using [redacted]');
   });
@@ -95,6 +95,10 @@ describe('Planning Center JSON:API normalization', () => {
       links: expect.any(Object),
       meta: expect.any(Object),
     });
+  });
+
+  it.each([undefined, '', null])('normalizes a bodyless response to one empty item', (response) => {
+    expect(normalizeJsonApiResponse(response)).toEqual([{}]);
   });
 });
 

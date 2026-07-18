@@ -1,11 +1,24 @@
 import { describe, expect, it, vi } from 'vitest';
+import { readFile } from 'node:fs/promises';
 
 import * as entrypoint from '../index';
 import { generatedProductConfigs, productConfigs } from '../src/generator/config';
-import { buildProductGeneration } from '../src/generator/openapi';
+import {
+  buildProductGeneration,
+  buildProductGenerationFromDocument,
+} from '../src/generator/openapi';
+import { renderNode } from '../src/generator/render';
+import { normalizeJsonApiResponse } from '../src/runtime/jsonApi';
 
 type GeneratedNodeClass = new () => {
-  description: { credentials?: unknown; displayName: string; icon?: string; name: string; properties: any[]; subtitle?: string };
+  description: {
+    credentials?: unknown;
+    displayName: string;
+    icon?: string;
+    name: string;
+    properties: any[];
+    subtitle?: string;
+  };
 };
 
 const generatedNodeClasses = generatedProductConfigs.map(
@@ -36,10 +49,16 @@ describe('generated Planning Center nodes', () => {
     nodes.forEach((node, index) => {
       const config = generatedProductConfigs[index];
 
-      expect(node.description.credentials).toEqual([{ name: 'planningCenterPatApi', required: true }]);
+      expect(node.description.credentials).toEqual([
+        { name: 'planningCenterPatApi', required: true },
+      ]);
       expect(node.description.icon).toBe(`file:${config.product}.svg`);
-      expect(node.description.properties.some((property) => property.name === 'resource')).toBe(true);
-      expect(node.description.properties.some((property) => property.name === 'operation')).toBe(true);
+      expect(node.description.properties.some((property) => property.name === 'resource')).toBe(
+        true,
+      );
+      expect(node.description.properties.some((property) => property.name === 'operation')).toBe(
+        true,
+      );
     });
   });
 
@@ -53,7 +72,9 @@ describe('generated Planning Center nodes', () => {
       expect(summary.operationCount).toBeGreaterThan(0);
       expect(summary.resourceCount).toBeGreaterThan(0);
       expect(summary.exclusions).toEqual([]);
-      expect(summary.operations.some((operation) => operation.path.startsWith(`/${summary.product}/v2`))).toBe(true);
+      expect(
+        summary.operations.some((operation) => operation.path.startsWith(`/${summary.product}/v2`)),
+      ).toBe(true);
     }
   });
 
@@ -63,7 +84,10 @@ describe('generated Planning Center nodes', () => {
     for (const summary of summaries) {
       const operationsByResource = new Map<string, typeof summary.operations>();
       for (const operation of summary.operations) {
-        operationsByResource.set(operation.resource, [...(operationsByResource.get(operation.resource) ?? []), operation]);
+        operationsByResource.set(operation.resource, [
+          ...(operationsByResource.get(operation.resource) ?? []),
+          operation,
+        ]);
       }
 
       for (const [resource, operations] of operationsByResource) {
@@ -105,14 +129,20 @@ describe('generated Planning Center nodes', () => {
       buildProductGeneration(givingConfig!),
       buildProductGeneration(servicesConfig!),
     ]);
-    const operations = Object.fromEntries(peopleSummary.operations.map((operation) => [operation.id, operation.operation]));
-    const givingOperations = Object.fromEntries(givingSummary.operations.map((operation) => [operation.id, operation.operation]));
+    const operations = Object.fromEntries(
+      peopleSummary.operations.map((operation) => [operation.id, operation.operation]),
+    );
+    const givingOperations = Object.fromEntries(
+      givingSummary.operations.map((operation) => [operation.id, operation.operation]),
+    );
     const servicesOperations = Object.fromEntries(
       servicesSummary.operations.map((operation) => [operation.id, operation.operation]),
     );
 
     expect(operations.getFormsFormIdFormSubmissions).toBe('List Form Submissions (via Form)');
-    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe('Get Form Submission (via Form)');
+    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionId).toBe(
+      'Get Form Submission (via Form)',
+    );
     expect(operations.postFormsFormIdFormSubmissions).toBe('Create Form Submission (via Form)');
     expect(operations.patchFormsFormIdFormSubmissionsFormSubmissionIdPersonPersonId).toBe(
       'Update Person (via Form Submission)',
@@ -123,14 +153,16 @@ describe('generated Planning Center nodes', () => {
     expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValues).toBe(
       'List Form Submission Values (via Form Submission)',
     );
-    expect(operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValuesFormSubmissionValueId).toBe(
-      'Get Form Submission Value (via Form Submission)',
-    );
+    expect(
+      operations.getFormsFormIdFormSubmissionsFormSubmissionIdFormSubmissionValuesFormSubmissionValueId,
+    ).toBe('Get Form Submission Value (via Form Submission)');
     expect(operations.getPeople).toBe('List People');
     expect(operations.getHouseholdsHouseholdIdPeople).toBe('List People (via Household)');
     expect(operations.getListsListIdPeople).toBe('List People (via List)');
     expect(operations.getPeoplePersonId).toBe('Get Person');
-    expect(operations.getPeoplePersonIdWorkflowCardsWorkflowCardIdPersonPersonId).toBe('Get Person (via Workflow Card)');
+    expect(operations.getPeoplePersonIdWorkflowCardsWorkflowCardIdPersonPersonId).toBe(
+      'Get Person (via Workflow Card)',
+    );
     expect(operations.getMaritalStatusesMaritalStatusId).toBe('Get Marital Status');
     expect(givingOperations.getCampusesCampusId).toBe('Get Campus');
     expect(servicesOperations.getFoldersFolderIdFoldersFolderId).toBe('Get Folder (via Folder)');
@@ -139,7 +171,9 @@ describe('generated Planning Center nodes', () => {
   it('renders selected operation subtitles from endpoint descriptions while preserving operation IDs', () => {
     const node = new entrypoint.PlanningCenterPeople();
     const operationProperty = node.description.properties.find(
-      (property) => property.name === 'operation' && property.options?.some((option: any) => option.value === 'getPeople'),
+      (property) =>
+        property.name === 'operation' &&
+        property.options?.some((option: any) => option.value === 'getPeople'),
     );
 
     expect(node.description.subtitle).not.toBe('={{$parameter["operation"]}}');
@@ -181,7 +215,9 @@ describe('generated Planning Center nodes', () => {
     expect(peopleConfig).toBeDefined();
 
     const summary = await buildProductGeneration(peopleConfig!);
-    const operation = summary.operations.find((candidate) => candidate.id === 'getFormsFormIdFormSubmissions');
+    const operation = summary.operations.find(
+      (candidate) => candidate.id === 'getFormsFormIdFormSubmissions',
+    );
     expect(operation).toBeDefined();
 
     const queryParameters = operation!.queryParameters.map((parameter) => parameter.sourceName);
@@ -202,7 +238,9 @@ describe('generated Planning Center nodes', () => {
     expect(queryParameters).not.toContain('offset');
     expect(queryParameters.length).toBeLessThan(20);
 
-    const queryOptions = Object.fromEntries(operation!.queryOptions.map((option) => [option.name, option]));
+    const queryOptions = Object.fromEntries(
+      operation!.queryOptions.map((option) => [option.name, option]),
+    );
     expect(queryOptions.wherecreatedAtFilter).toMatchObject({
       displayName: 'Created At',
       group: 'filter',
@@ -237,6 +275,125 @@ describe('generated Planning Center nodes', () => {
         { name: 'Created At Descending', value: '-created_at' },
       ]),
     });
+  });
+
+  it('models and renders supported ordinary primitive query parameters', () => {
+    const config = {
+      product: 'test',
+      displayName: 'Test',
+      className: 'TestNode',
+      nodeName: 'testNode',
+      sourceUrl: 'https://example.com/openapi.json',
+      snapshotDate: '2026-01-01',
+      generate: true,
+    };
+    const result = buildProductGenerationFromDocument(config, {
+      openapi: '3.1.0',
+      info: { title: 'Test', version: '1.0.0' },
+      paths: {
+        '/items': {
+          get: {
+            operationId: 'listItems',
+            tags: ['Items'],
+            parameters: [
+              {
+                in: 'query',
+                name: 'text-value',
+                description: 'Text value.',
+                schema: { type: 'string', default: 'hello' },
+              },
+              { in: 'query', name: 'count', required: true, schema: { type: 'integer' } },
+              { in: 'query', name: 'ratio', schema: { type: 'number' } },
+              { in: 'query', name: 'enabled', schema: { type: 'boolean' } },
+              {
+                in: 'query',
+                name: 'status',
+                schema: { type: 'string', enum: ['active', 'paused'] },
+              },
+              { in: 'query', name: 'at', schema: { type: 'string', format: 'date-time' } },
+              {
+                in: 'query',
+                name: 'unsupported',
+                schema: { type: 'array', items: { type: 'string' } },
+              },
+            ],
+            responses: {
+              200: {
+                description: 'OK',
+                content: {
+                  'application/vnd.api+json': {
+                    schema: {
+                      type: 'object',
+                      properties: { data: { type: 'array', items: { type: 'object' } } },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+    const operation = result.operations[0];
+
+    expect(operation.ordinaryQueryFields).toEqual([
+      expect.objectContaining({
+        name: 'textValue',
+        sourceName: 'text-value',
+        description: 'Text value.',
+        defaultValue: 'hello',
+        required: false,
+        type: 'string',
+      }),
+      expect.objectContaining({ sourceName: 'count', required: true, type: 'number' }),
+      expect.objectContaining({ sourceName: 'ratio', required: false, type: 'number' }),
+      expect.objectContaining({ sourceName: 'enabled', required: false, type: 'boolean' }),
+      expect.objectContaining({
+        sourceName: 'status',
+        valueOptions: [
+          { name: 'Active', value: 'active' },
+          { name: 'Paused', value: 'paused' },
+        ],
+      }),
+      expect.objectContaining({ sourceName: 'at', format: 'date-time' }),
+    ]);
+    expect(operation.ordinaryQueryFields.map((field) => field.sourceName)).not.toContain(
+      'unsupported',
+    );
+
+    const source = renderNode(config, result);
+    expect(source).toContain('displayName: \\"At\\"');
+    expect(source).toContain('type: \\"dateTime\\"');
+    expect(source).toContain('function addOrdinaryQuery');
+    expect(source).toContain('addOrdinaryQuery(context, itemIndex, operation, qs);');
+    expect(source.indexOf('addOrdinaryQuery(context, itemIndex, operation, qs);')).toBeLessThan(
+      source.indexOf('addAdditionalQuery(context, itemIndex, operation, qs);'),
+    );
+  });
+
+  it('rejects operation IDs that collide after generated identifier normalization', () => {
+    const config = {
+      product: 'test',
+      displayName: 'Test',
+      className: 'TestNode',
+      nodeName: 'testNode',
+      sourceUrl: 'https://example.com/openapi.json',
+      snapshotDate: '2026-01-01',
+      generate: true,
+    };
+
+    expect(() =>
+      buildProductGenerationFromDocument(config, {
+        paths: {
+          '/first': {
+            get: { operationId: 'get-items', responses: { 200: { description: 'OK' } } },
+          },
+          '/second': {
+            get: { operationId: 'get items', responses: { 200: { description: 'OK' } } },
+          },
+        },
+      }),
+    ).toThrow(/generated operation ID.*getItems/i);
   });
 
   it('renders grouped query options as multi-value fixed collections', () => {
@@ -297,7 +454,10 @@ describe('generated Planning Center nodes', () => {
           displayName: 'List',
           name: 'list',
           type: 'list',
-          typeOptions: expect.objectContaining({ searchable: true, searchListMethod: expect.any(String) }),
+          typeOptions: expect.objectContaining({
+            searchable: true,
+            searchListMethod: expect.any(String),
+          }),
         }),
         expect.objectContaining({ displayName: 'ID', name: 'id', type: 'string' }),
       ],
@@ -309,27 +469,49 @@ describe('generated Planning Center nodes', () => {
     expect(groupsConfig).toBeDefined();
 
     const summary = await buildProductGeneration(groupsConfig!);
-    const operations = Object.fromEntries(summary.operations.map((operation) => [operation.id, operation]));
+    const operations = Object.fromEntries(
+      summary.operations.map((operation) => [operation.id, operation]),
+    );
     const groupTypeGroups = operations.getGroupTypesGroupTypeIdGroups;
     const campusGroups = operations.getCampusesCampusIdGroups;
     const campusGroupPatch = operations.patchCampusesCampusIdGroupsGroupId;
 
-    expect(groupTypeGroups.pathParameters.find((field) => field.sourceName === 'group_type_id')?.lookup).toMatchObject({
+    expect(
+      groupTypeGroups.pathParameters.find((field) => field.sourceName === 'group_type_id')?.lookup,
+    ).toMatchObject({
       sourcePath: '/groups/v2/group_types',
       parentBindings: [],
       resultLimit: 25,
     });
-    expect(operations.getCampuses.queryOptions.find((option) => option.sourceName === 'where[id]')?.lookup).toMatchObject({
+    expect(
+      operations.getCampuses.queryOptions.find((option) => option.sourceName === 'where[id]')
+        ?.lookup,
+    ).toMatchObject({
       sourcePath: '/groups/v2/campuses',
       searchFilter: 'where[name]',
     });
-    expect(campusGroups.queryOptions.find((option) => option.sourceName === 'where[group_type][id]')?.lookup).toMatchObject({
+    expect(
+      campusGroups.queryOptions.find((option) => option.sourceName === 'where[group_type][id]')
+        ?.lookup,
+    ).toMatchObject({
       sourcePath: '/groups/v2/group_types',
     });
-    expect(campusGroupPatch.attributeFields.find((field) => field.sourceName === 'group_type_id')?.lookup).toBeDefined();
-    expect(campusGroupPatch.relationshipFields.find((field) => field.relationshipName === 'group_type')?.lookup).toBeDefined();
-    expect(campusGroupPatch.attributeFields.find((field) => field.sourceName === 'tag_ids')?.lookup).toBeUndefined();
-    expect(summary.operations.flatMap((operation) => operation.relationshipFields).filter((field) => field.multiple && field.lookup)).toEqual([]);
+    expect(
+      campusGroupPatch.attributeFields.find((field) => field.sourceName === 'group_type_id')
+        ?.lookup,
+    ).toBeDefined();
+    expect(
+      campusGroupPatch.relationshipFields.find((field) => field.relationshipName === 'group_type')
+        ?.lookup,
+    ).toBeDefined();
+    expect(
+      campusGroupPatch.attributeFields.find((field) => field.sourceName === 'tag_ids')?.lookup,
+    ).toBeUndefined();
+    expect(
+      summary.operations
+        .flatMap((operation) => operation.relationshipFields)
+        .filter((field) => field.multiple && field.lookup),
+    ).toEqual([]);
   });
 
   it('does not make path parameter lookups depend on their own selected value', async () => {
@@ -337,8 +519,12 @@ describe('generated Planning Center nodes', () => {
     expect(servicesConfig).toBeDefined();
 
     const summary = await buildProductGeneration(servicesConfig!);
-    const folderServiceTypes = summary.operations.find((operation) => operation.id === 'getFoldersFolderIdServiceTypes');
-    const folderId = folderServiceTypes?.pathParameters.find((field) => field.sourceName === 'folder_id');
+    const folderServiceTypes = summary.operations.find(
+      (operation) => operation.id === 'getFoldersFolderIdServiceTypes',
+    );
+    const folderId = folderServiceTypes?.pathParameters.find(
+      (field) => field.sourceName === 'folder_id',
+    );
 
     expect(folderId?.lookup).toMatchObject({
       sourcePath: '/services/v2/folders',
@@ -351,8 +537,12 @@ describe('generated Planning Center nodes', () => {
     expect(givingConfig).toBeDefined();
 
     const summary = await buildProductGeneration(givingConfig!);
-    const operation = summary.operations.find((candidate) => candidate.id === 'getPeoplePersonIdDonations');
-    const lookup = operation?.pathParameters.find((field) => field.sourceName === 'person_id')?.lookup;
+    const operation = summary.operations.find(
+      (candidate) => candidate.id === 'getPeoplePersonIdDonations',
+    );
+    const lookup = operation?.pathParameters.find(
+      (field) => field.sourceName === 'person_id',
+    )?.lookup;
 
     expect(operation?.operation).toBe('List Donations (via Person)');
     expect(lookup).toMatchObject({
@@ -394,13 +584,16 @@ describe('generated Planning Center nodes', () => {
       }),
       getNode: () => ({ name: 'Planning Center Groups', type: 'planningCenterGroups' }),
       getNodeParameter: vi.fn((name: string, fallback?: unknown) => {
-        if (name === 'getCampusesCampusIdGroupsGroupId_campusId') return { __rl: true, mode: 'list', value: '12' };
+        if (name === 'getCampusesCampusIdGroupsGroupId_campusId')
+          return { __rl: true, mode: 'list', value: '12' };
         return fallback;
       }),
       helpers: { httpRequest },
     };
 
-    await expect(node.methods.listSearch.searchGetCampusesCampusIdGroupsGroupIdGroupId.call(context, 'small')).resolves.toEqual({
+    await expect(
+      node.methods.listSearch.searchGetCampusesCampusIdGroupsGroupIdGroupId.call(context, 'small'),
+    ).resolves.toEqual({
       results: [
         { name: 'North (1)', value: '1' },
         { name: 'Fallback Title (2)', value: '2' },
@@ -416,7 +609,9 @@ describe('generated Planning Center nodes', () => {
     context.getNodeParameter = vi.fn((_name: string, fallback?: unknown) => fallback);
     httpRequest.mockClear();
 
-    await expect(node.methods.listSearch.searchGetCampusesCampusIdGroupsGroupIdGroupId.call(context, 'small')).resolves.toEqual({
+    await expect(
+      node.methods.listSearch.searchGetCampusesCampusIdGroupsGroupIdGroupId.call(context, 'small'),
+    ).resolves.toEqual({
       results: [],
     });
     expect(httpRequest).not.toHaveBeenCalled();
@@ -427,7 +622,9 @@ describe('generated Planning Center nodes', () => {
     expect(webhooksConfig).toBeDefined();
 
     const summary = await buildProductGeneration(webhooksConfig!);
-    const operation = summary.operations.find((candidate) => candidate.id === 'postWebhookSubscriptions');
+    const operation = summary.operations.find(
+      (candidate) => candidate.id === 'postWebhookSubscriptions',
+    );
 
     expect(operation).toMatchObject({
       resource: 'Webhook Subscription',
@@ -437,7 +634,9 @@ describe('generated Planning Center nodes', () => {
 
   it('uses canonical JSON:API request types in standard bodies and preserves raw JSON bodies', async () => {
     const node = new entrypoint.PlanningCenterWebhooks();
-    const httpRequest = vi.fn().mockResolvedValue({ data: { id: '1', type: 'WebhookSubscription' } });
+    const httpRequest = vi
+      .fn()
+      .mockResolvedValue({ data: { id: '1', type: 'WebhookSubscription' } });
     const context: any = {
       continueOnFail: () => false,
       getCredentials: vi.fn().mockResolvedValue({
@@ -464,27 +663,35 @@ describe('generated Planning Center nodes', () => {
       helpers: { httpRequest },
     };
 
-    await expect(node.execute.call(context)).resolves.toEqual([[
-      expect.objectContaining({ json: expect.any(Object) }),
-      expect.objectContaining({ json: expect.any(Object) }),
-    ]]);
-    expect(httpRequest).toHaveBeenNthCalledWith(1, expect.objectContaining({
-      method: 'POST',
-      url: 'https://api.example.test/webhooks/v2/webhook_subscriptions',
-      body: {
-        data: {
-          type: 'WebhookSubscription',
-          attributes: {
-            name: 'Member Updates',
-            url: 'https://example.test/webhook',
-            active: true,
+    await expect(node.execute.call(context)).resolves.toEqual([
+      [
+        expect.objectContaining({ json: expect.any(Object) }),
+        expect.objectContaining({ json: expect.any(Object) }),
+      ],
+    ]);
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        method: 'POST',
+        url: 'https://api.example.test/webhooks/v2/webhook_subscriptions',
+        body: {
+          data: {
+            type: 'WebhookSubscription',
+            attributes: {
+              name: 'Member Updates',
+              url: 'https://example.test/webhook',
+              active: true,
+            },
           },
         },
-      },
-    }));
-    expect(httpRequest).toHaveBeenNthCalledWith(2, expect.objectContaining({
-      body: { data: { type: 'CustomRawType', attributes: { name: 'Raw' } } },
-    }));
+      }),
+    );
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        body: { data: { type: 'CustomRawType', attributes: { name: 'Raw' } } },
+      }),
+    );
   });
 
   it('uses bounded split-name lookup search for Giving person locators', async () => {
@@ -501,7 +708,11 @@ describe('generated Planning Center nodes', () => {
       if (request.qs?.['where[last_name]']) {
         return Promise.resolve({
           data: [
-            { id: '2', type: 'Person', attributes: { first_name: 'Duplicate', last_name: 'Match' } },
+            {
+              id: '2',
+              type: 'Person',
+              attributes: { first_name: 'Duplicate', last_name: 'Match' },
+            },
             { id: '25', type: 'Person', attributes: { first_name: 'Last25', last_name: 'Match' } },
             { id: '26', type: 'Person', attributes: { first_name: 'Last26', last_name: 'Match' } },
           ],
@@ -520,28 +731,48 @@ describe('generated Planning Center nodes', () => {
       helpers: { httpRequest },
     };
 
-    await expect(node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, 'Ada Lovelace')).resolves.toEqual({
+    await expect(
+      node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(
+        context,
+        'Ada Lovelace',
+      ),
+    ).resolves.toEqual({
       results: [
-        ...firstNamePeople.map((person) => ({ name: `${person.attributes.first_name} ${person.attributes.last_name} (${person.id})`, value: person.id })),
+        ...firstNamePeople.map((person) => ({
+          name: `${person.attributes.first_name} ${person.attributes.last_name} (${person.id})`,
+          value: person.id,
+        })),
         { name: 'Last25 Match (25)', value: '25' },
       ],
     });
 
     expect(httpRequest).toHaveBeenCalledTimes(2);
-    expect(httpRequest).toHaveBeenNthCalledWith(1, expect.objectContaining({
-      url: 'https://api.example.test/giving/v2/people',
-      qs: { per_page: 25, 'where[first_name]': 'Ada' },
-    }));
-    expect(httpRequest).toHaveBeenNthCalledWith(2, expect.objectContaining({
-      url: 'https://api.example.test/giving/v2/people',
-      qs: { per_page: 25, 'where[last_name]': 'Lovelace' },
-    }));
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        url: 'https://api.example.test/giving/v2/people',
+        qs: { per_page: 25, 'where[first_name]': 'Ada' },
+      }),
+    );
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        url: 'https://api.example.test/giving/v2/people',
+        qs: { per_page: 25, 'where[last_name]': 'Lovelace' },
+      }),
+    );
 
     httpRequest.mockClear();
     await node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, 'Ada');
     expect(httpRequest).toHaveBeenCalledTimes(2);
-    expect(httpRequest).toHaveBeenNthCalledWith(1, expect.objectContaining({ qs: { per_page: 25, 'where[first_name]': 'Ada' } }));
-    expect(httpRequest).toHaveBeenNthCalledWith(2, expect.objectContaining({ qs: { per_page: 25, 'where[last_name]': 'Ada' } }));
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({ qs: { per_page: 25, 'where[first_name]': 'Ada' } }),
+    );
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({ qs: { per_page: 25, 'where[last_name]': 'Ada' } }),
+    );
   });
 
   it('uses one unfiltered request for initial Giving person locator results', async () => {
@@ -560,14 +791,18 @@ describe('generated Planning Center nodes', () => {
       helpers: { httpRequest },
     };
 
-    await expect(node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, '')).resolves.toEqual({
+    await expect(
+      node.methods.listSearch.searchGetPeoplePersonIdDonationsPersonId.call(context, ''),
+    ).resolves.toEqual({
       results: [{ name: 'Ada Lovelace (1)', value: '1' }],
     });
     expect(httpRequest).toHaveBeenCalledTimes(1);
-    expect(httpRequest).toHaveBeenCalledWith(expect.objectContaining({
-      url: 'https://api.example.test/giving/v2/people',
-      qs: { per_page: 25 },
-    }));
+    expect(httpRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://api.example.test/giving/v2/people',
+        qs: { per_page: 25 },
+      }),
+    );
   });
 
   it('executes lookup-enabled path, query, attribute, and relationship fields as IDs', async () => {
@@ -585,19 +820,26 @@ describe('generated Planning Center nodes', () => {
       getNodeParameter: vi.fn((name: string, _itemIndex: number, fallback?: unknown) => {
         if (name === 'resource') return 'Campus';
         if (name === 'operation') return 'patchCampusesCampusIdGroupsGroupId';
-        if (name === 'patchCampusesCampusIdGroupsGroupId_campusId') return { __rl: true, mode: 'list', value: '12' };
-        if (name === 'patchCampusesCampusIdGroupsGroupId_groupId') return { __rl: true, mode: 'id', value: '34' };
-        if (name === 'patchCampusesCampusIdGroupsGroupId_include') return { include: [{ value: 'group_type' }] };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_campusId')
+          return { __rl: true, mode: 'list', value: '12' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_groupId')
+          return { __rl: true, mode: 'id', value: '34' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_include')
+          return { include: [{ value: 'group_type' }] };
         if (name === 'bodyMode') return 'fields';
-        if (name === 'patchCampusesCampusIdGroupsGroupId_groupTypeId') return { __rl: true, mode: 'list', value: '56' };
-        if (name === 'patchCampusesCampusIdGroupsGroupId_groupTypeIds') return { __rl: true, mode: 'list', value: '78' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_groupTypeId')
+          return { __rl: true, mode: 'list', value: '56' };
+        if (name === 'patchCampusesCampusIdGroupsGroupId_groupTypeIds')
+          return { __rl: true, mode: 'list', value: '78' };
         if (name === 'additionalQueryParameters') return fallback;
         return fallback;
       }),
       helpers: { httpRequest },
     };
 
-    await expect(node.execute.call(context)).resolves.toEqual([[expect.objectContaining({ json: expect.any(Object) })]]);
+    await expect(node.execute.call(context)).resolves.toEqual([
+      [expect.objectContaining({ json: expect.any(Object) })],
+    ]);
     expect(httpRequest).toHaveBeenCalledWith(
       expect.objectContaining({
         method: 'PATCH',
@@ -618,7 +860,9 @@ describe('generated Planning Center nodes', () => {
     const node = new entrypoint.PlanningCenterPeople();
     const labelsByName = Object.fromEntries(
       node.description.properties
-        .filter((property) => String(property.name).startsWith('patchFieldDataFieldDatumId_fieldDefinition'))
+        .filter((property) =>
+          String(property.name).startsWith('patchFieldDataFieldDatumId_fieldDefinition'),
+        )
         .map((property) => [property.name, property.displayName]),
     );
 
@@ -631,21 +875,41 @@ describe('generated Planning Center nodes', () => {
   it('normalizes identifier acronym capitalization across generated labels', async () => {
     const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
     const mixedCaseIdentifierToken = /\bId(?:s)?\b/;
-    const summaryLabels = summaries.flatMap((summary) => summary.operations.flatMap((operation) => [
-      ...operation.pathParameters.map((field) => `${summary.product}:${operation.id}:path:${field.displayName}`),
-      ...operation.queryParameters.map((field) => `${summary.product}:${operation.id}:query:${field.displayName}`),
-      ...operation.attributeFields.map((field) => `${summary.product}:${operation.id}:attribute:${field.displayName}`),
-      ...operation.relationshipFields.map((field) => `${summary.product}:${operation.id}:relationship:${field.displayName}`),
-      ...operation.queryOptions.map((option) => `${summary.product}:${operation.id}:option:${option.displayName}`),
-      ...operation.queryOptions.flatMap((option) =>
-        (option.valueOptions ?? []).map((valueOption) => `${summary.product}:${operation.id}:value-option:${valueOption.name}`),
-      ),
-    ]));
+    const summaryLabels = summaries.flatMap((summary) =>
+      summary.operations.flatMap((operation) => [
+        ...operation.pathParameters.map(
+          (field) => `${summary.product}:${operation.id}:path:${field.displayName}`,
+        ),
+        ...operation.queryParameters.map(
+          (field) => `${summary.product}:${operation.id}:query:${field.displayName}`,
+        ),
+        ...operation.attributeFields.map(
+          (field) => `${summary.product}:${operation.id}:attribute:${field.displayName}`,
+        ),
+        ...operation.relationshipFields.map(
+          (field) => `${summary.product}:${operation.id}:relationship:${field.displayName}`,
+        ),
+        ...operation.queryOptions.map(
+          (option) => `${summary.product}:${operation.id}:option:${option.displayName}`,
+        ),
+        ...operation.queryOptions.flatMap((option) =>
+          (option.valueOptions ?? []).map(
+            (valueOption) => `${summary.product}:${operation.id}:value-option:${valueOption.name}`,
+          ),
+        ),
+      ]),
+    );
     const nodeLabels = generatedNodeClasses
       .map((NodeClass) => new NodeClass())
-      .flatMap((node) => collectDisplayNames(node.description.properties).map((label) => `${node.description.name}:${label}`));
+      .flatMap((node) =>
+        collectDisplayNames(node.description.properties).map(
+          (label) => `${node.description.name}:${label}`,
+        ),
+      );
 
-    const mixedCaseLabels = [...summaryLabels, ...nodeLabels].filter((entry) => mixedCaseIdentifierToken.test(entry));
+    const mixedCaseLabels = [...summaryLabels, ...nodeLabels].filter((entry) =>
+      mixedCaseIdentifierToken.test(entry),
+    );
 
     expect(mixedCaseLabels).toEqual([]);
   });
@@ -716,8 +980,10 @@ describe('generated Planning Center nodes', () => {
             wherepersonid: [{ value: '456' }],
           };
         }
-        if (name === 'getFormsFormIdFormSubmissions_order') return { order: [{ value: '-created_at' }] };
-        if (name === 'getFormsFormIdFormSubmissions_include') return { include: [{ value: 'person' }] };
+        if (name === 'getFormsFormIdFormSubmissions_order')
+          return { order: [{ value: '-created_at' }] };
+        if (name === 'getFormsFormIdFormSubmissions_include')
+          return { include: [{ value: 'person' }] };
         if (name === 'additionalQueryParameters') return fallback;
         if (name === 'getFormsFormIdFormSubmissions_returnAll') return false;
         if (name === 'getFormsFormIdFormSubmissions_limit') return 1;
@@ -738,6 +1004,213 @@ describe('generated Planning Center nodes', () => {
           include: 'person',
           order: '-created_at',
         },
+      }),
+    );
+  });
+
+  it('generates the unofficial People activity operation without ineffective app controls or lookup sources', async () => {
+    const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
+    expect(peopleConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(peopleConfig!);
+    const operation = summary.operations.find(
+      (candidate) => candidate.id === 'listPersonActivities',
+    );
+
+    expect(operation).toMatchObject({
+      method: 'GET',
+      path: '/people/v2/people/{person_id}/activities',
+      isList: true,
+      description: expect.stringContaining('does not document this endpoint'),
+    });
+    expect(operation?.ordinaryQueryFields).toEqual([
+      expect.objectContaining({ sourceName: 'before', format: 'date-time', required: false }),
+      expect.objectContaining({ sourceName: 'after', format: 'date-time', required: false }),
+    ]);
+    expect(operation?.queryParameters.map((field) => field.sourceName)).not.toContain('app');
+    expect(
+      summary.operations.flatMap((candidate) => [
+        ...candidate.pathParameters.map((field) => field.lookup?.sourcePath),
+        ...candidate.queryOptions.map((field) => field.lookup?.sourcePath),
+        ...candidate.attributeFields.map((field) => field.lookup?.sourcePath),
+        ...candidate.relationshipFields.map((field) => field.lookup?.sourcePath),
+      ]),
+    ).not.toContain('/people/v2/people/{person_id}/activities');
+  });
+
+  it('exposes ordinary query controls only for the observed People activity supplement', async () => {
+    const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+    const controls = summaries.flatMap((summary) =>
+      summary.operations.flatMap((operation) =>
+        operation.ordinaryQueryFields.length
+          ? [
+              {
+                product: summary.product,
+                operation: operation.id,
+                fields: operation.ordinaryQueryFields.map((field) => field.sourceName),
+              },
+            ]
+          : [],
+      ),
+    );
+
+    expect(controls).toEqual([
+      { product: 'people', operation: 'listPersonActivities', fields: ['before', 'after'] },
+    ]);
+  });
+
+  it('normalizes the sanitized People activity fixture through shared JSON:API behavior', async () => {
+    const fixture = JSON.parse(
+      await readFile('openapi/people/supplements/get-person-activities/response.json', 'utf8'),
+    );
+
+    expect(normalizeJsonApiResponse(fixture)).toEqual([
+      expect.objectContaining({
+        id: 'activity-example-1',
+        type: 'PersonProfileChange',
+        sections: expect.objectContaining({ Involvement: expect.any(Array) }),
+        relationships: expect.objectContaining({ editor_person: expect.any(Object) }),
+      }),
+      expect.objectContaining({
+        id: 'activity-example-2',
+        type: 'PersonProfileChange',
+        sections: expect.objectContaining({ Assimilation: expect.any(Array) }),
+      }),
+    ]);
+  });
+
+  it('serializes optional People activity dates unchanged and lets additional query values override them', async () => {
+    const node = new entrypoint.PlanningCenterPeople();
+    const httpRequest = vi.fn().mockResolvedValue({ data: [] });
+    const context: any = {
+      continueOnFail: () => false,
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getInputData: () => [{ json: {} }, { json: {} }],
+      getNode: () => ({ name: 'Planning Center People', type: 'planningCenterPeople' }),
+      getNodeParameter: vi.fn((name: string, itemIndex: number, fallback?: unknown) => {
+        if (name === 'resource') return 'Activity';
+        if (name === 'operation') return 'listPersonActivities';
+        if (name === 'listPersonActivities_personId') return '123';
+        if (name === 'listPersonActivities_before') return '2026-01-15T09:30:00-05:00';
+        if (name === 'listPersonActivities_after')
+          return itemIndex === 0 ? fallback : '2026-01-01T00:00:00Z';
+        if (name === 'listPersonActivities_returnAll') return false;
+        if (name === 'listPersonActivities_limit') return 1;
+        if (name === 'additionalQueryParameters') {
+          return itemIndex === 0
+            ? fallback
+            : { parameters: [{ name: 'before', value: 'advanced-override' }] };
+        }
+        return fallback;
+      }),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.execute.call(context)).resolves.toEqual([[]]);
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        url: 'https://api.example.test/people/v2/people/123/activities',
+        qs: { before: '2026-01-15T09:30:00-05:00', per_page: 1 },
+      }),
+    );
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        qs: { after: '2026-01-01T00:00:00Z', before: 'advanced-override', per_page: 1 },
+      }),
+    );
+  });
+
+  it('generates and executes both Webhooks batch-update body variants and raw JSON mode', async () => {
+    const webhooksConfig = generatedProductConfigs.find((config) => config.product === 'webhooks');
+    expect(webhooksConfig).toBeDefined();
+    const summary = await buildProductGeneration(webhooksConfig!);
+    const operation = summary.operations.find(
+      (candidate) => candidate.id === 'batchUpdateWebhookSubscriptions',
+    );
+
+    expect(operation).toMatchObject({
+      method: 'POST',
+      path: '/webhooks/v2/batch_update',
+      jsonApiType: undefined,
+      description: expect.stringContaining('does not document this endpoint'),
+    });
+    expect(operation?.attributeFields).toEqual([
+      expect.objectContaining({ sourceName: 'url', required: true }),
+      expect.objectContaining({ sourceName: 'old_url', required: false }),
+      expect.objectContaining({
+        sourceName: 'names',
+        required: true,
+        valueKind: 'stringCollection',
+      }),
+    ]);
+
+    const node = new entrypoint.PlanningCenterWebhooks();
+    const httpRequest = vi.fn().mockResolvedValue(undefined);
+    const context: any = {
+      continueOnFail: () => false,
+      getCredentials: vi.fn().mockResolvedValue({
+        applicationId: 'app-id',
+        secret: 'secret',
+        baseUrl: 'https://api.example.test',
+      }),
+      getInputData: () => [{ json: {} }, { json: {} }, { json: {} }],
+      getNode: () => ({ name: 'Planning Center Webhooks', type: 'planningCenterWebhooks' }),
+      getNodeParameter: vi.fn((name: string, itemIndex: number, fallback?: unknown) => {
+        if (name === 'resource') return 'Webhook Subscription';
+        if (name === 'operation') return 'batchUpdateWebhookSubscriptions';
+        if (name === 'bodyMode') return itemIndex === 2 ? 'rawJson' : 'fields';
+        if (name === 'batchUpdateWebhookSubscriptions_url') return 'https://example.test/webhook';
+        if (name === 'batchUpdateWebhookSubscriptions_oldUrl')
+          return itemIndex === 0 ? 'https://example.test/old' : fallback;
+        if (name === 'batchUpdateWebhookSubscriptions_names')
+          return itemIndex === 0 ? 'event.created, event.updated' : '';
+        if (name === 'rawJsonBody')
+          return JSON.stringify({ data: { attributes: { url: 'raw', names: [] } } });
+        if (name === 'additionalQueryParameters') return fallback;
+        return fallback;
+      }),
+      helpers: { httpRequest },
+    };
+
+    await expect(node.execute.call(context)).resolves.toEqual([
+      [
+        { json: {}, pairedItem: { item: 0 } },
+        { json: {}, pairedItem: { item: 1 } },
+        { json: {}, pairedItem: { item: 2 } },
+      ],
+    ]);
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        method: 'POST',
+        url: 'https://api.example.test/webhooks/v2/batch_update',
+        body: {
+          data: {
+            attributes: {
+              url: 'https://example.test/webhook',
+              old_url: 'https://example.test/old',
+              names: ['event.created', 'event.updated'],
+            },
+          },
+        },
+      }),
+    );
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        body: { data: { attributes: { url: 'https://example.test/webhook', names: [] } } },
+      }),
+    );
+    expect(httpRequest).toHaveBeenNthCalledWith(
+      3,
+      expect.objectContaining({
+        body: { data: { attributes: { url: 'raw', names: [] } } },
       }),
     );
   });

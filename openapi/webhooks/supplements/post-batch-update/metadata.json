@@ -1,0 +1,15 @@
+{
+  "mode": "add",
+  "method": "POST",
+  "path": "/batch_update",
+  "stability": "unofficial",
+  "provenance": {
+    "source": "observed",
+    "observedAt": "2026-07-17"
+  },
+  "observedResponse": {
+    "status": 204,
+    "contentType": null,
+    "hasBody": false
+  }
+}

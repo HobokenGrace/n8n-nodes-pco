@@ -4,6 +4,10 @@ export interface GeneratedField {
   name: string;
   sourceName: string;
   displayName: string;
+  description?: string;
+  defaultValue?: string | number | boolean;
+  format?: 'date-time';
+  valueKind?: 'scalar' | 'stringCollection';
   required: boolean;
   type: 'boolean' | 'number' | 'string';
   valueOptions?: GeneratedValueOption[];
@@ -76,6 +80,7 @@ export interface GeneratedOperation {
   lookupQueryParameterNames: string[];
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
+  ordinaryQueryFields: GeneratedField[];
   queryOptions: GeneratedQueryOption[];
   attributeFields: GeneratedField[];
   relationshipFields: GeneratedRelationshipField[];

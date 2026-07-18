@@ -1,6 +1,12 @@
 import type { ProductConfig } from './config';
 import { normalizeIdentifierDisplayLabel } from './labels';
-import type { GeneratedField, GeneratedLookup, GeneratedOperation, GeneratedQueryOption, ProductGenerationResult } from './model';
+import type {
+  GeneratedField,
+  GeneratedLookup,
+  GeneratedOperation,
+  GeneratedQueryOption,
+  ProductGenerationResult,
+} from './model';
 
 type QueryOptionGroup = GeneratedQueryOption['group'];
 
@@ -46,7 +52,11 @@ function locatorModes(lookup: GeneratedLookup): Array<Record<string, unknown>> {
   ];
 }
 
-function fieldProperty(field: GeneratedField, operation: GeneratedOperation, source: 'path' | 'query' | 'attribute'): string {
+function fieldProperty(
+  field: GeneratedField,
+  operation: GeneratedOperation,
+  source: 'path' | 'query' | 'attribute',
+): string {
   const displayOptions = {
     show: {
       resource: [operation.resource],
@@ -55,27 +65,75 @@ function fieldProperty(field: GeneratedField, operation: GeneratedOperation, sou
     },
   };
 
+  const optionalBoolean = source === 'query' && !field.required && field.type === 'boolean';
+  const propertyType = field.lookup
+    ? 'resourceLocator'
+    : field.valueOptions?.length || optionalBoolean
+      ? 'options'
+      : field.format === 'date-time'
+        ? 'dateTime'
+        : field.type;
+  const defaultValue =
+    field.defaultValue ??
+    (field.lookup
+      ? { mode: 'list', value: '' }
+      : field.type === 'number'
+        ? undefined
+        : field.required && field.type === 'boolean'
+          ? false
+          : '');
+  const options = optionalBoolean
+    ? [
+        { name: 'Not Set', value: '' },
+        { name: 'True', value: true },
+        { name: 'False', value: false },
+      ]
+    : field.valueOptions;
+
   return `    {
       displayName: ${q(source === 'attribute' ? bodyFieldDisplayName('Attribute', field.displayName) : field.displayName)},
       name: ${q(`${operation.id}_${field.name}`)},
-      type: ${q(field.lookup ? 'resourceLocator' : field.type)},
-      default: ${field.lookup ? locatorDefault() : field.type === 'number' ? 'undefined' : field.type === 'boolean' ? 'false' : "''"},
+      type: ${q(propertyType)},
+      default: ${q(defaultValue)},
       required: ${field.required},
-      ${field.lookup ? `modes: ${q(locatorModes(field.lookup))},\n      ` : ''}displayOptions: ${q(displayOptions)},
+      ${field.description ? `description: ${q(field.description)},\n      ` : ''}${options?.length ? `options: ${q(options)},\n      ` : ''}${field.lookup ? `modes: ${q(locatorModes(field.lookup))},\n      ` : ''}displayOptions: ${q(displayOptions)},
     },`;
 }
 
 function renderOperations(operations: GeneratedOperation[]): string {
-  const runtimeOperations = operations.map(({ lookupQueryParameterNames: _lookupQueryParameterNames, ...operation }) => ({
-    ...operation,
-    queryParameters: operation.queryParameters.map(({ valueOptions: _valueOptions, ...parameter }) => parameter),
-    queryOptions: operation.queryOptions.map(({ valueOptions: _valueOptions, ...option }) => option),
-  }));
+  const runtimeField = (field: GeneratedField): GeneratedField => {
+    const result = { ...field };
+    delete result.description;
+    delete result.defaultValue;
+    delete result.format;
+    delete result.valueOptions;
+    return result;
+  };
+  const runtimeOperations = operations.map((operation) => {
+    const result: Record<string, unknown> = {
+      ...operation,
+      pathParameters: operation.pathParameters.map(runtimeField),
+      queryParameters: operation.queryParameters.map(runtimeField),
+      queryOptions: operation.queryOptions.map((option) => {
+        const runtimeOption = { ...option };
+        delete runtimeOption.valueOptions;
+        return runtimeOption;
+      }),
+      attributeFields: operation.attributeFields.map(runtimeField),
+    };
+    delete result.lookupQueryParameterNames;
+    if (operation.ordinaryQueryFields.length)
+      result.ordinaryQueryFields = operation.ordinaryQueryFields.map(runtimeField);
+    else delete result.ordinaryQueryFields;
+    return result;
+  });
   return JSON.stringify(runtimeOperations, null, 2);
 }
 
 function renderOperationSubtitle(operations: GeneratedOperation[]): string {
-  const descriptions = Object.fromEntries(operations.map((operation) => [operation.id, operation.description]));
+  const descriptions = Object.fromEntries(
+    operations.map((operation) => [operation.id, operation.description]),
+  );
   return `={{(${JSON.stringify(descriptions)})[$parameter["operation"]] || $parameter["operation"]}}`;
 }
 
@@ -87,7 +145,11 @@ function renderQueryOptionValues(option: GeneratedQueryOption): unknown[] {
             displayName: 'Operator',
             name: 'operator',
             type: 'options',
-            options: option.operators?.map((operator) => ({ name: operator.name, value: operator.value })) ?? [],
+            options:
+              option.operators?.map((operator) => ({
+                name: operator.name,
+                value: operator.value,
+              })) ?? [],
             default: option.operators?.[0]?.value ?? '',
           },
         ]
@@ -95,10 +157,22 @@ function renderQueryOptionValues(option: GeneratedQueryOption): unknown[] {
     {
       displayName: 'Value',
       name: 'value',
-      type: option.lookup ? 'resourceLocator' : option.valueOptions?.length ? 'options' : option.type,
+      type: option.lookup
+        ? 'resourceLocator'
+        : option.valueOptions?.length
+          ? 'options'
+          : option.type,
       ...(option.valueOptions?.length ? { options: option.valueOptions } : {}),
       ...(option.lookup ? { modes: locatorModes(option.lookup) } : {}),
-      default: option.lookup ? { mode: 'list', value: '' } : option.valueOptions?.length ? '' : option.type === 'number' ? undefined : option.type === 'boolean' ? false : '',
+      default: option.lookup
+        ? { mode: 'list', value: '' }
+        : option.valueOptions?.length
+          ? ''
+          : option.type === 'number'
+            ? undefined
+            : option.type === 'boolean'
+              ? false
+              : '',
     },
   ];
 }
@@ -107,17 +181,23 @@ function operationLookups(operations: GeneratedOperation[]): GeneratedLookup[] {
   const lookups = new Map<string, GeneratedLookup>();
 
   for (const operation of operations) {
-    for (const field of operation.pathParameters) if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
-    for (const option of operation.queryOptions) if (option.lookup) lookups.set(option.lookup.methodName, option.lookup);
-    for (const field of operation.attributeFields) if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
-    for (const field of operation.relationshipFields) if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
+    for (const field of operation.pathParameters)
+      if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
+    for (const option of operation.queryOptions)
+      if (option.lookup) lookups.set(option.lookup.methodName, option.lookup);
+    for (const field of operation.attributeFields)
+      if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
+    for (const field of operation.relationshipFields)
+      if (field.lookup) lookups.set(field.lookup.methodName, field.lookup);
   }
 
   return [...lookups.values()].sort((a, b) => a.methodName.localeCompare(b.methodName));
 }
 
 function renderLookupSources(operations: GeneratedOperation[]): string {
-  const sources = Object.fromEntries(operationLookups(operations).map((lookup) => [lookup.methodName, lookup]));
+  const sources = Object.fromEntries(
+    operationLookups(operations).map((lookup) => [lookup.methodName, lookup]),
+  );
   return JSON.stringify(sources, null, 2);
 }
 
@@ -126,9 +206,15 @@ function renderListSearchMethods(operations: GeneratedOperation[]): string {
   if (!lookups.length) return '{}';
 
   return `{
-${lookups.map((lookup) => `      ${lookup.methodName}: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
+${lookups
+  .map(
+    (
+      lookup,
+    ) => `      ${lookup.methodName}: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
         return searchLookup(this, LOOKUP_SOURCES[${q(lookup.methodName)}], filter);
-      },`).join('\n')}
+      },`,
+  )
+  .join('\n')}
     }`;
 }
 
@@ -186,9 +272,14 @@ function renderProperties(operations: GeneratedOperation[]): string {
     const displayOptions = { show: { resource: [operation.resource], operation: [operation.id] } };
     const fields = [
       ...operation.pathParameters.map((field) => fieldProperty(field, operation, 'path')),
+      ...operation.ordinaryQueryFields.map((field) => fieldProperty(field, operation, 'query')),
     ];
 
-    fields.push(...QUERY_OPTION_GROUPS.flatMap((definition) => renderQueryOptionsProperty(operation, definition) ?? []));
+    fields.push(
+      ...QUERY_OPTION_GROUPS.flatMap(
+        (definition) => renderQueryOptionsProperty(operation, definition) ?? [],
+      ),
+    );
 
     if (operation.isList) {
       fields.push(`    {
@@ -208,16 +299,25 @@ function renderProperties(operations: GeneratedOperation[]): string {
     },`);
     }
 
-    if (operation.attributeFields.length || operation.relationshipFields.length || ['POST', 'PUT', 'PATCH'].includes(operation.method)) {
+    if (
+      operation.attributeFields.length ||
+      operation.relationshipFields.length ||
+      ['POST', 'PUT', 'PATCH'].includes(operation.method)
+    ) {
       fields.push(`    {
       displayName: 'Body Mode',
       name: 'bodyMode',
       type: 'options',
-      options: ${q([{ name: 'Fields', value: 'fields' }, { name: 'Raw JSON', value: 'rawJson' }])},
+      options: ${q([
+        { name: 'Fields', value: 'fields' },
+        { name: 'Raw JSON', value: 'rawJson' },
+      ])},
       default: 'fields',
       displayOptions: ${q(displayOptions)},
     },`);
-      fields.push(...operation.attributeFields.map((field) => fieldProperty(field, operation, 'attribute')));
+      fields.push(
+        ...operation.attributeFields.map((field) => fieldProperty(field, operation, 'attribute')),
+      );
       for (const relationship of operation.relationshipFields) {
         fields.push(`    {
       displayName: ${q(bodyFieldDisplayName('Relationship', relationship.displayName))},
@@ -305,6 +405,10 @@ interface GeneratedField {
   name: string;
   sourceName: string;
   displayName: string;
+  description?: string;
+  defaultValue?: string | number | boolean;
+  format?: 'date-time';
+  valueKind?: 'scalar' | 'stringCollection';
   required: boolean;
   type: 'boolean' | 'number' | 'string';
   lookup?: GeneratedLookup;
@@ -354,6 +458,7 @@ interface Operation {
   lookupTarget: string;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
+  ordinaryQueryFields?: GeneratedField[];
   queryOptions: GeneratedQueryOption[];
   attributeFields: GeneratedField[];
   relationshipFields: GeneratedRelationshipField[];
@@ -486,6 +591,15 @@ function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operatio
   }
 }
 
+function addOrdinaryQuery(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
+  for (const field of operation.ordinaryQueryFields ?? []) {
+    const value = field.required
+      ? context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex)
+      : context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex, '');
+    if (value !== undefined && value !== '') qs[field.sourceName] = value;
+  }
+}
+
 function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Operation): unknown {
   if (!['POST', 'PUT', 'PATCH'].includes(operation.method)) return undefined;
 
@@ -499,8 +613,13 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
     const value = field.required
       ? context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex)
       : context.getNodeParameter(\`${'${operation.id}'}_\${field.name}\`, itemIndex, '');
-    const attributeValue = field.lookup ? extractResourceLocatorId(value) : value;
-    if (attributeValue !== undefined && attributeValue !== '') {
+    let attributeValue = field.lookup ? extractResourceLocatorId(value) : value;
+    if (field.valueKind === 'stringCollection') {
+      attributeValue = Array.isArray(attributeValue)
+        ? attributeValue
+        : String(attributeValue ?? '').split(',').map((item) => item.trim()).filter(Boolean);
+    }
+    if (attributeValue !== undefined && attributeValue !== '' && (field.required || !Array.isArray(attributeValue) || attributeValue.length)) {
       attributes[field.sourceName] = attributeValue;
     }
   }
@@ -520,7 +639,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.jsonApiType ?? operation.resource,
+      ...(operation.jsonApiType ? { type: operation.jsonApiType } : {}),
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },
@@ -539,6 +658,7 @@ function buildPath(context: IExecuteFunctions, itemIndex: number, operation: Ope
 async function executeOperation(context: IExecuteFunctions, itemIndex: number, operation: Operation): Promise<INodeExecutionData[]> {
   const qs: IDataObject = {};
   addQueryOptions(context, itemIndex, operation, qs);
+  addOrdinaryQuery(context, itemIndex, operation, qs);
   addAdditionalQuery(context, itemIndex, operation, qs);
 
   const request = {

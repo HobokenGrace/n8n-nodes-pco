@@ -27,7 +27,9 @@ describe('package metadata', () => {
 
   it('exports every generated node class from the package entry point', () => {
     for (const config of generatedProductConfigs) {
-      const ExportedNodeClass = (entrypoint as unknown as Record<string, GeneratedNodeClass>)[config.className];
+      const ExportedNodeClass = (entrypoint as unknown as Record<string, GeneratedNodeClass>)[
+        config.className
+      ];
 
       expect(ExportedNodeClass).toBeDefined();
       expect(new ExportedNodeClass().description).toMatchObject({
@@ -36,12 +38,20 @@ describe('package metadata', () => {
       });
     }
   });
+
+  it('recommends the REST Client extension used by supplement request examples', () => {
+    const extensions = JSON.parse(readFileSync('.vscode/extensions.json', 'utf8'));
+
+    expect(extensions.recommendations).toContain('humao.rest-client');
+  });
 });
 
 describe('PlanningCenterPatApi', () => {
   it('collects application id, secret, and overrideable base URL', () => {
     const credential = new PlanningCenterPatApi();
-    const fields = Object.fromEntries(credential.properties.map((property) => [property.name, property]));
+    const fields = Object.fromEntries(
+      credential.properties.map((property) => [property.name, property]),
+    );
 
     expect(fields.applicationId.required).toBe(true);
     expect(fields.secret.typeOptions).toMatchObject({ password: true });

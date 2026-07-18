@@ -116,6 +116,10 @@ export function snapshotPath(config: ProductConfig): string {
   return `openapi/${config.product}/${config.snapshotDate}.json`;
 }
 
+export function supplementsPath(config: ProductConfig): string {
+  return `openapi/${config.product}/supplements`;
+}
+
 export function generatedNodePath(config: ProductConfig): string {
   return `nodes/generated/${config.product}/${config.className}.node.ts`;
 }

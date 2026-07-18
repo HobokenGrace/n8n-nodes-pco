@@ -1,9 +1,7 @@
-import SwaggerParser from '@apidevtools/swagger-parser';
 import { singularize } from 'inflection';
-import { readFile } from 'node:fs/promises';
 
 import type { ProductConfig } from './config';
-import { snapshotPath } from './config';
+import { loadEffectiveOpenApi } from './effectiveOpenApi';
 import { displayLabel, normalizeIdentifierDisplayLabel, titleCase } from './labels';
 import type {
   GeneratedField,
@@ -157,7 +155,8 @@ function relationshipContext(path: string, depth = 1): string | undefined {
 
   const contexts: string[] = [];
   for (let index = targetIndex - 1; index >= 0; index--) {
-    if (!isPathParameter(segments[index])) contexts.unshift(displayLabel(singularizeLastWord(segments[index])));
+    if (!isPathParameter(segments[index]))
+      contexts.unshift(displayLabel(singularizeLastWord(segments[index])));
   }
 
   return contexts.slice(-depth).join(' ') || undefined;
@@ -180,7 +179,13 @@ function operationLabel(operation: any, method: string, path: string): string {
   const source = operation.operationId ?? operation.summary;
   const label = source
     ? displayLabel(source)
-    : fallbackOperationLabel(method, path, Boolean(operation.deprecated), 1, responseIsList(operation));
+    : fallbackOperationLabel(
+        method,
+        path,
+        Boolean(operation.deprecated),
+        1,
+        responseIsList(operation),
+      );
   return operation.deprecated && source ? `${label} (Deprecated)` : label;
 }
 
@@ -200,7 +205,10 @@ function duplicateFallbackLabelGroups(
   const operationsByLabel = new Map<string, GeneratedOperation[]>();
   for (const operation of operations) {
     if (!fallbackOperationIds.has(operation.id)) continue;
-    operationsByLabel.set(operation.operation, [...(operationsByLabel.get(operation.operation) ?? []), operation]);
+    operationsByLabel.set(operation.operation, [
+      ...(operationsByLabel.get(operation.operation) ?? []),
+      operation,
+    ]);
   }
 
   return [...operationsByLabel.values()].filter((group) => group.length > 1);
@@ -252,8 +260,10 @@ function schemaType(schema: JsonSchema | undefined): GeneratedField['type'] {
 }
 
 function jsonApiResponseSchema(operation: any): JsonSchema | undefined {
-  return operation.responses?.['200']?.content?.['application/vnd.api+json']?.schema
-    ?? operation.responses?.['200']?.content?.['application/json']?.schema;
+  return (
+    operation.responses?.['200']?.content?.['application/vnd.api+json']?.schema ??
+    operation.responses?.['200']?.content?.['application/json']?.schema
+  );
 }
 
 function responseDataSchema(operation: any): JsonSchema | undefined {
@@ -327,7 +337,10 @@ function whereParameterName(segments: string[], operator?: string): string {
   return `where${[...segments, ...(operator ? [operator] : [])].map((segment) => `[${segment}]`).join('')}`;
 }
 
-function lookupTargetFromWhereParameter(sourceName: string, operation: GeneratedOperation): string | undefined {
+function lookupTargetFromWhereParameter(
+  sourceName: string,
+  operation: GeneratedOperation,
+): string | undefined {
   const parsed = parseWhereParameter(sourceName);
   if (!parsed || parsed.operator || parsed.field !== 'id') return undefined;
 
@@ -367,7 +380,9 @@ function operatorLabel(operator: string): string {
 function schemaEnumValues(schema: JsonSchema | undefined): Array<string | number | boolean> {
   const values = schema?.enum ?? schema?.items?.enum;
   if (!Array.isArray(values)) return [];
-  return values.filter((value): value is string | number | boolean => ['string', 'number', 'boolean'].includes(typeof value));
+  return values.filter((value): value is string | number | boolean =>
+    ['string', 'number', 'boolean'].includes(typeof value),
+  );
 }
 
 function uniqueValueOptions(options: GeneratedValueOption[]): GeneratedValueOption[] {
@@ -385,14 +400,16 @@ function queryValueOptions(parameter: any): GeneratedValueOption[] | undefined {
   if (!values.length) return undefined;
 
   if (parameter.name === 'order') {
-    return uniqueValueOptions(values.flatMap((value) => {
-      const sourceValue = String(value);
-      const orderField = sourceValue.startsWith('-') ? sourceValue.slice(1) : sourceValue;
-      return [
-        { name: `${displayLabel(orderField)} Ascending`, value: orderField },
-        { name: `${displayLabel(orderField)} Descending`, value: `-${orderField}` },
-      ];
-    }));
+    return uniqueValueOptions(
+      values.flatMap((value) => {
+        const sourceValue = String(value);
+        const orderField = sourceValue.startsWith('-') ? sourceValue.slice(1) : sourceValue;
+        return [
+          { name: `${displayLabel(orderField)} Ascending`, value: orderField },
+          { name: `${displayLabel(orderField)} Descending`, value: `-${orderField}` },
+        ];
+      }),
+    );
   }
 
   return values.map((value) => ({ name: displayLabel(String(value)), value }));
@@ -412,7 +429,11 @@ function shouldRenderWhereParameter(parameter: any, context: OperationQueryConte
 
   const { field, segments } = parsed;
   if (segments.length === 1) {
-    return field === 'id' || isDateFilter(parameter.schema) || isUsefulStringFilter(field, parameter.schema);
+    return (
+      field === 'id' ||
+      isDateFilter(parameter.schema) ||
+      isUsefulStringFilter(field, parameter.schema)
+    );
   }
 
   if (segments.length === 2) {
@@ -434,9 +455,18 @@ function shouldRenderQueryParameter(parameter: any, context: OperationQueryConte
   return true;
 }
 
+function isSupportedOrdinaryQueryParameter(parameter: any): boolean {
+  return (
+    ['string', 'integer', 'number', 'boolean'].includes(parameter?.schema?.type) &&
+    queryOptionGroup(parameter.name) === undefined
+  );
+}
+
 function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[] {
   const dateRangeGroups = new Map<string, GeneratedField[]>();
-  const fieldsBySourceName = new Map(parameters.map((parameter) => [parameter.sourceName, parameter]));
+  const fieldsBySourceName = new Map(
+    parameters.map((parameter) => [parameter.sourceName, parameter]),
+  );
   const usedSourceNames = new Set<string>();
 
   for (const parameter of parameters) {
@@ -453,7 +483,9 @@ function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[]
   const options: GeneratedQueryOption[] = [];
   for (const [baseSourceName, rangeParameters] of dateRangeGroups) {
     const baseParameter = fieldsBySourceName.get(baseSourceName);
-    const allParameters = [baseParameter, ...rangeParameters].filter((parameter): parameter is GeneratedField => Boolean(parameter));
+    const allParameters = [baseParameter, ...rangeParameters].filter(
+      (parameter): parameter is GeneratedField => Boolean(parameter),
+    );
     const sourceNames = new Set(allParameters.map((parameter) => parameter.sourceName));
     for (const sourceName of sourceNames) usedSourceNames.add(sourceName);
 
@@ -494,11 +526,19 @@ function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[]
   return options;
 }
 
-function parameterField(parameter: any): GeneratedField {
+function parameterField(parameter: any, retainPresentationMetadata = false): GeneratedField {
   return {
     name: camelCase(parameter.name),
     sourceName: parameter.name,
     displayName: displayLabel(parameter.name),
+    description: retainPresentationMetadata
+      ? (parameter.description ?? parameter.schema?.description)
+      : undefined,
+    defaultValue: retainPresentationMetadata ? parameter.schema?.default : undefined,
+    format:
+      retainPresentationMetadata && parameter.schema?.format === 'date-time'
+        ? 'date-time'
+        : undefined,
     required: Boolean(parameter.required),
     type: schemaType(parameter.schema),
     valueOptions: parameter.in === 'query' ? queryValueOptions(parameter) : undefined,
@@ -512,9 +552,9 @@ function lookupTargetFromIdName(sourceName: string): string | undefined {
 
 function lookupSearchFilter(sourceNames: string[]): string | undefined {
   const sourceNameSet = new Set(sourceNames);
-  return LOOKUP_SEARCH_FILTER_PRIORITY
-    .map((field) => `where[${field}]`)
-    .find((sourceName) => sourceNameSet.has(sourceName));
+  return LOOKUP_SEARCH_FILTER_PRIORITY.map((field) => `where[${field}]`).find((sourceName) =>
+    sourceNameSet.has(sourceName),
+  );
 }
 
 function lookupSplitNameSearch(sourceNames: string[]): GeneratedLookupSplitNameSearch | undefined {
@@ -539,16 +579,19 @@ function buildLookupCatalog(operations: GeneratedOperation[]): Map<string, Looku
       pathParameters: operation.pathParameters,
       target: operation.lookupTarget,
       searchFilter,
-      splitNameSearch: searchFilter ? undefined : lookupSplitNameSearch(operation.lookupQueryParameterNames),
+      splitNameSearch: searchFilter
+        ? undefined
+        : lookupSplitNameSearch(operation.lookupQueryParameterNames),
     };
     catalog.set(source.target, [...(catalog.get(source.target) ?? []), source]);
   }
 
   for (const sources of catalog.values()) {
-    sources.sort((a, b) =>
-      b.pathParameters.length - a.pathParameters.length
-      || a.operation.path.localeCompare(b.operation.path)
-      || a.operation.id.localeCompare(b.operation.id),
+    sources.sort(
+      (a, b) =>
+        b.pathParameters.length - a.pathParameters.length ||
+        a.operation.path.localeCompare(b.operation.path) ||
+        a.operation.id.localeCompare(b.operation.id),
     );
   }
 
@@ -563,16 +606,28 @@ function compatibleLookupSource(
 ): LookupSource | undefined {
   if (!target) return undefined;
 
-  const operationPathNames = new Set(operation.pathParameters.map((parameter) => parameter.sourceName));
-  return catalog.get(target)?.find((source) =>
-    source.pathParameters.every((parameter) =>
-      parameter.sourceName !== excludedSourceParameterName && operationPathNames.has(parameter.sourceName),
-    ),
+  const operationPathNames = new Set(
+    operation.pathParameters.map((parameter) => parameter.sourceName),
   );
+  return catalog
+    .get(target)
+    ?.find((source) =>
+      source.pathParameters.every(
+        (parameter) =>
+          parameter.sourceName !== excludedSourceParameterName &&
+          operationPathNames.has(parameter.sourceName),
+      ),
+    );
 }
 
-function lookupForSource(operation: GeneratedOperation, fieldName: string, source: LookupSource): GeneratedLookup {
-  const operationFields = new Map(operation.pathParameters.map((parameter) => [parameter.sourceName, parameter.name]));
+function lookupForSource(
+  operation: GeneratedOperation,
+  fieldName: string,
+  source: LookupSource,
+): GeneratedLookup {
+  const operationFields = new Map(
+    operation.pathParameters.map((parameter) => [parameter.sourceName, parameter.name]),
+  );
 
   return {
     methodName: camelCase(`search ${operation.id} ${fieldName}`),
@@ -593,57 +648,95 @@ function addLookupMetadata(operations: GeneratedOperation[]): void {
 
   for (const operation of operations) {
     for (const field of operation.pathParameters) {
-      const source = compatibleLookupSource(catalog, lookupTargetFromIdName(field.sourceName), operation, field.sourceName);
+      const source = compatibleLookupSource(
+        catalog,
+        lookupTargetFromIdName(field.sourceName),
+        operation,
+        field.sourceName,
+      );
       if (source) field.lookup = lookupForSource(operation, field.name, source);
     }
 
     for (const option of operation.queryOptions) {
       if (option.kind !== 'single' || !option.sourceName) continue;
-      const source = compatibleLookupSource(catalog, lookupTargetFromWhereParameter(option.sourceName, operation), operation);
+      const source = compatibleLookupSource(
+        catalog,
+        lookupTargetFromWhereParameter(option.sourceName, operation),
+        operation,
+      );
       if (source) option.lookup = lookupForSource(operation, option.name, source);
     }
 
     for (const field of operation.attributeFields) {
-      const source = compatibleLookupSource(catalog, lookupTargetFromIdName(field.sourceName), operation);
+      const source = compatibleLookupSource(
+        catalog,
+        lookupTargetFromIdName(field.sourceName),
+        operation,
+      );
       if (source) field.lookup = lookupForSource(operation, field.name, source);
     }
 
     for (const field of operation.relationshipFields) {
       if (field.multiple) continue;
-      const source = compatibleLookupSource(catalog, lookupTargetKey(field.relationshipType), operation);
+      const source = compatibleLookupSource(
+        catalog,
+        lookupTargetKey(field.relationshipType),
+        operation,
+      );
       if (source) field.lookup = lookupForSource(operation, field.name, source);
     }
   }
 }
 
-function collectParameters(path: string, pathItem: any, operation: any, where: 'path' | 'query'): GeneratedField[] {
-  const parameters = [...(pathItem.parameters ?? []), ...(operation.parameters ?? [])];
-  const seen = new Set<string>();
+function mergedParameters(pathItem: any, operation: any): any[] {
+  const parameters = new Map<string, any>();
+  for (const parameter of pathItem.parameters ?? [])
+    parameters.set(`${parameter?.in}:${parameter?.name}`, parameter);
+  for (const parameter of operation.parameters ?? [])
+    parameters.set(`${parameter?.in}:${parameter?.name}`, parameter);
+  return [...parameters.values()];
+}
+
+function collectParameters(
+  path: string,
+  pathItem: any,
+  operation: any,
+  where: 'path' | 'query',
+): GeneratedField[] {
+  const parameters = mergedParameters(pathItem, operation);
   const context = operationQueryContext(path, operation);
   return parameters
     .filter((parameter) => {
-      if (parameter?.in !== where || !parameter.name || seen.has(parameter.name)) return false;
-      seen.add(parameter.name);
-      return true;
+      return parameter?.in === where && Boolean(parameter.name);
     })
     .filter((parameter) => where !== 'query' || shouldRenderQueryParameter(parameter, context))
     .map((parameter) => parameterField(parameter));
 }
 
-function collectParameterSourceNames(pathItem: any, operation: any, where: 'path' | 'query'): string[] {
-  const parameters = [...(pathItem.parameters ?? []), ...(operation.parameters ?? [])];
-  const seen = new Set<string>();
+function collectOrdinaryQueryFields(path: string, pathItem: any, operation: any): GeneratedField[] {
+  const context = operationQueryContext(path, operation);
+  return mergedParameters(pathItem, operation)
+    .filter((parameter) => parameter?.in === 'query' && parameter.name)
+    .filter((parameter) => shouldRenderQueryParameter(parameter, context))
+    .filter(isSupportedOrdinaryQueryParameter)
+    .map((parameter) => parameterField(parameter, true));
+}
 
-  return parameters.flatMap((parameter) => {
-    if (parameter?.in !== where || !parameter.name || seen.has(parameter.name)) return [];
-    seen.add(parameter.name);
-    return [parameter.name];
-  });
+function collectParameterSourceNames(
+  pathItem: any,
+  operation: any,
+  where: 'path' | 'query',
+): string[] {
+  return mergedParameters(pathItem, operation).flatMap((parameter) =>
+    parameter?.in === where && parameter.name ? [parameter.name] : [],
+  );
 }
 
 function requestBodySchema(operation: any): JsonSchema | undefined {
-  return operation.requestBody?.content?.['application/vnd.api+json']?.schema
-    ?? operation.requestBody?.content?.['application/json']?.schema;
+  return (
+    operation.requestBody?.content?.['application/vnd.api+json']?.schema ??
+    operation.requestBody?.content?.['application/json']?.schema
+  );
 }
 
 function jsonApiTypeFromRequestBody(operation: any): string | undefined {
@@ -665,6 +758,10 @@ function collectAttributeFields(operation: any): GeneratedField[] {
       name: camelCase(name),
       sourceName: name,
       displayName: displayLabel(name),
+      valueKind:
+        schema.type === 'array' && schema.items?.type === 'string'
+          ? ('stringCollection' as const)
+          : undefined,
       required: required.has(name),
       type: schemaType(schema),
     }));
@@ -681,7 +778,8 @@ function relationshipLooksSimple(dataSchema: any): boolean {
 }
 
 function collectRelationshipFields(operation: any): GeneratedRelationshipField[] {
-  const relationships = requestBodySchema(operation)?.properties?.data?.properties?.relationships?.properties;
+  const relationships =
+    requestBodySchema(operation)?.properties?.data?.properties?.relationships?.properties;
   if (!relationships || typeof relationships !== 'object') return [];
 
   return Object.entries(relationships).flatMap(([name, schema]: [string, any]) => {
@@ -715,10 +813,10 @@ function requestPath(config: ProductConfig, path: string): string {
   return `${prefix}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
-export async function buildProductGeneration(config: ProductConfig): Promise<ProductGenerationResult> {
-  const file = snapshotPath(config);
-  const spec = JSON.parse(await readFile(file, 'utf8'));
-  const api = (await SwaggerParser.dereference(spec)) as any;
+export function buildProductGenerationFromDocument(
+  config: ProductConfig,
+  api: any,
+): ProductGenerationResult {
   const operations: GeneratedOperation[] = [];
   const exclusions: string[] = [];
   const fallbackOperationIds = new Set<string>();
@@ -731,7 +829,9 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         continue;
       }
 
-      const id = operation.operationId ? camelCase(operation.operationId) : camelCase(`${method} ${path}`);
+      const id = operation.operationId
+        ? camelCase(operation.operationId)
+        : camelCase(`${method} ${path}`);
       if (!operation.operationId && !operation.summary) fallbackOperationIds.add(id);
       const queryParameters = collectParameters(path, pathItem, operation, 'query');
       const lookupQueryParameterNames = collectParameterSourceNames(pathItem, operation, 'query');
@@ -740,7 +840,8 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         resource: resourceLabel(operation, path),
         jsonApiType: jsonApiTypeFromRequestBody(operation),
         operation: operationLabel(operation, method, path),
-        description: operation.description ?? operation.summary ?? `${method.toUpperCase()} ${path}`,
+        description:
+          operation.description ?? operation.summary ?? `${method.toUpperCase()} ${path}`,
         method: method.toUpperCase() as HttpMethod,
         path: requestPath(config, path),
         deprecated: Boolean(operation.deprecated),
@@ -749,11 +850,23 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
         lookupQueryParameterNames,
         pathParameters: collectParameters(path, pathItem, operation, 'path'),
         queryParameters,
+        ordinaryQueryFields: collectOrdinaryQueryFields(path, pathItem, operation),
         queryOptions: buildQueryOptions(queryParameters),
         attributeFields: collectAttributeFields(operation),
         relationshipFields: collectRelationshipFields(operation),
       });
     }
+  }
+
+  const operationIds = new Map<string, string>();
+  for (const operation of operations) {
+    const previousPath = operationIds.get(operation.id);
+    if (previousPath) {
+      throw new Error(
+        `Duplicate generated operation ID ${operation.id} on ${previousPath} and ${operation.method} ${operation.path}`,
+      );
+    }
+    operationIds.set(operation.id, `${operation.method} ${operation.path}`);
   }
 
   disambiguateFallbackOperationLabels(operations, fallbackOperationIds);
@@ -775,4 +888,10 @@ export async function buildProductGeneration(config: ProductConfig): Promise<Pro
     operations,
     exclusions,
   };
+}
+
+export async function buildProductGeneration(
+  config: ProductConfig,
+): Promise<ProductGenerationResult> {
+  return buildProductGenerationFromDocument(config, await loadEffectiveOpenApi(config));
 }

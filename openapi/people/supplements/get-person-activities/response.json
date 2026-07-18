@@ -1,0 +1,92 @@
+{
+  "links": {
+    "self": "https://api.planningcenteronline.com/people/v2/people/person-example/activities?after=2026-01-01&before=2026-04-01"
+  },
+  "data": [
+    {
+      "type": "PersonProfileChange",
+      "id": "activity-example-1",
+      "attributes": {
+        "created_at": "2026-01-15T12:00:00Z",
+        "editor_name": "Sanitized Editor",
+        "last_changed": "2026-01-15T12:00:00Z",
+        "sections": {
+          "Involvement": [
+            {
+              "audit_id": 1001,
+              "action": "update",
+              "type": "FieldDatum",
+              "section": "Involvement",
+              "has_erasable_data": false,
+              "change_details": [
+                {
+                  "Active Group – Membership": {
+                    "before": "Sanitized previous value",
+                    "after": "Sanitized current value"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Sanitized involvement change"
+      },
+      "relationships": {
+        "editor_person": {
+          "data": {
+            "type": "Person",
+            "id": "person-example-editor"
+          }
+        }
+      },
+      "links": {}
+    },
+    {
+      "type": "PersonProfileChange",
+      "id": "activity-example-2",
+      "attributes": {
+        "created_at": "2026-01-16T12:00:00Z",
+        "editor_name": "Sanitized Editor",
+        "last_changed": "2026-01-16T12:00:00Z",
+        "sections": {
+          "Assimilation": [
+            {
+              "audit_id": 1002,
+              "action": "create",
+              "type": "FieldDatum",
+              "section": "Assimilation",
+              "has_erasable_data": false,
+              "change_details": [
+                {
+                  "Last Check In - App (Default)": {
+                    "before": null,
+                    "after": "Sanitized current value"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Sanitized assimilation change"
+      },
+      "relationships": {
+        "editor_person": {
+          "data": {
+            "type": "Person",
+            "id": "person-example-editor"
+          }
+        }
+      },
+      "links": {}
+    }
+  ],
+  "included": [],
+  "meta": {
+    "total_count": 2,
+    "count": 2,
+    "parent": {
+      "id": "person-example",
+      "type": "Person"
+    }
+  }
+}

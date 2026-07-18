@@ -30,6 +30,10 @@ interface GeneratedField {
   name: string;
   sourceName: string;
   displayName: string;
+  description?: string;
+  defaultValue?: string | number | boolean;
+  format?: 'date-time';
+  valueKind?: 'scalar' | 'stringCollection';
   required: boolean;
   type: 'boolean' | 'number' | 'string';
   lookup?: GeneratedLookup;
@@ -79,6 +83,7 @@ interface Operation {
   lookupTarget: string;
   pathParameters: GeneratedField[];
   queryParameters: GeneratedField[];
+  ordinaryQueryFields?: GeneratedField[];
   queryOptions: GeneratedQueryOption[];
   attributeFields: GeneratedField[];
   relationshipFields: GeneratedRelationshipField[];
@@ -537,6 +542,15 @@ function addQueryOptions(context: IExecuteFunctions, itemIndex: number, operatio
   }
 }
 
+function addOrdinaryQuery(context: IExecuteFunctions, itemIndex: number, operation: Operation, qs: Record<string, unknown>): void {
+  for (const field of operation.ordinaryQueryFields ?? []) {
+    const value = field.required
+      ? context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex)
+      : context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, '');
+    if (value !== undefined && value !== '') qs[field.sourceName] = value;
+  }
+}
+
 function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Operation): unknown {
   if (!['POST', 'PUT', 'PATCH'].includes(operation.method)) return undefined;
 
@@ -550,8 +564,13 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
     const value = field.required
       ? context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex)
       : context.getNodeParameter(`${operation.id}_${field.name}`, itemIndex, '');
-    const attributeValue = field.lookup ? extractResourceLocatorId(value) : value;
-    if (attributeValue !== undefined && attributeValue !== '') {
+    let attributeValue = field.lookup ? extractResourceLocatorId(value) : value;
+    if (field.valueKind === 'stringCollection') {
+      attributeValue = Array.isArray(attributeValue)
+        ? attributeValue
+        : String(attributeValue ?? '').split(',').map((item) => item.trim()).filter(Boolean);
+    }
+    if (attributeValue !== undefined && attributeValue !== '' && (field.required || !Array.isArray(attributeValue) || attributeValue.length)) {
       attributes[field.sourceName] = attributeValue;
     }
   }
@@ -571,7 +590,7 @@ function buildBody(context: IExecuteFunctions, itemIndex: number, operation: Ope
 
   return {
     data: {
-      type: operation.jsonApiType ?? operation.resource,
+      ...(operation.jsonApiType ? { type: operation.jsonApiType } : {}),
       ...(Object.keys(attributes).length ? { attributes } : {}),
       ...(Object.keys(relationships).length ? { relationships } : {}),
     },
@@ -590,6 +609,7 @@ function buildPath(context: IExecuteFunctions, itemIndex: number, operation: Ope
 async function executeOperation(context: IExecuteFunctions, itemIndex: number, operation: Operation): Promise<INodeExecutionData[]> {
   const qs: IDataObject = {};
   addQueryOptions(context, itemIndex, operation, qs);
+  addOrdinaryQuery(context, itemIndex, operation, qs);
   addAdditionalQuery(context, itemIndex, operation, qs);
 
   const request = {

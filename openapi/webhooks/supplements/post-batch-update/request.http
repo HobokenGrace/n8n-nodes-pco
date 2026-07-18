@@ -1,0 +1,41 @@
+@api = {{$dotenv PCO_API_URL}}
+@auth = Basic {{$dotenv PCO_CLIENT_ID}}:{{$dotenv PCO_SECRET}}
+
+### create webhook subscription
+@webhook_url = https://example.com/pco-webhook
+# @note
+# WARNING: This request changes webhook subscriptions in the configured Planning Center account.
+POST {{api}}/webhooks/v2/batch_update
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "data": {
+    "attributes": {
+      "url": "{{webhook_url}}",
+      "old_url": "",
+      "names": [
+        "people.v2.events.email.created",
+        "people.v2.events.email.destroyed",
+        "people.v2.events.email.updated"
+      ]
+    }
+  }
+}
+
+
+### delete webhook subscription
+# @note
+# WARNING: This request removes webhook subscriptions from the configured Planning Center account.
+POST {{api}}/webhooks/v2/batch_update
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "data": {
+    "attributes": {
+      "url": "{{webhook_url}}",
+      "names": []
+    }
+  }
+}

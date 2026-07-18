@@ -1,0 +1,15 @@
+{
+  "mode": "add",
+  "method": "GET",
+  "path": "/people/{person_id}/activities",
+  "stability": "unofficial",
+  "provenance": {
+    "source": "observed",
+    "observedAt": "2026-07-17"
+  },
+  "observedResponse": {
+    "status": 200,
+    "contentType": "application/vnd.api+json",
+    "hasBody": true
+  }
+}

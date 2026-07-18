@@ -29,6 +29,7 @@ export function normalizeJsonApiResource(resource: unknown): JsonObject {
 }
 
 export function normalizeJsonApiResponse(response: unknown): JsonObject[] {
+  if (response === undefined || response === null || response === '') return [{}];
   if (!isObject(response) || !('data' in response)) {
     return [isObject(response) ? response : { value: response }];
   }

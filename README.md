@@ -39,6 +39,11 @@ pnpm openapi:refresh
 
 Review the snapshot diff before regenerating nodes.
 
+Repository-owned operations and reviewed corrections are maintained separately
+from vendor snapshots. See [Planning Center API Supplements](docs/api-supplements.md)
+for the package contract, safe REST Client capture workflow, sanitization rules,
+and add/override lifecycle.
+
 ## Generation
 
 Regenerate committed node source from the active snapshots with:

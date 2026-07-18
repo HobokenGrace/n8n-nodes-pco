@@ -1,0 +1,101 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Planning Center People person activities supplement",
+    "version": "2026-07-17"
+  },
+  "paths": {
+    "/people/{person_id}/activities": {
+      "get": {
+        "operationId": "listPersonActivities",
+        "summary": "List person activities",
+        "description": "Lists observed profile activity for a person.",
+        "tags": ["Activity"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "description": "Planning Center person ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "Returns activity before this date and time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "Returns activity after this date and time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Person activity collection.",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["type", "id", "attributes"],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": ["PersonProfileChange"]
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "attributes": {
+                            "type": "object",
+                            "additionalProperties": true
+                          },
+                          "relationships": {
+                            "type": "object",
+                            "additionalProperties": true
+                          },
+                          "links": {
+                            "type": "object",
+                            "additionalProperties": true
+                          }
+                        }
+                      }
+                    },
+                    "included": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "links": {
+                      "type": "object",
+                      "additionalProperties": true
+                    },
+                    "meta": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

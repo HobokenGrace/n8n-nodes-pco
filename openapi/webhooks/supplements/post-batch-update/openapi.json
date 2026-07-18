@@ -1,0 +1,63 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Planning Center Webhooks batch update supplement",
+    "version": "2026-07-17"
+  },
+  "paths": {
+    "/batch_update": {
+      "post": {
+        "operationId": "batchUpdateWebhookSubscriptions",
+        "summary": "Batch update webhook subscriptions",
+        "description": "Creates, updates, or removes webhook subscriptions for a URL.",
+        "tags": ["Webhook Subscription"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["data"],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": ["attributes"],
+                    "properties": {
+                      "attributes": {
+                        "type": "object",
+                        "required": ["url", "names"],
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "Webhook destination URL."
+                          },
+                          "old_url": {
+                            "type": "string",
+                            "description": "Previous webhook destination URL when changing it."
+                          },
+                          "names": {
+                            "type": "array",
+                            "description": "Event names to subscribe to. An empty array removes subscriptions for the URL.",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Subscriptions updated; no response body."
+          }
+        }
+      }
+    }
+  }
+}

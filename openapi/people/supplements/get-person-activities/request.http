@@ -1,0 +1,19 @@
+@api = {{$dotenv PCO_API_URL}}
+@auth = Basic {{$dotenv PCO_CLIENT_ID}}:{{$dotenv PCO_SECRET}}
+@after = 2026-01-01
+@before = 2026-04-01
+
+### list activity
+# @prompt person_id Planning Center person ID
+GET {{api}}/people/v2/people/{{person_id}}/activities?after={{after}}&before={{before}}
+Authorization: {{auth}}
+
+### list activity without date filter
+# @prompt person_id Planning Center person ID
+GET {{api}}/people/v2/people/{{person_id}}/activities
+Authorization: {{auth}}
+
+### list activity with only after date filter
+# @prompt person_id Planning Center person ID
+GET {{api}}/people/v2/people/{{person_id}}/activities?after={{after}}
+Authorization: {{auth}}
