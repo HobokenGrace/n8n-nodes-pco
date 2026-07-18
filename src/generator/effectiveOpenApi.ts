@@ -5,11 +5,11 @@ import { join } from 'node:path';
 
 import type { ProductConfig } from './config';
 import { snapshotPath, supplementsPath } from './config';
+import type { OperationStability } from './model';
 
 const HTTP_METHODS = ['get', 'post', 'put', 'patch', 'delete'] as const;
 const HTTP_METHOD_SET = new Set<string>(HTTP_METHODS);
-const UNOFFICIAL_WARNING =
-  'Planning Center does not document this endpoint and may change it without notice.';
+export const PCO_STABILITY_EXTENSION = 'x-pco-stability';
 
 type JsonObject = Record<string, any>;
 type SupplementMethod = (typeof HTTP_METHODS)[number];
@@ -28,7 +28,7 @@ interface ObservedResponse {
 interface SupplementMetadataBase {
   method: SupplementMethod;
   path: string;
-  stability: 'official' | 'unofficial';
+  stability: OperationStability;
   provenance: SupplementProvenance;
   observedResponse: ObservedResponse;
 }
@@ -261,12 +261,10 @@ function normalizedOperation(pathItem: JsonObject, operation: JsonObject): JsonO
   return result;
 }
 
-function withStabilityDescription(operation: JsonObject, metadata: SupplementMetadata): JsonObject {
-  if (metadata.stability !== 'unofficial') return operation;
-  const description = typeof operation.description === 'string' ? operation.description.trim() : '';
+function withStabilityMetadata(operation: JsonObject, metadata: SupplementMetadata): JsonObject {
   return {
     ...operation,
-    description: description ? `${UNOFFICIAL_WARNING}\n\n${description}` : UNOFFICIAL_WARNING,
+    [PCO_STABILITY_EXTENSION]: metadata.stability,
   };
 }
 
@@ -339,7 +337,7 @@ async function applyAddition(document: JsonObject, supplement: SupplementPackage
   document.paths ??= {};
   document.paths[entry.path] ??= {};
   const pathItem = dereferenced.paths[entry.path];
-  document.paths[entry.path][entry.method] = withStabilityDescription(
+  document.paths[entry.path][entry.method] = withStabilityMetadata(
     normalizedOperation(pathItem, entry.operation),
     metadata,
   );
@@ -373,7 +371,7 @@ async function applyOverride(document: JsonObject, supplement: SupplementPackage
     throw new Error(`Supplement ${supplement.name} patch.json must produce an operation object`);
 
   pathItem.parameters = [];
-  pathItem[metadata.method] = withStabilityDescription(patched, metadata);
+  pathItem[metadata.method] = withStabilityMetadata(patched, metadata);
 }
 
 function validateUniqueOperationIds(document: JsonObject): void {

@@ -76,6 +76,7 @@ interface Operation {
   jsonApiType?: string;
   operation: string;
   description: string;
+  stability: 'official' | 'unofficial';
   method: IHttpRequestMethods;
   path: string;
   deprecated: boolean;
@@ -95,6 +96,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Person",
     "operation": "List Organization (via Person)",
     "description": "GET /people/{person_id}/organization",
+    "stability": "official",
     "method": "GET",
     "path": "/current/v2/people/{person_id}/organization",
     "deprecated": false,
@@ -138,6 +140,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Person",
     "operation": "List People",
     "description": "GET /people",
+    "stability": "official",
     "method": "GET",
     "path": "/current/v2/people",
     "deprecated": false,
@@ -171,6 +174,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Person",
     "operation": "Get Me",
     "description": "GET /me",
+    "stability": "official",
     "method": "GET",
     "path": "/current/v2/me",
     "deprecated": false,
@@ -204,6 +208,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Person",
     "operation": "Get Organization (via Person)",
     "description": "GET /people/{person_id}/organization/{organization_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/current/v2/people/{person_id}/organization/{organization_id}",
     "deprecated": false,
@@ -278,6 +283,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Person",
     "operation": "Get Person",
     "description": "GET /people/{person_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/current/v2/people/{person_id}",
     "deprecated": false,

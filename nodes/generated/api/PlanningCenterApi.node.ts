@@ -76,6 +76,7 @@ interface Operation {
   jsonApiType?: string;
   operation: string;
   description: string;
+  stability: 'official' | 'unofficial';
   method: IHttpRequestMethods;
   path: string;
   deprecated: boolean;
@@ -95,6 +96,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Connected Application",
     "operation": "List Connected Applications",
     "description": "GET /connected_applications",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/connected_applications",
     "deprecated": false,
@@ -111,6 +113,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Connected Application",
     "operation": "List People (via Connected Application)",
     "description": "GET /connected_applications/{connected_application_id}/people",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/connected_applications/{connected_application_id}/people",
     "deprecated": false,
@@ -154,6 +157,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Connected Application",
     "operation": "Get Connected Application",
     "description": "GET /connected_applications/{connected_application_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/connected_applications/{connected_application_id}",
     "deprecated": false,
@@ -197,6 +201,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Connected Application",
     "operation": "Get Person (via Connected Application)",
     "description": "GET /connected_applications/{connected_application_id}/people/{person_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/connected_applications/{connected_application_id}/people/{person_id}",
     "deprecated": false,
@@ -247,6 +252,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Oauth Application",
     "operation": "List Mau (via Oauth Application)",
     "description": "GET /oauth_applications/{oauth_application_id}/mau",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/oauth_applications/{oauth_application_id}/mau",
     "deprecated": false,
@@ -290,6 +296,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Oauth Application",
     "operation": "List Oauth Applications",
     "description": "GET /oauth_applications",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/oauth_applications",
     "deprecated": false,
@@ -306,6 +313,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Oauth Application",
     "operation": "Get Mau (via Oauth Application)",
     "description": "GET /oauth_applications/{oauth_application_id}/mau/{mau_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/oauth_applications/{oauth_application_id}/mau/{mau_id}",
     "deprecated": false,
@@ -356,6 +364,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Oauth Application",
     "operation": "Get Oauth Application",
     "description": "GET /oauth_applications/{oauth_application_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/oauth_applications/{oauth_application_id}",
     "deprecated": false,
@@ -399,6 +408,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Personal Access Token",
     "operation": "List Personal Access Tokens",
     "description": "GET /personal_access_tokens",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/personal_access_tokens",
     "deprecated": false,
@@ -415,6 +425,7 @@ const OPERATIONS: Operation[] = [
     "resource": "Personal Access Token",
     "operation": "Get Personal Access Token",
     "description": "GET /personal_access_tokens/{personal_access_token_id}",
+    "stability": "official",
     "method": "GET",
     "path": "/api/v2/personal_access_tokens/{personal_access_token_id}",
     "deprecated": false,

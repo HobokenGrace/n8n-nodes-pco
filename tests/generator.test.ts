@@ -190,6 +190,29 @@ describe('generated Planning Center nodes', () => {
     );
   });
 
+  it('renders unofficial operation subtitles and dropdown descriptions without warning copy', () => {
+    const peopleNode = new entrypoint.PlanningCenterPeople();
+    const operationProperty = peopleNode.description.properties.find(
+      (property) =>
+        property.name === 'operation' &&
+        property.options?.some((option: any) => option.value === 'listPersonActivities'),
+    );
+
+    expect(peopleNode.description.subtitle).toContain(
+      '"listPersonActivities":"GET /people/{person_id}/activities"',
+    );
+    expect(peopleNode.description.subtitle).not.toContain('does not document this endpoint');
+    expect(operationProperty?.options).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          name: 'List Person Activities',
+          value: 'listPersonActivities',
+          description: 'GET /people/{person_id}/activities',
+        }),
+      ]),
+    );
+  });
+
   it('does not emit duplicate operation labels within a product', async () => {
     const summaries = await Promise.all(productConfigs.map(buildProductGeneration));
 
@@ -336,6 +359,7 @@ describe('generated Planning Center nodes', () => {
     });
     const operation = result.operations[0];
 
+    expect(operation.stability).toBe('official');
     expect(operation.ordinaryQueryFields).toEqual([
       expect.objectContaining({
         name: 'textValue',
@@ -362,6 +386,7 @@ describe('generated Planning Center nodes', () => {
     );
 
     const source = renderNode(config, result);
+    expect(source).toContain('"stability": "official"');
     expect(source).toContain('displayName: \\"At\\"');
     expect(source).toContain('type: \\"dateTime\\"');
     expect(source).toContain('function addOrdinaryQuery');
@@ -1021,8 +1046,10 @@ describe('generated Planning Center nodes', () => {
       method: 'GET',
       path: '/people/v2/people/{person_id}/activities',
       isList: true,
-      description: expect.stringContaining('does not document this endpoint'),
+      stability: 'unofficial',
+      description: 'GET /people/{person_id}/activities',
     });
+    expect(operation?.description).not.toContain('does not document this endpoint');
     expect(operation?.ordinaryQueryFields).toEqual([
       expect.objectContaining({ sourceName: 'before', format: 'date-time', required: false }),
       expect.objectContaining({ sourceName: 'after', format: 'date-time', required: false }),
@@ -1138,8 +1165,10 @@ describe('generated Planning Center nodes', () => {
       method: 'POST',
       path: '/webhooks/v2/batch_update',
       jsonApiType: undefined,
-      description: expect.stringContaining('does not document this endpoint'),
+      stability: 'unofficial',
+      description: 'POST /batch_update',
     });
+    expect(operation?.description).not.toContain('does not document this endpoint');
     expect(operation?.attributeFields).toEqual([
       expect.objectContaining({ sourceName: 'url', required: true }),
       expect.objectContaining({ sourceName: 'old_url', required: false }),

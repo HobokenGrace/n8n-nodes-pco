@@ -1,7 +1,7 @@
 import { singularize } from 'inflection';
 
 import type { ProductConfig } from './config';
-import { loadEffectiveOpenApi } from './effectiveOpenApi';
+import { loadEffectiveOpenApi, PCO_STABILITY_EXTENSION } from './effectiveOpenApi';
 import { displayLabel, normalizeIdentifierDisplayLabel, titleCase } from './labels';
 import type {
   GeneratedField,
@@ -12,6 +12,7 @@ import type {
   GeneratedValueOption,
   GeneratedRelationshipField,
   HttpMethod,
+  OperationStability,
   ProductGenerationResult,
 } from './model';
 
@@ -813,6 +814,21 @@ function requestPath(config: ProductConfig, path: string): string {
   return `${prefix}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
+function operationStability(operation: any): OperationStability {
+  const value = operation?.[PCO_STABILITY_EXTENSION];
+  return value === 'unofficial' ? 'unofficial' : 'official';
+}
+
+function operationDescription(
+  operation: any,
+  method: string,
+  path: string,
+  stability: OperationStability,
+): string {
+  const route = `${method.toUpperCase()} ${path}`;
+  return stability === 'unofficial' ? route : (operation.description ?? operation.summary ?? route);
+}
+
 export function buildProductGenerationFromDocument(
   config: ProductConfig,
   api: any,
@@ -835,13 +851,14 @@ export function buildProductGenerationFromDocument(
       if (!operation.operationId && !operation.summary) fallbackOperationIds.add(id);
       const queryParameters = collectParameters(path, pathItem, operation, 'query');
       const lookupQueryParameterNames = collectParameterSourceNames(pathItem, operation, 'query');
+      const stability = operationStability(operation);
       operations.push({
         id,
         resource: resourceLabel(operation, path),
         jsonApiType: jsonApiTypeFromRequestBody(operation),
         operation: operationLabel(operation, method, path),
-        description:
-          operation.description ?? operation.summary ?? `${method.toUpperCase()} ${path}`,
+        description: operationDescription(operation, method, path, stability),
+        stability,
         method: method.toUpperCase() as HttpMethod,
         path: requestPath(config, path),
         deprecated: Boolean(operation.deprecated),
