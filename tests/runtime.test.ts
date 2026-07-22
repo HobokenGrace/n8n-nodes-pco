@@ -10,6 +10,7 @@ import {
   retryDelayMs,
   sanitizePlanningCenterError,
   shouldRetry,
+  toNodeOperationError,
 } from '../src/runtime/request';
 
 function fakeContext(overrides: Record<string, unknown> = {}): any {
@@ -70,6 +71,68 @@ describe('Planning Center request helper', () => {
     });
 
     expect(message).toBe('failed for [redacted] using [redacted]');
+  });
+
+  it('preserves Planning Center JSON:API and request details through item execution errors', async () => {
+    const body = {
+      data: {
+        type: 'FieldDatum',
+        attributes: { value: 'Example', note: 'app-id uses super-secret' },
+      },
+    };
+    const responseData = {
+      errors: [
+        {
+          title: 'Unprocessable Entity',
+          detail: 'The field definition is invalid.',
+        },
+      ],
+    };
+    const requestError = Object.assign(new Error('Request failed with status code 422'), {
+      response: {
+        status: 422,
+        data: responseData,
+      },
+    });
+    const context = fakeContext({
+      helpers: {
+        httpRequest: vi.fn().mockRejectedValue(requestError),
+      },
+    });
+
+    let apiError: unknown;
+    try {
+      await planningCenterApiRequest.call(context, {
+        method: 'POST',
+        path: '/people/v2/people/123/field_data',
+        qs: { source: 'app-id' },
+        body,
+      });
+    } catch (error) {
+      apiError = error;
+    }
+
+    const operationError = toNodeOperationError(context, apiError, 0);
+    expect(operationError.message).toBe('Request failed with status code 422');
+    expect(operationError.description).toBe('Unprocessable Entity: The field definition is invalid.');
+    expect(operationError.httpCode).toBe('422');
+    expect(operationError.context.data).toEqual({
+      ...responseData,
+      request: {
+        method: 'POST',
+        path: '/people/v2/people/123/field_data',
+        query: { source: '[redacted]' },
+        body: {
+          data: {
+            type: 'FieldDatum',
+            attributes: { value: 'Example', note: '[redacted] uses [redacted]' },
+          },
+        },
+      },
+    });
+    expect(context.helpers.httpRequest).toHaveBeenCalledWith(
+      expect.objectContaining({ body, qs: { source: 'app-id' } }),
+    );
   });
 });
 

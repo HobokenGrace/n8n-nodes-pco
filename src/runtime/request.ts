@@ -36,6 +36,28 @@ export function sanitizePlanningCenterError(error: unknown, credentials?: Partia
   return message;
 }
 
+function sanitizePlanningCenterDetails(
+  value: unknown,
+  credentials: Partial<PlanningCenterCredentials>,
+  ancestors = new WeakSet<object>(),
+): unknown {
+  if (typeof value === 'string') return sanitizePlanningCenterError(value, credentials);
+  if (!value || typeof value !== 'object') return value;
+  if (ancestors.has(value)) return '[circular]';
+
+  ancestors.add(value);
+  const sanitized = Array.isArray(value)
+    ? value.map((entry) => sanitizePlanningCenterDetails(entry, credentials, ancestors))
+    : Object.fromEntries(
+        Object.entries(value).map(([key, entry]) => [
+          key,
+          sanitizePlanningCenterDetails(entry, credentials, ancestors),
+        ]),
+      );
+  ancestors.delete(value);
+  return sanitized;
+}
+
 export function shouldRetry(statusCode: number | undefined): boolean {
   return statusCode === 429 || (statusCode !== undefined && statusCode >= 500 && statusCode <= 599);
 }
@@ -68,6 +90,22 @@ function errorStatus(error: any): number | undefined {
 function retryAfterHeader(error: any): string | undefined {
   const headers = error?.response?.headers ?? error?.headers;
   return headers?.['retry-after'] ?? headers?.['Retry-After'];
+}
+
+function planningCenterErrorDescription(error: any): string | undefined {
+  const errors = error?.response?.data?.errors;
+  if (!Array.isArray(errors)) return undefined;
+
+  const descriptions = errors.flatMap((entry) => {
+    if (!entry || typeof entry !== 'object') return [];
+
+    const title = typeof entry.title === 'string' ? entry.title : undefined;
+    const detail = typeof entry.detail === 'string' ? entry.detail : undefined;
+    if (title && detail) return [`${title}: ${detail}`];
+    return title || detail ? [title ?? detail] : [];
+  });
+
+  return descriptions.length > 0 ? descriptions.join(' | ') : undefined;
 }
 
 export async function planningCenterApiRequest(
@@ -105,17 +143,53 @@ export async function planningCenterApiRequest(
   }
 
   const message = sanitizePlanningCenterError(lastError, credentials);
-  throw new NodeApiError(this.getNode(), lastError as any, { message });
+  const description = planningCenterErrorDescription(lastError);
+  const apiError = new NodeApiError(this.getNode(), lastError as any, {
+    message,
+    description: description
+      ? sanitizePlanningCenterError(description, credentials)
+      : undefined,
+  });
+  const responseData = apiError.context.data;
+  apiError.context.data = sanitizePlanningCenterDetails(
+    {
+      ...(responseData && typeof responseData === 'object' && !Array.isArray(responseData)
+        ? responseData
+        : {}),
+      request: {
+        method: options.method,
+        path: options.path,
+        ...(options.qs !== undefined ? { query: options.qs } : {}),
+        ...(options.body !== undefined ? { body: options.body } : {}),
+      },
+    },
+    credentials,
+  ) as IDataObject;
+  apiError.messages = apiError.messages.map((rawMessage) =>
+    sanitizePlanningCenterError(rawMessage, credentials),
+  );
+  throw apiError;
 }
 
 export function toNodeOperationError(
   context: IExecuteFunctions,
   error: unknown,
   itemIndex: number,
-): NodeOperationError {
+): NodeOperationError & Partial<Pick<NodeApiError, 'httpCode'>> {
   if (error instanceof NodeOperationError) {
     return error;
   }
 
-  return new NodeOperationError(context.getNode(), sanitizePlanningCenterError(error), { itemIndex });
+  const operationError = new NodeOperationError(
+    context.getNode(),
+    error instanceof Error ? error : sanitizePlanningCenterError(error),
+    { itemIndex, message: sanitizePlanningCenterError(error) },
+  ) as NodeOperationError & Partial<Pick<NodeApiError, 'httpCode'>>;
+
+  if (error instanceof NodeApiError) {
+    operationError.httpCode = error.httpCode;
+    operationError.context.data = error.context.data;
+  }
+
+  return operationError;
 }
