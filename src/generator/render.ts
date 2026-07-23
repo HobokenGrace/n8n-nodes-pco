@@ -451,6 +451,7 @@ interface Operation {
   jsonApiType?: string;
   operation: string;
   description: string;
+  stability: 'official' | 'unofficial';
   method: IHttpRequestMethods;
   path: string;
   deprecated: boolean;

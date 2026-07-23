@@ -71,6 +71,316 @@ describe('Planning Center request helper', () => {
 
     expect(message).toBe('failed for [redacted] using [redacted]');
   });
+
+  it('fully redacts overlapping credential values', () => {
+    const message = sanitizePlanningCenterError('failed for app-id-secret', {
+      applicationId: 'app-id',
+      secret: 'app-id-secret',
+    });
+
+    expect(message).toBe('failed for [redacted]');
+  });
+
+  it('preserves Planning Center JSON:API and request details through item error serialization', async () => {
+    const body = {
+      data: {
+        type: 'FieldDatum',
+        attributes: { value: 'Example', note: 'app-id uses super-secret' },
+      },
+    };
+    const responseData = {
+      errors: [
+        {
+          title: 'Unprocessable Entity',
+          detail: 'The field definition is invalid for app-id.',
+        },
+      ],
+      meta: { credential: 'super-secret' },
+    };
+    const requestError = Object.assign(
+      new Error('Request failed with status code 422 for app-id using super-secret'),
+      {
+      response: {
+        status: 422,
+        data: responseData,
+      },
+      },
+    );
+    const context = fakeContext({
+      helpers: {
+        httpRequest: vi.fn().mockRejectedValue(requestError),
+      },
+    });
+
+    let operationError: any;
+    try {
+      await executeItemWithContinueOnFail(context, 7, async () => {
+        await planningCenterApiRequest.call(context, {
+          method: 'POST',
+          path: '/people/v2/people/123/field_data',
+          qs: { source: 'app-id' },
+          body,
+          headers: { 'X-Diagnostic-Test': 'must-not-be-recorded' },
+        });
+        return [];
+      });
+    } catch (error) {
+      operationError = error;
+    }
+
+    expect(operationError.message).toBe(
+      'Request failed with status code 422 for [redacted] using [redacted]',
+    );
+    expect(operationError.messages).not.toContain(
+      'Request failed with status code 422 for app-id using super-secret',
+    );
+    expect(operationError.description).toBe(
+      'Unprocessable Entity: The field definition is invalid for [redacted].',
+    );
+    expect(operationError.httpCode).toBe('422');
+    expect(operationError.context.itemIndex).toBe(7);
+    expect(operationError.context.data).toEqual({
+      response: {
+        errors: [
+          {
+            title: 'Unprocessable Entity',
+            detail: 'The field definition is invalid for [redacted].',
+          },
+        ],
+        meta: { credential: '[redacted]' },
+      },
+      request: {
+        method: 'POST',
+        path: '/people/v2/people/123/field_data',
+        query: { source: '[redacted]' },
+        body: {
+          data: {
+            type: 'FieldDatum',
+            attributes: { value: 'Example', note: '[redacted] uses [redacted]' },
+          },
+        },
+      },
+    });
+    expect(operationError.context.data.request).not.toHaveProperty('headers');
+    expect(JSON.stringify(operationError)).not.toContain('must-not-be-recorded');
+    expect(JSON.stringify(operationError)).not.toContain('super-secret');
+    expect(JSON.parse(JSON.stringify(operationError))).toMatchObject({
+      description: operationError.description,
+      messages: operationError.messages,
+      httpCode: operationError.httpCode,
+      context: {
+        itemIndex: operationError.context.itemIndex,
+        data: operationError.context.data,
+      },
+    });
+    expect(context.helpers.httpRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        body,
+        qs: { source: 'app-id' },
+        headers: expect.objectContaining({
+          Authorization: buildBasicAuthHeader('app-id', 'super-secret'),
+          'X-Diagnostic-Test': 'must-not-be-recorded',
+        }),
+      }),
+    );
+  });
+
+  it('redacts credentials from non-JSON:API error descriptions', async () => {
+    const requestError = Object.assign(new Error('Request failed with status code 401'), {
+      response: {
+        status: 401,
+        data: { message: 'Rejected app-id using super-secret' },
+      },
+    });
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockRejectedValue(requestError) },
+    });
+
+    await expect(
+      planningCenterApiRequest.call(context, {
+        method: 'GET',
+        path: '/people/v2/me',
+      }),
+    ).rejects.toMatchObject({
+      description: 'Rejected [redacted] using [redacted]',
+    });
+  });
+
+  it('redacts credentials from diagnostic object keys', async () => {
+    const requestError = Object.assign(new Error('Request failed with status code 422'), {
+      response: {
+        status: 422,
+        data: { details: { 'app-id': 'invalid response field' } },
+      },
+    });
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockRejectedValue(requestError) },
+    });
+
+    let apiError: any;
+    try {
+      await planningCenterApiRequest.call(context, {
+        method: 'GET',
+        path: '/people/v2/me',
+        qs: { 'super-secret': 'request value' },
+      });
+    } catch (error) {
+      apiError = error;
+    }
+
+    expect(apiError.context.data).toMatchObject({
+      response: { details: { '[redacted]': 'invalid response field' } },
+      request: { query: { '[redacted]': 'request value' } },
+    });
+    expect(JSON.stringify(apiError.context.data)).not.toContain('app-id');
+    expect(JSON.stringify(apiError.context.data)).not.toContain('super-secret');
+  });
+
+  it.each([
+    { label: 'array', responseData: [{ detail: 'first error' }] },
+    { label: 'primitive', responseData: 'upstream unavailable' },
+    { label: 'object with a request field', responseData: { request: { id: 'api-request' } } },
+  ])('preserves $label response bodies without request collisions', async ({ responseData }) => {
+    const requestError = Object.assign(new Error('Request failed with status code 422'), {
+      response: { status: 422, data: responseData },
+    });
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockRejectedValue(requestError) },
+    });
+
+    let apiError: any;
+    try {
+      await planningCenterApiRequest.call(context, {
+        method: 'GET',
+        path: '/people/v2/me',
+      });
+    } catch (error) {
+      apiError = error;
+    }
+
+    expect(apiError.context.data).toEqual({
+      response: responseData,
+      request: { method: 'GET', path: '/people/v2/me' },
+    });
+  });
+
+  it('formats multiple JSON:API errors and omits absent request values', async () => {
+    const requestError = Object.assign(new Error('Request failed with status code 422'), {
+      response: {
+        status: 422,
+        data: {
+          errors: [
+            { title: 'Invalid name', detail: 'Name is required.' },
+            { title: 'Invalid email' },
+            { detail: 'Email is malformed.' },
+            {},
+          ],
+        },
+      },
+    });
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockRejectedValue(requestError) },
+    });
+
+    await expect(
+      planningCenterApiRequest.call(context, {
+        method: 'DELETE',
+        path: '/people/v2/people/123',
+      }),
+    ).rejects.toMatchObject({
+      description: 'Invalid name: Name is required. | Invalid email | Email is malformed.',
+      context: {
+        data: {
+          request: {
+            method: 'DELETE',
+            path: '/people/v2/people/123',
+          },
+        },
+      },
+    });
+  });
+
+  it('creates serializable diagnostics for circular request values', async () => {
+    const body: Record<string, unknown> = { value: 'Example' };
+    body.self = body;
+    const requestError = Object.assign(new Error('Request failed with status code 422'), {
+      response: { status: 422, data: { errors: [{ title: 'Invalid request' }] } },
+    });
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockRejectedValue(requestError) },
+    });
+
+    let apiError: any;
+    try {
+      await planningCenterApiRequest.call(context, {
+        method: 'POST',
+        path: '/people/v2/people',
+        body,
+      });
+    } catch (error) {
+      apiError = error;
+    }
+
+    expect(apiError.context.data.request.body).toEqual({
+      value: 'Example',
+      self: '[circular]',
+    });
+    expect(() => JSON.stringify(apiError.context.data)).not.toThrow();
+    expect(context.helpers.httpRequest).toHaveBeenCalledWith(expect.objectContaining({ body }));
+  });
+
+  it('excludes raw transport credentials and headers from serialized API errors', async () => {
+    const requestError = Object.assign(
+      new Error('Request failed for app-id using super-secret'),
+      {
+        response: {
+          status: 422,
+          data: { errors: [{ detail: 'Rejected super-secret for app-id' }] },
+        },
+        config: {
+          headers: {
+            Authorization: buildBasicAuthHeader('app-id', 'super-secret'),
+            'X-Diagnostic-Test': 'must-not-be-recorded',
+          },
+        },
+      },
+    );
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockRejectedValue(requestError) },
+    });
+
+    let apiError: any;
+    try {
+      await planningCenterApiRequest.call(context, {
+        method: 'POST',
+        path: '/people/v2/people',
+        body: { credential: 'super-secret' },
+      });
+    } catch (error) {
+      apiError = error;
+    }
+
+    const serializedError = JSON.stringify(apiError);
+    expect(serializedError).not.toContain('app-id');
+    expect(serializedError).not.toContain('super-secret');
+    expect(serializedError).not.toContain('Authorization');
+    expect(serializedError).not.toContain('must-not-be-recorded');
+  });
+
+  it('returns successful responses without creating diagnostics', async () => {
+    const response = { data: [{ id: '123' }] };
+    const context = fakeContext({
+      helpers: { httpRequest: vi.fn().mockResolvedValue(response) },
+    });
+
+    const result = await planningCenterApiRequest.call(context, {
+      method: 'GET',
+      path: '/people/v2/people/123',
+    });
+
+    expect(result).toBe(response);
+    expect(response).toEqual({ data: [{ id: '123' }] });
+  });
 });
 
 describe('Planning Center JSON:API normalization', () => {

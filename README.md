@@ -77,8 +77,10 @@ This package includes a prototype of the newer `@n8n/node-cli` workflow:
 ```sh
 pnpm dev
 pnpm lint:n8n
-pnpm release
 ```
+
+Publishing is performed only by `.github/workflows/publish.yml`; maintainers
+must follow [`docs/publishing.md`](docs/publishing.md).
 
 `pnpm build` already uses `n8n-node build`, followed by the package-specific
 asset copy step. `pnpm lint` intentionally uses `eslint.config.repo.mjs` for the

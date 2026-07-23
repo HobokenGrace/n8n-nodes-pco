@@ -1,4 +1,5 @@
 export type HttpMethod = 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT';
+export type OperationStability = 'official' | 'unofficial';
 
 export interface GeneratedField {
   name: string;
@@ -72,6 +73,7 @@ export interface GeneratedOperation {
   jsonApiType?: string;
   operation: string;
   description: string;
+  stability: OperationStability;
   method: HttpMethod;
   path: string;
   deprecated: boolean;

@@ -10,6 +10,7 @@ import {
   canonicalSerialize,
   fingerprintOperation,
   loadEffectiveOpenApi,
+  PCO_STABILITY_EXTENSION,
 } from '../src/generator/effectiveOpenApi';
 
 const config: ProductConfig = {
@@ -109,7 +110,7 @@ describe('effective OpenAPI supplements', () => {
       'openapi.json': document({
         '/a-first': {
           parameters: [{ in: 'query', name: 'inherited', schema: { type: 'string' } }],
-          get: operation('getAFirst'),
+          get: operation('getAFirst', { description: 'List observed items.' }),
         },
       }),
     });
@@ -120,7 +121,11 @@ describe('effective OpenAPI supplements', () => {
     expect(result.paths['/a-first'].get.parameters).toEqual([
       { in: 'query', name: 'inherited', schema: { type: 'string' } },
     ]);
-    expect(result.paths['/a-first'].get.description).toContain('does not document this endpoint');
+    expect(result.paths['/a-first'].get[PCO_STABILITY_EXTENSION]).toBe('unofficial');
+    expect(result.paths['/a-first'].get.description).toBe('List observed items.');
+    expect(result.paths['/a-first'].get.description).not.toContain(
+      'does not document this endpoint',
+    );
   });
 
   it.each([
