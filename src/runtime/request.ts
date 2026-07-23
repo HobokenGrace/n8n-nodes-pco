@@ -29,8 +29,11 @@ export function sanitizePlanningCenterError(error: unknown, credentials?: Partia
   const raw = error instanceof Error ? error.message : String(error);
   let message = raw || 'Planning Center API request failed';
 
-  for (const secretValue of [credentials?.applicationId, credentials?.secret].filter(Boolean)) {
-    message = message.split(String(secretValue)).join('[redacted]');
+  const credentialValues = [credentials?.applicationId, credentials?.secret]
+    .filter((value): value is string => Boolean(value))
+    .sort((left, right) => right.length - left.length);
+  for (const credentialValue of credentialValues) {
+    message = message.split(credentialValue).join('[redacted]');
   }
 
   return message;
@@ -47,10 +50,10 @@ function sanitizePlanningCenterDetails(
 
   ancestors.add(value);
   const sanitized = Array.isArray(value)
-    ? value.map((entry) => sanitizePlanningCenterDetails(entry, credentials, ancestors))
-    : Object.fromEntries(
+      ? value.map((entry) => sanitizePlanningCenterDetails(entry, credentials, ancestors))
+      : Object.fromEntries(
         Object.entries(value).map(([key, entry]) => [
-          key,
+          sanitizePlanningCenterError(key, credentials),
           sanitizePlanningCenterDetails(entry, credentials, ancestors),
         ]),
       );
@@ -150,12 +153,13 @@ export async function planningCenterApiRequest(
       ? sanitizePlanningCenterError(description, credentials)
       : undefined,
   });
-  const responseData = apiError.context.data;
+  if (apiError.description) {
+    apiError.description = sanitizePlanningCenterError(apiError.description, credentials);
+  }
+  const responseData = (lastError as any)?.response?.data;
   apiError.context.data = sanitizePlanningCenterDetails(
     {
-      ...(responseData && typeof responseData === 'object' && !Array.isArray(responseData)
-        ? responseData
-        : {}),
+      ...(responseData !== undefined ? { response: responseData } : {}),
       request: {
         method: options.method,
         path: options.path,
@@ -187,8 +191,19 @@ export function toNodeOperationError(
   ) as NodeOperationError & Partial<Pick<NodeApiError, 'httpCode'>>;
 
   if (error instanceof NodeApiError) {
+    operationError.description = error.description;
+    operationError.messages = [...error.messages];
     operationError.httpCode = error.httpCode;
     operationError.context.data = error.context.data;
+
+    const baseToJSON = operationError.toJSON?.bind(operationError);
+    if (baseToJSON) {
+      operationError.toJSON = () => ({
+        ...baseToJSON(),
+        messages: operationError.messages,
+        httpCode: operationError.httpCode,
+      });
+    }
   }
 
   return operationError;
