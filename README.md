@@ -27,8 +27,10 @@ hand-edited. Update the generator or OpenAPI snapshots, then regenerate.
 
 ## Polling Triggers
 
-Qualifying products also provide generated polling trigger nodes. Select a
-Resource and then a `Created` or `Created or Updated` Event. `Created` follows
+Qualifying products also provide generated polling trigger nodes. Select the
+emitted Resource and then a `Created` or `Created or Updated` Event. Nested
+resources include their parent scope, such as `Form Submission (via Form)`.
+`Created` follows
 `created_at`; it does not detect an older resource that starts matching a filter
 later. `Created or Updated` follows `updated_at`, so it observes creation and the
 latest representation of later changes whose timestamp advances. Polling does
@@ -46,7 +48,9 @@ activation and emit only later changes. No existing resource is emitted by that
 activation. A past or current RFC 3339 value starts inclusive historical
 catch-up at the first Poll Time. A future value keeps the workflow active and
 quiet until a matching resource reaches that time. Reactivation with unchanged
-settings resumes the saved watermark and catches up downtime changes. Changing
+settings resumes the saved watermark and may immediately emit one capped batch
+of downtime changes during n8n's activation poll, before the next configured
+Poll Time. Changing
 credentials, Resource/Event, path scope, Start Time, or a result filter applies
 fresh activation semantics. With a configured Start Time that reset replays
 inclusively and can re-emit previously delivered resources; stable expressions

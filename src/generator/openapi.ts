@@ -544,8 +544,7 @@ function pollingCursorFields(pathItem: any, operation: any, isList: boolean): Po
 
   return POLLING_CURSOR_FIELDS.filter((cursorField) => {
     const inclusiveFilter = parameters.find(
-      (parameter) =>
-        parameter?.in === 'query' && parameter.name === `where[${cursorField}][gte]`,
+      (parameter) => parameter?.in === 'query' && parameter.name === `where[${cursorField}][gte]`,
     );
     return orderValues.has(cursorField) && inclusiveFilter?.schema?.format === 'date-time';
   });
@@ -563,10 +562,13 @@ function isPollingOwnedQueryOption(
   return sourceNames.some((sourceName) => parseWhereParameter(sourceName)?.field === cursorField);
 }
 
-function pollingEventLabel(operation: GeneratedOperation, cursorField: PollingCursorField): string {
-  const context = relationshipContext(operation.path);
-  const scope = context ? ` (via ${context})` : '';
-  return `${cursorField === 'created_at' ? 'Created' : 'Created or Updated'}${scope}`;
+function pollingResourceLabel(operation: GeneratedOperation, contextDepth = 1): string {
+  const context = relationshipContext(operation.path, contextDepth);
+  return `${displayLabel(operation.lookupTarget)}${context ? ` (via ${context})` : ''}`;
+}
+
+function pollingEventLabel(cursorField: PollingCursorField): string {
+  return cursorField === 'created_at' ? 'Created' : 'Created or Updated';
 }
 
 function pollingEventDescription(cursorField: PollingCursorField): string {
@@ -589,17 +591,20 @@ function cursorSparseFieldSourceName(
     const resourceType = option.sourceName?.match(/^fields\[([^\]]+)\]$/)?.[1];
     return resourceType && lookupTargetKey(resourceType) === operation.lookupTarget;
   });
-  return matchingTarget?.sourceName ?? (candidates.length === 1 ? candidates[0].sourceName : undefined);
+  return (
+    matchingTarget?.sourceName ?? (candidates.length === 1 ? candidates[0].sourceName : undefined)
+  );
 }
 
 function buildPollingOperation(
   operation: GeneratedOperation,
   cursorField: PollingCursorField,
 ): GeneratedPollingOperation {
-  const event = pollingEventLabel(operation, cursorField);
+  const event = pollingEventLabel(cursorField);
   return {
     ...operation,
     id: `${operation.id}_${camelCase(cursorField)}`,
+    resource: pollingResourceLabel(operation),
     sourceOperationId: operation.id,
     operation: event,
     event,
@@ -618,7 +623,7 @@ function buildPollingOperation(
   };
 }
 
-function duplicatePollingEventGroups(
+function duplicatePollingSelectionGroups(
   operations: GeneratedPollingOperation[],
 ): GeneratedPollingOperation[][] {
   const groups = new Map<string, GeneratedPollingOperation[]>();
@@ -629,29 +634,24 @@ function duplicatePollingEventGroups(
   return [...groups.values()].filter((group) => group.length > 1);
 }
 
-function disambiguatePollingEventLabels(operations: GeneratedPollingOperation[]): void {
+function disambiguatePollingResourceLabels(operations: GeneratedPollingOperation[]): void {
   for (let contextDepth = 2; contextDepth <= 10; contextDepth += 1) {
-    const duplicateGroups = duplicatePollingEventGroups(operations);
+    const duplicateGroups = duplicatePollingSelectionGroups(operations);
     if (!duplicateGroups.length) return;
 
     for (const group of duplicateGroups) {
       for (const operation of group) {
-        const context = relationshipContext(operation.path, contextDepth);
-        const base = operation.cursorField === 'created_at' ? 'Created' : 'Created or Updated';
-        operation.event = `${base}${context ? ` (via ${context})` : ''}`;
-        operation.operation = operation.event;
+        operation.resource = pollingResourceLabel(operation, contextDepth);
       }
     }
   }
 
-  for (const group of duplicatePollingEventGroups(operations)) {
+  for (const group of duplicatePollingSelectionGroups(operations)) {
     for (const operation of group) {
       const context = relationshipContext(operation.path, 10);
       const collection = operationTarget(operation.path, 'List');
       const scope = [context, collection].filter(Boolean).join(' ');
-      const base = operation.cursorField === 'created_at' ? 'Created' : 'Created or Updated';
-      operation.event = `${base} (via ${scope})`;
-      operation.operation = operation.event;
+      operation.resource = `${displayLabel(operation.lookupTarget)} (via ${scope})`;
     }
   }
 }
@@ -1039,16 +1039,13 @@ export function buildProductGenerationFromDocument(
   disambiguateFallbackOperationLabels(operations, fallbackOperationIds);
   addLookupMetadata(operations);
 
-  const pollingOperations = operations
-    .flatMap((operation) =>
-      (pollingCursorFieldsByOperationId.get(operation.id) ?? []).map((cursorField) =>
-        buildPollingOperation(operation, cursorField),
-      ),
-    );
-  disambiguatePollingEventLabels(pollingOperations);
-  pollingOperations.sort((a, b) =>
-    `${a.resource}:${a.id}`.localeCompare(`${b.resource}:${b.id}`),
+  const pollingOperations = operations.flatMap((operation) =>
+    (pollingCursorFieldsByOperationId.get(operation.id) ?? []).map((cursorField) =>
+      buildPollingOperation(operation, cursorField),
+    ),
   );
+  disambiguatePollingResourceLabels(pollingOperations);
+  pollingOperations.sort((a, b) => `${a.resource}:${a.id}`.localeCompare(`${b.resource}:${b.id}`));
 
   const resources = new Set(operations.map((operation) => operation.resource));
   const pollingResources = new Set(pollingOperations.map((operation) => operation.resource));

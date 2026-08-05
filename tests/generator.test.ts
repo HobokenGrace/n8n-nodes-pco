@@ -49,18 +49,31 @@ const pollingTestConfig = {
   generate: true,
 };
 
-function pollingCollectionOperation(options: {
-  collection?: boolean;
-  cursorParameters?: any[];
-  operationId?: string;
-  path?: string;
-  tags?: string[];
-} = {}): any {
+function pollingCollectionOperation(
+  options: {
+    collection?: boolean;
+    cursorParameters?: any[];
+    operationId?: string;
+    path?: string;
+    resourceType?: string;
+    tags?: string[];
+  } = {},
+): any {
+  const resourceSchema = {
+    type: 'object',
+    properties: {
+      type: { type: 'string', enum: [options.resourceType ?? 'Item'] },
+    },
+  };
   return {
     operationId: options.operationId ?? 'listItems',
     tags: options.tags ?? ['Items'],
     parameters: options.cursorParameters ?? [
-      { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at', 'updated_at'] } },
+      {
+        in: 'query',
+        name: 'order',
+        schema: { type: 'string', enum: ['created_at', 'updated_at'] },
+      },
       {
         in: 'query',
         name: 'where[created_at][gte]',
@@ -80,9 +93,10 @@ function pollingCollectionOperation(options: {
             schema: {
               type: 'object',
               properties: {
-                data: options.collection === false
-                  ? { type: 'object' }
-                  : { type: 'array', items: { type: 'object' } },
+                data:
+                  options.collection === false
+                    ? resourceSchema
+                    : { type: 'array', items: resourceSchema },
               },
             },
           },
@@ -151,13 +165,14 @@ describe('generated Planning Center nodes', () => {
     }
   });
 
-  it('models stable Created events and preserves nested collection scope', () => {
+  it('models stable events and scopes emitted resources for nested collections', () => {
     const result = buildProductGenerationFromDocument(pollingTestConfig, {
       paths: {
         '/items': { get: pollingCollectionOperation() },
         '/forms/{form_id}/submissions': {
           get: pollingCollectionOperation({
             operationId: 'listFormSubmissions',
+            resourceType: 'FormSubmission',
             tags: ['Form Submissions'],
             cursorParameters: [
               { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
@@ -168,9 +183,7 @@ describe('generated Planning Center nodes', () => {
               },
             ],
           }),
-          parameters: [
-            { in: 'path', name: 'form_id', required: true, schema: { type: 'string' } },
-          ],
+          parameters: [{ in: 'path', name: 'form_id', required: true, schema: { type: 'string' } }],
         },
       },
     });
@@ -179,7 +192,7 @@ describe('generated Planning Center nodes', () => {
       expect.arrayContaining([
         expect.objectContaining({
           id: 'listItems_createdAt',
-          resource: 'Items',
+          resource: 'Item',
           event: 'Created',
           cursorField: 'created_at',
           description: expect.stringContaining('creation time'),
@@ -192,7 +205,8 @@ describe('generated Planning Center nodes', () => {
         }),
         expect.objectContaining({
           id: 'listFormSubmissions_createdAt',
-          event: 'Created (via Form)',
+          resource: 'Form Submission (via Form)',
+          event: 'Created',
           cursorField: 'created_at',
         }),
       ]),
@@ -204,19 +218,28 @@ describe('generated Planning Center nodes', () => {
 
   it('includes the resource in trigger action labels while keeping Event names concise', () => {
     const result = buildProductGenerationFromDocument(pollingTestConfig, {
-      paths: { '/items': { get: pollingCollectionOperation() } },
+      paths: {
+        '/items': { get: pollingCollectionOperation() },
+        '/forms/{form_id}/submissions': {
+          get: pollingCollectionOperation({
+            operationId: 'listFormSubmissions',
+            resourceType: 'FormSubmission',
+          }),
+        },
+      },
     });
     const source = renderTriggerNode(pollingTestConfig, result);
 
     expect(source).toContain('"name":"Created"');
     expect(source).toContain('"name":"Created or Updated"');
-    expect(source).toContain('"action":"On Items created"');
-    expect(source).toContain('"action":"On Items created or updated"');
+    expect(source).toContain('"action":"On Item created"');
+    expect(source).toContain('"action":"On Item created or updated"');
+    expect(source).toContain('"action":"On Form Submission created (via Form)"');
     expect(source).not.toContain('"action":"Created"');
     expect(source).not.toContain('"action":"Created or Updated"');
   });
 
-  it('adds deeper scope only when nested polling Event labels would collide', () => {
+  it('adds deeper scope only when scoped polling Resource labels would collide', () => {
     const nestedOperation = (operationId: string) =>
       pollingCollectionOperation({
         operationId,
@@ -241,13 +264,15 @@ describe('generated Planning Center nodes', () => {
       },
     });
 
-    expect(result.pollingOperations.map((candidate) => candidate.event)).toEqual([
-      'Created (via Parent Form)',
-      'Created (via Template Form)',
+    expect(
+      result.pollingOperations.map((candidate) => [candidate.resource, candidate.event]),
+    ).toEqual([
+      ['Item (via Parent Form)', 'Created'],
+      ['Item (via Template Form)', 'Created'],
     ]);
   });
 
-  it('adds the collection route when sibling Event labels share every parent scope', () => {
+  it('adds the collection route when scoped Resource labels share every parent scope', () => {
     const siblingOperation = (operationId: string) =>
       pollingCollectionOperation({
         operationId,
@@ -270,9 +295,11 @@ describe('generated Planning Center nodes', () => {
       },
     });
 
-    expect(result.pollingOperations.map((candidate) => candidate.event)).toEqual([
-      'Created (via Parent Archived Items)',
-      'Created (via Parent Items)',
+    expect(
+      result.pollingOperations.map((candidate) => [candidate.resource, candidate.event]),
+    ).toEqual([
+      ['Item (via Parent Archived Items)', 'Created'],
+      ['Item (via Parent Items)', 'Created'],
     ]);
   });
 
@@ -297,27 +324,27 @@ describe('generated Planning Center nodes', () => {
       const source = renderTriggerNode(generatedProductConfigs[index], result);
       if (source) expect(source).toContain("displayName: 'Delivery Limitations'");
     }
-    expect(renderTriggerNode(pollingTestConfig, {
-      product: 'test',
-      displayName: 'Test',
-      className: 'TestNode',
-      operationCount: 0,
-      resourceCount: 0,
-      operations: [],
-      pollingOperationCount: 0,
-      pollingResourceCount: 0,
-      pollingOperations: [],
-      exclusions: [],
-    })).toBeUndefined();
+    expect(
+      renderTriggerNode(pollingTestConfig, {
+        product: 'test',
+        displayName: 'Test',
+        className: 'TestNode',
+        operationCount: 0,
+        resourceCount: 0,
+        operations: [],
+        pollingOperationCount: 0,
+        pollingResourceCount: 0,
+        pollingOperations: [],
+        exclusions: [],
+      }),
+    ).toBeUndefined();
   });
 
   it('renders trigger identity, limitations, shared controls, and bounded catch-up settings', () => {
     const result = buildProductGenerationFromDocument(pollingTestConfig, {
       paths: {
         '/forms/{form_id}/submissions': {
-          parameters: [
-            { in: 'path', name: 'form_id', required: true, schema: { type: 'string' } },
-          ],
+          parameters: [{ in: 'path', name: 'form_id', required: true, schema: { type: 'string' } }],
           get: pollingCollectionOperation({
             operationId: 'listFormSubmissions',
             tags: ['Form Submissions'],
@@ -325,11 +352,23 @@ describe('generated Planning Center nodes', () => {
               { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
               { in: 'query', name: 'offset', schema: { type: 'integer' } },
               { in: 'query', name: 'per_page', schema: { type: 'integer' } },
-              { in: 'query', name: 'where[created_at]', schema: { type: 'string', format: 'date-time' } },
-              { in: 'query', name: 'where[created_at][gte]', schema: { type: 'string', format: 'date-time' } },
+              {
+                in: 'query',
+                name: 'where[created_at]',
+                schema: { type: 'string', format: 'date-time' },
+              },
+              {
+                in: 'query',
+                name: 'where[created_at][gte]',
+                schema: { type: 'string', format: 'date-time' },
+              },
               { in: 'query', name: 'where[name]', schema: { type: 'string' } },
               { in: 'query', name: 'include', schema: { type: 'string', enum: ['form'] } },
-              { in: 'query', name: 'fields[FormSubmission]', schema: { type: 'string', enum: ['name', 'created_at'] } },
+              {
+                in: 'query',
+                name: 'fields[FormSubmission]',
+                schema: { type: 'string', enum: ['name', 'created_at'] },
+              },
             ],
           }),
         },
@@ -346,16 +385,20 @@ describe('generated Planning Center nodes', () => {
       'include',
       'fields',
     ]);
-    expect(operation.queryOptions.flatMap((option) => [
-      option.sourceName,
-      ...(option.operators?.map((candidate) => candidate.sourceName) ?? []),
-    ])).not.toEqual(expect.arrayContaining([
-      'order',
-      'offset',
-      'per_page',
-      'where[created_at]',
-      'where[created_at][gte]',
-    ]));
+    expect(
+      operation.queryOptions.flatMap((option) => [
+        option.sourceName,
+        ...(option.operators?.map((candidate) => candidate.sourceName) ?? []),
+      ]),
+    ).not.toEqual(
+      expect.arrayContaining([
+        'order',
+        'offset',
+        'per_page',
+        'where[created_at]',
+        'where[created_at][gte]',
+      ]),
+    );
     expect(source).toContain("displayName: 'Delivery Limitations'");
     expect(source).toContain('Polling may deliver duplicates');
     expect(source).toContain('deleted resources are not detected');

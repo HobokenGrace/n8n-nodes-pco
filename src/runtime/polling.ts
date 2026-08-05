@@ -1,4 +1,9 @@
-import type { IDataObject, IExecuteFunctions, INodeExecutionData, IPollFunctions } from 'n8n-workflow';
+import type {
+  IDataObject,
+  IExecuteFunctions,
+  INodeExecutionData,
+  IPollFunctions,
+} from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
 
 import { normalizeJsonApiResource, type JsonObject } from './jsonApi';
@@ -9,9 +14,7 @@ const STATE_KEY = 'planningCenterPollingState';
 const STATE_VERSION = 1;
 const EMPTY_WATERMARK = '1970-01-01T00:00:00.000Z';
 const MAX_PAGE_SIZE = 100;
-const ACTIVATED_CONTEXTS = new WeakSet<object>();
-const RFC3339_WITH_OFFSET =
-  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+const RFC3339_WITH_OFFSET = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
 
 export type PollingCursorField = 'created_at' | 'updated_at';
 
@@ -199,7 +202,10 @@ function resolveConfiguration(
     (candidate) => candidate.resource === resource && candidate.id === operationId,
   );
   if (!operation) {
-    throw new NodeOperationError(context.getNode(), `Unsupported polling operation: ${resource}.${operationId}`);
+    throw new NodeOperationError(
+      context.getNode(),
+      `Unsupported polling operation: ${resource}.${operationId}`,
+    );
   }
 
   const batchSize = Number(context.getNodeParameter('maxRecordsPerPoll', 100));
@@ -247,8 +253,10 @@ function resolveConfiguration(
       if (value === undefined || value === '') continue;
       const sourceName =
         option.kind === 'operator'
-          ? (option.operators?.find((candidate) => candidate.value === selected.operator) ??
-              option.operators?.[0])?.sourceName
+          ? (
+              option.operators?.find((candidate) => candidate.value === selected.operator) ??
+              option.operators?.[0]
+            )?.sourceName
           : option.sourceName;
       if (!sourceName) continue;
 
@@ -402,7 +410,8 @@ async function baselineState(
     const signature = canonicalStringify(
       boundaryPage.resources.map((resource) => [resource.cursor, resource.type, resource.id]),
     );
-    if (pageSignatures.has(signature) || boundaryPage.resources.length === 0) {
+    if (boundaryPage.resources.length === 0) break;
+    if (pageSignatures.has(signature)) {
       throw new Error('Planning Center pagination made no progress while baselining.');
     }
     pageSignatures.add(signature);
@@ -483,7 +492,8 @@ async function collectBatch(
       }
       if (resource.cursor === state.watermark && initialBoundary.has(resource.identity)) continue;
       const previous = collected.get(resource.identity);
-      if (!previous || resource.cursorMs > previous.cursorMs) collected.set(resource.identity, resource);
+      if (!previous || resource.cursorMs > previous.cursorMs)
+        collected.set(resource.identity, resource);
     }
 
     if (!page.hasNext || page.resources.length === 0) break;
@@ -527,20 +537,26 @@ export async function pollPlanningCenter(
   const staticData = this.getWorkflowStaticData('node');
   const storedState = validatePollingState(this, staticData[STATE_KEY]);
   const fingerprint = await configurationFingerprint(this, configuration);
-  const activation = !ACTIVATED_CONTEXTS.has(this);
-  ACTIVATED_CONTEXTS.add(this);
 
-  if (!storedState || storedState.fingerprint !== fingerprint) {
+  if (!storedState) {
     const state = await baselineState(this, configuration, fingerprint);
     staticData[STATE_KEY] = state as unknown as IDataObject;
-    return activation ? null : [[]];
+    return null;
   }
-  if (activation) return null;
+  if (storedState.fingerprint !== fingerprint) {
+    const state = await baselineState(this, configuration, fingerprint);
+    staticData[STATE_KEY] = state as unknown as IDataObject;
+    return [[]];
+  }
   if (Date.parse(storedState.watermark) > Date.now()) return null;
 
   const resources = await collectBatch(this, configuration, storedState);
   if (!resources.length) return null;
   const items = normalizedItems(resources, configuration.sparseCursorOutputKey);
-  staticData[STATE_KEY] = advancedState(configuration, storedState, resources) as unknown as IDataObject;
+  staticData[STATE_KEY] = advancedState(
+    configuration,
+    storedState,
+    resources,
+  ) as unknown as IDataObject;
   return [items];
 }

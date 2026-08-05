@@ -117,9 +117,9 @@ function renderOperations(operations: GeneratedOperation[], includeSparseFields 
       queryOptions: operation.queryOptions
         .filter((option) => includeSparseFields || option.group !== 'fields')
         .map((option) => {
-        const runtimeOption = { ...option };
-        delete runtimeOption.valueOptions;
-        return runtimeOption;
+          const runtimeOption = { ...option };
+          delete runtimeOption.valueOptions;
+          return runtimeOption;
         }),
       attributeFields: operation.attributeFields.map(runtimeField),
     };
@@ -789,15 +789,16 @@ export function renderTriggerNode(
   const eventProperties = resources.map((resource) => {
     const options = operations
       .filter((operation) => operation.resource === resource)
-      .map((operation) => ({
-        name: operation.event,
-        value: operation.id,
-        description: operation.description,
-        action: `On ${operation.resource} ${operation.event.replace(
-          /^Created(?: or Updated)?/,
-          (event) => event.toLowerCase(),
-        )}`,
-      }));
+      .map((operation) => {
+        const [, emittedResource = operation.resource, scope = ''] =
+          operation.resource.match(/^(.*?)( \(via .+\))?$/) ?? [];
+        return {
+          name: operation.event,
+          value: operation.id,
+          description: operation.description,
+          action: `On ${emittedResource} ${operation.event.toLowerCase()}${scope}`,
+        };
+      });
     return `    {
       displayName: 'Event',
       name: 'operation',

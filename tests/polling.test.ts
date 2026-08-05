@@ -13,9 +13,7 @@ const operation: PollingOperation = {
   cursorField: 'created_at',
   cursorSparseFieldSourceName: 'fields[Item]',
   path: '/test/v2/forms/{form_id}/items',
-  pathParameters: [
-    { name: 'formId', sourceName: 'form_id', required: true, type: 'string' },
-  ],
+  pathParameters: [{ name: 'formId', sourceName: 'form_id', required: true, type: 'string' }],
   ordinaryQueryFields: [],
   queryOptions: [
     {
@@ -52,12 +50,14 @@ function page(data: unknown[], next: string | null = null) {
   return { data, links: { next } };
 }
 
-function pollingContext(options: {
-  mode?: string;
-  parameters?: Record<string, unknown>;
-  responses?: unknown[];
-  staticData?: Record<string, any>;
-} = {}) {
+function pollingContext(
+  options: {
+    mode?: string;
+    parameters?: Record<string, unknown>;
+    responses?: unknown[];
+    staticData?: Record<string, any>;
+  } = {},
+) {
   const parameters: Record<string, unknown> = {
     resource: 'Items',
     operation: operation.id,
@@ -107,9 +107,7 @@ function pollingState(staticData: Record<string, any>) {
 
 describe('Planning Center polling state and lifecycle', () => {
   it('canonicalizes timestamps and recursively sorted fingerprints while preserving array order', () => {
-    expect(canonicalizeRfc3339('2026-01-01T02:00:00+02:00')).toBe(
-      '2026-01-01T00:00:00.000Z',
-    );
+    expect(canonicalizeRfc3339('2026-01-01T02:00:00+02:00')).toBe('2026-01-01T00:00:00.000Z');
     expect(() => canonicalizeRfc3339('2026-01-01')).toThrow(/RFC 3339.*explicit offset/);
     expect(canonicalStringify({ z: 1, nested: { b: 2, a: 1 }, values: ['b', 'a'] })).toBe(
       '{"nested":{"a":1,"b":2},"values":["b","a"],"z":1}',
@@ -134,17 +132,20 @@ describe('Planning Center polling state and lifecycle', () => {
       watermark: '2026-01-01T00:00:00.000Z',
       boundaryIdentities: ['["Item","1"]', '["Item","1"]'],
     },
-  ])('fails closed for malformed or unsupported state without requests or mutation', async (state) => {
-    const staticData = { planningCenterPollingState: structuredClone(state) };
-    const { context, getCredentials, httpRequest } = pollingContext({ staticData });
+  ])(
+    'fails closed for malformed or unsupported state without requests or mutation',
+    async (state) => {
+      const staticData = { planningCenterPollingState: structuredClone(state) };
+      const { context, getCredentials, httpRequest } = pollingContext({ staticData });
 
-    await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(
-      /Replace this trigger node.*Start Time/i,
-    );
-    expect(httpRequest).not.toHaveBeenCalled();
-    expect(getCredentials).not.toHaveBeenCalled();
-    expect(staticData.planningCenterPollingState).toEqual(state);
-  });
+      await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(
+        /Replace this trigger node.*Start Time/i,
+      );
+      expect(httpRequest).not.toHaveBeenCalled();
+      expect(getCredentials).not.toHaveBeenCalled();
+      expect(staticData.planningCenterPollingState).toEqual(state);
+    },
+  );
 
   it('baselines newest records on activation and resumes beyond equal-timestamp identities', async () => {
     const boundary = '2026-01-01T00:00:00Z';
@@ -180,6 +181,26 @@ describe('Planning Center polling state and lifecycle', () => {
     );
   });
 
+  it('continues from persisted state when a scheduled poll uses a fresh context', async () => {
+    const boundary = '2026-01-01T00:00:00Z';
+    const later = '2026-01-01T00:01:00Z';
+    const staticData = {};
+    const activation = pollingContext({
+      staticData,
+      responses: [page([resource('1', boundary)])],
+    });
+
+    await expect(pollPlanningCenter.call(activation.context, [operation])).resolves.toBeNull();
+
+    const scheduled = pollingContext({
+      staticData,
+      responses: [page([resource('1', boundary), resource('2', later)])],
+    });
+    await expect(pollPlanningCenter.call(scheduled.context, [operation])).resolves.toEqual([
+      [{ json: expect.objectContaining({ id: '2' }) }],
+    ]);
+  });
+
   it('uses the epoch for an empty baseline so a later-visible earlier resource can emit', async () => {
     const { context, staticData } = pollingContext({
       responses: [page([]), page([resource('1', '2020-01-01T00:00:00Z')])],
@@ -195,17 +216,27 @@ describe('Planning Center polling state and lifecycle', () => {
   it('collects every equal-timestamp identity when the activation baseline spans pages', async () => {
     const timestamp = '2026-01-01T00:00:00Z';
     const { context, staticData } = pollingContext({
+      responses: [page([resource('1', timestamp)], 'next-page'), page([resource('2', timestamp)])],
+    });
+
+    await expect(pollPlanningCenter.call(context, [operation])).resolves.toBeNull();
+    expect(pollingState(staticData).boundaryIdentities).toEqual(['["Item","1"]', '["Item","2"]']);
+  });
+
+  it('accepts an empty inclusive boundary page when the descending page only has older results', async () => {
+    const latest = '2026-01-02T00:00:00Z';
+    const { context, staticData } = pollingContext({
       responses: [
-        page([resource('1', timestamp)], 'next-page'),
-        page([resource('2', timestamp)]),
+        page([resource('2', latest), resource('1', '2026-01-01T00:00:00Z')], 'older-page'),
+        page([]),
       ],
     });
 
     await expect(pollPlanningCenter.call(context, [operation])).resolves.toBeNull();
-    expect(pollingState(staticData).boundaryIdentities).toEqual([
-      '["Item","1"]',
-      '["Item","2"]',
-    ]);
+    expect(pollingState(staticData)).toMatchObject({
+      watermark: '2026-01-02T00:00:00.000Z',
+      boundaryIdentities: ['["Item","2"]'],
+    });
   });
 
   it('persists an explicit inclusive Start Time on activation and catches up on scheduled polls', async () => {
@@ -255,7 +286,9 @@ describe('Planning Center polling state and lifecycle', () => {
     ]);
     expect(getWorkflowStaticData).not.toHaveBeenCalled();
     expect(httpRequest).toHaveBeenCalledWith(
-      expect.objectContaining({ qs: expect.objectContaining({ order: '-created_at', per_page: 1 }) }),
+      expect.objectContaining({
+        qs: expect.objectContaining({ order: '-created_at', per_page: 1 }),
+      }),
     );
   });
 
@@ -304,7 +337,7 @@ describe('Planning Center polling state and lifecycle', () => {
     await expect(pollPlanningCenter.call(context, [operation])).resolves.toEqual([[]]);
   });
 
-  it('preserves state across reactivation and returns null for unchanged empty polls', async () => {
+  it('preserves state and polls immediately after reactivation', async () => {
     const sharedStaticData: Record<string, any> = {};
     const first = pollingContext({ staticData: sharedStaticData, responses: [page([]), page([])] });
     await pollPlanningCenter.call(first.context, [operation]);
@@ -312,19 +345,23 @@ describe('Planning Center polling state and lifecycle', () => {
 
     const reactivated = pollingContext({ staticData: sharedStaticData, responses: [page([])] });
     await expect(pollPlanningCenter.call(reactivated.context, [operation])).resolves.toBeNull();
-    expect(reactivated.httpRequest).not.toHaveBeenCalled();
-    await expect(pollPlanningCenter.call(reactivated.context, [operation])).resolves.toBeNull();
+    expect(reactivated.httpRequest).toHaveBeenCalledOnce();
   });
 });
 
 describe('Planning Center cursor polling and atomic batches', () => {
-  it.each([0, 1001, 1.5, 'invalid'])('rejects invalid batch size %s before requests', async (value) => {
-    const { context, httpRequest } = pollingContext({
-      parameters: { maxRecordsPerPoll: value, startTime: '2026-01-01T00:00:00Z' },
-    });
-    await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(/integer.*1.*1000/i);
-    expect(httpRequest).not.toHaveBeenCalled();
-  });
+  it.each([0, 1001, 1.5, 'invalid'])(
+    'rejects invalid batch size %s before requests',
+    async (value) => {
+      const { context, httpRequest } = pollingContext({
+        parameters: { maxRecordsPerPoll: value, startTime: '2026-01-01T00:00:00Z' },
+      });
+      await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(
+        /integer.*1.*1000/i,
+      );
+      expect(httpRequest).not.toHaveBeenCalled();
+    },
+  );
 
   it('orders tied resources by type and id, deduplicates overlap, and retains boundary identities', async () => {
     const timestamp = '2026-01-01T00:00:00Z';
@@ -344,10 +381,7 @@ describe('Planning Center cursor polling and atomic batches', () => {
 
     const first = await pollPlanningCenter.call(context, [operation]);
     expect(first?.[0].map((item) => item.json.id)).toEqual(['1', '2']);
-    expect(pollingState(staticData).boundaryIdentities).toEqual([
-      '["Item","1"]',
-      '["Item","2"]',
-    ]);
+    expect(pollingState(staticData).boundaryIdentities).toEqual(['["Item","1"]', '["Item","2"]']);
 
     const second = await pollPlanningCenter.call(context, [operation]);
     expect(second?.[0].map((item) => item.json.id)).toEqual(['3']);
@@ -460,7 +494,9 @@ describe('Planning Center cursor polling and atomic batches', () => {
     await pollPlanningCenter.call(context, [operation]);
     const before = structuredClone(pollingState(staticData));
 
-    await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(/later page failed/);
+    await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(
+      /later page failed/,
+    );
     expect(pollingState(staticData)).toEqual(before);
   });
 
