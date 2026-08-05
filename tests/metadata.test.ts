@@ -4,17 +4,34 @@ import { describe, expect, it } from 'vitest';
 
 import * as entrypoint from '../index';
 import { PlanningCenterPatApi } from '../credentials/PlanningCenterPatApi.credentials';
-import { generatedProductConfigs } from '../src/generator/config';
+import {
+  generatedProductConfigs,
+  triggerClassName,
+  triggerNodeName,
+} from '../src/generator/config';
+import { buildProductGeneration } from '../src/generator/openapi';
 
-type GeneratedNodeClass = new () => { description: { displayName: string; name: string } };
-
-const expectedGeneratedNodePaths = generatedProductConfigs.map(
-  (config) => `dist/nodes/generated/${config.product}/${config.className}.node.js`,
-);
+type GeneratedNodeClass = new () => {
+  description: {
+    credentials?: unknown;
+    displayName: string;
+    group?: string[];
+    name: string;
+    polling?: boolean;
+    version?: number;
+  };
+};
 
 describe('package metadata', () => {
-  it('declares n8n community node metadata and flexible n8n workflow compatibility', () => {
+  it('declares n8n community node metadata and flexible n8n workflow compatibility', async () => {
     const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+    const results = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+    const expectedNodePaths = generatedProductConfigs.flatMap((config, index) => [
+      `dist/nodes/generated/${config.product}/${config.className}.node.js`,
+      ...(results[index].pollingOperationCount
+        ? [`dist/nodes/generated/${config.product}/${triggerClassName(config)}.node.js`]
+        : []),
+    ]);
 
     expect(pkg.name).toBe('@hobokengrace/n8n-nodes-pco');
     expect(pkg.engines.node).toBe('>=22.0.0');
@@ -22,7 +39,9 @@ describe('package metadata', () => {
     expect(pkg.peerDependencies['n8n-workflow']).toBe('*');
     expect(pkg.devDependencies['n8n-workflow']).toBe('*');
     expect(pkg.n8n.credentials).toContain('dist/credentials/PlanningCenterPatApi.credentials.js');
-    expect(pkg.n8n.nodes).toEqual(expectedGeneratedNodePaths);
+    expect(pkg.n8n.n8nNodesApiVersion).toBe(1);
+    expect(pkg.n8n.nodes).toEqual(expectedNodePaths);
+    expect(new Set(pkg.n8n.nodes).size).toBe(pkg.n8n.nodes.length);
   });
 
   it('exports every generated node class from the package entry point', () => {
@@ -36,6 +55,36 @@ describe('package metadata', () => {
         displayName: config.displayName,
         name: config.nodeName,
       });
+    }
+  });
+
+  it('exports and registers every qualifying generated trigger exactly once', async () => {
+    const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+    const results = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+
+    for (const [index, config] of generatedProductConfigs.entries()) {
+      const className = triggerClassName(config);
+      const ExportedTrigger = (entrypoint as unknown as Record<string, GeneratedNodeClass>)[
+        className
+      ];
+      const registration = `dist/nodes/generated/${config.product}/${className}.node.js`;
+
+      if (!results[index].pollingOperationCount) {
+        expect(ExportedTrigger).toBeUndefined();
+        expect(pkg.n8n.nodes).not.toContain(registration);
+        continue;
+      }
+
+      expect(ExportedTrigger).toBeDefined();
+      expect(new ExportedTrigger().description).toMatchObject({
+        displayName: `${config.displayName} Trigger`,
+        name: triggerNodeName(config),
+        group: ['trigger'],
+        version: 1,
+        polling: true,
+        credentials: [{ name: 'planningCenterPatApi', required: true }],
+      });
+      expect(pkg.n8n.nodes.filter((path: string) => path === registration)).toHaveLength(1);
     }
   });
 

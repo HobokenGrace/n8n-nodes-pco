@@ -123,3 +123,15 @@ export function supplementsPath(config: ProductConfig): string {
 export function generatedNodePath(config: ProductConfig): string {
   return `nodes/generated/${config.product}/${config.className}.node.ts`;
 }
+
+export function triggerClassName(config: ProductConfig): string {
+  return `${config.className}Trigger`;
+}
+
+export function triggerNodeName(config: ProductConfig): string {
+  return `${config.nodeName}Trigger`;
+}
+
+export function generatedTriggerNodePath(config: ProductConfig): string {
+  return `nodes/generated/${config.product}/${triggerClassName(config)}.node.ts`;
+}

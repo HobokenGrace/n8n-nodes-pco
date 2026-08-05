@@ -25,6 +25,58 @@ JSON:API output normalization.
 Generated source lives under `nodes/generated/<product>` and should not be
 hand-edited. Update the generator or OpenAPI snapshots, then regenerate.
 
+## Polling Triggers
+
+Qualifying products also provide generated polling trigger nodes. Select a
+Resource and then a `Created` or `Created or Updated` Event. `Created` follows
+`created_at`; it does not detect an older resource that starts matching a filter
+later. `Created or Updated` follows `updated_at`, so it observes creation and the
+latest representation of later changes whose timestamp advances. Polling does
+not detect deleted resources or every intermediate change between polls.
+
+n8n supplies the native **Poll Times** schedule. The package does not add a
+second interval or timer. Each Poll Time makes Planning Center API requests and
+emits at most **Max Records Per Poll** records, defaulting to 100 and limited to
+1,000. A larger backlog continues one capped batch at later Poll Times; the
+package does not schedule immediate follow-up polls. Choose the Poll Times and
+batch size with Planning Center API usage in mind.
+
+Leave **Start Time** empty to baseline the newest currently matching records on
+activation and emit only later changes. No existing resource is emitted by that
+activation. A past or current RFC 3339 value starts inclusive historical
+catch-up at the first Poll Time. A future value keeps the workflow active and
+quiet until a matching resource reaches that time. Reactivation with unchanged
+settings resumes the saved watermark and catches up downtime changes. Changing
+credentials, Resource/Event, path scope, Start Time, or a result filter applies
+fresh activation semantics. With a configured Start Time that reset replays
+inclusively and can re-emit previously delivered resources; stable expressions
+preserve state, while expressions resolving to different result-affecting
+values reset it. Poll Times, batch size, includes, and sparse output fields do
+not reset the watermark.
+
+Manual **Test workflow** execution is a non-stateful sample preview. It applies
+scope, filters, includes, and sparse fields, ignores Start Time and production
+state, and returns at most the newest matching normalized resource. It does not
+predict activation output or the next catch-up batch. A scheduled configuration
+reset may create a successful execution with zero items so n8n persists the new
+state; this is an expected state-persistence execution, not a resource event or
+trigger failure. An unchanged poll with no resources starts no execution.
+
+Polling uses an inclusive timestamp watermark and retains every `(type, id)`
+seen at the current timestamp without a package-defined limit. A late identity
+at that timestamp can still emit, while the same identity at the same timestamp
+is suppressed even if its representation changed. Concurrently reordered PCO
+offset pages cannot provide a gap-free snapshot. Native polls may also overlap
+or repeat before static state is persisted, so duplicate resources or batches
+are possible. Use idempotent downstream processing where duplicates matter.
+
+A batch successfully returned by the trigger advances its watermark before
+downstream nodes finish. It is not replayed solely because a later node fails;
+workflow authors are responsible for downstream retry and recovery. The
+trigger provides neither exactly-once nor end-to-end at-least-once delivery and
+does not guarantee gap-free concurrent pagination, deletion events, or every
+intermediate resource version.
+
 ## OpenAPI Snapshots
 
 Committed OpenAPI inputs live at `openapi/<product>/<date>.json`. Normal

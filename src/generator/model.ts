@@ -49,7 +49,7 @@ export interface GeneratedQueryOptionOperator {
 export interface GeneratedQueryOption {
   name: string;
   displayName: string;
-  group: 'filter' | 'order' | 'include';
+  group: 'filter' | 'order' | 'include' | 'fields';
   type: GeneratedField['type'];
   kind: 'single' | 'operator';
   sourceName?: string;
@@ -88,6 +88,15 @@ export interface GeneratedOperation {
   relationshipFields: GeneratedRelationshipField[];
 }
 
+export type PollingCursorField = 'created_at' | 'updated_at';
+
+export interface GeneratedPollingOperation extends GeneratedOperation {
+  sourceOperationId: string;
+  cursorField: PollingCursorField;
+  cursorSparseFieldSourceName?: string;
+  event: string;
+}
+
 export interface ProductGenerationResult {
   product: string;
   displayName: string;
@@ -95,5 +104,8 @@ export interface ProductGenerationResult {
   operationCount: number;
   resourceCount: number;
   operations: GeneratedOperation[];
+  pollingOperationCount: number;
+  pollingResourceCount: number;
+  pollingOperations: GeneratedPollingOperation[];
   exclusions: string[];
 }

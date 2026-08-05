@@ -7,7 +7,7 @@ import {
   buildProductGeneration,
   buildProductGenerationFromDocument,
 } from '../src/generator/openapi';
-import { renderNode } from '../src/generator/render';
+import { renderNode, renderTriggerNode } from '../src/generator/render';
 import { normalizeJsonApiResponse } from '../src/runtime/jsonApi';
 
 type GeneratedNodeClass = new () => {
@@ -39,7 +39,339 @@ function collectDisplayNames(value: unknown, labels: string[] = []): string[] {
   return labels;
 }
 
+const pollingTestConfig = {
+  product: 'test',
+  displayName: 'Planning Center Test',
+  className: 'PlanningCenterTest',
+  nodeName: 'planningCenterTest',
+  sourceUrl: 'https://example.com/openapi.json',
+  snapshotDate: '2026-01-01',
+  generate: true,
+};
+
+function pollingCollectionOperation(options: {
+  collection?: boolean;
+  cursorParameters?: any[];
+  operationId?: string;
+  path?: string;
+  tags?: string[];
+} = {}): any {
+  return {
+    operationId: options.operationId ?? 'listItems',
+    tags: options.tags ?? ['Items'],
+    parameters: options.cursorParameters ?? [
+      { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at', 'updated_at'] } },
+      {
+        in: 'query',
+        name: 'where[created_at][gte]',
+        schema: { type: 'string', format: 'date-time' },
+      },
+      {
+        in: 'query',
+        name: 'where[updated_at][gte]',
+        schema: { type: 'string', format: 'date-time' },
+      },
+    ],
+    responses: {
+      200: {
+        description: 'OK',
+        content: {
+          'application/vnd.api+json': {
+            schema: {
+              type: 'object',
+              properties: {
+                data: options.collection === false
+                  ? { type: 'object' }
+                  : { type: 'array', items: { type: 'object' } },
+              },
+            },
+          },
+        },
+      },
+    },
+  };
+}
+
 describe('generated Planning Center nodes', () => {
+  it('declares native polling without defining a custom schedule control', () => {
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: { '/items': { get: pollingCollectionOperation() } },
+    });
+    const source = renderTriggerNode(pollingTestConfig, result);
+
+    expect(source).toContain('polling: true');
+    expect(source).not.toMatch(/name:\s*['"]pollTimes['"]/);
+    expect(source).not.toMatch(/name:\s*['"](?:interval|schedule|scheduler)['"]/i);
+  });
+
+  it('derives polling eligibility only from complete same-field collection contracts', () => {
+    const eligible = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: { '/items': { get: pollingCollectionOperation() } },
+    });
+    expect(eligible.pollingOperations.map((operation) => operation.cursorField)).toEqual([
+      'created_at',
+      'updated_at',
+    ]);
+
+    const exclusions = [
+      pollingCollectionOperation({ collection: false }),
+      pollingCollectionOperation({
+        cursorParameters: [
+          { in: 'query', name: 'order', schema: { type: 'string', enum: ['updated_at'] } },
+          {
+            in: 'query',
+            name: 'where[created_at][gte]',
+            schema: { type: 'string', format: 'date-time' },
+          },
+        ],
+      }),
+      pollingCollectionOperation({
+        cursorParameters: [
+          { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
+          {
+            in: 'query',
+            name: 'where[created_at][gte]',
+            schema: { type: 'string', format: 'date' },
+          },
+        ],
+      }),
+      pollingCollectionOperation({
+        cursorParameters: [
+          { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
+        ],
+      }),
+    ];
+
+    for (const operation of exclusions) {
+      expect(
+        buildProductGenerationFromDocument(pollingTestConfig, {
+          paths: { '/items': { get: operation } },
+        }).pollingOperations,
+      ).toEqual([]);
+    }
+  });
+
+  it('models stable Created events and preserves nested collection scope', () => {
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: {
+        '/items': { get: pollingCollectionOperation() },
+        '/forms/{form_id}/submissions': {
+          get: pollingCollectionOperation({
+            operationId: 'listFormSubmissions',
+            tags: ['Form Submissions'],
+            cursorParameters: [
+              { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
+              {
+                in: 'query',
+                name: 'where[created_at][gte]',
+                schema: { type: 'string', format: 'date-time' },
+              },
+            ],
+          }),
+          parameters: [
+            { in: 'path', name: 'form_id', required: true, schema: { type: 'string' } },
+          ],
+        },
+      },
+    });
+
+    expect(result.pollingOperations).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: 'listItems_createdAt',
+          resource: 'Items',
+          event: 'Created',
+          cursorField: 'created_at',
+          description: expect.stringContaining('creation time'),
+        }),
+        expect.objectContaining({
+          id: 'listItems_updatedAt',
+          event: 'Created or Updated',
+          cursorField: 'updated_at',
+          description: expect.stringContaining('later changes'),
+        }),
+        expect.objectContaining({
+          id: 'listFormSubmissions_createdAt',
+          event: 'Created (via Form)',
+          cursorField: 'created_at',
+        }),
+      ]),
+    );
+    expect(result.pollingOperations.every((operation) => !/deleted/i.test(operation.event))).toBe(
+      true,
+    );
+  });
+
+  it('includes the resource in trigger action labels while keeping Event names concise', () => {
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: { '/items': { get: pollingCollectionOperation() } },
+    });
+    const source = renderTriggerNode(pollingTestConfig, result);
+
+    expect(source).toContain('"name":"Created"');
+    expect(source).toContain('"name":"Created or Updated"');
+    expect(source).toContain('"action":"On Items created"');
+    expect(source).toContain('"action":"On Items created or updated"');
+    expect(source).not.toContain('"action":"Created"');
+    expect(source).not.toContain('"action":"Created or Updated"');
+  });
+
+  it('adds deeper scope only when nested polling Event labels would collide', () => {
+    const nestedOperation = (operationId: string) =>
+      pollingCollectionOperation({
+        operationId,
+        tags: ['Items'],
+        cursorParameters: [
+          { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
+          {
+            in: 'query',
+            name: 'where[created_at][gte]',
+            schema: { type: 'string', format: 'date-time' },
+          },
+        ],
+      });
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: {
+        '/parents/{parent_id}/forms/{form_id}/items': {
+          get: nestedOperation('listParentFormItems'),
+        },
+        '/templates/{template_id}/forms/{form_id}/items': {
+          get: nestedOperation('listTemplateFormItems'),
+        },
+      },
+    });
+
+    expect(result.pollingOperations.map((candidate) => candidate.event)).toEqual([
+      'Created (via Parent Form)',
+      'Created (via Template Form)',
+    ]);
+  });
+
+  it('adds the collection route when sibling Event labels share every parent scope', () => {
+    const siblingOperation = (operationId: string) =>
+      pollingCollectionOperation({
+        operationId,
+        tags: ['Parent'],
+        cursorParameters: [
+          { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
+          {
+            in: 'query',
+            name: 'where[created_at][gte]',
+            schema: { type: 'string', format: 'date-time' },
+          },
+        ],
+      });
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: {
+        '/parents/{parent_id}/items': { get: siblingOperation('listParentItems') },
+        '/parents/{parent_id}/archived_items': {
+          get: siblingOperation('listParentArchivedItems'),
+        },
+      },
+    });
+
+    expect(result.pollingOperations.map((candidate) => candidate.event)).toEqual([
+      'Created (via Parent Archived Items)',
+      'Created (via Parent Items)',
+    ]);
+  });
+
+  it('keeps Event labels unique within every generated Resource', async () => {
+    const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+    for (const summary of summaries) {
+      const keys = summary.pollingOperations.map(
+        (operation) => `${operation.resource}:${operation.event}`,
+      );
+      expect(new Set(keys).size, summary.product).toBe(keys.length);
+    }
+  });
+
+  it('renders one trigger only for products with qualifying operations', async () => {
+    const summaries = await Promise.all(generatedProductConfigs.map(buildProductGeneration));
+    const renderedProducts = summaries.flatMap((result, index) =>
+      renderTriggerNode(generatedProductConfigs[index], result) ? [result.product] : [],
+    );
+
+    expect(renderedProducts).toEqual(['calendar', 'check-ins', 'giving', 'people', 'services']);
+    for (const [index, result] of summaries.entries()) {
+      const source = renderTriggerNode(generatedProductConfigs[index], result);
+      if (source) expect(source).toContain("displayName: 'Delivery Limitations'");
+    }
+    expect(renderTriggerNode(pollingTestConfig, {
+      product: 'test',
+      displayName: 'Test',
+      className: 'TestNode',
+      operationCount: 0,
+      resourceCount: 0,
+      operations: [],
+      pollingOperationCount: 0,
+      pollingResourceCount: 0,
+      pollingOperations: [],
+      exclusions: [],
+    })).toBeUndefined();
+  });
+
+  it('renders trigger identity, limitations, shared controls, and bounded catch-up settings', () => {
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: {
+        '/forms/{form_id}/submissions': {
+          parameters: [
+            { in: 'path', name: 'form_id', required: true, schema: { type: 'string' } },
+          ],
+          get: pollingCollectionOperation({
+            operationId: 'listFormSubmissions',
+            tags: ['Form Submissions'],
+            cursorParameters: [
+              { in: 'query', name: 'order', schema: { type: 'string', enum: ['created_at'] } },
+              { in: 'query', name: 'offset', schema: { type: 'integer' } },
+              { in: 'query', name: 'per_page', schema: { type: 'integer' } },
+              { in: 'query', name: 'where[created_at]', schema: { type: 'string', format: 'date-time' } },
+              { in: 'query', name: 'where[created_at][gte]', schema: { type: 'string', format: 'date-time' } },
+              { in: 'query', name: 'where[name]', schema: { type: 'string' } },
+              { in: 'query', name: 'include', schema: { type: 'string', enum: ['form'] } },
+              { in: 'query', name: 'fields[FormSubmission]', schema: { type: 'string', enum: ['name', 'created_at'] } },
+            ],
+          }),
+        },
+      },
+    });
+    const operation = result.pollingOperations[0];
+    const source = renderTriggerNode(pollingTestConfig, result)!;
+
+    expect(operation.pathParameters).toEqual([
+      expect.objectContaining({ sourceName: 'form_id', required: true }),
+    ]);
+    expect(operation.queryOptions.map((option) => option.group)).toEqual([
+      'filter',
+      'include',
+      'fields',
+    ]);
+    expect(operation.queryOptions.flatMap((option) => [
+      option.sourceName,
+      ...(option.operators?.map((candidate) => candidate.sourceName) ?? []),
+    ])).not.toEqual(expect.arrayContaining([
+      'order',
+      'offset',
+      'per_page',
+      'where[created_at]',
+      'where[created_at][gte]',
+    ]));
+    expect(source).toContain("displayName: 'Delivery Limitations'");
+    expect(source).toContain('Polling may deliver duplicates');
+    expect(source).toContain('deleted resources are not detected');
+    expect(source).toContain('listFormSubmissions_createdAt_formId');
+    expect(source).toContain("displayName: 'Max Records Per Poll'");
+    expect(source).toContain('default: 100');
+    expect(source).toContain('minValue: 1, maxValue: 1000, numberPrecision: 0');
+    expect(source).toContain('one capped batch per Poll Time');
+    expect(source).toContain("displayName: 'Start Time'");
+    expect(source).toContain("type: 'dateTime'");
+    expect(source).toContain("default: ''");
+    expect(source).toContain('new changes only');
+    expect(source).toContain('inclusive historical catch-up');
+    expect(source).toContain('future value waits');
+  });
+
   it('exposes required n8n descriptions for generated products', () => {
     const nodes = generatedNodeClasses.map((NodeClass) => new NodeClass());
 

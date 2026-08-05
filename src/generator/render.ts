@@ -100,7 +100,7 @@ function fieldProperty(
     },`;
 }
 
-function renderOperations(operations: GeneratedOperation[]): string {
+function renderOperations(operations: GeneratedOperation[], includeSparseFields = false): string {
   const runtimeField = (field: GeneratedField): GeneratedField => {
     const result = { ...field };
     delete result.description;
@@ -114,11 +114,13 @@ function renderOperations(operations: GeneratedOperation[]): string {
       ...operation,
       pathParameters: operation.pathParameters.map(runtimeField),
       queryParameters: operation.queryParameters.map(runtimeField),
-      queryOptions: operation.queryOptions.map((option) => {
+      queryOptions: operation.queryOptions
+        .filter((option) => includeSparseFields || option.group !== 'fields')
+        .map((option) => {
         const runtimeOption = { ...option };
         delete runtimeOption.valueOptions;
         return runtimeOption;
-      }),
+        }),
       attributeFields: operation.attributeFields.map(runtimeField),
     };
     delete result.lookupQueryParameterNames;
@@ -128,6 +130,51 @@ function renderOperations(operations: GeneratedOperation[]): string {
     return result;
   });
   return JSON.stringify(runtimeOperations, null, 2);
+}
+
+function renderPollingOperations(operations: ProductGenerationResult['pollingOperations']): string {
+  return JSON.stringify(
+    operations.map((operation) => ({
+      id: operation.id,
+      resource: operation.resource,
+      cursorField: operation.cursorField,
+      ...(operation.cursorSparseFieldSourceName
+        ? { cursorSparseFieldSourceName: operation.cursorSparseFieldSourceName }
+        : {}),
+      path: operation.path,
+      pathParameters: operation.pathParameters.map((field) => ({
+        name: field.name,
+        sourceName: field.sourceName,
+        required: field.required,
+        type: field.type,
+        ...(field.lookup ? { lookup: field.lookup } : {}),
+      })),
+      ordinaryQueryFields: operation.ordinaryQueryFields.map((field) => ({
+        name: field.name,
+        sourceName: field.sourceName,
+        required: field.required,
+        type: field.type,
+        ...(field.lookup ? { lookup: field.lookup } : {}),
+      })),
+      queryOptions: operation.queryOptions.map((option) => ({
+        name: option.name,
+        group: option.group,
+        kind: option.kind,
+        ...(option.sourceName ? { sourceName: option.sourceName } : {}),
+        ...(option.operators
+          ? {
+              operators: option.operators.map((operator) => ({
+                value: operator.value,
+                sourceName: operator.sourceName,
+              })),
+            }
+          : {}),
+        ...(option.lookup ? { lookup: option.lookup } : {}),
+      })),
+    })),
+    null,
+    2,
+  );
 }
 
 function renderOperationSubtitle(operations: GeneratedOperation[]): string {
@@ -201,7 +248,10 @@ function renderLookupSources(operations: GeneratedOperation[]): string {
   return JSON.stringify(sources, null, 2);
 }
 
-function renderListSearchMethods(operations: GeneratedOperation[]): string {
+function renderListSearchMethods(
+  operations: GeneratedOperation[],
+  searchFunction = 'searchLookup',
+): string {
   const lookups = operationLookups(operations);
   if (!lookups.length) return '{}';
 
@@ -211,7 +261,7 @@ ${lookups
     (
       lookup,
     ) => `      ${lookup.methodName}: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchLookup(this, LOOKUP_SOURCES[${q(lookup.methodName)}], filter);
+        return ${searchFunction}(this, LOOKUP_SOURCES[${q(lookup.methodName)}], filter);
       },`,
   )
   .join('\n')}
@@ -722,6 +772,125 @@ export class ${config.className} implements INodeType {
     }
 
     return [returnData];
+  }
+}
+`;
+}
+
+export function renderTriggerNode(
+  config: ProductConfig,
+  result: ProductGenerationResult,
+): string | undefined {
+  const operations = result.pollingOperations;
+  if (!operations.length) return undefined;
+
+  const resources = [...new Set(operations.map((operation) => operation.resource))].sort();
+  const resourceOptions = resources.map((resource) => ({ name: resource, value: resource }));
+  const eventProperties = resources.map((resource) => {
+    const options = operations
+      .filter((operation) => operation.resource === resource)
+      .map((operation) => ({
+        name: operation.event,
+        value: operation.id,
+        description: operation.description,
+        action: `On ${operation.resource} ${operation.event.replace(
+          /^Created(?: or Updated)?/,
+          (event) => event.toLowerCase(),
+        )}`,
+      }));
+    return `    {
+      displayName: 'Event',
+      name: 'operation',
+      type: 'options',
+      noDataExpression: true,
+      displayOptions: ${q({ show: { resource: [resource] } })},
+      options: ${q(options)},
+      default: ${q(options[0]?.value ?? '')},
+    },`;
+  });
+  const queryOptionGroups: Array<{
+    group: QueryOptionGroup;
+    displayName: string;
+    placeholder: string;
+  }> = [
+    { group: 'filter', displayName: 'Filter', placeholder: 'Filter by' },
+    { group: 'include', displayName: 'Include', placeholder: 'Include data' },
+    { group: 'fields', displayName: 'Sparse Fields', placeholder: 'Select fields' },
+  ];
+  const operationProperties = operations.flatMap((operation) => [
+    ...operation.pathParameters.map((field) => fieldProperty(field, operation, 'path')),
+    ...operation.ordinaryQueryFields.map((field) => fieldProperty(field, operation, 'query')),
+    ...queryOptionGroups.flatMap(
+      (definition) => renderQueryOptionsProperty(operation, definition) ?? [],
+    ),
+  ]);
+
+  return `import type { ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, INodeType, INodeTypeDescription, IPollFunctions } from 'n8n-workflow';
+
+import { searchPlanningCenterLookup, type GeneratedLookup } from '../../../src/runtime/lookup';
+import { pollPlanningCenter, type PollingOperation } from '../../../src/runtime/polling';
+
+const LOOKUP_SOURCES: Record<string, GeneratedLookup> = ${renderLookupSources(operations)};
+
+const OPERATIONS: PollingOperation[] = ${renderPollingOperations(operations)};
+
+const NODE_PROPERTIES = [
+    {
+      displayName: 'Delivery Limitations',
+      name: 'deliveryLimitations',
+      type: 'notice',
+      default: '',
+      description: 'Polling may deliver duplicates. A successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. See the package polling documentation for idempotency, retry, and other limitations.',
+    },
+    {
+      displayName: 'Resource',
+      name: 'resource',
+      type: 'options',
+      noDataExpression: true,
+      options: ${q(resourceOptions)},
+      default: ${q(resourceOptions[0]?.value ?? '')},
+    },
+${eventProperties.join('\n')}
+    {
+      displayName: 'Start Time',
+      name: 'startTime',
+      type: 'dateTime',
+      default: '',
+      description: 'Leave empty for new changes only. A past or current value starts inclusive historical catch-up at the first configured Poll Time; a future value waits without resource output.',
+    },
+    {
+      displayName: 'Max Records Per Poll',
+      name: 'maxRecordsPerPoll',
+      type: 'number',
+      default: 100,
+      typeOptions: { minValue: 1, maxValue: 1000, numberPrecision: 0 },
+      description: 'Emits at most one capped batch per Poll Time. A larger backlog continues over later Poll Times.',
+    },
+${operationProperties.join('\n')}
+  ] as any;
+
+export class ${config.className}Trigger implements INodeType {
+  description: INodeTypeDescription = {
+    displayName: ${q(`${config.displayName} Trigger`)},
+    name: ${q(`${config.nodeName}Trigger`)},
+    icon: 'file:${config.product}.svg',
+    group: ['trigger'],
+    version: 1,
+    description: ${q(`Poll ${config.displayName} for created or updated resources.`)},
+    defaults: { name: ${q(`${config.displayName} Trigger`)} },
+    inputs: [],
+    outputs: ['main'],
+    polling: true,
+    credentials: [{ name: 'planningCenterPatApi', required: true }],
+    properties: NODE_PROPERTIES,
+  };
+
+  methods = {
+    listSearch: ${renderListSearchMethods(operations, 'searchPlanningCenterLookup')},
+  };
+
+  async poll(this: IPollFunctions): Promise<INodeExecutionData[][] | null> {
+    return pollPlanningCenter.call(this, OPERATIONS);
   }
 }
 `;

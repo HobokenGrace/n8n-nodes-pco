@@ -1,12 +1,17 @@
 export { PlanningCenterPatApi } from './credentials/PlanningCenterPatApi.credentials';
 export { PlanningCenterApi } from './nodes/generated/api/PlanningCenterApi.node';
 export { PlanningCenterCalendar } from './nodes/generated/calendar/PlanningCenterCalendar.node';
+export { PlanningCenterCalendarTrigger } from './nodes/generated/calendar/PlanningCenterCalendarTrigger.node';
 export { PlanningCenterCheckIns } from './nodes/generated/check-ins/PlanningCenterCheckIns.node';
+export { PlanningCenterCheckInsTrigger } from './nodes/generated/check-ins/PlanningCenterCheckInsTrigger.node';
 export { PlanningCenterCurrent } from './nodes/generated/current/PlanningCenterCurrent.node';
 export { PlanningCenterGiving } from './nodes/generated/giving/PlanningCenterGiving.node';
+export { PlanningCenterGivingTrigger } from './nodes/generated/giving/PlanningCenterGivingTrigger.node';
 export { PlanningCenterGroups } from './nodes/generated/groups/PlanningCenterGroups.node';
 export { PlanningCenterPeople } from './nodes/generated/people/PlanningCenterPeople.node';
+export { PlanningCenterPeopleTrigger } from './nodes/generated/people/PlanningCenterPeopleTrigger.node';
 export { PlanningCenterPublishing } from './nodes/generated/publishing/PlanningCenterPublishing.node';
 export { PlanningCenterRegistrations } from './nodes/generated/registrations/PlanningCenterRegistrations.node';
 export { PlanningCenterServices } from './nodes/generated/services/PlanningCenterServices.node';
+export { PlanningCenterServicesTrigger } from './nodes/generated/services/PlanningCenterServicesTrigger.node';
 export { PlanningCenterWebhooks } from './nodes/generated/webhooks/PlanningCenterWebhooks.node';

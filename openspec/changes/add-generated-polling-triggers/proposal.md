@@ -5,11 +5,11 @@ Planning Center exposes many useful resource changes through queryable collectio
 ## What Changes
 
 - Generate one polling trigger node per Planning Center product that has at least one qualifying collection operation.
-- Generate `On <Resource> Created` and `On <Resource> Created or Updated` operations when the collection supports an inclusive timestamp filter and ordering on the corresponding cursor field.
+- Generate `Created` and `Created or Updated` events under a separate Resource selector when the collection supports an inclusive timestamp filter and ordering on the corresponding cursor field.
 - Reuse generated path parameters, filters, includes, fields, resource locators, labels, and JSON:API normalization while reserving cursor, ordering, and pagination controls for the polling runtime.
 - Add shared polling state, inclusive watermark deduplication, bounded catch-up batches, first-activation baselining, reactivation catch-up, configuration-change resets, and non-stateful manual testing.
+- Use n8n's native injected `Poll Times` control and scheduling semantics without defining a package-specific interval control or scheduler.
 - Register and export generated trigger nodes alongside the existing product action nodes.
-- Verify whether native n8n polling supports the requested numeric minute interval contract before implementing scheduling; stop for a product decision if it cannot cleanly provide a default of 2 minutes and an integer range from 1 through 2,147,483,647.
 
 ## Capabilities
 

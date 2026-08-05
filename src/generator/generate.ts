@@ -1,9 +1,9 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
-import { generatedNodePath, generatedProductConfigs } from './config';
+import { generatedNodePath, generatedProductConfigs, generatedTriggerNodePath } from './config';
 import { buildProductGeneration } from './openapi';
-import { renderNode } from './render';
+import { renderNode, renderTriggerNode } from './render';
 import type { ProductGenerationResult } from './model';
 
 async function writeGeneratedNode(
@@ -14,12 +14,16 @@ async function writeGeneratedNode(
   const target = generatedNodePath(config);
   await mkdir(dirname(target), { recursive: true });
   await writeFile(target, renderNode(config, result));
+  const triggerTarget = generatedTriggerNodePath(config);
+  const triggerSource = renderTriggerNode(config, result);
+  if (triggerSource) await writeFile(triggerTarget, triggerSource);
+  else await rm(triggerTarget, { force: true });
   await writeFile(
     `${dirname(target)}/${config.product}.svg`,
     await readFile(`nodes/assets/${config.product}.svg`, 'utf8'),
   );
   console.log(
-    `${config.displayName}: ${result.operationCount} operations across ${result.resourceCount} resources`,
+    `${config.displayName}: ${result.operationCount} actions and ${result.pollingOperationCount} polling events`,
   );
 }
 

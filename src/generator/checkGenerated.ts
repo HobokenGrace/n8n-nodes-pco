@@ -2,9 +2,22 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { generatedNodePath, generatedProductConfigs } from './config';
+import {
+  generatedNodePath,
+  generatedProductConfigs,
+  generatedTriggerNodePath,
+} from './config';
 import { buildProductGeneration } from './openapi';
-import { renderNode } from './render';
+import { renderNode, renderTriggerNode } from './render';
+
+async function existingSource(path: string): Promise<string | undefined> {
+  try {
+    return await readFile(path, 'utf8');
+  } catch (error: any) {
+    if (error?.code === 'ENOENT') return undefined;
+    throw error;
+  }
+}
 
 async function main(): Promise<void> {
   const mismatches: string[] = [];
@@ -12,10 +25,15 @@ async function main(): Promise<void> {
 
   try {
     for (const config of generatedProductConfigs) {
-      const current = await readFile(generatedNodePath(config), 'utf8');
-      const expected = renderNode(config, await buildProductGeneration(config));
+      const result = await buildProductGeneration(config);
+      const current = await existingSource(generatedNodePath(config));
+      const expected = renderNode(config, result);
       if (current !== expected) {
         mismatches.push(generatedNodePath(config));
+      }
+      const triggerPath = generatedTriggerNodePath(config);
+      if ((await existingSource(triggerPath)) !== renderTriggerNode(config, result)) {
+        mismatches.push(triggerPath);
       }
     }
   } finally {

@@ -8,12 +8,14 @@ import type {
   GeneratedLookup,
   GeneratedLookupSplitNameSearch,
   GeneratedOperation,
+  GeneratedPollingOperation,
   GeneratedQueryOption,
   GeneratedValueOption,
   GeneratedRelationshipField,
   HttpMethod,
   OperationStability,
   ProductGenerationResult,
+  PollingCursorField,
 } from './model';
 
 const HTTP_METHODS = new Set(['get', 'post', 'put', 'patch', 'delete']);
@@ -55,6 +57,7 @@ const LOOKUP_SEARCH_FILTER_PRIORITY = [
   'subject',
   'label',
 ];
+const POLLING_CURSOR_FIELDS: PollingCursorField[] = ['created_at', 'updated_at'];
 
 type JsonSchema = Record<string, any>;
 
@@ -366,6 +369,7 @@ function queryOptionGroup(sourceName: string): GeneratedQueryOption['group'] | u
   if (sourceName.startsWith('where[')) return 'filter';
   if (sourceName === 'order') return 'order';
   if (sourceName === 'include') return 'include';
+  if (sourceName.startsWith('fields[')) return 'fields';
   return undefined;
 }
 
@@ -525,6 +529,131 @@ function buildQueryOptions(parameters: GeneratedField[]): GeneratedQueryOption[]
   }
 
   return options;
+}
+
+function pollingCursorFields(pathItem: any, operation: any, isList: boolean): PollingCursorField[] {
+  if (!isList) return [];
+
+  const parameters = mergedParameters(pathItem, operation);
+  const orderParameter = parameters.find(
+    (parameter) => parameter?.in === 'query' && parameter.name === 'order',
+  );
+  const orderValues = new Set(
+    schemaEnumValues(orderParameter?.schema).map((value) => String(value).replace(/^-/, '')),
+  );
+
+  return POLLING_CURSOR_FIELDS.filter((cursorField) => {
+    const inclusiveFilter = parameters.find(
+      (parameter) =>
+        parameter?.in === 'query' && parameter.name === `where[${cursorField}][gte]`,
+    );
+    return orderValues.has(cursorField) && inclusiveFilter?.schema?.format === 'date-time';
+  });
+}
+
+function isPollingOwnedQueryOption(
+  option: GeneratedQueryOption,
+  cursorField: PollingCursorField,
+): boolean {
+  if (option.group === 'order') return true;
+  const sourceNames = [
+    ...(option.sourceName ? [option.sourceName] : []),
+    ...(option.operators?.map((operator) => operator.sourceName) ?? []),
+  ];
+  return sourceNames.some((sourceName) => parseWhereParameter(sourceName)?.field === cursorField);
+}
+
+function pollingEventLabel(operation: GeneratedOperation, cursorField: PollingCursorField): string {
+  const context = relationshipContext(operation.path);
+  const scope = context ? ` (via ${context})` : '';
+  return `${cursorField === 'created_at' ? 'Created' : 'Created or Updated'}${scope}`;
+}
+
+function pollingEventDescription(cursorField: PollingCursorField): string {
+  return cursorField === 'created_at'
+    ? 'Follows creation time. An older resource that only starts matching later is not detected.'
+    : 'Includes initial creation and later changes when the update timestamp advances.';
+}
+
+function cursorSparseFieldSourceName(
+  operation: GeneratedOperation,
+  cursorField: PollingCursorField,
+): string | undefined {
+  const candidates = operation.queryOptions.filter(
+    (option) =>
+      option.group === 'fields' &&
+      option.sourceName &&
+      option.valueOptions?.some((value) => value.value === cursorField),
+  );
+  const matchingTarget = candidates.find((option) => {
+    const resourceType = option.sourceName?.match(/^fields\[([^\]]+)\]$/)?.[1];
+    return resourceType && lookupTargetKey(resourceType) === operation.lookupTarget;
+  });
+  return matchingTarget?.sourceName ?? (candidates.length === 1 ? candidates[0].sourceName : undefined);
+}
+
+function buildPollingOperation(
+  operation: GeneratedOperation,
+  cursorField: PollingCursorField,
+): GeneratedPollingOperation {
+  const event = pollingEventLabel(operation, cursorField);
+  return {
+    ...operation,
+    id: `${operation.id}_${camelCase(cursorField)}`,
+    sourceOperationId: operation.id,
+    operation: event,
+    event,
+    description: pollingEventDescription(cursorField),
+    cursorField,
+    cursorSparseFieldSourceName: cursorSparseFieldSourceName(operation, cursorField),
+    queryParameters: operation.queryParameters.filter(
+      (field) => parseWhereParameter(field.sourceName)?.field !== cursorField,
+    ),
+    ordinaryQueryFields: operation.ordinaryQueryFields.filter(
+      (field) => parseWhereParameter(field.sourceName)?.field !== cursorField,
+    ),
+    queryOptions: operation.queryOptions.filter(
+      (option) => !isPollingOwnedQueryOption(option, cursorField),
+    ),
+  };
+}
+
+function duplicatePollingEventGroups(
+  operations: GeneratedPollingOperation[],
+): GeneratedPollingOperation[][] {
+  const groups = new Map<string, GeneratedPollingOperation[]>();
+  for (const operation of operations) {
+    const key = `${operation.resource}:${operation.event}`;
+    groups.set(key, [...(groups.get(key) ?? []), operation]);
+  }
+  return [...groups.values()].filter((group) => group.length > 1);
+}
+
+function disambiguatePollingEventLabels(operations: GeneratedPollingOperation[]): void {
+  for (let contextDepth = 2; contextDepth <= 10; contextDepth += 1) {
+    const duplicateGroups = duplicatePollingEventGroups(operations);
+    if (!duplicateGroups.length) return;
+
+    for (const group of duplicateGroups) {
+      for (const operation of group) {
+        const context = relationshipContext(operation.path, contextDepth);
+        const base = operation.cursorField === 'created_at' ? 'Created' : 'Created or Updated';
+        operation.event = `${base}${context ? ` (via ${context})` : ''}`;
+        operation.operation = operation.event;
+      }
+    }
+  }
+
+  for (const group of duplicatePollingEventGroups(operations)) {
+    for (const operation of group) {
+      const context = relationshipContext(operation.path, 10);
+      const collection = operationTarget(operation.path, 'List');
+      const scope = [context, collection].filter(Boolean).join(' ');
+      const base = operation.cursorField === 'created_at' ? 'Created' : 'Created or Updated';
+      operation.event = `${base} (via ${scope})`;
+      operation.operation = operation.event;
+    }
+  }
 }
 
 function parameterField(parameter: any, retainPresentationMetadata = false): GeneratedField {
@@ -723,6 +852,21 @@ function collectOrdinaryQueryFields(path: string, pathItem: any, operation: any)
     .map((parameter) => parameterField(parameter, true));
 }
 
+function collectQueryOptionParameters(
+  path: string,
+  pathItem: any,
+  operation: any,
+): GeneratedField[] {
+  const context = operationQueryContext(path, operation);
+  return mergedParameters(pathItem, operation)
+    .filter((parameter) => parameter?.in === 'query' && parameter.name)
+    .filter(
+      (parameter) =>
+        parameter.name.startsWith('fields[') || shouldRenderQueryParameter(parameter, context),
+    )
+    .map((parameter) => parameterField(parameter));
+}
+
 function collectParameterSourceNames(
   pathItem: any,
   operation: any,
@@ -834,6 +978,7 @@ export function buildProductGenerationFromDocument(
   api: any,
 ): ProductGenerationResult {
   const operations: GeneratedOperation[] = [];
+  const pollingCursorFieldsByOperationId = new Map<string, PollingCursorField[]>();
   const exclusions: string[] = [];
   const fallbackOperationIds = new Set<string>();
 
@@ -852,7 +997,7 @@ export function buildProductGenerationFromDocument(
       const queryParameters = collectParameters(path, pathItem, operation, 'query');
       const lookupQueryParameterNames = collectParameterSourceNames(pathItem, operation, 'query');
       const stability = operationStability(operation);
-      operations.push({
+      const generatedOperation: GeneratedOperation = {
         id,
         resource: resourceLabel(operation, path),
         jsonApiType: jsonApiTypeFromRequestBody(operation),
@@ -868,10 +1013,15 @@ export function buildProductGenerationFromDocument(
         pathParameters: collectParameters(path, pathItem, operation, 'path'),
         queryParameters,
         ordinaryQueryFields: collectOrdinaryQueryFields(path, pathItem, operation),
-        queryOptions: buildQueryOptions(queryParameters),
+        queryOptions: buildQueryOptions(collectQueryOptionParameters(path, pathItem, operation)),
         attributeFields: collectAttributeFields(operation),
         relationshipFields: collectRelationshipFields(operation),
-      });
+      };
+      operations.push(generatedOperation);
+      const cursorFields = pollingCursorFields(pathItem, operation, generatedOperation.isList);
+      if (method === 'get' && cursorFields.length) {
+        pollingCursorFieldsByOperationId.set(id, cursorFields);
+      }
     }
   }
 
@@ -889,7 +1039,19 @@ export function buildProductGenerationFromDocument(
   disambiguateFallbackOperationLabels(operations, fallbackOperationIds);
   addLookupMetadata(operations);
 
+  const pollingOperations = operations
+    .flatMap((operation) =>
+      (pollingCursorFieldsByOperationId.get(operation.id) ?? []).map((cursorField) =>
+        buildPollingOperation(operation, cursorField),
+      ),
+    );
+  disambiguatePollingEventLabels(pollingOperations);
+  pollingOperations.sort((a, b) =>
+    `${a.resource}:${a.id}`.localeCompare(`${b.resource}:${b.id}`),
+  );
+
   const resources = new Set(operations.map((operation) => operation.resource));
+  const pollingResources = new Set(pollingOperations.map((operation) => operation.resource));
   operations.sort((a, b) =>
     `${a.resource}:${operationSortPriority(a)}:${a.operation}:${a.id}`.localeCompare(
       `${b.resource}:${operationSortPriority(b)}:${b.operation}:${b.id}`,
@@ -903,6 +1065,9 @@ export function buildProductGenerationFromDocument(
     operationCount: operations.length,
     resourceCount: resources.size,
     operations,
+    pollingOperationCount: pollingOperations.length,
+    pollingResourceCount: pollingResources.size,
+    pollingOperations,
     exclusions,
   };
 }
