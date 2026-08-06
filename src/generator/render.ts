@@ -307,6 +307,7 @@ function renderQueryOptionsProperty(
     values: renderQueryOptionValues(option),
   }));
 
+  // ! NOTE: n8n currently does not display hints on fixedCollection properties.
   return `    {
       displayName: ${q(definition.displayName)},
       name: ${q(`${operation.id}_${definition.group}`)},
