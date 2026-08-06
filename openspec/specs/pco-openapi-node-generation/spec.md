@@ -405,3 +405,82 @@ Generated operation selection SHALL continue using stable internal IDs independe
 - **WHEN** a supplement is reconciled with a newly official operation
 - **THEN** existing workflows SHALL continue selecting and dispatching the operation by the previously generated internal ID
 
+### Requirement: Generated write operations preserve JSON:API resource types
+The system SHALL build standard-mode JSON:API request bodies with the canonical `data.type` declared by the OpenAPI request schema, independently of user-facing resource labels.
+
+#### Scenario: Canonical type differs from display label
+- **WHEN** a generated create, update, or patch operation has a request schema whose `data.type` declares one canonical string value that differs from the formatted n8n resource label
+- **THEN** the generated standard-mode request body SHALL send the exact schema value as `data.type`
+
+#### Scenario: Resource label remains human-readable
+- **WHEN** the generator preserves a canonical JSON:API request type for an operation
+- **THEN** the generated n8n resource label SHALL remain human-readable and SHALL NOT be replaced by the wire-format type
+
+### Requirement: Generated operation stability metadata
+The system SHALL represent endpoint stability separately from generated operation descriptions.
+
+#### Scenario: Unofficial operation is generated
+- **WHEN** a generated operation comes from an unofficial Planning Center supplement
+- **THEN** the generated operation SHALL carry machine-readable unofficial stability metadata
+- **AND** its generated user-facing description SHALL NOT include the full unofficial endpoint warning sentence
+
+#### Scenario: Official operation is generated
+- **WHEN** a generated operation has no unofficial supplement stability metadata
+- **THEN** the generated operation SHALL carry official stability metadata or an equivalent official default
+- **AND** its generated user-facing description SHALL continue to come from the OpenAPI description, summary, or route fallback
+
+#### Scenario: Operation subtitle is rendered
+- **WHEN** n8n renders the selected operation subtitle for an unofficial generated operation
+- **THEN** the subtitle SHALL use the generated operation description without the full unofficial endpoint warning sentence
+
+#### Scenario: Operation dropdown option is rendered
+- **WHEN** n8n renders an unofficial generated operation in the operation dropdown
+- **THEN** the option description SHALL remain focused on the operation description or route
+- **AND** it SHALL NOT prepend the full unofficial endpoint warning sentence
+
+### Requirement: Qualifying products receive generated polling trigger nodes
+The generator SHALL produce a separate polling trigger node for each configured Planning Center product whose OpenAPI snapshot contains at least one collection operation that satisfies the polling trigger eligibility contract.
+
+#### Scenario: Product has qualifying polling operations
+- **WHEN** generation processes a product with one or more qualifying collection cursor fields
+- **THEN** it SHALL produce a `<Product> Trigger` node in addition to the existing product action node
+- **AND** the trigger implementation SHALL dispatch through shared generated metadata and shared polling runtime behavior
+
+#### Scenario: Product has no qualifying polling operations
+- **WHEN** generation processes a product with no qualifying collection cursor field
+- **THEN** it SHALL NOT produce or register an empty trigger node for that product
+
+#### Scenario: OpenAPI snapshot changes eligibility
+- **WHEN** a committed OpenAPI snapshot adds or removes same-field ordering or inclusive range filtering
+- **THEN** deterministic regeneration SHALL add or remove the corresponding trigger operation without a hand-written operation allowlist
+
+### Requirement: Generated polling operations have stable product metadata
+Generated polling trigger classes, internal operation IDs, display labels, icons, credentials, resource grouping, and source paths SHALL be derived deterministically from product configuration and the qualifying action operation metadata.
+
+#### Scenario: Trigger operation ID is generated
+- **WHEN** a collection qualifies for a cursor field
+- **THEN** its trigger operation SHALL receive a stable internal ID that distinguishes the source collection and cursor field
+
+#### Scenario: Trigger reuses product identity
+- **WHEN** a polling trigger node is generated
+- **THEN** it SHALL use the corresponding product's credentials and icon while using a distinct trigger class name and n8n node name
+
+### Requirement: Generated polling trigger nodes are package-registered
+Package metadata and entry-point exports SHALL include every generated product trigger node and SHALL exclude trigger paths for products without qualifying operations.
+
+#### Scenario: Qualifying trigger appears in package metadata
+- **WHEN** a product trigger is generated
+- **THEN** `package.json` SHALL include its built node path in the n8n node registration list
+- **AND** the package entry point SHALL export its generated trigger class
+
+#### Scenario: Trigger generation set changes
+- **WHEN** configured snapshots change which products have qualifying trigger operations
+- **THEN** metadata tests SHALL fail until registration and exports match the generated trigger set
+
+### Requirement: Generated polling output remains drift-checked
+Generated trigger source and copied product assets SHALL be committed output governed by the same deterministic generation checks as action nodes.
+
+#### Scenario: Generated trigger output is stale
+- **WHEN** generator logic, product configuration, or an eligible OpenAPI snapshot changes without regenerating trigger output
+- **THEN** the generation drift check SHALL fail
+

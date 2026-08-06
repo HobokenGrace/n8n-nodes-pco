@@ -135,7 +135,8 @@ The People product SHALL expose the observed unofficial person activity collecti
 #### Scenario: Person activities are generated
 
 - **WHEN** the effective People specification includes `GET /people/{person_id}/activities`
-- **THEN** the generated People node SHALL expose a visibly unofficial list operation with a stable operation ID
+- **THEN** the generated People node SHALL expose a list operation with unofficial stability metadata and a stable operation ID
+- **AND** the operation description SHALL NOT require the full unofficial endpoint warning sentence
 
 #### Scenario: Person activity request is configured
 
@@ -156,7 +157,8 @@ The Webhooks product SHALL expose the observed unofficial batch-update route as 
 #### Scenario: Batch update is generated
 
 - **WHEN** the effective Webhooks specification includes `POST /batch_update`
-- **THEN** the generated Webhooks node SHALL expose a visibly unofficial batch-update operation with a stable operation ID
+- **THEN** the generated Webhooks node SHALL expose a batch-update operation with unofficial stability metadata and a stable operation ID
+- **AND** the operation description SHALL NOT require the full unofficial endpoint warning sentence
 
 #### Scenario: Batch update body is configured
 
