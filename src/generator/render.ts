@@ -10,11 +10,14 @@ import type {
 
 type QueryOptionGroup = GeneratedQueryOption['group'];
 
-const QUERY_OPTION_GROUPS: Array<{
+interface QueryOptionGroupDefinition {
   group: QueryOptionGroup;
   displayName: string;
   placeholder: string;
-}> = [
+  hint?: string;
+}
+
+const QUERY_OPTION_GROUPS: QueryOptionGroupDefinition[] = [
   { group: 'filter', displayName: 'Filter', placeholder: 'Filter by' },
   { group: 'order', displayName: 'Order', placeholder: 'Order by' },
   { group: 'include', displayName: 'Include', placeholder: 'Include data' },
@@ -292,7 +295,7 @@ ${lookups
 
 function renderQueryOptionsProperty(
   operation: GeneratedOperation,
-  definition: { group: QueryOptionGroup; displayName: string; placeholder: string },
+  definition: QueryOptionGroupDefinition,
 ): string | undefined {
   const groupOptions = operation.queryOptions.filter((option) => option.group === definition.group);
   if (!groupOptions.length) return undefined;
@@ -310,7 +313,7 @@ function renderQueryOptionsProperty(
       type: 'fixedCollection',
       default: {},
       placeholder: ${q(definition.placeholder)},
-      typeOptions: { multipleValues: true },
+${definition.hint ? `      hint: ${q(definition.hint)},\n` : ''}      typeOptions: { multipleValues: true },
       displayOptions: ${q(displayOptions)},
       options: ${q(options)},
     },`;
@@ -831,14 +834,25 @@ export function renderTriggerNode(
       default: ${q(options[0]?.value ?? '')},
     },`;
   });
-  const queryOptionGroups: Array<{
-    group: QueryOptionGroup;
-    displayName: string;
-    placeholder: string;
-  }> = [
-    { group: 'filter', displayName: 'Filter', placeholder: 'Filter by' },
-    { group: 'include', displayName: 'Include', placeholder: 'Include data' },
-    { group: 'fields', displayName: 'Sparse Fields', placeholder: 'Select fields' },
+  const queryOptionGroups: QueryOptionGroupDefinition[] = [
+    {
+      group: 'filter',
+      displayName: 'Filter',
+      placeholder: 'Filter by',
+      hint: 'Only emit records that match the selected Planning Center API filters.',
+    },
+    {
+      group: 'include',
+      displayName: 'Include',
+      placeholder: 'Include data',
+      hint: 'Request related resources from Planning Center in the same API response.',
+    },
+    {
+      group: 'fields',
+      displayName: 'Sparse Fields',
+      placeholder: 'Select fields',
+      hint: 'Request only the selected attributes from Planning Center to reduce the data transferred to n8n.',
+    },
   ];
   const operationProperties = operations.flatMap((operation) => [
     ...operation.pathParameters.map((field) => fieldProperty(field, operation, 'path')),

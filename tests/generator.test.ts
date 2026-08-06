@@ -397,6 +397,15 @@ describe('generated Planning Center nodes', () => {
       'include',
       'fields',
     ]);
+    expect(source).toContain(
+      'hint: "Only emit records that match the selected Planning Center API filters."',
+    );
+    expect(source).toContain(
+      'hint: "Request related resources from Planning Center in the same API response."',
+    );
+    expect(source).toContain(
+      'hint: "Request only the selected attributes from Planning Center to reduce the data transferred to n8n."',
+    );
     expect(
       operation.queryOptions.flatMap((option) => [
         option.sourceName,
