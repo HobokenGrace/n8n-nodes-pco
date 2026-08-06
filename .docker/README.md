@@ -1,6 +1,8 @@
 # Local n8n Docker Development
 
 This folder contains the local n8n Docker setup for testing `@hobokengrace/n8n-nodes-pco`.
+See [Contributing](../docs/contributing.md) for repository setup, generation,
+validation, and pull request expectations before using this environment.
 
 ## Files
 
@@ -33,8 +35,6 @@ docker compose ps
 
 The `n8n` service should show as `healthy`, then open `http://localhost:5678`.
 
-Open n8n at `http://localhost:5678`.
-
 ## Update n8n
 
 ```sh
@@ -51,8 +51,22 @@ docker image prune # removes old n8n images
 3. Add `Planning Center PAT API`.
 4. Enter your Planning Center Application ID and Secret.
 5. Test the credential.
-6. Create a workflow and search for `Planning Center People`, `Planning Center Groups`, or `Planning Center Giving`.
-7. Add an operation, execute the node, and inspect the output.
+6. Create a workflow and confirm these operation nodes appear in the node picker:
+   - `Planning Center API`
+   - `Planning Center Calendar`
+   - `Planning Center Check-Ins`
+   - `Planning Center Current`
+   - `Planning Center Giving`
+   - `Planning Center Groups`
+   - `Planning Center People`
+   - `Planning Center Publishing`
+   - `Planning Center Registrations`
+   - `Planning Center Services`
+   - `Planning Center Webhooks`
+7. Confirm polling triggers appear for Calendar, Check-Ins, Giving, People, and
+   Services by starting a workflow with a trigger-node search.
+8. Add the operation or trigger affected by the change, execute or activate it,
+   and inspect its sanitized output and error behavior.
 
 ## After Code Changes
 

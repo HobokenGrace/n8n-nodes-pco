@@ -1,158 +1,75 @@
-# n8n-nodes-pco
+# n8n Nodes for Planning Center
 
-Generated n8n community nodes for Planning Center Online.
+`@hobokengrace/n8n-nodes-pco` provides n8n community nodes for working with
+Planning Center APIs. It includes nodes for API, Calendar, Check-Ins, Current,
+Giving, Groups, People, Publishing, Registrations, Services, and Webhooks, plus
+polling triggers for supported products.
 
-## Authentication
+## Quick Start
 
-Create a Planning Center Personal Access Token in Planning Center, then create
-the `Planning Center PAT API` credential in n8n with:
+This path is for self-hosted n8n instances that permit community nodes.
 
-- Application ID
-- Secret
-- Base URL, defaulting to `https://api.planningcenteronline.com`
+1. In n8n, open **Settings > Community Nodes** and select **Install**.
+2. Enter `@hobokengrace/n8n-nodes-pco` as the npm package name and complete the
+   installation.
+3. In your [Planning Center developer account](https://api.planningcenteronline.com/oauth/applications),
+   generate a Personal Access Token (PAT).
+4. In n8n, create a `Planning Center PAT API` credential. Enter the Application
+   ID and Secret from the same PAT, retain the default Base URL, and test it.
+5. Add **Planning Center People**, choose **Person > List People**, set a small
+   **Limit**, and execute the node.
 
-The credential test calls `GET {baseUrl}/people/v2/me` to verify access. The
-secret is only used for Basic authentication and is not included in node output
-or package-created errors.
+See [Getting Started](docs/getting-started.md) for the complete installation,
+credential, first-read, and troubleshooting procedure.
 
-## Generated Nodes
+## Choose a Node
 
-This package generates one node per Planning Center product. The bootstrap
-includes People, Groups, and Giving. Generated operations call shared runtime
-helpers for authentication, retries, pagination, Continue On Fail handling, and
-JSON:API output normalization.
+Prefer a product-specific generated node when it contains the resource and
+operation you need. These nodes provide operation-specific fields, identifiers,
+query options, pagination controls, and normalized JSON:API output.
 
-Generated source lives under `nodes/generated/<product>` and should not be
-hand-edited. Update the generator or OpenAPI snapshots, then regenerate.
+Use **Planning Center API** for the account-level developer resources it exposes,
+including connected applications, OAuth applications, and personal access
+tokens. It is not an arbitrary HTTP request node and does not replace a product
+node for an uncovered product endpoint.
 
-## Polling Triggers
+- [Node Catalog](docs/nodes.md): what each registered node covers and how
+  generated operations behave
+- [Workflow Walkthroughs](docs/walkthroughs.md): complete People, Giving, and
+  Planning Center API read examples
 
-Qualifying products also provide generated polling trigger nodes. Select the
-emitted Resource and then a `Created` or `Created or Updated` Event. Nested
-resources include their parent scope, such as `Form Submission (via Form)`.
-`Created` follows
-`created_at`; it does not detect an older resource that starts matching a filter
-later. `Created or Updated` follows `updated_at`, so it observes creation and the
-latest representation of later changes whose timestamp advances. Polling does
-not detect deleted resources or every intermediate change between polls.
+## Compatibility
 
-n8n supplies the native **Poll Times** schedule. The package does not add a
-second interval or timer. Each Poll Time makes Planning Center API requests and
-emits at most **Max Records Per Poll** records, defaulting to 100 and limited to
-1,000. A larger backlog continues one capped batch at later Poll Times; the
-package does not schedule immediate follow-up polls. Choose the Poll Times and
-batch size with Planning Center API usage in mind.
+- Installation guidance covers the self-hosted n8n Community Nodes UI. This
+  repository does not claim n8n Cloud support.
+- The package declares `n8n-workflow` as a peer dependency without a pinned n8n
+  version. No n8n version support matrix is currently published.
+- Repository development and CI use Node.js 22 or newer and pnpm 10.30.2.
 
-Leave **Start Time** empty to baseline the newest currently matching records on
-activation and emit only later changes. No existing resource is emitted by that
-activation. A past or current RFC 3339 value starts inclusive historical
-catch-up at the first Poll Time. A future value keeps the workflow active and
-quiet until a matching resource reaches that time. Reactivation with unchanged
-settings resumes the saved watermark and may immediately emit one capped batch
-of downtime changes during n8n's activation poll, before the next configured
-Poll Time. Changing
-credentials, Resource/Event, path scope, Start Time, or a result filter applies
-fresh activation semantics. With a configured Start Time that reset replays
-inclusively and can re-emit previously delivered resources; stable expressions
-preserve state, while expressions resolving to different result-affecting
-values reset it. Poll Times, batch size, includes, and sparse output fields do
-not reset the watermark.
+## Documentation
 
-Manual **Test workflow** execution is a non-stateful sample preview. It applies
-scope, filters, includes, and sparse fields, ignores Start Time and production
-state, and returns at most the newest matching normalized resource. It does not
-predict activation output or the next catch-up batch. A scheduled configuration
-reset may create a successful execution with zero items so n8n persists the new
-state; this is an expected state-persistence execution, not a resource event or
-trigger failure. An unchanged poll with no resources starts no execution.
+- [Getting Started](docs/getting-started.md)
+- [Workflow Walkthroughs](docs/walkthroughs.md)
+- [Node Catalog](docs/nodes.md)
+- [Contributing](docs/contributing.md)
+- [Local Docker Testing](.docker/README.md)
+- [Planning Center API Supplements](docs/api-supplements.md)
+- [Publishing](docs/publishing.md)
 
-Polling uses an inclusive timestamp watermark and retains every `(type, id)`
-seen at the current timestamp without a package-defined limit. A late identity
-at that timestamp can still emit, while the same identity at the same timestamp
-is suppressed even if its representation changed. Concurrently reordered PCO
-offset pages cannot provide a gap-free snapshot. Native polls may also overlap
-or repeat before static state is persisted, so duplicate resources or batches
-are possible. Use idempotent downstream processing where duplicates matter.
+## Support
 
-A batch successfully returned by the trigger advances its watermark before
-downstream nodes finish. It is not replayed solely because a later node fails;
-workflow authors are responsible for downstream retry and recovery. The
-trigger provides neither exactly-once nor end-to-end at-least-once delivery and
-does not guarantee gap-free concurrent pagination, deletion events, or every
-intermediate resource version.
+Report package defects and request package features in
+[GitHub Issues](https://github.com/HobokenGrace/n8n-nodes-pco/issues). A useful
+bug report includes the n8n version, package version, deployment type,
+node/resource/operation, reproduction steps, sanitized input and output, and the
+complete error message.
 
-## OpenAPI Snapshots
+Before sharing logs, screenshots, workflow data, or node output, remove the PAT
+Application ID and Secret, authorization headers, and all Planning Center
+personal data. For Planning Center account access, permissions, or API
+availability, contact [Planning Center Support](https://www.planningcenter.com/support)
+instead of opening a package issue.
 
-Committed OpenAPI inputs live at `openapi/<product>/<date>.json`. Normal
-generation uses those files so local builds and CI are deterministic and do not
-depend on Planning Center's OpenAPI endpoint availability.
+## License
 
-Refresh snapshots explicitly with:
-
-```sh
-pnpm openapi:refresh
-```
-
-Review the snapshot diff before regenerating nodes.
-
-Repository-owned operations and reviewed corrections are maintained separately
-from vendor snapshots. See [Planning Center API Supplements](docs/api-supplements.md)
-for the package contract, safe REST Client capture workflow, sanitization rules,
-and add/override lifecycle.
-
-## Generation
-
-Regenerate committed node source from the active snapshots with:
-
-```sh
-pnpm generate
-```
-
-Check for generated-source drift without keeping changes with:
-
-```sh
-pnpm generate:check
-```
-
-## Local Checks
-
-Run the same checks used by CI:
-
-```sh
-pnpm generate:check
-pnpm test
-pnpm lint
-pnpm build
-```
-
-`pnpm build` compiles committed source and copies assets. It does not run
-generation.
-
-This package includes a prototype of the newer `@n8n/node-cli` workflow:
-
-```sh
-pnpm dev
-pnpm lint:n8n
-```
-
-Publishing is performed only by `.github/workflows/publish.yml`; maintainers
-must follow [`docs/publishing.md`](docs/publishing.md).
-
-`pnpm build` already uses `n8n-node build`, followed by the package-specific
-asset copy step. `pnpm lint` intentionally uses `eslint.config.repo.mjs` for the
-current generated-node and generator/test layout. `pnpm lint:n8n` is stricter
-and currently represents follow-up compliance work for n8n Cloud-style rules,
-including generated-node `usableAsTool`, connection type constants,
-Continue On Fail handling, themed icons, and keeping generator/test sources out
-of the strict community-node lint surface.
-
-## Publishing
-
-Maintainers can follow the release checklist in [docs/publishing.md](docs/publishing.md)
-to publish the package from GitHub Actions with npm provenance.
-
-## OAuth Later
-
-The bootstrap intentionally ships PAT authentication first. Generated operations
-depend on shared Planning Center request helpers, so a future OAuth credential
-can authenticate the same operation surface without endpoint-by-endpoint rewrites.
+[MIT](LICENSE.md)
