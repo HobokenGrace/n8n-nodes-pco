@@ -407,6 +407,41 @@ describe('Planning Center JSON:API normalization', () => {
     });
   });
 
+  it('attaches normalized included resources to each primary resource', () => {
+    expect(
+      normalizeJsonApiResponse({
+        data: [
+          { id: '1', type: 'Person', attributes: { first_name: 'Ada' } },
+          { id: '2', type: 'Person', attributes: { first_name: 'Grace' } },
+        ],
+        included: [
+          { id: '10', type: 'Household', attributes: { name: 'Lovelace' } },
+        ],
+      }),
+    ).toEqual([
+      {
+        id: '1',
+        type: 'Person',
+        first_name: 'Ada',
+        included: [{ id: '10', type: 'Household', name: 'Lovelace' }],
+      },
+      {
+        id: '2',
+        type: 'Person',
+        first_name: 'Grace',
+        included: [{ id: '10', type: 'Household', name: 'Lovelace' }],
+      },
+    ]);
+  });
+
+  it('preserves an included attribute when the response has no included resources', () => {
+    expect(
+      normalizeJsonApiResponse({
+        data: { id: '1', type: 'Person', attributes: { included: true } },
+      }),
+    ).toEqual([{ id: '1', type: 'Person', included: true }]);
+  });
+
   it.each([undefined, '', null])('normalizes a bodyless response to one empty item', (response) => {
     expect(normalizeJsonApiResponse(response)).toEqual([{}]);
   });
@@ -437,6 +472,36 @@ describe('Planning Center pagination helper', () => {
 
     expect(results.map((item) => item.id)).toEqual(['1', '2']);
     expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
+  });
+
+  it('preserves the included resources returned with each page', async () => {
+    const context = fakeContext({
+      helpers: {
+        httpRequest: vi
+          .fn()
+          .mockResolvedValueOnce({
+            data: [{ id: '1', type: 'Person', attributes: { name: 'One' } }],
+            included: [{ id: '10', type: 'Household', attributes: { name: 'First' } }],
+            links: { next: 'https://api.example.test/people/v2/people?page=2' },
+          })
+          .mockResolvedValueOnce({
+            data: [{ id: '2', type: 'Person', attributes: { name: 'Two' } }],
+            included: [{ id: '20', type: 'Household', attributes: { name: 'Second' } }],
+            links: { next: null },
+          }),
+      },
+    });
+
+    const results = await collectPaginatedPlanningCenterResults.call(
+      context,
+      { method: 'GET', path: '/people/v2/people' },
+      { returnAll: true, limit: 2 },
+    );
+
+    expect(results.map((item) => item.included)).toEqual([
+      [{ id: '10', type: 'Household', name: 'First' }],
+      [{ id: '20', type: 'Household', name: 'Second' }],
+    ]);
   });
 
   it('does not cap Return All results by Limit', async () => {

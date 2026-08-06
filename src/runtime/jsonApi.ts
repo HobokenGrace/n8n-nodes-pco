@@ -35,13 +35,23 @@ export function normalizeJsonApiResponse(response: unknown): JsonObject[] {
   }
 
   const { data } = response;
+  const included = Array.isArray(response.included)
+    ? response.included.map(normalizeJsonApiResource)
+    : undefined;
+  const normalizeResource = (resource: unknown): JsonObject => {
+    const output = normalizeJsonApiResource(resource);
+    if (!included) return output;
+    if ('included' in output) output.attribute_included = output.included;
+    output.included = included;
+    return output;
+  };
   if (Array.isArray(data)) {
-    return data.map(normalizeJsonApiResource);
+    return data.map(normalizeResource);
   }
 
   if (data === null) {
     return [];
   }
 
-  return [normalizeJsonApiResource(data)];
+  return [normalizeResource(data)];
 }

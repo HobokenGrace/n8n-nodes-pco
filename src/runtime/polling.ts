@@ -6,7 +6,7 @@ import type {
 } from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
 
-import { normalizeJsonApiResource, type JsonObject } from './jsonApi';
+import { normalizeJsonApiResponse, type JsonObject } from './jsonApi';
 import { planningCenterApiRequest, type PlanningCenterCredentials } from './request';
 import { extractResourceLocatorId } from './resourceLocator';
 
@@ -79,6 +79,7 @@ interface ResolvedPollingConfiguration {
 
 interface ValidatedResource {
   raw: JsonObject;
+  included?: unknown[];
   type: string;
   id: string;
   identity: string;
@@ -407,7 +408,7 @@ async function requestPage(
   context: IPollFunctions,
   configuration: ResolvedPollingConfiguration,
   qs: IDataObject,
-): Promise<{ resources: ValidatedResource[]; hasNext: boolean; included?: unknown }> {
+): Promise<{ resources: ValidatedResource[]; hasNext: boolean }> {
   const response = (await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, {
     method: 'GET',
     path: configuration.path,
@@ -416,12 +417,13 @@ async function requestPage(
   if (!response || !Array.isArray(response.data)) {
     throw new Error('Planning Center returned an invalid JSON:API collection response.');
   }
+  const included = Array.isArray(response.included) ? response.included : undefined;
   return {
-    resources: response.data.map((resource) =>
-      validateResource(resource, configuration.operation.cursorField),
-    ),
+    resources: response.data.map((resource) => ({
+      ...validateResource(resource, configuration.operation.cursorField),
+      ...(included ? { included } : {}),
+    })),
     hasNext: Boolean(response.links?.next),
-    included: response.included,
   };
 }
 
@@ -504,7 +506,10 @@ function normalizedItems(
   sparseCursorOutputKey?: string,
 ): INodeExecutionData[] {
   return resources.map((resource) => {
-    const json = normalizeJsonApiResource(resource.raw);
+    const [json] = normalizeJsonApiResponse({
+      data: resource.raw,
+      ...(resource.included ? { included: resource.included } : {}),
+    });
     if (sparseCursorOutputKey) delete json[sparseCursorOutputKey];
     return { json };
   });

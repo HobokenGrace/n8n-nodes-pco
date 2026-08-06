@@ -46,8 +46,8 @@ function resource(id: string, cursor: string, attributes: Record<string, unknown
   };
 }
 
-function page(data: unknown[], next: string | null = null) {
-  return { data, links: { next } };
+function page(data: unknown[], next: string | null = null, included?: unknown[]) {
+  return { data, links: { next }, ...(included ? { included } : {}) };
 }
 
 function pollingContext(
@@ -468,7 +468,11 @@ describe('Planning Center cursor polling and atomic batches', () => {
         [`${operation.id}_include`]: { include: [{ value: 'form' }] },
         [`${operation.id}_fields`]: { fieldsItem: [{ value: 'name' }] },
       },
-      responses: [page([resource('1', timestamp)])],
+      responses: [
+        page([resource('1', timestamp)], null, [
+          { id: 'form-1', type: 'Form', attributes: { name: 'Registration' } },
+        ]),
+      ],
     });
     await pollPlanningCenter.call(context, [operation]);
     const output = await pollPlanningCenter.call(context, [operation]);
@@ -481,7 +485,18 @@ describe('Planning Center cursor polling and atomic batches', () => {
         }),
       }),
     );
-    expect(output).toEqual([[{ json: { id: '1', type: 'Item', name: 'Item 1' } }]]);
+    expect(output).toEqual([
+      [
+        {
+          json: {
+            id: '1',
+            type: 'Item',
+            name: 'Item 1',
+            included: [{ id: 'form-1', type: 'Form', name: 'Registration' }],
+          },
+        },
+      ],
+    ]);
   });
 
   it('does not force the primary cursor into included-resource sparse fields', async () => {
