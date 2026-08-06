@@ -837,13 +837,6 @@ const OPERATIONS: PollingOperation[] = ${renderPollingOperations(operations)};
 
 const NODE_PROPERTIES = [
     {
-      displayName: 'Delivery Limitations',
-      name: 'deliveryLimitations',
-      type: 'notice',
-      default: '',
-      description: 'Polling may deliver duplicates. A successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. See the package polling documentation for idempotency, retry, and other limitations.',
-    },
-    {
       displayName: 'Resource',
       name: 'resource',
       type: 'options',
@@ -868,6 +861,12 @@ ${eventProperties.join('\n')}
       description: 'Emits at most one capped batch per Poll Time. A larger backlog continues over later Poll Times.',
     },
 ${operationProperties.join('\n')}
+    {
+      displayName: '<strong>Limitations:</strong> This trigger may occasionally send the same record more than once, and it won’t report when a record is deleted. If a later workflow step fails after records are sent, this trigger won’t automatically send those records again.',
+      name: 'deliveryLimitations',
+      type: 'notice',
+      default: '',
+    },
   ] as any;
 
 export class ${config.className}Trigger implements INodeType {

@@ -322,7 +322,7 @@ describe('generated Planning Center nodes', () => {
     expect(renderedProducts).toEqual(['calendar', 'check-ins', 'giving', 'people', 'services']);
     for (const [index, result] of summaries.entries()) {
       const source = renderTriggerNode(generatedProductConfigs[index], result);
-      if (source) expect(source).toContain("displayName: 'Delivery Limitations'");
+      if (source) expect(source).toContain("displayName: '<strong>Limitations:</strong>");
     }
     expect(
       renderTriggerNode(pollingTestConfig, {
@@ -399,9 +399,14 @@ describe('generated Planning Center nodes', () => {
         'where[created_at][gte]',
       ]),
     );
-    expect(source).toContain("displayName: 'Delivery Limitations'");
-    expect(source).toContain('Polling may deliver duplicates');
-    expect(source).toContain('deleted resources are not detected');
+    const deliveryLimitationsNotice = `    {
+      displayName: '<strong>Limitations:</strong> This trigger may occasionally send the same record more than once, and it won’t report when a record is deleted. If a later workflow step fails after records are sent, this trigger won’t automatically send those records again.',
+      name: 'deliveryLimitations',
+      type: 'notice',
+      default: '',
+    },`;
+
+    expect(source).toContain(`${deliveryLimitationsNotice}\n  ] as any;`);
     expect(source).toContain('listFormSubmissions_createdAt_formId');
     expect(source).toContain("displayName: 'Max Records Per Poll'");
     expect(source).toContain('default: 100');
