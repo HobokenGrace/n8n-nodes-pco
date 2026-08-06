@@ -15,7 +15,7 @@ const STATE_VERSION = 1;
 const EMPTY_WATERMARK = '1970-01-01T00:00:00.000Z';
 const MAX_PAGE_SIZE = 100;
 const RFC3339_WITH_OFFSET = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
-const N8N_LOCAL_DATE_TIME = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/;
+const N8N_LOCAL_DATE_TIME = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2}):(\d{2})$/;
 
 export type PollingCursorField = 'created_at' | 'updated_at';
 
