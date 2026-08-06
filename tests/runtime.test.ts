@@ -12,6 +12,8 @@ import {
   shouldRetry,
 } from '../src/runtime/request';
 
+const API_VERSION = '2026-01-01';
+
 function fakeContext(overrides: Record<string, unknown> = {}): any {
   return {
     continueOnFail: () => false,
@@ -32,7 +34,11 @@ describe('Planning Center request helper', () => {
   it('builds Basic auth from PAT credentials', async () => {
     const context = fakeContext();
 
-    await planningCenterApiRequest.call(context, { method: 'GET', path: '/people/v2/me' });
+    await planningCenterApiRequest.call(context, {
+      method: 'GET',
+      path: '/people/v2/me',
+      apiVersion: API_VERSION,
+    });
 
     expect(context.helpers.httpRequest).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -42,6 +48,39 @@ describe('Planning Center request helper', () => {
         }),
       }),
     );
+  });
+
+  it('preserves one authoritative canonical API version header across retries', async () => {
+    const error = Object.assign(new Error('rate limited'), {
+      httpCode: 429,
+      response: { headers: { 'retry-after': '0' } },
+    });
+    const context = fakeContext({
+      helpers: {
+        httpRequest: vi.fn().mockRejectedValueOnce(error).mockResolvedValueOnce({ data: [] }),
+      },
+    });
+
+    await planningCenterApiRequest.call(context, {
+      method: 'GET',
+      path: '/people/v2/me',
+      apiVersion: API_VERSION,
+      headers: {
+        'x-pco-api-version': 'caller-lowercase',
+        'X-Pco-Api-Version': 'caller-mixed-case',
+        'X-Additional-Header': 'preserved',
+      },
+    });
+
+    expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
+    for (const [request] of context.helpers.httpRequest.mock.calls) {
+      expect(
+        Object.entries(request.headers).filter(
+          ([name]) => name.toLowerCase() === 'x-pco-api-version',
+        ),
+      ).toEqual([['X-PCO-API-Version', API_VERSION]]);
+      expect(request.headers['X-Additional-Header']).toBe('preserved');
+    }
   });
 
   it('retries 429 responses and respects retry-after parsing', async () => {
@@ -55,7 +94,11 @@ describe('Planning Center request helper', () => {
       },
     });
 
-    await planningCenterApiRequest.call(context, { method: 'GET', path: '/people/v2/me' });
+    await planningCenterApiRequest.call(context, {
+      method: 'GET',
+      path: '/people/v2/me',
+      apiVersion: API_VERSION,
+    });
 
     expect(context.helpers.httpRequest).toHaveBeenCalledTimes(2);
     expect(shouldRetry(429)).toBe(true);
@@ -118,6 +161,7 @@ describe('Planning Center request helper', () => {
         await planningCenterApiRequest.call(context, {
           method: 'POST',
           path: '/people/v2/people/123/field_data',
+          apiVersion: API_VERSION,
           qs: { source: 'app-id' },
           body,
           headers: { 'X-Diagnostic-Test': 'must-not-be-recorded' },
@@ -200,6 +244,7 @@ describe('Planning Center request helper', () => {
       planningCenterApiRequest.call(context, {
         method: 'GET',
         path: '/people/v2/me',
+        apiVersion: API_VERSION,
       }),
     ).rejects.toMatchObject({
       description: 'Rejected [redacted] using [redacted]',
@@ -222,6 +267,7 @@ describe('Planning Center request helper', () => {
       await planningCenterApiRequest.call(context, {
         method: 'GET',
         path: '/people/v2/me',
+        apiVersion: API_VERSION,
         qs: { 'super-secret': 'request value' },
       });
     } catch (error) {
@@ -253,6 +299,7 @@ describe('Planning Center request helper', () => {
       await planningCenterApiRequest.call(context, {
         method: 'GET',
         path: '/people/v2/me',
+        apiVersion: API_VERSION,
       });
     } catch (error) {
       apiError = error;
@@ -286,6 +333,7 @@ describe('Planning Center request helper', () => {
       planningCenterApiRequest.call(context, {
         method: 'DELETE',
         path: '/people/v2/people/123',
+        apiVersion: API_VERSION,
       }),
     ).rejects.toMatchObject({
       description: 'Invalid name: Name is required. | Invalid email | Email is malformed.',
@@ -315,6 +363,7 @@ describe('Planning Center request helper', () => {
       await planningCenterApiRequest.call(context, {
         method: 'POST',
         path: '/people/v2/people',
+        apiVersion: API_VERSION,
         body,
       });
     } catch (error) {
@@ -354,6 +403,7 @@ describe('Planning Center request helper', () => {
       await planningCenterApiRequest.call(context, {
         method: 'POST',
         path: '/people/v2/people',
+        apiVersion: API_VERSION,
         body: { credential: 'super-secret' },
       });
     } catch (error) {
@@ -376,6 +426,7 @@ describe('Planning Center request helper', () => {
     const result = await planningCenterApiRequest.call(context, {
       method: 'GET',
       path: '/people/v2/people/123',
+      apiVersion: API_VERSION,
     });
 
     expect(result).toBe(response);
@@ -466,7 +517,7 @@ describe('Planning Center pagination helper', () => {
 
     const results = await collectPaginatedPlanningCenterResults.call(
       context,
-      { method: 'GET', path: '/people/v2/people' },
+      { method: 'GET', path: '/people/v2/people', apiVersion: API_VERSION },
       { returnAll: true, limit: 2 },
     );
 
@@ -494,7 +545,7 @@ describe('Planning Center pagination helper', () => {
 
     const results = await collectPaginatedPlanningCenterResults.call(
       context,
-      { method: 'GET', path: '/people/v2/people' },
+      { method: 'GET', path: '/people/v2/people', apiVersion: API_VERSION },
       { returnAll: true, limit: 2 },
     );
 
@@ -525,7 +576,7 @@ describe('Planning Center pagination helper', () => {
 
     const results = await collectPaginatedPlanningCenterResults.call(
       context,
-      { method: 'GET', path: '/people/v2/people' },
+      { method: 'GET', path: '/people/v2/people', apiVersion: API_VERSION },
       { returnAll: true, limit: 2 },
     );
 
@@ -561,7 +612,7 @@ describe('Planning Center pagination helper', () => {
 
     const results = await collectPaginatedPlanningCenterResults.call(
       context,
-      { method: 'GET', path: '/people/v2/people' },
+      { method: 'GET', path: '/people/v2/people', apiVersion: API_VERSION },
       { returnAll: false, limit: 180 },
     );
 

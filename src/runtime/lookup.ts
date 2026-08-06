@@ -59,11 +59,13 @@ async function requestLookup(
   context: ILoadOptionsFunctions,
   path: string,
   qs: IDataObject,
+  apiVersion: string,
 ): Promise<any[]> {
   const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, {
     method: 'GET',
     path,
     qs,
+    apiVersion,
   });
   return Array.isArray((response as any)?.data) ? (response as any).data : [];
 }
@@ -81,6 +83,7 @@ function splitNameRequests(lookup: GeneratedLookup, filter: string): IDataObject
 export async function searchPlanningCenterLookup(
   context: ILoadOptionsFunctions,
   lookup: GeneratedLookup,
+  apiVersion: string,
   filter?: string,
 ): Promise<INodeListSearchResult> {
   const path = lookupPath(context, lookup);
@@ -94,7 +97,9 @@ export async function searchPlanningCenterLookup(
     requests = splitNameRequests(lookup, trimmedFilter);
   }
 
-  const dataSets = await Promise.all(requests.map((qs) => requestLookup(context, path, qs)));
+  const dataSets = await Promise.all(
+    requests.map((qs) => requestLookup(context, path, qs, apiVersion)),
+  );
   const seen = new Set<string>();
   const results: INodeListSearchResult['results'] = [];
   for (const data of dataSets) {

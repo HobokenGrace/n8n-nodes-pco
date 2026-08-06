@@ -90,6 +90,8 @@ interface Operation {
   relationshipFields: GeneratedRelationshipField[];
 }
 
+const API_VERSION = "2025-05-01";
+
 const OPERATIONS: Operation[] = [
   {
     "id": "getAttendees",
@@ -3439,7 +3441,7 @@ function lookupPath(context: ILoadOptionsFunctions, lookup: GeneratedLookup): st
 }
 
 async function requestLookup(context: ILoadOptionsFunctions, path: string, qs: IDataObject): Promise<any[]> {
-  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs });
+  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs, apiVersion: API_VERSION });
   return Array.isArray((response as any)?.data) ? (response as any).data : [];
 }
 
@@ -3607,6 +3609,7 @@ async function executeOperation(context: IExecuteFunctions, itemIndex: number, o
   const request = {
     method: operation.method,
     path: buildPath(context, itemIndex, operation),
+    apiVersion: API_VERSION,
     qs,
     body: buildBody(context, itemIndex, operation),
   };

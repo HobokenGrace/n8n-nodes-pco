@@ -135,11 +135,15 @@ function renderOperations(operations: GeneratedOperation[], includeSparseFields 
   return JSON.stringify(runtimeOperations, null, 2);
 }
 
-function renderPollingOperations(operations: ProductGenerationResult['pollingOperations']): string {
+function renderPollingOperations(
+  operations: ProductGenerationResult['pollingOperations'],
+  apiVersion: string,
+): string {
   return JSON.stringify(
     operations.map((operation) => ({
       id: operation.id,
       resource: operation.resource,
+      apiVersion,
       cursorField: operation.cursorField,
       ...(operation.cursorSparseFieldSourceName
         ? { cursorSparseFieldSourceName: operation.cursorSparseFieldSourceName }
@@ -276,6 +280,7 @@ function renderLookupSources(operations: GeneratedOperation[]): string {
 function renderListSearchMethods(
   operations: GeneratedOperation[],
   searchFunction = 'searchLookup',
+  apiVersion?: string,
 ): string {
   const lookups = operationLookups(operations);
   if (!lookups.length) return '{}';
@@ -286,7 +291,7 @@ ${lookups
     (
       lookup,
     ) => `      ${lookup.methodName}: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return ${searchFunction}(this, LOOKUP_SOURCES[${q(lookup.methodName)}], filter);
+        return ${searchFunction}(this, LOOKUP_SOURCES[${q(lookup.methodName)}], ${apiVersion ? `${apiVersion}, ` : ''}filter);
       },`,
   )
   .join('\n')}
@@ -541,6 +546,8 @@ interface Operation {
   relationshipFields: GeneratedRelationshipField[];
 }
 
+const API_VERSION = ${q(config.snapshotDate)};
+
 const OPERATIONS: Operation[] = ${renderOperations(result.operations)};
 
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = ${renderLookupSources(result.operations)};
@@ -573,7 +580,7 @@ function lookupPath(context: ILoadOptionsFunctions, lookup: GeneratedLookup): st
 }
 
 async function requestLookup(context: ILoadOptionsFunctions, path: string, qs: IDataObject): Promise<any[]> {
-  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs });
+  const response = await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, { method: 'GET', path, qs, apiVersion: API_VERSION });
   return Array.isArray((response as any)?.data) ? (response as any).data : [];
 }
 
@@ -741,6 +748,7 @@ async function executeOperation(context: IExecuteFunctions, itemIndex: number, o
   const request = {
     method: operation.method,
     path: buildPath(context, itemIndex, operation),
+    apiVersion: API_VERSION,
     qs,
     body: buildBody(context, itemIndex, operation),
   };
@@ -868,9 +876,11 @@ export function renderTriggerNode(
 import { searchPlanningCenterLookup, type GeneratedLookup } from '../../../src/runtime/lookup';
 import { pollPlanningCenter, type PollingOperation } from '../../../src/runtime/polling';
 
+const API_VERSION = ${q(config.snapshotDate)};
+
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = ${renderLookupSources(operations)};
 
-const OPERATIONS: PollingOperation[] = ${renderPollingOperations(operations)};
+const OPERATIONS: PollingOperation[] = ${renderPollingOperations(operations, config.snapshotDate)};
 
 const NODE_PROPERTIES = [
     {
@@ -924,7 +934,7 @@ export class ${config.className}Trigger implements INodeType {
   };
 
   methods = {
-    listSearch: ${renderListSearchMethods(operations, 'searchPlanningCenterLookup')},
+    listSearch: ${renderListSearchMethods(operations, 'searchPlanningCenterLookup', 'API_VERSION')},
   };
 
   async poll(this: IPollFunctions): Promise<INodeExecutionData[][] | null> {

@@ -3,6 +3,8 @@ import type { ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, 
 import { searchPlanningCenterLookup, type GeneratedLookup } from '../../../src/runtime/lookup';
 import { pollPlanningCenter, type PollingOperation } from '../../../src/runtime/polling';
 
+const API_VERSION = "2022-07-07";
+
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   "searchGetConflictsConflictIdResolvedByConflictId": {
     "methodName": "searchGetConflictsConflictIdResolvedByConflictId",
@@ -842,6 +844,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdAttachments_createdAt",
     "resource": "Attachment (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/events/{event_id}/attachments",
@@ -955,6 +958,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdAttachments_updatedAt",
     "resource": "Attachment (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/events/{event_id}/attachments",
@@ -1068,6 +1072,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getAttachments_createdAt",
     "resource": "Attachment",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/attachments",
@@ -1154,6 +1159,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getAttachments_updatedAt",
     "resource": "Attachment",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/attachments",
@@ -1240,6 +1246,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdEventInstances_createdAt",
     "resource": "Event Instance (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/events/{event_id}/event_instances",
@@ -1437,6 +1444,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdEventInstances_updatedAt",
     "resource": "Event Instance (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/events/{event_id}/event_instances",
@@ -1634,6 +1642,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getTagsTagIdEventInstances_createdAt",
     "resource": "Event Instance (via Tag)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/tags/{tag_id}/event_instances",
@@ -1831,6 +1840,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getTagsTagIdEventInstances_updatedAt",
     "resource": "Event Instance (via Tag)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/tags/{tag_id}/event_instances",
@@ -2028,6 +2038,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventInstances_createdAt",
     "resource": "Event Instance",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/event_instances",
@@ -2198,6 +2209,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventInstances_updatedAt",
     "resource": "Event Instance",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/event_instances",
@@ -2368,6 +2380,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getConflictsConflictIdResolvedBy_createdAt",
     "resource": "Person (via Conflict)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resolved_by",
@@ -2450,6 +2463,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getConflictsConflictIdResolvedBy_updatedAt",
     "resource": "Person (via Conflict)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resolved_by",
@@ -2532,6 +2546,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdCreatedBy_createdAt",
     "resource": "Person (via Event Resource Request Created By)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/created_by",
@@ -2614,6 +2629,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdCreatedBy_updatedAt",
     "resource": "Person (via Event Resource Request Created By)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/created_by",
@@ -2696,6 +2712,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdUpdatedBy_createdAt",
     "resource": "Person (via Event Resource Request Updated By)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/updated_by",
@@ -2778,6 +2795,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdUpdatedBy_updatedAt",
     "resource": "Person (via Event Resource Request Updated By)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/updated_by",
@@ -2860,6 +2878,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdOwner_createdAt",
     "resource": "Person (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/events/{event_id}/owner",
@@ -2943,6 +2962,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdOwner_updatedAt",
     "resource": "Person (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/events/{event_id}/owner",
@@ -3026,6 +3046,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdPeople_createdAt",
     "resource": "Person (via Resource Approval Group)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/people",
@@ -3109,6 +3130,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdPeople_updatedAt",
     "resource": "Person (via Resource Approval Group)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/people",
@@ -3192,6 +3214,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeople_createdAt",
     "resource": "Person",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/people",
@@ -3248,6 +3271,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeople_updatedAt",
     "resource": "Person",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/people",
@@ -3304,6 +3328,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getConflictsConflictIdResource_createdAt",
     "resource": "Resource (via Conflict)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resource",
@@ -3453,6 +3478,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getConflictsConflictIdResource_updatedAt",
     "resource": "Resource (via Conflict)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resource",
@@ -3602,6 +3628,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdResource_createdAt",
     "resource": "Resource (via Event Resource Request)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource",
@@ -3751,6 +3778,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdResource_updatedAt",
     "resource": "Resource (via Event Resource Request)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource",
@@ -3900,6 +3928,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResource_createdAt",
     "resource": "Resource (via Required Approval)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/required_approvals/{required_approval_id}/resource",
@@ -4084,6 +4113,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResource_updatedAt",
     "resource": "Resource (via Required Approval)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/required_approvals/{required_approval_id}/resource",
@@ -4268,6 +4298,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdResources_createdAt",
     "resource": "Resource (via Resource Approval Group)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/resources",
@@ -4418,6 +4449,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdResources_updatedAt",
     "resource": "Resource (via Resource Approval Group)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/resources",
@@ -4568,6 +4600,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceBookingsResourceBookingIdResource_createdAt",
     "resource": "Resource (via Resource Booking)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_bookings/{resource_booking_id}/resource",
@@ -4717,6 +4750,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceBookingsResourceBookingIdResource_updatedAt",
     "resource": "Resource (via Resource Booking)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_bookings/{resource_booking_id}/resource",
@@ -4866,6 +4900,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceFoldersResourceFolderIdResources_createdAt",
     "resource": "Resource (via Resource Folder)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
@@ -5016,6 +5051,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceFoldersResourceFolderIdResources_updatedAt",
     "resource": "Resource (via Resource Folder)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
@@ -5166,6 +5202,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResource_createdAt",
     "resource": "Resource (via Resource Suggestion)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/room_setups/{room_setup_id}/resource_suggestions/{resource_suggestion_id}/resource",
@@ -5350,6 +5387,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResource_updatedAt",
     "resource": "Resource (via Resource Suggestion)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/room_setups/{room_setup_id}/resource_suggestions/{resource_suggestion_id}/resource",
@@ -5534,6 +5572,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdResourceApprovalGroups_createdAt",
     "resource": "Resource Approval Group (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
@@ -5684,6 +5723,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdResourceApprovalGroups_updatedAt",
     "resource": "Resource Approval Group (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
@@ -5834,6 +5874,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroups_createdAt",
     "resource": "Resource Approval Group",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resource_approval_groups",
@@ -5952,6 +5993,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceApprovalGroups_updatedAt",
     "resource": "Resource Approval Group",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resource_approval_groups",
@@ -6070,6 +6112,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventInstancesEventInstanceIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Event Instance)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_instances/{event_instance_id}/resource_bookings",
@@ -6274,6 +6317,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventInstancesEventInstanceIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Event Instance)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_instances/{event_instance_id}/resource_bookings",
@@ -6478,6 +6522,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Event Resource Request)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource_bookings",
@@ -6687,6 +6732,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Event Resource Request)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource_bookings",
@@ -6896,6 +6942,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/events/{event_id}/resource_bookings",
@@ -7101,6 +7148,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Event)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/events/{event_id}/resource_bookings",
@@ -7306,6 +7354,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resources/{resource_id}/resource_bookings",
@@ -7485,6 +7534,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resources/{resource_id}/resource_bookings",
@@ -7664,6 +7714,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceBookings_createdAt",
     "resource": "Resource Booking",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resource_bookings",
@@ -7842,6 +7893,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceBookings_updatedAt",
     "resource": "Resource Booking",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resource_bookings",
@@ -8020,6 +8072,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdResourceFolder_createdAt",
     "resource": "Resource Folder (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resources/{resource_id}/resource_folder",
@@ -8127,6 +8180,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdResourceFolder_updatedAt",
     "resource": "Resource Folder (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resources/{resource_id}/resource_folder",
@@ -8234,6 +8288,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceFolders_createdAt",
     "resource": "Resource Folder",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resource_folders",
@@ -8314,6 +8369,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourceFolders_updatedAt",
     "resource": "Resource Folder",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resource_folders",
@@ -8394,6 +8450,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResources_createdAt",
     "resource": "Resource",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resources",
@@ -8512,6 +8569,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResources_updatedAt",
     "resource": "Resource",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resources",
@@ -8630,6 +8688,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdRoomSetup_createdAt",
     "resource": "Room Setup (via Event Resource Request)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/room_setup",
@@ -8724,6 +8783,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventResourceRequestsEventResourceRequestIdRoomSetup_updatedAt",
     "resource": "Room Setup (via Event Resource Request)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/room_setup",
@@ -8818,6 +8878,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdRoomSetups_createdAt",
     "resource": "Room Setup (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/resources/{resource_id}/room_setups",
@@ -8913,6 +8974,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getResourcesResourceIdRoomSetups_updatedAt",
     "resource": "Room Setup (via Resource)",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/resources/{resource_id}/room_setups",
@@ -9008,6 +9070,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getRoomSetups_createdAt",
     "resource": "Room Setup",
+    "apiVersion": "2022-07-07",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/room_setups",
@@ -9076,6 +9139,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getRoomSetups_updatedAt",
     "resource": "Room Setup",
+    "apiVersion": "2022-07-07",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/room_setups",
@@ -11970,121 +12034,121 @@ export class PlanningCenterCalendarTrigger implements INodeType {
   methods = {
     listSearch: {
       searchGetConflictsConflictIdResolvedByConflictId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetConflictsConflictIdResolvedByConflictId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetConflictsConflictIdResolvedByConflictId"], API_VERSION, filter);
       },
       searchGetConflictsConflictIdResourceConflictId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetConflictsConflictIdResourceConflictId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetConflictsConflictIdResourceConflictId"], API_VERSION, filter);
       },
       searchGetConflictsConflictIdResourceWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetConflictsConflictIdResourceWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetConflictsConflictIdResourceWhereid"], API_VERSION, filter);
       },
       searchGetEventInstancesEventInstanceIdResourceBookingsEventInstanceId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventInstancesEventInstanceIdResourceBookingsEventInstanceId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventInstancesEventInstanceIdResourceBookingsEventInstanceId"], API_VERSION, filter);
       },
       searchGetEventInstancesEventInstanceIdResourceBookingsWhereresourceid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventInstancesEventInstanceIdResourceBookingsWhereresourceid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventInstancesEventInstanceIdResourceBookingsWhereresourceid"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdCreatedByEventResourceRequestId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdCreatedByEventResourceRequestId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdCreatedByEventResourceRequestId"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsEventResourceRequestId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsEventResourceRequestId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsEventResourceRequestId"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsWhereresourceid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsWhereresourceid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsWhereresourceid"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdResourceEventResourceRequestId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceEventResourceRequestId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceEventResourceRequestId"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdResourceWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdResourceWhereid"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdRoomSetupEventResourceRequestId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdRoomSetupEventResourceRequestId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdRoomSetupEventResourceRequestId"], API_VERSION, filter);
       },
       searchGetEventResourceRequestsEventResourceRequestIdUpdatedByEventResourceRequestId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdUpdatedByEventResourceRequestId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventResourceRequestsEventResourceRequestIdUpdatedByEventResourceRequestId"], API_VERSION, filter);
       },
       searchGetEventsEventIdAttachmentsEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdAttachmentsEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdAttachmentsEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdEventInstancesEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdEventInstancesEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdEventInstancesEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdOwnerEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdOwnerEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdOwnerEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdResourceBookingsEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdResourceBookingsEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdResourceBookingsEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdResourceBookingsWhereresourceid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdResourceBookingsWhereresourceid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdResourceBookingsWhereresourceid"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsResourceApprovalGroupIdPeopleResourceApprovalGroupId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdPeopleResourceApprovalGroupId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdPeopleResourceApprovalGroupId"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceRequiredApprovalId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceRequiredApprovalId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceRequiredApprovalId"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceApprovalGroupId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceApprovalGroupId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceApprovalGroupId"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceWhereid"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceApprovalGroupId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceApprovalGroupId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceApprovalGroupId"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesWhereid"], API_VERSION, filter);
       },
       searchGetResourceApprovalGroupsWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceApprovalGroupsWhereid"], API_VERSION, filter);
       },
       searchGetResourceBookingsResourceBookingIdResourceResourceBookingId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceBookingsResourceBookingIdResourceResourceBookingId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceBookingsResourceBookingIdResourceResourceBookingId"], API_VERSION, filter);
       },
       searchGetResourceBookingsResourceBookingIdResourceWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceBookingsResourceBookingIdResourceWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceBookingsResourceBookingIdResourceWhereid"], API_VERSION, filter);
       },
       searchGetResourceBookingsWhereresourceid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceBookingsWhereresourceid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceBookingsWhereresourceid"], API_VERSION, filter);
       },
       searchGetResourceFoldersResourceFolderIdResourcesResourceFolderId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceFoldersResourceFolderIdResourcesResourceFolderId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceFoldersResourceFolderIdResourcesResourceFolderId"], API_VERSION, filter);
       },
       searchGetResourceFoldersResourceFolderIdResourcesWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceFoldersResourceFolderIdResourcesWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourceFoldersResourceFolderIdResourcesWhereid"], API_VERSION, filter);
       },
       searchGetResourcesResourceIdResourceApprovalGroupsResourceId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceApprovalGroupsResourceId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceApprovalGroupsResourceId"], API_VERSION, filter);
       },
       searchGetResourcesResourceIdResourceApprovalGroupsWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceApprovalGroupsWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceApprovalGroupsWhereid"], API_VERSION, filter);
       },
       searchGetResourcesResourceIdResourceBookingsResourceId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceBookingsResourceId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceBookingsResourceId"], API_VERSION, filter);
       },
       searchGetResourcesResourceIdResourceFolderResourceId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceFolderResourceId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdResourceFolderResourceId"], API_VERSION, filter);
       },
       searchGetResourcesResourceIdRoomSetupsResourceId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdRoomSetupsResourceId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesResourceIdRoomSetupsResourceId"], API_VERSION, filter);
       },
       searchGetResourcesWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetResourcesWhereid"], API_VERSION, filter);
       },
       searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceSuggestionId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceSuggestionId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceSuggestionId"], API_VERSION, filter);
       },
       searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceRoomSetupId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceRoomSetupId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceRoomSetupId"], API_VERSION, filter);
       },
       searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceWhereid"], API_VERSION, filter);
       },
       searchGetTagsTagIdEventInstancesTagId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetTagsTagIdEventInstancesTagId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetTagsTagIdEventInstancesTagId"], API_VERSION, filter);
       },
     },
   };

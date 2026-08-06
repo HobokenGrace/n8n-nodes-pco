@@ -7,9 +7,12 @@ import {
   type PollingOperation,
 } from '../src/runtime/polling';
 
+const API_VERSION = '2026-01-01';
+
 const operation: PollingOperation = {
   id: 'listItems_createdAt',
   resource: 'Items',
+  apiVersion: API_VERSION,
   cursorField: 'created_at',
   cursorSparseFieldSourceName: 'fields[Item]',
   path: '/test/v2/forms/{form_id}/items',
@@ -114,6 +117,45 @@ describe('Planning Center polling state and lifecycle', () => {
     expect(canonicalStringify({ z: 1, nested: { b: 2, a: 1 }, values: ['b', 'a'] })).toBe(
       '{"nested":{"a":1,"b":2},"values":["b","a"],"z":1}',
     );
+  });
+
+  it('preserves the generated API version through previews, baselines, and paginated collections', async () => {
+    const timestamp = '2026-01-01T00:00:00Z';
+    const manual = pollingContext({
+      mode: 'manual',
+      responses: [page([resource('preview', timestamp)])],
+    });
+    const baseline = pollingContext({
+      responses: [
+        page([resource('baseline-1', timestamp)], 'next-page'),
+        page([resource('baseline-2', timestamp)]),
+      ],
+    });
+    const collection = pollingContext({
+      parameters: { startTime: timestamp },
+      responses: [
+        page([resource('collection-1', timestamp)], 'next-page'),
+        page([resource('collection-2', '2026-01-01T00:01:00Z')]),
+      ],
+    });
+
+    await pollPlanningCenter.call(manual.context, [operation]);
+    await pollPlanningCenter.call(baseline.context, [operation]);
+    await pollPlanningCenter.call(collection.context, [operation]);
+    await pollPlanningCenter.call(collection.context, [operation]);
+
+    expect(manual.httpRequest).toHaveBeenCalledOnce();
+    expect(baseline.httpRequest).toHaveBeenCalledTimes(2);
+    expect(collection.httpRequest).toHaveBeenCalledTimes(2);
+    for (const context of [manual, baseline, collection]) {
+      for (const [request] of context.httpRequest.mock.calls) {
+        expect(
+          Object.entries(request.headers).filter(
+            ([name]) => name.toLowerCase() === 'x-pco-api-version',
+          ),
+        ).toEqual([['X-PCO-API-Version', API_VERSION]]);
+      }
+    }
   });
 
   it.each([

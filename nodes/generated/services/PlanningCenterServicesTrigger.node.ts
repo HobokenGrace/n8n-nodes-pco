@@ -3,6 +3,8 @@ import type { ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, 
 import { searchPlanningCenterLookup, type GeneratedLookup } from '../../../src/runtime/lookup';
 import { pollPlanningCenter, type PollingOperation } from '../../../src/runtime/polling';
 
+const API_VERSION = "2018-11-01";
+
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   "searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPersonId": {
     "methodName": "searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPersonId",
@@ -532,6 +534,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlans_createdAt",
     "resource": "Plan (via Live)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans/{plan_id}/live/{live_id}/watchable_plans",
@@ -721,6 +724,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlans_updatedAt",
     "resource": "Plan (via Live)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans/{plan_id}/live/{live_id}/watchable_plans",
@@ -910,6 +914,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdPlanPeoplePlanPersonIdPlan_createdAt",
     "resource": "Plan (via Plan Person)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/people/{person_id}/plan_people/{plan_person_id}/plan",
@@ -1087,6 +1092,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdPlanPeoplePlanPersonIdPlan_updatedAt",
     "resource": "Plan (via Plan Person)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/people/{person_id}/plan_people/{plan_person_id}/plan",
@@ -1264,6 +1270,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getSeriesSeriesIdPlans_createdAt",
     "resource": "Plan (via Series)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans",
@@ -1408,6 +1415,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getSeriesSeriesIdPlans_updatedAt",
     "resource": "Plan (via Series)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans",
@@ -1552,6 +1560,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNextPlan_createdAt",
     "resource": "Plan (via Service Type Plan Next Plan)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/next_plan",
@@ -1731,6 +1740,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNextPlan_updatedAt",
     "resource": "Plan (via Service Type Plan Next Plan)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/next_plan",
@@ -1910,6 +1920,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlansPlanIdPreviousPlan_createdAt",
     "resource": "Plan (via Service Type Plan Previous Plan)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/previous_plan",
@@ -2089,6 +2100,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlansPlanIdPreviousPlan_updatedAt",
     "resource": "Plan (via Service Type Plan Previous Plan)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/previous_plan",
@@ -2268,6 +2280,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlans_createdAt",
     "resource": "Plan (via Service Type Plans)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans",
@@ -2412,6 +2425,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlans_updatedAt",
     "resource": "Plan (via Service Type Plans)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans",
@@ -2556,6 +2570,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdUnscopedPlans_createdAt",
     "resource": "Plan (via Service Type Unscoped Plans)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/unscoped_plans",
@@ -2700,6 +2715,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdUnscopedPlans_updatedAt",
     "resource": "Plan (via Service Type Unscoped Plans)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/unscoped_plans",
@@ -2844,6 +2860,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotes_createdAt",
     "resource": "Plan Note (via Plan Template)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plan_templates/{plan_template_id}/notes",
@@ -2957,6 +2974,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotes_updatedAt",
     "resource": "Plan Note (via Plan Template)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plan_templates/{plan_template_id}/notes",
@@ -3070,6 +3088,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNotes_createdAt",
     "resource": "Plan Note (via Plan)",
+    "apiVersion": "2018-11-01",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/notes",
@@ -3184,6 +3203,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNotes_updatedAt",
     "resource": "Plan Note (via Plan)",
+    "apiVersion": "2018-11-01",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/notes",
@@ -4310,70 +4330,70 @@ export class PlanningCenterServicesTrigger implements INodeType {
   methods = {
     listSearch: {
       searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPlanPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPlanPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanPlanPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPlanPeoplePlanPersonIdPlanWhereid"], API_VERSION, filter);
       },
       searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansPlanId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansPlanId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansPlanId"], API_VERSION, filter);
       },
       searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansSeriesId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansSeriesId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansSeriesId"], API_VERSION, filter);
       },
       searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlansWhereid"], API_VERSION, filter);
       },
       searchGetSeriesSeriesIdPlansSeriesId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansSeriesId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansSeriesId"], API_VERSION, filter);
       },
       searchGetSeriesSeriesIdPlansWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetSeriesSeriesIdPlansWhereid"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanPlanId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanPlanId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanPlanId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanServiceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanServiceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanServiceTypeId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNextPlanWhereid"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdNotesPlanId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNotesPlanId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNotesPlanId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdNotesServiceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNotesServiceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdNotesServiceTypeId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanPlanId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanPlanId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanPlanId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanServiceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanServiceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanServiceTypeId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansPlanIdPreviousPlanWhereid"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansServiceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansServiceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansServiceTypeId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlansWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlansWhereid"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotesPlanTemplateId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotesPlanTemplateId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotesPlanTemplateId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotesServiceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotesServiceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotesServiceTypeId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdUnscopedPlansServiceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdUnscopedPlansServiceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdUnscopedPlansServiceTypeId"], API_VERSION, filter);
       },
       searchGetServiceTypesServiceTypeIdUnscopedPlansWhereid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdUnscopedPlansWhereid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetServiceTypesServiceTypeIdUnscopedPlansWhereid"], API_VERSION, filter);
       },
     },
   };

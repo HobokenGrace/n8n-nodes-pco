@@ -10,6 +10,7 @@ export interface PlanningCenterCredentials {
 export interface PlanningCenterRequestOptions {
   method: IHttpRequestMethods;
   path: string;
+  apiVersion: string;
   qs?: IDataObject;
   body?: any;
   headers?: Record<string, string>;
@@ -116,6 +117,11 @@ export async function planningCenterApiRequest(
   options: PlanningCenterRequestOptions,
 ): Promise<unknown> {
   const credentials = (await this.getCredentials('planningCenterPatApi')) as PlanningCenterCredentials;
+  const callerHeaders = Object.fromEntries(
+    Object.entries(options.headers ?? {}).filter(
+      ([name]) => name.toLowerCase() !== 'x-pco-api-version',
+    ),
+  );
   const requestOptions: IHttpRequestOptions = {
     method: options.method,
     url: `${normalizeBaseUrl(credentials.baseUrl)}${options.path}`,
@@ -126,7 +132,8 @@ export async function planningCenterApiRequest(
       Accept: 'application/json',
       'Content-Type': 'application/json',
       Authorization: buildBasicAuthHeader(credentials.applicationId, credentials.secret),
-      ...options.headers,
+      ...callerHeaders,
+      'X-PCO-API-Version': options.apiVersion,
     },
   };
 

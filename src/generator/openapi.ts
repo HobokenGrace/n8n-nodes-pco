@@ -981,6 +981,24 @@ export function buildProductGenerationFromDocument(
   config: ProductConfig,
   api: any,
 ): ProductGenerationResult {
+  if (typeof config.snapshotDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(config.snapshotDate)) {
+    throw new Error(
+      `Product ${config.product} snapshotDate must use YYYY-MM-DD format; received ${JSON.stringify(config.snapshotDate)}`,
+    );
+  }
+
+  const documentVersion = api?.info?.version;
+  if (typeof documentVersion !== 'string' || !documentVersion) {
+    throw new Error(
+      `Product ${config.product} OpenAPI info.version is missing; configured snapshotDate is ${config.snapshotDate}`,
+    );
+  }
+  if (documentVersion !== config.snapshotDate) {
+    throw new Error(
+      `Product ${config.product} snapshotDate ${config.snapshotDate} does not match OpenAPI info.version ${documentVersion}`,
+    );
+  }
+
   const operations: GeneratedOperation[] = [];
   const pollingCursorFieldsByOperationId = new Map<string, PollingCursorField[]>();
   const exclusions: string[] = [];

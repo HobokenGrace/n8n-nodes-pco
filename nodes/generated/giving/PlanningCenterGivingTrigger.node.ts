@@ -3,6 +3,8 @@ import type { ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, 
 import { searchPlanningCenterLookup, type GeneratedLookup } from '../../../src/runtime/lookup';
 import { pollPlanningCenter, type PollingOperation } from '../../../src/runtime/polling';
 
+const API_VERSION = "2019-10-18";
+
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   "searchGetBatchesBatchIdBatchGroupBatchId": {
     "methodName": "searchGetBatchesBatchIdBatchGroupBatchId",
@@ -335,6 +337,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getBatchGroupsBatchGroupIdBatches_updatedAt",
     "resource": "Batch (via Batch Group)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Batch]",
     "path": "/giving/v2/batch_groups/{batch_group_id}/batches",
@@ -396,6 +399,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdBatches_updatedAt",
     "resource": "Batch (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Batch]",
     "path": "/giving/v2/people/{person_id}/batches",
@@ -461,6 +465,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getBatchesBatchIdBatchGroup_updatedAt",
     "resource": "Batch Group (via Batch)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[BatchGroup]",
     "path": "/giving/v2/batches/{batch_id}/batch_group",
@@ -516,6 +521,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdBatchGroups_updatedAt",
     "resource": "Batch Group (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[BatchGroup]",
     "path": "/giving/v2/people/{person_id}/batch_groups",
@@ -575,6 +581,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getBatchGroups_updatedAt",
     "resource": "Batch Group",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[BatchGroup]",
     "path": "/giving/v2/batch_groups",
@@ -604,6 +611,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getBatches_updatedAt",
     "resource": "Batch",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Batch]",
     "path": "/giving/v2/batches",
@@ -639,6 +647,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getBatchesBatchIdDonations_createdAt",
     "resource": "Donation (via Batch)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/batches/{batch_id}/donations",
@@ -805,6 +814,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getBatchesBatchIdDonations_updatedAt",
     "resource": "Donation (via Batch)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/batches/{batch_id}/donations",
@@ -971,6 +981,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCampusesCampusIdDonations_createdAt",
     "resource": "Donation (via Campus)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/campuses/{campus_id}/donations",
@@ -1137,6 +1148,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCampusesCampusIdDonations_updatedAt",
     "resource": "Donation (via Campus)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/campuses/{campus_id}/donations",
@@ -1303,6 +1315,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPaymentSourcesPaymentSourceIdDonations_createdAt",
     "resource": "Donation (via Payment Source)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/payment_sources/{payment_source_id}/donations",
@@ -1469,6 +1482,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPaymentSourcesPaymentSourceIdDonations_updatedAt",
     "resource": "Donation (via Payment Source)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/payment_sources/{payment_source_id}/donations",
@@ -1635,6 +1649,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdDonations_createdAt",
     "resource": "Donation (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/people/{person_id}/donations",
@@ -1805,6 +1820,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdDonations_updatedAt",
     "resource": "Donation (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/people/{person_id}/donations",
@@ -1975,6 +1991,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getDonations_createdAt",
     "resource": "Donation",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/donations",
@@ -2115,6 +2132,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getDonations_updatedAt",
     "resource": "Donation",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/donations",
@@ -2255,6 +2273,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdInKindDonations_createdAt",
     "resource": "In Kind Donation (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/people/{person_id}/in_kind_donations",
@@ -2406,6 +2425,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdInKindDonations_updatedAt",
     "resource": "In Kind Donation (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/people/{person_id}/in_kind_donations",
@@ -2557,6 +2577,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getInKindDonations_createdAt",
     "resource": "In Kind Donation",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/in_kind_donations",
@@ -2678,6 +2699,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getInKindDonations_updatedAt",
     "resource": "In Kind Donation",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/in_kind_donations",
@@ -2799,6 +2821,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdPledges_createdAt",
     "resource": "Pledge (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges",
@@ -2897,6 +2920,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdPledges_updatedAt",
     "resource": "Pledge (via Person)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges",
@@ -2995,6 +3019,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_createdAt",
     "resource": "Pledge (via Pledge Campaign)",
+    "apiVersion": "2019-10-18",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
@@ -3157,6 +3182,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_updatedAt",
     "resource": "Pledge (via Pledge Campaign)",
+    "apiVersion": "2019-10-18",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
@@ -4429,49 +4455,49 @@ export class PlanningCenterGivingTrigger implements INodeType {
   methods = {
     listSearch: {
       searchGetBatchesBatchIdBatchGroupBatchId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetBatchesBatchIdBatchGroupBatchId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetBatchesBatchIdBatchGroupBatchId"], API_VERSION, filter);
       },
       searchGetBatchesBatchIdDonationsBatchId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetBatchesBatchIdDonationsBatchId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetBatchesBatchIdDonationsBatchId"], API_VERSION, filter);
       },
       searchGetBatchGroupsBatchGroupIdBatchesBatchGroupId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetBatchGroupsBatchGroupIdBatchesBatchGroupId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetBatchGroupsBatchGroupIdBatchesBatchGroupId"], API_VERSION, filter);
       },
       searchGetCampusesCampusIdDonationsCampusId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCampusesCampusIdDonationsCampusId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCampusesCampusIdDonationsCampusId"], API_VERSION, filter);
       },
       searchGetInKindDonationsWherefundid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetInKindDonationsWherefundid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetInKindDonationsWherefundid"], API_VERSION, filter);
       },
       searchGetPaymentSourcesPaymentSourceIdDonationsPaymentSourceId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPaymentSourcesPaymentSourceIdDonationsPaymentSourceId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPaymentSourcesPaymentSourceIdDonationsPaymentSourceId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdBatchesPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdBatchesPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdBatchesPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdBatchGroupsPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdBatchGroupsPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdBatchGroupsPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdDonationsPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdDonationsPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdDonationsPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdInKindDonationsPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdInKindDonationsPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdInKindDonationsPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdInKindDonationsWherefundid: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdInKindDonationsWherefundid"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdInKindDonationsWherefundid"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdPledgesPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPersonId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeCampaignId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeCampaignId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeCampaignId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledgesPledgeId"], API_VERSION, filter);
       },
     },
   };

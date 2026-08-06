@@ -44,6 +44,7 @@ export interface PollingQueryOption {
 export interface PollingOperation {
   id: string;
   resource: string;
+  apiVersion: string;
   cursorField: PollingCursorField;
   cursorSparseFieldSourceName?: string;
   path: string;
@@ -412,6 +413,7 @@ async function requestPage(
   const response = (await planningCenterApiRequest.call(context as unknown as IExecuteFunctions, {
     method: 'GET',
     path: configuration.path,
+    apiVersion: configuration.operation.apiVersion,
     qs,
   })) as JsonApiPage;
   if (!response || !Array.isArray(response.data)) {

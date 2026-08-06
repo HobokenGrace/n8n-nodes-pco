@@ -3,6 +3,8 @@ import type { ILoadOptionsFunctions, INodeExecutionData, INodeListSearchResult, 
 import { searchPlanningCenterLookup, type GeneratedLookup } from '../../../src/runtime/lookup';
 import { pollPlanningCenter, type PollingOperation } from '../../../src/runtime/polling';
 
+const API_VERSION = "2025-05-28";
+
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId": {
     "methodName": "searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId",
@@ -502,6 +504,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_createdAt",
     "resource": "Check In (via Check In Group)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/check_ins",
@@ -686,6 +689,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_updatedAt",
     "resource": "Check In (via Check In Group)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/check_ins",
@@ -870,6 +874,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_createdAt",
     "resource": "Check In (via Event Period)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
@@ -1054,6 +1059,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_updatedAt",
     "resource": "Check In (via Event Period)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
@@ -1238,6 +1244,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_createdAt",
     "resource": "Check In (via Event Person Event First Check In)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/first_check_in",
@@ -1423,6 +1430,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_updatedAt",
     "resource": "Check In (via Event Person Event First Check In)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/first_check_in",
@@ -1608,6 +1616,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_createdAt",
     "resource": "Check In (via Event Person Event Last Check In)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/last_check_in",
@@ -1793,6 +1802,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_updatedAt",
     "resource": "Check In (via Event Person Event Last Check In)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/last_check_in",
@@ -1978,6 +1988,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventTimesEventTimeIdCheckIns_createdAt",
     "resource": "Check In (via Event Time)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/check_ins",
@@ -2132,6 +2143,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventTimesEventTimeIdCheckIns_updatedAt",
     "resource": "Check In (via Event Time)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/check_ins",
@@ -2286,6 +2298,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdCheckIns_createdAt",
     "resource": "Check In (via Event)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/check_ins",
@@ -2441,6 +2454,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdCheckIns_updatedAt",
     "resource": "Check In (via Event)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/check_ins",
@@ -2596,6 +2610,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_createdAt",
     "resource": "Check In (via Location Event Period)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
@@ -2814,6 +2829,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_updatedAt",
     "resource": "Check In (via Location Event Period)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
@@ -3032,6 +3048,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_createdAt",
     "resource": "Check In (via Location Event Time)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/check_ins",
@@ -3216,6 +3233,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_updatedAt",
     "resource": "Check In (via Location Event Time)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/check_ins",
@@ -3400,6 +3418,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckInsCheckInIdLocationsLocationIdCheckIns_createdAt",
     "resource": "Check In (via Location)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
@@ -3584,6 +3603,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckInsCheckInIdLocationsLocationIdCheckIns_updatedAt",
     "resource": "Check In (via Location)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
@@ -3768,6 +3788,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getOptionsOptionIdCheckIns_createdAt",
     "resource": "Check In (via Option)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/options/{option_id}/check_ins",
@@ -3922,6 +3943,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getOptionsOptionIdCheckIns_updatedAt",
     "resource": "Check In (via Option)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/options/{option_id}/check_ins",
@@ -4076,6 +4098,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdCheckIns_createdAt",
     "resource": "Check In (via Person)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/people/{person_id}/check_ins",
@@ -4231,6 +4254,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getPeoplePersonIdCheckIns_updatedAt",
     "resource": "Check In (via Person)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/people/{person_id}/check_ins",
@@ -4386,6 +4410,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getStationsStationIdCheckedInAtCheckIns_createdAt",
     "resource": "Check In (via Station)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/checked_in_at_check_ins",
@@ -4540,6 +4565,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getStationsStationIdCheckedInAtCheckIns_updatedAt",
     "resource": "Check In (via Station)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/checked_in_at_check_ins",
@@ -4694,6 +4720,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckIns_createdAt",
     "resource": "Check In",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins",
@@ -4822,6 +4849,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getCheckIns_updatedAt",
     "resource": "Check In",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins",
@@ -4950,6 +4978,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_createdAt",
     "resource": "Headcount (via Attendance Type)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/headcounts",
@@ -5082,6 +5111,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_updatedAt",
     "resource": "Headcount (via Attendance Type)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/headcounts",
@@ -5214,6 +5244,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventTimesEventTimeIdHeadcounts_createdAt",
     "resource": "Headcount (via Event Time)",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/event_times/{event_time_id}/headcounts",
@@ -5320,6 +5351,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getEventTimesEventTimeIdHeadcounts_updatedAt",
     "resource": "Headcount (via Event Time)",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/event_times/{event_time_id}/headcounts",
@@ -5426,6 +5458,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getHeadcounts_createdAt",
     "resource": "Headcount",
+    "apiVersion": "2025-05-28",
     "cursorField": "created_at",
     "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/headcounts",
@@ -5506,6 +5539,7 @@ const OPERATIONS: PollingOperation[] = [
   {
     "id": "getHeadcounts_updatedAt",
     "resource": "Headcount",
+    "apiVersion": "2025-05-28",
     "cursorField": "updated_at",
     "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/headcounts",
@@ -7251,73 +7285,73 @@ export class PlanningCenterCheckInsTrigger implements INodeType {
   methods = {
     listSearch: {
       searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsCheckInId"], API_VERSION, filter);
       },
       searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsEventPeriodId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsEventPeriodId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdCheckInsEventPeriodId"], API_VERSION, filter);
       },
       searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsCheckInId"], API_VERSION, filter);
       },
       searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsEventPeriodId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsEventPeriodId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsEventPeriodId"], API_VERSION, filter);
       },
       searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsLocationEventPeriodId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsLocationEventPeriodId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckInsLocationEventPeriodId"], API_VERSION, filter);
       },
       searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdLocationsLocationIdCheckInsCheckInId"], API_VERSION, filter);
       },
       searchGetCheckInsCheckInIdLocationsLocationIdCheckInsLocationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdLocationsLocationIdCheckInsLocationId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetCheckInsCheckInIdLocationsLocationIdCheckInsLocationId"], API_VERSION, filter);
       },
       searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsAttendanceTypeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsAttendanceTypeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsAttendanceTypeId"], API_VERSION, filter);
       },
       searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdAttendanceTypesAttendanceTypeIdHeadcountsEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdCheckInsEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdCheckInsEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdCheckInsEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInPersonEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInPersonEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdFirstCheckInPersonEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInEventId"], API_VERSION, filter);
       },
       searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInPersonEventId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInPersonEventId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventsEventIdPersonEventsPersonEventIdLastCheckInPersonEventId"], API_VERSION, filter);
       },
       searchGetEventTimesEventTimeIdCheckInsEventTimeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdCheckInsEventTimeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdCheckInsEventTimeId"], API_VERSION, filter);
       },
       searchGetEventTimesEventTimeIdHeadcountsEventTimeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdHeadcountsEventTimeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdHeadcountsEventTimeId"], API_VERSION, filter);
       },
       searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsEventTimeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsEventTimeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsEventTimeId"], API_VERSION, filter);
       },
       searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsLocationEventTimeId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsLocationEventTimeId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckInsLocationEventTimeId"], API_VERSION, filter);
       },
       searchGetOptionsOptionIdCheckInsOptionId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetOptionsOptionIdCheckInsOptionId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetOptionsOptionIdCheckInsOptionId"], API_VERSION, filter);
       },
       searchGetPeoplePersonIdCheckInsPersonId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdCheckInsPersonId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetPeoplePersonIdCheckInsPersonId"], API_VERSION, filter);
       },
       searchGetStationsStationIdCheckedInAtCheckInsStationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetStationsStationIdCheckedInAtCheckInsStationId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetStationsStationIdCheckedInAtCheckInsStationId"], API_VERSION, filter);
       },
       searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInGroupId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInGroupId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsCheckInGroupId"], API_VERSION, filter);
       },
       searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsStationId: async function(this: ILoadOptionsFunctions, filter?: string): Promise<INodeListSearchResult> {
-        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsStationId"], filter);
+        return searchPlanningCenterLookup(this, LOOKUP_SOURCES["searchGetStationsStationIdCheckInGroupsCheckInGroupIdCheckInsStationId"], API_VERSION, filter);
       },
     },
   };

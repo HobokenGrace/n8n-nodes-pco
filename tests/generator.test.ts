@@ -49,6 +49,13 @@ const pollingTestConfig = {
   generate: true,
 };
 
+function buildPollingTestGeneration(api: any) {
+  return buildProductGenerationFromDocument(pollingTestConfig, {
+    info: { title: 'Test', version: pollingTestConfig.snapshotDate },
+    ...api,
+  });
+}
+
 function pollingCollectionOperation(
   options: {
     collection?: boolean;
@@ -107,8 +114,51 @@ function pollingCollectionOperation(
 }
 
 describe('generated Planning Center nodes', () => {
+  it('requires matching date-valued product and OpenAPI versions', () => {
+    expect(() =>
+      buildProductGenerationFromDocument(pollingTestConfig, {
+        info: { version: pollingTestConfig.snapshotDate },
+      }),
+    ).not.toThrow();
+
+    for (const snapshotDate of [undefined, '2026-1-01', 'not-a-date']) {
+      expect(() =>
+        buildProductGenerationFromDocument(
+          { ...pollingTestConfig, snapshotDate } as typeof pollingTestConfig,
+          { info: { version: '2026-01-01' } },
+        ),
+      ).toThrow(/test.*snapshotDate.*YYYY-MM-DD/i);
+    }
+
+    expect(() => buildProductGenerationFromDocument(pollingTestConfig, {})).toThrow(
+      /test.*info\.version.*missing/i,
+    );
+    expect(() =>
+      buildProductGenerationFromDocument(pollingTestConfig, {
+        info: { version: '2025-12-31' },
+      }),
+    ).toThrow(/test.*2026-01-01.*2025-12-31/i);
+  });
+
+  it('embeds the validated product version in action, pagination, and lookup requests', () => {
+    const result = buildPollingTestGeneration({
+      paths: { '/items': { get: pollingCollectionOperation() } },
+    });
+    const source = renderNode(pollingTestConfig, result);
+
+    expect(source).toContain('const API_VERSION = "2026-01-01";');
+    expect(source).toMatch(/const request = \{[\s\S]*?apiVersion: API_VERSION,[\s\S]*?\};/);
+    expect(source).toContain('collectPaginatedPlanningCenterResults.call(context, request');
+    expect(source).toContain('planningCenterApiRequest.call(context, request)');
+    expect(source).toMatch(
+      /planningCenterApiRequest\.call\(context as unknown as IExecuteFunctions, \{ method: 'GET', path, qs, apiVersion: API_VERSION \}\)/,
+    );
+    expect(source).not.toMatch(/name:\s*['"]apiVersion['"]/);
+    expect(source).not.toMatch(/planningCenterPatApi[^\]]*apiVersion/);
+  });
+
   it('declares native polling without defining a custom schedule control', () => {
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: { '/items': { get: pollingCollectionOperation() } },
     });
     const source = renderTriggerNode(pollingTestConfig, result);
@@ -119,7 +169,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('derives polling eligibility only from complete same-field collection contracts', () => {
-    const eligible = buildProductGenerationFromDocument(pollingTestConfig, {
+    const eligible = buildPollingTestGeneration({
       paths: { '/items': { get: pollingCollectionOperation() } },
     });
     expect(eligible.pollingOperations.map((operation) => operation.cursorField)).toEqual([
@@ -158,7 +208,7 @@ describe('generated Planning Center nodes', () => {
 
     for (const operation of exclusions) {
       expect(
-        buildProductGenerationFromDocument(pollingTestConfig, {
+        buildPollingTestGeneration({
           paths: { '/items': { get: operation } },
         }).pollingOperations,
       ).toEqual([]);
@@ -181,7 +231,7 @@ describe('generated Planning Center nodes', () => {
       },
     });
 
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: { '/items': { get: operation } },
     });
 
@@ -207,7 +257,7 @@ describe('generated Planning Center nodes', () => {
       schema: { type: 'array', items: { type: 'string', enum: ['name'] } },
     });
 
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: { '/items': { get: operation } },
     });
 
@@ -219,7 +269,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('models stable events and scopes emitted resources for nested collections', () => {
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: {
         '/items': { get: pollingCollectionOperation() },
         '/forms/{form_id}/submissions': {
@@ -270,7 +320,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('includes the resource in trigger action labels while keeping Event names concise', () => {
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: {
         '/items': { get: pollingCollectionOperation() },
         '/forms/{form_id}/submissions': {
@@ -293,7 +343,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('renders trigger subtitles from source endpoints and cursor fields', () => {
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: { '/items': { get: pollingCollectionOperation() } },
     });
     const source = renderTriggerNode(pollingTestConfig, result);
@@ -318,7 +368,7 @@ describe('generated Planning Center nodes', () => {
           },
         ],
       });
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: {
         '/parents/{parent_id}/forms/{form_id}/items': {
           get: nestedOperation('listParentFormItems'),
@@ -351,7 +401,7 @@ describe('generated Planning Center nodes', () => {
           },
         ],
       });
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: {
         '/parents/{parent_id}/items': { get: siblingOperation('listParentItems') },
         '/parents/{parent_id}/archived_items': {
@@ -387,7 +437,19 @@ describe('generated Planning Center nodes', () => {
     expect(renderedProducts).toEqual(['calendar', 'check-ins', 'giving', 'people', 'services']);
     for (const [index, result] of summaries.entries()) {
       const source = renderTriggerNode(generatedProductConfigs[index], result);
-      if (source) expect(source).toContain("displayName: '<strong>Limitations:</strong>");
+      if (source) {
+        expect(source).toContain("displayName: '<strong>Limitations:</strong>");
+        expect(source).toContain(
+          `const API_VERSION = ${JSON.stringify(generatedProductConfigs[index].snapshotDate)};`,
+        );
+        expect(source).toContain(
+          `"apiVersion": ${JSON.stringify(generatedProductConfigs[index].snapshotDate)}`,
+        );
+        if (source.includes('searchPlanningCenterLookup(this')) {
+          expect(source).toMatch(/searchPlanningCenterLookup\([^;]+API_VERSION, filter\)/);
+          expect(source).not.toMatch(/searchPlanningCenterLookup\([^;]+\], filter\);/);
+        }
+      }
     }
     expect(
       renderTriggerNode(pollingTestConfig, {
@@ -406,7 +468,7 @@ describe('generated Planning Center nodes', () => {
   });
 
   it('renders trigger identity, limitations, shared controls, and bounded catch-up settings', () => {
-    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+    const result = buildPollingTestGeneration({
       paths: {
         '/forms/{form_id}/submissions': {
           parameters: [{ in: 'path', name: 'form_id', required: true, schema: { type: 'string' } }],
@@ -766,7 +828,7 @@ describe('generated Planning Center nodes', () => {
     };
     const result = buildProductGenerationFromDocument(config, {
       openapi: '3.1.0',
-      info: { title: 'Test', version: '1.0.0' },
+      info: { title: 'Test', version: config.snapshotDate },
       paths: {
         '/items': {
           get: {
@@ -863,6 +925,7 @@ describe('generated Planning Center nodes', () => {
 
     expect(() =>
       buildProductGenerationFromDocument(config, {
+        info: { title: 'Test', version: config.snapshotDate },
         paths: {
           '/first': {
             get: { operationId: 'get-items', responses: { 200: { description: 'OK' } } },
