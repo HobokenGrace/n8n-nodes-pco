@@ -843,6 +843,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdAttachments_createdAt",
     "resource": "Attachment (via Event)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/events/{event_id}/attachments",
     "pathParameters": [
       {
@@ -955,6 +956,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdAttachments_updatedAt",
     "resource": "Attachment (via Event)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/events/{event_id}/attachments",
     "pathParameters": [
       {
@@ -1067,6 +1069,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getAttachments_createdAt",
     "resource": "Attachment",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/attachments",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -1152,6 +1155,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getAttachments_updatedAt",
     "resource": "Attachment",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Attachment]",
     "path": "/calendar/v2/attachments",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -1237,6 +1241,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdEventInstances_createdAt",
     "resource": "Event Instance (via Event)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/events/{event_id}/event_instances",
     "pathParameters": [
       {
@@ -1433,6 +1438,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdEventInstances_updatedAt",
     "resource": "Event Instance (via Event)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/events/{event_id}/event_instances",
     "pathParameters": [
       {
@@ -1629,6 +1635,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getTagsTagIdEventInstances_createdAt",
     "resource": "Event Instance (via Tag)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/tags/{tag_id}/event_instances",
     "pathParameters": [
       {
@@ -1825,6 +1832,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getTagsTagIdEventInstances_updatedAt",
     "resource": "Event Instance (via Tag)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/tags/{tag_id}/event_instances",
     "pathParameters": [
       {
@@ -2021,6 +2029,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventInstances_createdAt",
     "resource": "Event Instance",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/event_instances",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -2190,6 +2199,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventInstances_updatedAt",
     "resource": "Event Instance",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[EventInstance]",
     "path": "/calendar/v2/event_instances",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -2359,6 +2369,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getConflictsConflictIdResolvedBy_createdAt",
     "resource": "Person (via Conflict)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resolved_by",
     "pathParameters": [
       {
@@ -2440,6 +2451,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getConflictsConflictIdResolvedBy_updatedAt",
     "resource": "Person (via Conflict)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resolved_by",
     "pathParameters": [
       {
@@ -2521,6 +2533,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdCreatedBy_createdAt",
     "resource": "Person (via Event Resource Request Created By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/created_by",
     "pathParameters": [
       {
@@ -2602,6 +2615,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdCreatedBy_updatedAt",
     "resource": "Person (via Event Resource Request Created By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/created_by",
     "pathParameters": [
       {
@@ -2683,6 +2697,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdUpdatedBy_createdAt",
     "resource": "Person (via Event Resource Request Updated By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/updated_by",
     "pathParameters": [
       {
@@ -2764,6 +2779,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdUpdatedBy_updatedAt",
     "resource": "Person (via Event Resource Request Updated By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/updated_by",
     "pathParameters": [
       {
@@ -2845,6 +2861,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdOwner_createdAt",
     "resource": "Person (via Event)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/events/{event_id}/owner",
     "pathParameters": [
       {
@@ -2927,6 +2944,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdOwner_updatedAt",
     "resource": "Person (via Event)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/events/{event_id}/owner",
     "pathParameters": [
       {
@@ -3009,6 +3027,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdPeople_createdAt",
     "resource": "Person (via Resource Approval Group)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/people",
     "pathParameters": [
       {
@@ -3091,6 +3110,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdPeople_updatedAt",
     "resource": "Person (via Resource Approval Group)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/people",
     "pathParameters": [
       {
@@ -3173,6 +3193,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeople_createdAt",
     "resource": "Person",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/people",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -3228,6 +3249,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeople_updatedAt",
     "resource": "Person",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/calendar/v2/people",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -3283,6 +3305,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getConflictsConflictIdResource_createdAt",
     "resource": "Resource (via Conflict)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resource",
     "pathParameters": [
       {
@@ -3431,6 +3454,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getConflictsConflictIdResource_updatedAt",
     "resource": "Resource (via Conflict)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/conflicts/{conflict_id}/resource",
     "pathParameters": [
       {
@@ -3579,6 +3603,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdResource_createdAt",
     "resource": "Resource (via Event Resource Request)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource",
     "pathParameters": [
       {
@@ -3727,6 +3752,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdResource_updatedAt",
     "resource": "Resource (via Event Resource Request)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource",
     "pathParameters": [
       {
@@ -3875,6 +3901,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResource_createdAt",
     "resource": "Resource (via Required Approval)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/required_approvals/{required_approval_id}/resource",
     "pathParameters": [
       {
@@ -4058,6 +4085,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResource_updatedAt",
     "resource": "Resource (via Required Approval)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/required_approvals/{required_approval_id}/resource",
     "pathParameters": [
       {
@@ -4241,6 +4269,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdResources_createdAt",
     "resource": "Resource (via Resource Approval Group)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/resources",
     "pathParameters": [
       {
@@ -4390,6 +4419,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroupsResourceApprovalGroupIdResources_updatedAt",
     "resource": "Resource (via Resource Approval Group)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/resources",
     "pathParameters": [
       {
@@ -4539,6 +4569,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceBookingsResourceBookingIdResource_createdAt",
     "resource": "Resource (via Resource Booking)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_bookings/{resource_booking_id}/resource",
     "pathParameters": [
       {
@@ -4687,6 +4718,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceBookingsResourceBookingIdResource_updatedAt",
     "resource": "Resource (via Resource Booking)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_bookings/{resource_booking_id}/resource",
     "pathParameters": [
       {
@@ -4835,6 +4867,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceFoldersResourceFolderIdResources_createdAt",
     "resource": "Resource (via Resource Folder)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
     "pathParameters": [
       {
@@ -4984,6 +5017,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceFoldersResourceFolderIdResources_updatedAt",
     "resource": "Resource (via Resource Folder)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
     "pathParameters": [
       {
@@ -5133,6 +5167,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResource_createdAt",
     "resource": "Resource (via Resource Suggestion)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/room_setups/{room_setup_id}/resource_suggestions/{resource_suggestion_id}/resource",
     "pathParameters": [
       {
@@ -5316,6 +5351,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResource_updatedAt",
     "resource": "Resource (via Resource Suggestion)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/room_setups/{room_setup_id}/resource_suggestions/{resource_suggestion_id}/resource",
     "pathParameters": [
       {
@@ -5499,6 +5535,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdResourceApprovalGroups_createdAt",
     "resource": "Resource Approval Group (via Resource)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
     "pathParameters": [
       {
@@ -5648,6 +5685,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdResourceApprovalGroups_updatedAt",
     "resource": "Resource Approval Group (via Resource)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
     "pathParameters": [
       {
@@ -5797,6 +5835,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroups_createdAt",
     "resource": "Resource Approval Group",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resource_approval_groups",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -5914,6 +5953,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceApprovalGroups_updatedAt",
     "resource": "Resource Approval Group",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceApprovalGroup]",
     "path": "/calendar/v2/resource_approval_groups",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -6031,6 +6071,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventInstancesEventInstanceIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Event Instance)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_instances/{event_instance_id}/resource_bookings",
     "pathParameters": [
       {
@@ -6234,6 +6275,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventInstancesEventInstanceIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Event Instance)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_instances/{event_instance_id}/resource_bookings",
     "pathParameters": [
       {
@@ -6437,6 +6479,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Event Resource Request)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource_bookings",
     "pathParameters": [
       {
@@ -6645,6 +6688,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Event Resource Request)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource_bookings",
     "pathParameters": [
       {
@@ -6853,6 +6897,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Event)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/events/{event_id}/resource_bookings",
     "pathParameters": [
       {
@@ -7057,6 +7102,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Event)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/events/{event_id}/resource_bookings",
     "pathParameters": [
       {
@@ -7261,6 +7307,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdResourceBookings_createdAt",
     "resource": "Resource Booking (via Resource)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resources/{resource_id}/resource_bookings",
     "pathParameters": [
       {
@@ -7439,6 +7486,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdResourceBookings_updatedAt",
     "resource": "Resource Booking (via Resource)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resources/{resource_id}/resource_bookings",
     "pathParameters": [
       {
@@ -7617,6 +7665,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceBookings_createdAt",
     "resource": "Resource Booking",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resource_bookings",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -7794,6 +7843,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceBookings_updatedAt",
     "resource": "Resource Booking",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceBooking]",
     "path": "/calendar/v2/resource_bookings",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -7971,6 +8021,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdResourceFolder_createdAt",
     "resource": "Resource Folder (via Resource)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resources/{resource_id}/resource_folder",
     "pathParameters": [
       {
@@ -8077,6 +8128,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdResourceFolder_updatedAt",
     "resource": "Resource Folder (via Resource)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resources/{resource_id}/resource_folder",
     "pathParameters": [
       {
@@ -8183,6 +8235,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceFolders_createdAt",
     "resource": "Resource Folder",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resource_folders",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -8262,6 +8315,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourceFolders_updatedAt",
     "resource": "Resource Folder",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ResourceFolder]",
     "path": "/calendar/v2/resource_folders",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -8341,6 +8395,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResources_createdAt",
     "resource": "Resource",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resources",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -8458,6 +8513,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResources_updatedAt",
     "resource": "Resource",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Resource]",
     "path": "/calendar/v2/resources",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -8575,6 +8631,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdRoomSetup_createdAt",
     "resource": "Room Setup (via Event Resource Request)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/room_setup",
     "pathParameters": [
       {
@@ -8668,6 +8725,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventResourceRequestsEventResourceRequestIdRoomSetup_updatedAt",
     "resource": "Room Setup (via Event Resource Request)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/event_resource_requests/{event_resource_request_id}/room_setup",
     "pathParameters": [
       {
@@ -8761,6 +8819,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdRoomSetups_createdAt",
     "resource": "Room Setup (via Resource)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/resources/{resource_id}/room_setups",
     "pathParameters": [
       {
@@ -8855,6 +8914,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getResourcesResourceIdRoomSetups_updatedAt",
     "resource": "Room Setup (via Resource)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/resources/{resource_id}/room_setups",
     "pathParameters": [
       {
@@ -8949,6 +9009,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getRoomSetups_createdAt",
     "resource": "Room Setup",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/room_setups",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -9016,6 +9077,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getRoomSetups_updatedAt",
     "resource": "Room Setup",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[RoomSetup]",
     "path": "/calendar/v2/room_setups",
     "pathParameters": [],
     "ordinaryQueryFields": [],

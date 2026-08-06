@@ -581,19 +581,23 @@ function cursorSparseFieldSourceName(
   operation: GeneratedOperation,
   cursorField: PollingCursorField,
 ): string | undefined {
-  const candidates = operation.queryOptions.filter(
-    (option) =>
-      option.group === 'fields' &&
-      option.sourceName &&
-      option.valueOptions?.some((value) => value.value === cursorField),
+  const fieldOptions = operation.queryOptions.filter(
+    (option) => option.group === 'fields' && option.sourceName,
   );
-  const matchingTarget = candidates.find((option) => {
+  const matchingTarget = fieldOptions.find((option) => {
     const resourceType = option.sourceName?.match(/^fields\[([^\]]+)\]$/)?.[1];
-    return resourceType && lookupTargetKey(resourceType) === operation.lookupTarget;
+    return (
+      resourceType &&
+      lookupTargetKey(resourceType) === operation.lookupTarget &&
+      (!option.valueOptions || option.valueOptions.some((value) => value.value === cursorField))
+    );
   });
-  return (
-    matchingTarget?.sourceName ?? (candidates.length === 1 ? candidates[0].sourceName : undefined)
+  if (matchingTarget) return matchingTarget.sourceName;
+
+  const cursorCandidates = fieldOptions.filter((option) =>
+    option.valueOptions?.some((value) => value.value === cursorField),
   );
+  return cursorCandidates.length === 1 ? cursorCandidates[0].sourceName : undefined;
 }
 
 function buildPollingOperation(

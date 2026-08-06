@@ -503,6 +503,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_createdAt",
     "resource": "Check In (via Check In Group)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/check_ins",
     "pathParameters": [
       {
@@ -686,6 +687,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_updatedAt",
     "resource": "Check In (via Check In Group)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/check_in_groups/{check_in_group_id}/check_ins",
     "pathParameters": [
       {
@@ -869,6 +871,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_createdAt",
     "resource": "Check In (via Event Period)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
     "pathParameters": [
       {
@@ -1052,6 +1055,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_updatedAt",
     "resource": "Check In (via Event Period)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/check_ins",
     "pathParameters": [
       {
@@ -1235,6 +1239,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_createdAt",
     "resource": "Check In (via Event Person Event First Check In)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/first_check_in",
     "pathParameters": [
       {
@@ -1419,6 +1424,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_updatedAt",
     "resource": "Check In (via Event Person Event First Check In)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/first_check_in",
     "pathParameters": [
       {
@@ -1603,6 +1609,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_createdAt",
     "resource": "Check In (via Event Person Event Last Check In)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/last_check_in",
     "pathParameters": [
       {
@@ -1787,6 +1794,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdPersonEventsPersonEventIdLastCheckIn_updatedAt",
     "resource": "Check In (via Event Person Event Last Check In)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/person_events/{person_event_id}/last_check_in",
     "pathParameters": [
       {
@@ -1971,6 +1979,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventTimesEventTimeIdCheckIns_createdAt",
     "resource": "Check In (via Event Time)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/check_ins",
     "pathParameters": [
       {
@@ -2124,6 +2133,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventTimesEventTimeIdCheckIns_updatedAt",
     "resource": "Check In (via Event Time)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/check_ins",
     "pathParameters": [
       {
@@ -2277,6 +2287,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdCheckIns_createdAt",
     "resource": "Check In (via Event)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/check_ins",
     "pathParameters": [
       {
@@ -2431,6 +2442,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdCheckIns_updatedAt",
     "resource": "Check In (via Event)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/events/{event_id}/check_ins",
     "pathParameters": [
       {
@@ -2585,6 +2597,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_createdAt",
     "resource": "Check In (via Location Event Period)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
     "pathParameters": [
       {
@@ -2802,6 +2815,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_updatedAt",
     "resource": "Check In (via Location Event Period)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins",
     "pathParameters": [
       {
@@ -3019,6 +3033,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_createdAt",
     "resource": "Check In (via Location Event Time)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/check_ins",
     "pathParameters": [
       {
@@ -3202,6 +3217,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_updatedAt",
     "resource": "Check In (via Location Event Time)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/event_times/{event_time_id}/location_event_times/{location_event_time_id}/check_ins",
     "pathParameters": [
       {
@@ -3385,6 +3401,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckInsCheckInIdLocationsLocationIdCheckIns_createdAt",
     "resource": "Check In (via Location)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
     "pathParameters": [
       {
@@ -3568,6 +3585,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckInsCheckInIdLocationsLocationIdCheckIns_updatedAt",
     "resource": "Check In (via Location)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins/{check_in_id}/locations/{location_id}/check_ins",
     "pathParameters": [
       {
@@ -3751,6 +3769,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getOptionsOptionIdCheckIns_createdAt",
     "resource": "Check In (via Option)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/options/{option_id}/check_ins",
     "pathParameters": [
       {
@@ -3904,6 +3923,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getOptionsOptionIdCheckIns_updatedAt",
     "resource": "Check In (via Option)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/options/{option_id}/check_ins",
     "pathParameters": [
       {
@@ -4057,6 +4077,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdCheckIns_createdAt",
     "resource": "Check In (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/people/{person_id}/check_ins",
     "pathParameters": [
       {
@@ -4211,6 +4232,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdCheckIns_updatedAt",
     "resource": "Check In (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/people/{person_id}/check_ins",
     "pathParameters": [
       {
@@ -4365,6 +4387,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getStationsStationIdCheckedInAtCheckIns_createdAt",
     "resource": "Check In (via Station)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/checked_in_at_check_ins",
     "pathParameters": [
       {
@@ -4518,6 +4541,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getStationsStationIdCheckedInAtCheckIns_updatedAt",
     "resource": "Check In (via Station)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/stations/{station_id}/checked_in_at_check_ins",
     "pathParameters": [
       {
@@ -4671,6 +4695,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckIns_createdAt",
     "resource": "Check In",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -4798,6 +4823,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCheckIns_updatedAt",
     "resource": "Check In",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[CheckIn]",
     "path": "/check-ins/v2/check_ins",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -4925,6 +4951,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_createdAt",
     "resource": "Headcount (via Attendance Type)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/headcounts",
     "pathParameters": [
       {
@@ -5056,6 +5083,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_updatedAt",
     "resource": "Headcount (via Attendance Type)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/events/{event_id}/attendance_types/{attendance_type_id}/headcounts",
     "pathParameters": [
       {
@@ -5187,6 +5215,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventTimesEventTimeIdHeadcounts_createdAt",
     "resource": "Headcount (via Event Time)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/event_times/{event_time_id}/headcounts",
     "pathParameters": [
       {
@@ -5292,6 +5321,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEventTimesEventTimeIdHeadcounts_updatedAt",
     "resource": "Headcount (via Event Time)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/event_times/{event_time_id}/headcounts",
     "pathParameters": [
       {
@@ -5397,6 +5427,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHeadcounts_createdAt",
     "resource": "Headcount",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/headcounts",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -5476,6 +5507,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHeadcounts_updatedAt",
     "resource": "Headcount",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Headcount]",
     "path": "/check-ins/v2/headcounts",
     "pathParameters": [],
     "ordinaryQueryFields": [],

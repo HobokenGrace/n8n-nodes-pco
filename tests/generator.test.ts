@@ -165,6 +165,59 @@ describe('generated Planning Center nodes', () => {
     }
   });
 
+  it('identifies the primary sparse field selector when its values use oneOf', () => {
+    const operation = pollingCollectionOperation();
+    operation.parameters.push({
+      in: 'query',
+      name: 'fields[Item]',
+      schema: {
+        type: 'array',
+        items: {
+          oneOf: [
+            { type: 'string', enum: ['name', 'created_at', 'updated_at'] },
+            { type: 'string', enum: ['form'] },
+          ],
+        },
+      },
+    });
+
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: { '/items': { get: operation } },
+    });
+
+    expect(result.pollingOperations).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: 'listItems_createdAt',
+          cursorSparseFieldSourceName: 'fields[Item]',
+        }),
+        expect.objectContaining({
+          id: 'listItems_updatedAt',
+          cursorSparseFieldSourceName: 'fields[Item]',
+        }),
+      ]),
+    );
+  });
+
+  it('does not use a primary sparse field selector that explicitly excludes the cursor', () => {
+    const operation = pollingCollectionOperation();
+    operation.parameters.push({
+      in: 'query',
+      name: 'fields[Item]',
+      schema: { type: 'array', items: { type: 'string', enum: ['name'] } },
+    });
+
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: { '/items': { get: operation } },
+    });
+
+    expect(
+      result.pollingOperations.every(
+        (pollingOperation) => pollingOperation.cursorSparseFieldSourceName === undefined,
+      ),
+    ).toBe(true);
+  });
+
   it('models stable events and scopes emitted resources for nested collections', () => {
     const result = buildProductGenerationFromDocument(pollingTestConfig, {
       paths: {

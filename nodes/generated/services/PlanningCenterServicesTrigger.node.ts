@@ -533,6 +533,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlans_createdAt",
     "resource": "Plan (via Live)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans/{plan_id}/live/{live_id}/watchable_plans",
     "pathParameters": [
       {
@@ -721,6 +722,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlans_updatedAt",
     "resource": "Plan (via Live)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans/{plan_id}/live/{live_id}/watchable_plans",
     "pathParameters": [
       {
@@ -909,6 +911,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPlanPeoplePlanPersonIdPlan_createdAt",
     "resource": "Plan (via Plan Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/people/{person_id}/plan_people/{plan_person_id}/plan",
     "pathParameters": [
       {
@@ -1085,6 +1088,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPlanPeoplePlanPersonIdPlan_updatedAt",
     "resource": "Plan (via Plan Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/people/{person_id}/plan_people/{plan_person_id}/plan",
     "pathParameters": [
       {
@@ -1261,6 +1265,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSeriesSeriesIdPlans_createdAt",
     "resource": "Plan (via Series)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans",
     "pathParameters": [
       {
@@ -1404,6 +1409,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSeriesSeriesIdPlans_updatedAt",
     "resource": "Plan (via Series)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/series/{series_id}/plans",
     "pathParameters": [
       {
@@ -1547,6 +1553,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNextPlan_createdAt",
     "resource": "Plan (via Service Type Plan Next Plan)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/next_plan",
     "pathParameters": [
       {
@@ -1725,6 +1732,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNextPlan_updatedAt",
     "resource": "Plan (via Service Type Plan Next Plan)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/next_plan",
     "pathParameters": [
       {
@@ -1903,6 +1911,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlansPlanIdPreviousPlan_createdAt",
     "resource": "Plan (via Service Type Plan Previous Plan)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/previous_plan",
     "pathParameters": [
       {
@@ -2081,6 +2090,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlansPlanIdPreviousPlan_updatedAt",
     "resource": "Plan (via Service Type Plan Previous Plan)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/previous_plan",
     "pathParameters": [
       {
@@ -2259,6 +2269,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlans_createdAt",
     "resource": "Plan (via Service Type Plans)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans",
     "pathParameters": [
       {
@@ -2402,6 +2413,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlans_updatedAt",
     "resource": "Plan (via Service Type Plans)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/plans",
     "pathParameters": [
       {
@@ -2545,6 +2557,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdUnscopedPlans_createdAt",
     "resource": "Plan (via Service Type Unscoped Plans)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/unscoped_plans",
     "pathParameters": [
       {
@@ -2688,6 +2701,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdUnscopedPlans_updatedAt",
     "resource": "Plan (via Service Type Unscoped Plans)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Plan]",
     "path": "/services/v2/service_types/{service_type_id}/unscoped_plans",
     "pathParameters": [
       {
@@ -2831,6 +2845,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotes_createdAt",
     "resource": "Plan Note (via Plan Template)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plan_templates/{plan_template_id}/notes",
     "pathParameters": [
       {
@@ -2943,6 +2958,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotes_updatedAt",
     "resource": "Plan Note (via Plan Template)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plan_templates/{plan_template_id}/notes",
     "pathParameters": [
       {
@@ -3055,6 +3071,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNotes_createdAt",
     "resource": "Plan Note (via Plan)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/notes",
     "pathParameters": [
       {
@@ -3168,6 +3185,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getServiceTypesServiceTypeIdPlansPlanIdNotes_updatedAt",
     "resource": "Plan Note (via Plan)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[PlanNote]",
     "path": "/services/v2/service_types/{service_type_id}/plans/{plan_id}/notes",
     "pathParameters": [
       {

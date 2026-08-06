@@ -2966,6 +2966,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdCampus_createdAt",
     "resource": "Campus (via Form)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/forms/{form_id}/campus",
     "pathParameters": [
       {
@@ -3113,6 +3114,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdCampus_updatedAt",
     "resource": "Campus (via Form)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/forms/{form_id}/campus",
     "pathParameters": [
       {
@@ -3260,6 +3262,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdCampus_createdAt",
     "resource": "Campus (via List)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/lists/{list_id}/campus",
     "pathParameters": [
       {
@@ -3408,6 +3411,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdCampus_updatedAt",
     "resource": "Campus (via List)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/lists/{list_id}/campus",
     "pathParameters": [
       {
@@ -3556,6 +3560,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPrimaryCampus_createdAt",
     "resource": "Campus (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/people/{person_id}/primary_campus",
     "pathParameters": [
       {
@@ -3704,6 +3709,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPrimaryCampus_updatedAt",
     "resource": "Campus (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/people/{person_id}/primary_campus",
     "pathParameters": [
       {
@@ -3852,6 +3858,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCampuses_createdAt",
     "resource": "Campus",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/campuses",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -3968,6 +3975,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCampuses_updatedAt",
     "resource": "Campus",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Campus]",
     "path": "/people/v2/campuses",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -4084,6 +4092,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdRulesRuleIdConditions_createdAt",
     "resource": "Condition (via Rule)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Condition]",
     "path": "/people/v2/lists/{list_id}/rules/{rule_id}/conditions",
     "pathParameters": [
       {
@@ -4292,6 +4301,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdRulesRuleIdConditions_updatedAt",
     "resource": "Condition (via Rule)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Condition]",
     "path": "/people/v2/lists/{list_id}/rules/{rule_id}/conditions",
     "pathParameters": [
       {
@@ -4500,6 +4510,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdEmails_createdAt",
     "resource": "Email (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Email]",
     "path": "/people/v2/people/{person_id}/emails",
     "pathParameters": [
       {
@@ -4576,6 +4587,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdEmails_updatedAt",
     "resource": "Email (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Email]",
     "path": "/people/v2/people/{person_id}/emails",
     "pathParameters": [
       {
@@ -4652,6 +4664,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEmails_createdAt",
     "resource": "Email",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Email]",
     "path": "/people/v2/emails",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -4701,6 +4714,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEmails_updatedAt",
     "resource": "Email",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Email]",
     "path": "/people/v2/emails",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -4750,6 +4764,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdFieldData_createdAt",
     "resource": "Field Datum (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[FieldDatum]",
     "path": "/people/v2/people/{person_id}/field_data",
     "pathParameters": [
       {
@@ -4844,6 +4859,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdFieldData_updatedAt",
     "resource": "Field Datum (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[FieldDatum]",
     "path": "/people/v2/people/{person_id}/field_data",
     "pathParameters": [
       {
@@ -4938,6 +4954,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFieldData_createdAt",
     "resource": "Field Datum",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[FieldDatum]",
     "path": "/people/v2/field_data",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -5005,6 +5022,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFieldData_updatedAt",
     "resource": "Field Datum",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[FieldDatum]",
     "path": "/people/v2/field_data",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -5072,6 +5090,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdCategory_createdAt",
     "resource": "Form Category (via Form)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[FormCategory]",
     "path": "/people/v2/forms/{form_id}/category",
     "pathParameters": [
       {
@@ -5147,6 +5166,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdCategory_updatedAt",
     "resource": "Form Category (via Form)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[FormCategory]",
     "path": "/people/v2/forms/{form_id}/category",
     "pathParameters": [
       {
@@ -5222,6 +5242,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormCategories_createdAt",
     "resource": "Form Category",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[FormCategory]",
     "path": "/people/v2/form_categories",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -5271,6 +5292,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormCategories_updatedAt",
     "resource": "Form Category",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[FormCategory]",
     "path": "/people/v2/form_categories",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -5320,6 +5342,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdFieldsFormFieldIdFormFieldConditions_createdAt",
     "resource": "Form Field Condition (via Field)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[FormFieldCondition]",
     "path": "/people/v2/forms/{form_id}/fields/{form_field_id}/form_field_conditions",
     "pathParameters": [
       {
@@ -5419,6 +5442,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdFieldsFormFieldIdFormFieldConditions_updatedAt",
     "resource": "Form Field Condition (via Field)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[FormFieldCondition]",
     "path": "/people/v2/forms/{form_id}/fields/{form_field_id}/form_field_conditions",
     "pathParameters": [
       {
@@ -5518,6 +5542,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdFormSubmissions_createdAt",
     "resource": "Form Submission (via Form)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[FormSubmission]",
     "path": "/people/v2/forms/{form_id}/form_submissions",
     "pathParameters": [
       {
@@ -5757,6 +5782,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdFormSubmissions_updatedAt",
     "resource": "Form Submission (via Form)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[FormSubmission]",
     "path": "/people/v2/forms/{form_id}/form_submissions",
     "pathParameters": [
       {
@@ -5996,6 +6022,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeopleImportsPeopleImportIdHistoriesPeopleImportHistoryIdHousehold_createdAt",
     "resource": "Household (via History)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/people_imports/{people_import_id}/histories/{people_import_history_id}/household",
     "pathParameters": [
       {
@@ -6233,6 +6260,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeopleImportsPeopleImportIdHistoriesPeopleImportHistoryIdHousehold_updatedAt",
     "resource": "Household (via History)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/people_imports/{people_import_id}/histories/{people_import_history_id}/household",
     "pathParameters": [
       {
@@ -6470,6 +6498,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdHousehold_createdAt",
     "resource": "Household (via Household Membership)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/households/{household_id}/household_memberships/{household_membership_id}/household",
     "pathParameters": [
       {
@@ -6707,6 +6736,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdHousehold_updatedAt",
     "resource": "Household (via Household Membership)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/households/{household_id}/household_memberships/{household_membership_id}/household",
     "pathParameters": [
       {
@@ -6944,6 +6974,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdHouseholds_createdAt",
     "resource": "Household (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/people/{person_id}/households",
     "pathParameters": [
       {
@@ -7142,6 +7173,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdHouseholds_updatedAt",
     "resource": "Household (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/people/{person_id}/households",
     "pathParameters": [
       {
@@ -7340,6 +7372,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholds_createdAt",
     "resource": "Household",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/households",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -7511,6 +7544,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholds_updatedAt",
     "resource": "Household",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Household]",
     "path": "/people/v2/households",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -7682,6 +7716,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCampusesCampusIdLists_createdAt",
     "resource": "List (via Campus)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[List]",
     "path": "/people/v2/campuses/{campus_id}/lists",
     "pathParameters": [
       {
@@ -7953,6 +7988,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCampusesCampusIdLists_updatedAt",
     "resource": "List (via Campus)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[List]",
     "path": "/people/v2/campuses/{campus_id}/lists",
     "pathParameters": [
       {
@@ -8224,6 +8260,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListCategoriesListCategoryIdLists_createdAt",
     "resource": "List (via List Category)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[List]",
     "path": "/people/v2/list_categories/{list_category_id}/lists",
     "pathParameters": [
       {
@@ -8496,6 +8533,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListCategoriesListCategoryIdLists_updatedAt",
     "resource": "List (via List Category)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[List]",
     "path": "/people/v2/list_categories/{list_category_id}/lists",
     "pathParameters": [
       {
@@ -8768,6 +8806,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdCategory_createdAt",
     "resource": "List Category (via List)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ListCategory]",
     "path": "/people/v2/lists/{list_id}/category",
     "pathParameters": [
       {
@@ -8886,6 +8925,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdCategory_updatedAt",
     "resource": "List Category (via List)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ListCategory]",
     "path": "/people/v2/lists/{list_id}/category",
     "pathParameters": [
       {
@@ -9004,6 +9044,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListCategories_createdAt",
     "resource": "List Category",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ListCategory]",
     "path": "/people/v2/list_categories",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -9095,6 +9136,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListCategories_updatedAt",
     "resource": "List Category",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[ListCategory]",
     "path": "/people/v2/list_categories",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -9186,6 +9228,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdShares_createdAt",
     "resource": "List Share (via List)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[ListShare]",
     "path": "/people/v2/lists/{list_id}/shares",
     "pathParameters": [
       {
@@ -9368,6 +9411,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getLists_createdAt",
     "resource": "List",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[List]",
     "path": "/people/v2/lists",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -9608,6 +9652,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getLists_updatedAt",
     "resource": "List",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[List]",
     "path": "/people/v2/lists",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -9848,6 +9893,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessageGroupsMessageGroupIdMessages_createdAt",
     "resource": "Message (via Message Group)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Message]",
     "path": "/people/v2/message_groups/{message_group_id}/messages",
     "pathParameters": [
       {
@@ -10098,6 +10144,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdMessages_createdAt",
     "resource": "Message (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Message]",
     "path": "/people/v2/people/{person_id}/messages",
     "pathParameters": [
       {
@@ -10348,6 +10395,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessagesMessageIdMessageGroup_createdAt",
     "resource": "Message Group (via Message)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[MessageGroup]",
     "path": "/people/v2/messages/{message_id}/message_group",
     "pathParameters": [
       {
@@ -10511,6 +10559,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdMessageGroups_createdAt",
     "resource": "Message Group (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[MessageGroup]",
     "path": "/people/v2/people/{person_id}/message_groups",
     "pathParameters": [
       {
@@ -10674,6 +10723,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessageGroups_createdAt",
     "resource": "Message Group",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[MessageGroup]",
     "path": "/people/v2/message_groups",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -10810,6 +10860,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessages_createdAt",
     "resource": "Message",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Message]",
     "path": "/people/v2/messages",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -11033,6 +11084,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdNotes_createdAt",
     "resource": "Note (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Note]",
     "path": "/people/v2/people/{person_id}/notes",
     "pathParameters": [
       {
@@ -11229,6 +11281,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdNotes_updatedAt",
     "resource": "Note (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Note]",
     "path": "/people/v2/people/{person_id}/notes",
     "pathParameters": [
       {
@@ -11425,6 +11478,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotesNoteIdCategory_createdAt",
     "resource": "Note Category (via Note)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategory]",
     "path": "/people/v2/notes/{note_id}/category",
     "pathParameters": [
       {
@@ -11614,6 +11668,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotesNoteIdCategory_updatedAt",
     "resource": "Note Category (via Note)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategory]",
     "path": "/people/v2/notes/{note_id}/category",
     "pathParameters": [
       {
@@ -11803,6 +11858,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategoriesNoteCategoryIdSubscriptions_createdAt",
     "resource": "Note Category Subscription (via Note Category)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategorySubscription]",
     "path": "/people/v2/note_categories/{note_category_id}/subscriptions",
     "pathParameters": [
       {
@@ -12006,6 +12062,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategoriesNoteCategoryIdSubscriptions_updatedAt",
     "resource": "Note Category Subscription (via Note Category)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategorySubscription]",
     "path": "/people/v2/note_categories/{note_category_id}/subscriptions",
     "pathParameters": [
       {
@@ -12209,6 +12266,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategorySubscriptions_createdAt",
     "resource": "Note Category Subscription",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategorySubscription]",
     "path": "/people/v2/note_category_subscriptions",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -12380,6 +12438,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategorySubscriptions_updatedAt",
     "resource": "Note Category Subscription",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategorySubscription]",
     "path": "/people/v2/note_category_subscriptions",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -12551,6 +12610,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategories_createdAt",
     "resource": "Note Category",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategory]",
     "path": "/people/v2/note_categories",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -12714,6 +12774,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategories_updatedAt",
     "resource": "Note Category",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[NoteCategory]",
     "path": "/people/v2/note_categories",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -12877,6 +12938,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotes_createdAt",
     "resource": "Note",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Note]",
     "path": "/people/v2/notes",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -13072,6 +13134,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotes_updatedAt",
     "resource": "Note",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Note]",
     "path": "/people/v2/notes",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -13267,6 +13330,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdStepsStepIdAssigneeSummariesWorkflowStepAssigneeSummaryIdPerson_createdAt",
     "resource": "Person (via Assignee Summary)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/workflows/{workflow_id}/steps/{step_id}/assignee_summaries/{workflow_step_assignee_summary_id}/person",
     "pathParameters": [
       {
@@ -13631,6 +13695,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdStepsStepIdAssigneeSummariesWorkflowStepAssigneeSummaryIdPerson_updatedAt",
     "resource": "Person (via Assignee Summary)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/workflows/{workflow_id}/steps/{step_id}/assignee_summaries/{workflow_step_assignee_summary_id}/person",
     "pathParameters": [
       {
@@ -13995,6 +14060,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBackgroundChecksBackgroundCheckIdCreatedBy_createdAt",
     "resource": "Person (via Background Check Created By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/background_checks/{background_check_id}/created_by",
     "pathParameters": [
       {
@@ -14338,6 +14404,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBackgroundChecksBackgroundCheckIdCreatedBy_updatedAt",
     "resource": "Person (via Background Check Created By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/background_checks/{background_check_id}/created_by",
     "pathParameters": [
       {
@@ -14681,6 +14748,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBackgroundChecksBackgroundCheckIdPerson_createdAt",
     "resource": "Person (via Background Check Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/background_checks/{background_check_id}/person",
     "pathParameters": [
       {
@@ -15024,6 +15092,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBackgroundChecksBackgroundCheckIdPerson_updatedAt",
     "resource": "Person (via Background Check Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/background_checks/{background_check_id}/person",
     "pathParameters": [
       {
@@ -15367,6 +15436,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdRulesRuleIdConditionsConditionIdCreatedBy_createdAt",
     "resource": "Person (via Condition)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/rules/{rule_id}/conditions/{condition_id}/created_by",
     "pathParameters": [
       {
@@ -15783,6 +15853,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdRulesRuleIdConditionsConditionIdCreatedBy_updatedAt",
     "resource": "Person (via Condition)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/rules/{rule_id}/conditions/{condition_id}/created_by",
     "pathParameters": [
       {
@@ -16199,6 +16270,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEmailsEmailIdPerson_createdAt",
     "resource": "Person (via Email)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/emails/{email_id}/person",
     "pathParameters": [
       {
@@ -16542,6 +16614,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getEmailsEmailIdPerson_updatedAt",
     "resource": "Person (via Email)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/emails/{email_id}/person",
     "pathParameters": [
       {
@@ -16885,6 +16958,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFieldDataFieldDatumIdPerson_createdAt",
     "resource": "Person (via Field Datum)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/field_data/{field_datum_id}/person",
     "pathParameters": [
       {
@@ -17228,6 +17302,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFieldDataFieldDatumIdPerson_updatedAt",
     "resource": "Person (via Field Datum)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/field_data/{field_datum_id}/person",
     "pathParameters": [
       {
@@ -17571,6 +17646,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdFormSubmissionsFormSubmissionIdPerson_createdAt",
     "resource": "Person (via Form Submission)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/forms/{form_id}/form_submissions/{form_submission_id}/person",
     "pathParameters": [
       {
@@ -17948,6 +18024,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getFormsFormIdFormSubmissionsFormSubmissionIdPerson_updatedAt",
     "resource": "Person (via Form Submission)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/forms/{form_id}/form_submissions/{form_submission_id}/person",
     "pathParameters": [
       {
@@ -18325,6 +18402,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeopleImportsPeopleImportIdHistoriesPeopleImportHistoryIdPerson_createdAt",
     "resource": "Person (via History)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people_imports/{people_import_id}/histories/{people_import_history_id}/person",
     "pathParameters": [
       {
@@ -18703,6 +18781,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeopleImportsPeopleImportIdHistoriesPeopleImportHistoryIdPerson_updatedAt",
     "resource": "Person (via History)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people_imports/{people_import_id}/histories/{people_import_history_id}/person",
     "pathParameters": [
       {
@@ -19081,6 +19160,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPerson_createdAt",
     "resource": "Person (via Household Membership)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/households/{household_id}/household_memberships/{household_membership_id}/person",
     "pathParameters": [
       {
@@ -19459,6 +19539,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPerson_updatedAt",
     "resource": "Person (via Household Membership)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/households/{household_id}/household_memberships/{household_membership_id}/person",
     "pathParameters": [
       {
@@ -19837,6 +19918,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholdsHouseholdIdPeople_createdAt",
     "resource": "Person (via Household)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/households/{household_id}/people",
     "pathParameters": [
       {
@@ -20181,6 +20263,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getHouseholdsHouseholdIdPeople_updatedAt",
     "resource": "Person (via Household)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/households/{household_id}/people",
     "pathParameters": [
       {
@@ -20525,6 +20608,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdCreatedBy_createdAt",
     "resource": "Person (via List Created By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/created_by",
     "pathParameters": [
       {
@@ -20869,6 +20953,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdCreatedBy_updatedAt",
     "resource": "Person (via List Created By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/created_by",
     "pathParameters": [
       {
@@ -21213,6 +21298,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdPeople_createdAt",
     "resource": "Person (via List People)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/people",
     "pathParameters": [
       {
@@ -21557,6 +21643,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdPeople_updatedAt",
     "resource": "Person (via List People)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/people",
     "pathParameters": [
       {
@@ -21901,6 +21988,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdListResultsListResultIdPerson_createdAt",
     "resource": "Person (via List Result)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/list_results/{list_result_id}/person",
     "pathParameters": [
       {
@@ -22279,6 +22367,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdListResultsListResultIdPerson_updatedAt",
     "resource": "Person (via List Result)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/list_results/{list_result_id}/person",
     "pathParameters": [
       {
@@ -22657,6 +22746,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdSharesListShareIdPerson_createdAt",
     "resource": "Person (via List Share)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/shares/{list_share_id}/person",
     "pathParameters": [
       {
@@ -23036,6 +23126,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdSharesListShareIdPerson_updatedAt",
     "resource": "Person (via List Share)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/shares/{list_share_id}/person",
     "pathParameters": [
       {
@@ -23415,6 +23506,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdUpdatedBy_createdAt",
     "resource": "Person (via List Updated By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/updated_by",
     "pathParameters": [
       {
@@ -23759,6 +23851,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdUpdatedBy_updatedAt",
     "resource": "Person (via List Updated By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/lists/{list_id}/updated_by",
     "pathParameters": [
       {
@@ -24103,6 +24196,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessageGroupsMessageGroupIdFrom_createdAt",
     "resource": "Person (via Message Group)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/message_groups/{message_group_id}/from",
     "pathParameters": [
       {
@@ -24447,6 +24541,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessageGroupsMessageGroupIdFrom_updatedAt",
     "resource": "Person (via Message Group)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/message_groups/{message_group_id}/from",
     "pathParameters": [
       {
@@ -24791,6 +24886,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessagesMessageIdTo_createdAt",
     "resource": "Person (via Message)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/messages/{message_id}/to",
     "pathParameters": [
       {
@@ -25135,6 +25231,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getMessagesMessageIdTo_updatedAt",
     "resource": "Person (via Message)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/messages/{message_id}/to",
     "pathParameters": [
       {
@@ -25479,6 +25576,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategoriesNoteCategoryIdSharesNoteCategoryShareIdPerson_createdAt",
     "resource": "Person (via Note Category Share)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/note_categories/{note_category_id}/shares/{note_category_share_id}/person",
     "pathParameters": [
       {
@@ -25857,6 +25955,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategoriesNoteCategoryIdSharesNoteCategoryShareIdPerson_updatedAt",
     "resource": "Person (via Note Category Share)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/note_categories/{note_category_id}/shares/{note_category_share_id}/person",
     "pathParameters": [
       {
@@ -26235,6 +26334,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategorySubscriptionsNoteCategorySubscriptionIdPerson_createdAt",
     "resource": "Person (via Note Category Subscription)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/note_category_subscriptions/{note_category_subscription_id}/person",
     "pathParameters": [
       {
@@ -26578,6 +26678,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategorySubscriptionsNoteCategorySubscriptionIdPerson_updatedAt",
     "resource": "Person (via Note Category Subscription)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/note_category_subscriptions/{note_category_subscription_id}/person",
     "pathParameters": [
       {
@@ -26921,6 +27022,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategoriesNoteCategoryIdSubscribers_createdAt",
     "resource": "Person (via Note Category)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/note_categories/{note_category_id}/subscribers",
     "pathParameters": [
       {
@@ -27265,6 +27367,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNoteCategoriesNoteCategoryIdSubscribers_updatedAt",
     "resource": "Person (via Note Category)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/note_categories/{note_category_id}/subscribers",
     "pathParameters": [
       {
@@ -27609,6 +27712,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotesNoteIdCreatedBy_createdAt",
     "resource": "Person (via Note Created By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/notes/{note_id}/created_by",
     "pathParameters": [
       {
@@ -27952,6 +28056,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotesNoteIdCreatedBy_updatedAt",
     "resource": "Person (via Note Created By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/notes/{note_id}/created_by",
     "pathParameters": [
       {
@@ -28295,6 +28400,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotesNoteIdPerson_createdAt",
     "resource": "Person (via Note Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/notes/{note_id}/person",
     "pathParameters": [
       {
@@ -28638,6 +28744,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getNotesNoteIdPerson_updatedAt",
     "resource": "Person (via Note Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/notes/{note_id}/person",
     "pathParameters": [
       {
@@ -28981,6 +29088,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdAssignee_createdAt",
     "resource": "Person (via Person Workflow Card Assignee)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/assignee",
     "pathParameters": [
       {
@@ -29359,6 +29467,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdAssignee_updatedAt",
     "resource": "Person (via Person Workflow Card Assignee)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/assignee",
     "pathParameters": [
       {
@@ -29737,6 +29846,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdPerson_createdAt",
     "resource": "Person (via Person Workflow Card Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/person",
     "pathParameters": [
       {
@@ -30115,6 +30225,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdPerson_updatedAt",
     "resource": "Person (via Person Workflow Card Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/person",
     "pathParameters": [
       {
@@ -30493,6 +30604,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getReportsReportIdCreatedBy_createdAt",
     "resource": "Person (via Report Created By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/reports/{report_id}/created_by",
     "pathParameters": [
       {
@@ -30837,6 +30949,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getReportsReportIdCreatedBy_updatedAt",
     "resource": "Person (via Report Created By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/reports/{report_id}/created_by",
     "pathParameters": [
       {
@@ -31181,6 +31294,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getReportsReportIdUpdatedBy_createdAt",
     "resource": "Person (via Report Updated By)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/reports/{report_id}/updated_by",
     "pathParameters": [
       {
@@ -31525,6 +31639,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getReportsReportIdUpdatedBy_updatedAt",
     "resource": "Person (via Report Updated By)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/reports/{report_id}/updated_by",
     "pathParameters": [
       {
@@ -31869,6 +31984,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSocialProfilesSocialProfileIdPerson_createdAt",
     "resource": "Person (via Social Profile)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/social_profiles/{social_profile_id}/person",
     "pathParameters": [
       {
@@ -32212,6 +32328,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSocialProfilesSocialProfileIdPerson_updatedAt",
     "resource": "Person (via Social Profile)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/social_profiles/{social_profile_id}/person",
     "pathParameters": [
       {
@@ -32555,6 +32672,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdStepsWorkflowStepIdDefaultAssignee_createdAt",
     "resource": "Person (via Step)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/workflows/{workflow_id}/steps/{workflow_step_id}/default_assignee",
     "pathParameters": [
       {
@@ -32934,6 +33052,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdStepsWorkflowStepIdDefaultAssignee_updatedAt",
     "resource": "Person (via Step)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/workflows/{workflow_id}/steps/{workflow_step_id}/default_assignee",
     "pathParameters": [
       {
@@ -33313,6 +33432,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowSharesWorkflowShareIdPerson_createdAt",
     "resource": "Person (via Workflow Share)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people/{person_id}/workflow_shares/{workflow_share_id}/person",
     "pathParameters": [
       {
@@ -33691,6 +33811,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowSharesWorkflowShareIdPerson_updatedAt",
     "resource": "Person (via Workflow Share)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people/{person_id}/workflow_shares/{workflow_share_id}/person",
     "pathParameters": [
       {
@@ -34069,6 +34190,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdSharedPeople_createdAt",
     "resource": "Person (via Workflow)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/workflows/{workflow_id}/shared_people",
     "pathParameters": [
       {
@@ -34413,6 +34535,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdSharedPeople_updatedAt",
     "resource": "Person (via Workflow)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/workflows/{workflow_id}/shared_people",
     "pathParameters": [
       {
@@ -34757,6 +34880,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPersonMergers_createdAt",
     "resource": "Person Merger",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[PersonMerger]",
     "path": "/people/v2/person_mergers",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -34773,6 +34897,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeople_createdAt",
     "resource": "Person",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -35085,6 +35210,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeople_updatedAt",
     "resource": "Person",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Person]",
     "path": "/people/v2/people",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -35397,6 +35523,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPhoneNumbers_createdAt",
     "resource": "Phone Number (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[PhoneNumber]",
     "path": "/people/v2/people/{person_id}/phone_numbers",
     "pathParameters": [
       {
@@ -35467,6 +35594,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPhoneNumbers_updatedAt",
     "resource": "Phone Number (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[PhoneNumber]",
     "path": "/people/v2/people/{person_id}/phone_numbers",
     "pathParameters": [
       {
@@ -35537,6 +35665,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPhoneNumbers_createdAt",
     "resource": "Phone Number",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[PhoneNumber]",
     "path": "/people/v2/phone_numbers",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -35580,6 +35709,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPhoneNumbers_updatedAt",
     "resource": "Phone Number",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[PhoneNumber]",
     "path": "/people/v2/phone_numbers",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -35623,6 +35753,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getReports_createdAt",
     "resource": "Report",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Report]",
     "path": "/people/v2/reports",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -35774,6 +35905,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getReports_updatedAt",
     "resource": "Report",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Report]",
     "path": "/people/v2/reports",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -35925,6 +36057,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdRules_createdAt",
     "resource": "Rule (via List)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Rule]",
     "path": "/people/v2/lists/{list_id}/rules",
     "pathParameters": [
       {
@@ -36013,6 +36146,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getListsListIdRules_updatedAt",
     "resource": "Rule (via List)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Rule]",
     "path": "/people/v2/lists/{list_id}/rules",
     "pathParameters": [
       {
@@ -36101,6 +36235,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdSocialProfiles_createdAt",
     "resource": "Social Profile (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[SocialProfile]",
     "path": "/people/v2/people/{person_id}/social_profiles",
     "pathParameters": [
       {
@@ -36267,6 +36402,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdSocialProfiles_updatedAt",
     "resource": "Social Profile (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[SocialProfile]",
     "path": "/people/v2/people/{person_id}/social_profiles",
     "pathParameters": [
       {
@@ -36433,6 +36569,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSocialProfiles_createdAt",
     "resource": "Social Profile",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[SocialProfile]",
     "path": "/people/v2/social_profiles",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -36572,6 +36709,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getSocialProfiles_updatedAt",
     "resource": "Social Profile",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[SocialProfile]",
     "path": "/people/v2/social_profiles",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -36711,6 +36849,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflow_createdAt",
     "resource": "Workflow (via Workflow Card)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Workflow]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/workflow",
     "pathParameters": [
       {
@@ -36936,6 +37075,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflow_updatedAt",
     "resource": "Workflow (via Workflow Card)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Workflow]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/workflow",
     "pathParameters": [
       {
@@ -37161,6 +37301,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdActivities_createdAt",
     "resource": "Workflow Card Activity (via Workflow Card)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowCardActivity]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/activities",
     "pathParameters": [
       {
@@ -37261,6 +37402,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdActivities_updatedAt",
     "resource": "Workflow Card Activity (via Workflow Card)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowCardActivity]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/activities",
     "pathParameters": [
       {
@@ -37361,6 +37503,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdNotes_createdAt",
     "resource": "Workflow Card Note (via Workflow Card)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowCardNote]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/notes",
     "pathParameters": [
       {
@@ -37461,6 +37604,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdNotes_updatedAt",
     "resource": "Workflow Card Note (via Workflow Card)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowCardNote]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/notes",
     "pathParameters": [
       {
@@ -37561,6 +37705,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdCategory_createdAt",
     "resource": "Workflow Category (via Workflow)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowCategory]",
     "path": "/people/v2/workflows/{workflow_id}/category",
     "pathParameters": [
       {
@@ -37637,6 +37782,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdCategory_updatedAt",
     "resource": "Workflow Category (via Workflow)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowCategory]",
     "path": "/people/v2/workflows/{workflow_id}/category",
     "pathParameters": [
       {
@@ -37713,6 +37859,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdCurrentStep_createdAt",
     "resource": "Workflow Step (via Workflow Card)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowStep]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/current_step",
     "pathParameters": [
       {
@@ -37927,6 +38074,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdWorkflowCardsWorkflowCardIdCurrentStep_updatedAt",
     "resource": "Workflow Step (via Workflow Card)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowStep]",
     "path": "/people/v2/people/{person_id}/workflow_cards/{workflow_card_id}/current_step",
     "pathParameters": [
       {
@@ -38141,6 +38289,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdSteps_createdAt",
     "resource": "Workflow Step (via Workflow)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowStep]",
     "path": "/people/v2/workflows/{workflow_id}/steps",
     "pathParameters": [
       {
@@ -38325,6 +38474,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflowsWorkflowIdSteps_updatedAt",
     "resource": "Workflow Step (via Workflow)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[WorkflowStep]",
     "path": "/people/v2/workflows/{workflow_id}/steps",
     "pathParameters": [
       {
@@ -38509,6 +38659,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflows_createdAt",
     "resource": "Workflow",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Workflow]",
     "path": "/people/v2/workflows",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -38668,6 +38819,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getWorkflows_updatedAt",
     "resource": "Workflow",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Workflow]",
     "path": "/people/v2/workflows",
     "pathParameters": [],
     "ordinaryQueryFields": [],

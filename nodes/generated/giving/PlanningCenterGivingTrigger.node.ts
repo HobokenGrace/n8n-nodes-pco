@@ -336,6 +336,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBatchGroupsBatchGroupIdBatches_updatedAt",
     "resource": "Batch (via Batch Group)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Batch]",
     "path": "/giving/v2/batch_groups/{batch_group_id}/batches",
     "pathParameters": [
       {
@@ -396,6 +397,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdBatches_updatedAt",
     "resource": "Batch (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Batch]",
     "path": "/giving/v2/people/{person_id}/batches",
     "pathParameters": [
       {
@@ -460,6 +462,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBatchesBatchIdBatchGroup_updatedAt",
     "resource": "Batch Group (via Batch)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[BatchGroup]",
     "path": "/giving/v2/batches/{batch_id}/batch_group",
     "pathParameters": [
       {
@@ -514,6 +517,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdBatchGroups_updatedAt",
     "resource": "Batch Group (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[BatchGroup]",
     "path": "/giving/v2/people/{person_id}/batch_groups",
     "pathParameters": [
       {
@@ -572,6 +576,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBatchGroups_updatedAt",
     "resource": "Batch Group",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[BatchGroup]",
     "path": "/giving/v2/batch_groups",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -600,6 +605,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBatches_updatedAt",
     "resource": "Batch",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Batch]",
     "path": "/giving/v2/batches",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -634,6 +640,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBatchesBatchIdDonations_createdAt",
     "resource": "Donation (via Batch)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/batches/{batch_id}/donations",
     "pathParameters": [
       {
@@ -799,6 +806,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getBatchesBatchIdDonations_updatedAt",
     "resource": "Donation (via Batch)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/batches/{batch_id}/donations",
     "pathParameters": [
       {
@@ -964,6 +972,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCampusesCampusIdDonations_createdAt",
     "resource": "Donation (via Campus)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/campuses/{campus_id}/donations",
     "pathParameters": [
       {
@@ -1129,6 +1138,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getCampusesCampusIdDonations_updatedAt",
     "resource": "Donation (via Campus)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/campuses/{campus_id}/donations",
     "pathParameters": [
       {
@@ -1294,6 +1304,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPaymentSourcesPaymentSourceIdDonations_createdAt",
     "resource": "Donation (via Payment Source)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/payment_sources/{payment_source_id}/donations",
     "pathParameters": [
       {
@@ -1459,6 +1470,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPaymentSourcesPaymentSourceIdDonations_updatedAt",
     "resource": "Donation (via Payment Source)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/payment_sources/{payment_source_id}/donations",
     "pathParameters": [
       {
@@ -1624,6 +1636,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdDonations_createdAt",
     "resource": "Donation (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/people/{person_id}/donations",
     "pathParameters": [
       {
@@ -1793,6 +1806,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdDonations_updatedAt",
     "resource": "Donation (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/people/{person_id}/donations",
     "pathParameters": [
       {
@@ -1962,6 +1976,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getDonations_createdAt",
     "resource": "Donation",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/donations",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -2101,6 +2116,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getDonations_updatedAt",
     "resource": "Donation",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Donation]",
     "path": "/giving/v2/donations",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -2240,6 +2256,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdInKindDonations_createdAt",
     "resource": "In Kind Donation (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/people/{person_id}/in_kind_donations",
     "pathParameters": [
       {
@@ -2390,6 +2407,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdInKindDonations_updatedAt",
     "resource": "In Kind Donation (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/people/{person_id}/in_kind_donations",
     "pathParameters": [
       {
@@ -2540,6 +2558,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getInKindDonations_createdAt",
     "resource": "In Kind Donation",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/in_kind_donations",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -2660,6 +2679,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getInKindDonations_updatedAt",
     "resource": "In Kind Donation",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[InKindDonation]",
     "path": "/giving/v2/in_kind_donations",
     "pathParameters": [],
     "ordinaryQueryFields": [],
@@ -2780,6 +2800,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPledges_createdAt",
     "resource": "Pledge (via Person)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges",
     "pathParameters": [
       {
@@ -2877,6 +2898,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPledges_updatedAt",
     "resource": "Pledge (via Person)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges",
     "pathParameters": [
       {
@@ -2974,6 +2996,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_createdAt",
     "resource": "Pledge (via Pledge Campaign)",
     "cursorField": "created_at",
+    "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
     "pathParameters": [
       {
@@ -3135,6 +3158,7 @@ const OPERATIONS: PollingOperation[] = [
     "id": "getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_updatedAt",
     "resource": "Pledge (via Pledge Campaign)",
     "cursorField": "updated_at",
+    "cursorSparseFieldSourceName": "fields[Pledge]",
     "path": "/giving/v2/people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges",
     "pathParameters": [
       {
