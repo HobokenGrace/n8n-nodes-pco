@@ -65,3 +65,12 @@
 - [x] 10.2 Replace process-local poll-context activation detection with state-driven initialization and cover scheduled polling through a fresh context
 - [x] 10.3 Group nested trigger operations by emitted resource plus parent scope and keep Event labels limited to `Created` or `Created or Updated`
 - [x] 10.4 Add an n8n UI acceptance test plan for generated polling triggers
+
+## 11. Show Polling Endpoint Subtitles
+
+- [x] 11.1 Add regression coverage and render each configured trigger subtitle as the source action endpoint description followed by the active snake_case cursor field
+
+## 12. Accept Native Start Time Values
+
+- [x] 12.1 Add regression coverage for native n8n local date-time values and invalid calendar dates
+- [x] 12.2 Interpret native Start Time values in the workflow timezone while preserving explicit-offset RFC 3339 support and UTC state canonicalization

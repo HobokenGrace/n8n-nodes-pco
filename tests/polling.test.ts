@@ -56,6 +56,7 @@ function pollingContext(
     parameters?: Record<string, unknown>;
     responses?: unknown[];
     staticData?: Record<string, any>;
+    timezone?: string;
   } = {},
 ) {
   const parameters: Record<string, unknown> = {
@@ -93,6 +94,7 @@ function pollingContext(
     getNodeParameter: vi.fn((name: string, fallback?: unknown) =>
       Object.hasOwn(parameters, name) ? parameters[name] : fallback,
     ),
+    getTimezone: () => options.timezone ?? 'America/New_York',
     getWorkflow: () => ({ id: 'workflow-1', name: 'Workflow' }),
     getWorkflowSettings: () => ({}),
     getWorkflowStaticData,
@@ -260,6 +262,31 @@ describe('Planning Center polling state and lifecycle', () => {
       [{ json: expect.objectContaining({ id: '2' }) }],
     ]);
   });
+
+  it('interprets the n8n date-time selector value in the workflow timezone', async () => {
+    const { context, httpRequest, staticData } = pollingContext({
+      parameters: { startTime: '2026-04-01 00:00:00' },
+      timezone: 'America/New_York',
+    });
+
+    await expect(pollPlanningCenter.call(context, [operation])).resolves.toBeNull();
+    expect(httpRequest).not.toHaveBeenCalled();
+    expect(pollingState(staticData).watermark).toBe('2026-04-01T04:00:00.000Z');
+  });
+
+  it.each(['2026-02-30 00:00:00', '2026-03-08 02:30:00'])(
+    'rejects invalid n8n date-time selector value %s before requesting',
+    async (startTime) => {
+      const { context, httpRequest } = pollingContext({
+        parameters: { startTime },
+      });
+
+      await expect(pollPlanningCenter.call(context, [operation])).rejects.toThrow(
+        /Start Time must be a valid date-time/,
+      );
+      expect(httpRequest).not.toHaveBeenCalled();
+    },
+  );
 
   it('accepts a future Start Time and waits without requesting or emitting', async () => {
     vi.useFakeTimers();

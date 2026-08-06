@@ -26,7 +26,7 @@ The system SHALL derive polling trigger operations from committed Planning Cente
 
 ### Requirement: Trigger operations preserve collection context
 
-Each generated product trigger SHALL expose separate Resource and Event controls. The Resource control SHALL group polling operations by their emitted JSON:API resource type and append `(via <Scope>)` for nested collection routes, adding deeper path context only when needed to keep Resource and Event combinations unique. Event labels SHALL remain `Created` or `Created or Updated`. The corresponding n8n action labels SHALL start with `On`, include the emitted resource name, and place any `(via <Scope>)` suffix after the event so operations remain identifiable outside the configured node. Each `Created` option SHALL describe that it follows creation time and does not fire when an older resource merely starts matching. Each `Created or Updated` option SHALL describe that it includes initial creation and later changes whose update timestamp advances.
+Each generated product trigger SHALL expose separate Resource and Event controls. The Resource control SHALL group polling operations by their emitted JSON:API resource type and append `(via <Scope>)` for nested collection routes, adding deeper path context only when needed to keep Resource and Event combinations unique. Event labels SHALL remain `Created` or `Created or Updated`. The corresponding n8n action labels SHALL start with `On`, include the emitted resource name, and place any `(via <Scope>)` suffix after the event so operations remain identifiable outside the configured node. The configured node subtitle SHALL reuse the corresponding action operation's endpoint description and append the active snake_case cursor field. Each `Created` option SHALL describe that it follows creation time and does not fire when an older resource merely starts matching. Each `Created or Updated` option SHALL describe that it includes initial creation and later changes whose update timestamp advances.
 
 #### Scenario: Direct collection trigger is generated
 
@@ -34,6 +34,7 @@ Each generated product trigger SHALL expose separate Resource and Event controls
 - **THEN** the Resource control SHALL contain `<Resource Type>`
 - **AND** its Event control SHALL use `Created` or `Created or Updated`
 - **AND** its n8n action label SHALL use `On <Resource Type> created` or `On <Resource Type> created or updated`
+- **AND** its configured node subtitle SHALL use `<METHOD> <endpoint> created_at` or `<METHOD> <endpoint> updated_at` for the selected Event
 - **AND** each Event option SHALL include the corresponding creation-time or update-time description
 
 #### Scenario: Nested collection trigger is generated
@@ -110,7 +111,7 @@ The generated trigger SHALL declare itself as an n8n polling node and SHALL rely
 
 ### Requirement: Initial polling state avoids an implicit historical replay
 
-The trigger SHALL expose Start Time as an optional native n8n date-time control with an empty default and expression support. It SHALL default to new changes only when the resolved value is empty. The Start Time description SHALL state that leaving it empty does not emit existing matching records, a past or current value starts inclusive historical catch-up after initialization, and a future value keeps the trigger active without emitting resource items until that time. A configured or expression-resolved value SHALL be a valid RFC 3339 date-time with an explicit offset; the runtime SHALL canonicalize it to UTC and use it as an inclusive watermark. The value MAY be in the past or future. A node without persisted state SHALL initialize and persist the applicable boundary without returning resource items. A node with valid persisted state SHALL poll immediately whenever n8n invokes it, including during reactivation.
+The trigger SHALL expose Start Time as an optional native n8n date-time control with an empty default and expression support. It SHALL default to new changes only when the resolved value is empty. The Start Time description SHALL state that leaving it empty does not emit existing matching records, a past or current value starts inclusive historical catch-up after initialization, and a future value keeps the trigger active without emitting resource items until that time. A configured or expression-resolved value SHALL be either the native n8n local date-time format or a valid RFC 3339 date-time with an explicit offset. The runtime SHALL interpret a native local value in the workflow timezone, canonicalize either accepted form to UTC, and use it as an inclusive watermark. The value MAY be in the past or future. A node without persisted state SHALL initialize and persist the applicable boundary without returning resource items. A node with valid persisted state SHALL poll immediately whenever n8n invokes it, including during reactivation.
 
 #### Scenario: User configures Start Time in the editor
 
@@ -118,6 +119,7 @@ The trigger SHALL expose Start Time as an optional native n8n date-time control 
 - **THEN** Start Time SHALL use the native date-time input rather than a plain string or date-only control
 - **AND** its default SHALL be empty
 - **AND** it SHALL accept an n8n expression whose resolved value is validated at runtime
+- **AND** a value selected in the editor SHALL be interpreted in the workflow timezone
 
 #### Scenario: Trigger is activated without prior state
 
@@ -155,7 +157,7 @@ The trigger SHALL expose Start Time as an optional native n8n date-time control 
 
 #### Scenario: User configures an invalid start time
 
-- **WHEN** the start time is not a valid RFC 3339 date-time with an explicit offset
+- **WHEN** the start time is neither the native n8n local date-time format nor a valid RFC 3339 date-time with an explicit offset
 - **THEN** the trigger SHALL reject the configuration without making a Planning Center request or changing state
 
 ### Requirement: Polling uses an inclusive durable watermark

@@ -5555,13 +5555,6 @@ const OPERATIONS: PollingOperation[] = [
 
 const NODE_PROPERTIES = [
     {
-      displayName: 'Delivery Limitations',
-      name: 'deliveryLimitations',
-      type: 'notice',
-      default: '',
-      description: 'Polling may deliver duplicates. A successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. See the package polling documentation for idempotency, retry, and other limitations.',
-    },
-    {
       displayName: 'Resource',
       name: 'resource',
       type: 'options',
@@ -7102,6 +7095,12 @@ const NODE_PROPERTIES = [
       displayOptions: {"show":{"resource":["Headcount"],"operation":["getHeadcounts_updatedAt"]}},
       options: [{"displayName":"Fields[Headcount]","name":"fieldsHeadcount","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Attendance Type]","name":"fieldsAttendanceType","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Event Time]","name":"fieldsEventTime","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Event]","name":"fieldsEvent","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Event Period]","name":"fieldsEventPeriod","values":[{"displayName":"Value","name":"value","type":"string","default":""}]}],
     },
+    {
+      displayName: '<strong>Limitations:</strong> This trigger may occasionally send the same record more than once, and it won’t report when a record is deleted. If a later workflow step fails after records are sent, this trigger won’t automatically send those records again.',
+      name: 'deliveryLimitations',
+      type: 'notice',
+      default: '',
+    },
   ] as any;
 
 export class PlanningCenterCheckInsTrigger implements INodeType {
@@ -7111,6 +7110,7 @@ export class PlanningCenterCheckInsTrigger implements INodeType {
     icon: 'file:check-ins.svg',
     group: ['trigger'],
     version: 1,
+    subtitle: "={{({\"getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_createdAt\":\"GET /stations/{station_id}/check_in_groups/{check_in_group_id}/check_ins created_at\",\"getStationsStationIdCheckInGroupsCheckInGroupIdCheckIns_updatedAt\":\"GET /stations/{station_id}/check_in_groups/{check_in_group_id}/check_ins updated_at\",\"getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_createdAt\":\"GET /check_ins/{check_in_id}/event_period/{event_period_id}/check_ins created_at\",\"getCheckInsCheckInIdEventPeriodEventPeriodIdCheckIns_updatedAt\":\"GET /check_ins/{check_in_id}/event_period/{event_period_id}/check_ins updated_at\",\"getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_createdAt\":\"GET /events/{event_id}/person_events/{person_event_id}/first_check_in created_at\",\"getEventsEventIdPersonEventsPersonEventIdFirstCheckIn_updatedAt\":\"GET /events/{event_id}/person_events/{person_event_id}/first_check_in updated_at\",\"getEventsEventIdPersonEventsPersonEventIdLastCheckIn_createdAt\":\"GET /events/{event_id}/person_events/{person_event_id}/last_check_in created_at\",\"getEventsEventIdPersonEventsPersonEventIdLastCheckIn_updatedAt\":\"GET /events/{event_id}/person_events/{person_event_id}/last_check_in updated_at\",\"getEventTimesEventTimeIdCheckIns_createdAt\":\"GET /event_times/{event_time_id}/check_ins created_at\",\"getEventTimesEventTimeIdCheckIns_updatedAt\":\"GET /event_times/{event_time_id}/check_ins updated_at\",\"getEventsEventIdCheckIns_createdAt\":\"GET /events/{event_id}/check_ins created_at\",\"getEventsEventIdCheckIns_updatedAt\":\"GET /events/{event_id}/check_ins updated_at\",\"getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_createdAt\":\"GET /check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins created_at\",\"getCheckInsCheckInIdEventPeriodEventPeriodIdLocationEventPeriodsLocationEventPeriodIdCheckIns_updatedAt\":\"GET /check_ins/{check_in_id}/event_period/{event_period_id}/location_event_periods/{location_event_period_id}/check_ins updated_at\",\"getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_createdAt\":\"GET /event_times/{event_time_id}/location_event_times/{location_event_time_id}/check_ins created_at\",\"getEventTimesEventTimeIdLocationEventTimesLocationEventTimeIdCheckIns_updatedAt\":\"GET /event_times/{event_time_id}/location_event_times/{location_event_time_id}/check_ins updated_at\",\"getCheckInsCheckInIdLocationsLocationIdCheckIns_createdAt\":\"GET /check_ins/{check_in_id}/locations/{location_id}/check_ins created_at\",\"getCheckInsCheckInIdLocationsLocationIdCheckIns_updatedAt\":\"GET /check_ins/{check_in_id}/locations/{location_id}/check_ins updated_at\",\"getOptionsOptionIdCheckIns_createdAt\":\"GET /options/{option_id}/check_ins created_at\",\"getOptionsOptionIdCheckIns_updatedAt\":\"GET /options/{option_id}/check_ins updated_at\",\"getPeoplePersonIdCheckIns_createdAt\":\"GET /people/{person_id}/check_ins created_at\",\"getPeoplePersonIdCheckIns_updatedAt\":\"GET /people/{person_id}/check_ins updated_at\",\"getStationsStationIdCheckedInAtCheckIns_createdAt\":\"GET /stations/{station_id}/checked_in_at_check_ins created_at\",\"getStationsStationIdCheckedInAtCheckIns_updatedAt\":\"GET /stations/{station_id}/checked_in_at_check_ins updated_at\",\"getCheckIns_createdAt\":\"GET /check_ins created_at\",\"getCheckIns_updatedAt\":\"GET /check_ins updated_at\",\"getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_createdAt\":\"GET /events/{event_id}/attendance_types/{attendance_type_id}/headcounts created_at\",\"getEventsEventIdAttendanceTypesAttendanceTypeIdHeadcounts_updatedAt\":\"GET /events/{event_id}/attendance_types/{attendance_type_id}/headcounts updated_at\",\"getEventTimesEventTimeIdHeadcounts_createdAt\":\"GET /event_times/{event_time_id}/headcounts created_at\",\"getEventTimesEventTimeIdHeadcounts_updatedAt\":\"GET /event_times/{event_time_id}/headcounts updated_at\",\"getHeadcounts_createdAt\":\"GET /headcounts created_at\",\"getHeadcounts_updatedAt\":\"GET /headcounts updated_at\"})[$parameter[\"operation\"]] || $parameter[\"operation\"]}}",
     description: "Poll Planning Center Check-Ins for created or updated resources.",
     defaults: { name: "Planning Center Check-Ins Trigger" },
     inputs: [],

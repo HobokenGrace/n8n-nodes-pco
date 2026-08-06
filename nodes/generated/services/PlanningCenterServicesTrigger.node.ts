@@ -3281,13 +3281,6 @@ const OPERATIONS: PollingOperation[] = [
 
 const NODE_PROPERTIES = [
     {
-      displayName: 'Delivery Limitations',
-      name: 'deliveryLimitations',
-      type: 'notice',
-      default: '',
-      description: 'Polling may deliver duplicates. A successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. See the package polling documentation for idempotency, retry, and other limitations.',
-    },
-    {
       displayName: 'Resource',
       name: 'resource',
       type: 'options',
@@ -4217,6 +4210,12 @@ const NODE_PROPERTIES = [
       displayOptions: {"show":{"resource":["Plan Note (via Plan)"],"operation":["getServiceTypesServiceTypeIdPlansPlanIdNotes_updatedAt"]}},
       options: [{"displayName":"Fields[Plan Note]","name":"fieldsPlanNote","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Plan Note Category]","name":"fieldsPlanNoteCategory","values":[{"displayName":"Value","name":"value","type":"string","default":""}]}],
     },
+    {
+      displayName: '<strong>Limitations:</strong> This trigger may occasionally send the same record more than once, and it won’t report when a record is deleted. If a later workflow step fails after records are sent, this trigger won’t automatically send those records again.',
+      name: 'deliveryLimitations',
+      type: 'notice',
+      default: '',
+    },
   ] as any;
 
 export class PlanningCenterServicesTrigger implements INodeType {
@@ -4226,6 +4225,7 @@ export class PlanningCenterServicesTrigger implements INodeType {
     icon: 'file:services.svg',
     group: ['trigger'],
     version: 1,
+    subtitle: "={{({\"getSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlans_createdAt\":\"GET /series/{series_id}/plans/{plan_id}/live/{live_id}/watchable_plans created_at\",\"getSeriesSeriesIdPlansPlanIdLiveLiveIdWatchablePlans_updatedAt\":\"GET /series/{series_id}/plans/{plan_id}/live/{live_id}/watchable_plans updated_at\",\"getPeoplePersonIdPlanPeoplePlanPersonIdPlan_createdAt\":\"GET /people/{person_id}/plan_people/{plan_person_id}/plan created_at\",\"getPeoplePersonIdPlanPeoplePlanPersonIdPlan_updatedAt\":\"GET /people/{person_id}/plan_people/{plan_person_id}/plan updated_at\",\"getSeriesSeriesIdPlans_createdAt\":\"GET /series/{series_id}/plans created_at\",\"getSeriesSeriesIdPlans_updatedAt\":\"GET /series/{series_id}/plans updated_at\",\"getServiceTypesServiceTypeIdPlansPlanIdNextPlan_createdAt\":\"GET /service_types/{service_type_id}/plans/{plan_id}/next_plan created_at\",\"getServiceTypesServiceTypeIdPlansPlanIdNextPlan_updatedAt\":\"GET /service_types/{service_type_id}/plans/{plan_id}/next_plan updated_at\",\"getServiceTypesServiceTypeIdPlansPlanIdPreviousPlan_createdAt\":\"GET /service_types/{service_type_id}/plans/{plan_id}/previous_plan created_at\",\"getServiceTypesServiceTypeIdPlansPlanIdPreviousPlan_updatedAt\":\"GET /service_types/{service_type_id}/plans/{plan_id}/previous_plan updated_at\",\"getServiceTypesServiceTypeIdPlans_createdAt\":\"GET /service_types/{service_type_id}/plans created_at\",\"getServiceTypesServiceTypeIdPlans_updatedAt\":\"GET /service_types/{service_type_id}/plans updated_at\",\"getServiceTypesServiceTypeIdUnscopedPlans_createdAt\":\"GET /service_types/{service_type_id}/unscoped_plans created_at\",\"getServiceTypesServiceTypeIdUnscopedPlans_updatedAt\":\"GET /service_types/{service_type_id}/unscoped_plans updated_at\",\"getServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotes_createdAt\":\"GET /service_types/{service_type_id}/plan_templates/{plan_template_id}/notes created_at\",\"getServiceTypesServiceTypeIdPlanTemplatesPlanTemplateIdNotes_updatedAt\":\"GET /service_types/{service_type_id}/plan_templates/{plan_template_id}/notes updated_at\",\"getServiceTypesServiceTypeIdPlansPlanIdNotes_createdAt\":\"GET /service_types/{service_type_id}/plans/{plan_id}/notes created_at\",\"getServiceTypesServiceTypeIdPlansPlanIdNotes_updatedAt\":\"GET /service_types/{service_type_id}/plans/{plan_id}/notes updated_at\"})[$parameter[\"operation\"]] || $parameter[\"operation\"]}}",
     description: "Poll Planning Center Services for created or updated resources.",
     defaults: { name: "Planning Center Services Trigger" },
     inputs: [],

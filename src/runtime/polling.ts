@@ -15,6 +15,7 @@ const STATE_VERSION = 1;
 const EMPTY_WATERMARK = '1970-01-01T00:00:00.000Z';
 const MAX_PAGE_SIZE = 100;
 const RFC3339_WITH_OFFSET = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+const N8N_LOCAL_DATE_TIME = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/;
 
 export type PollingCursorField = 'created_at' | 'updated_at';
 
@@ -121,6 +122,70 @@ export function canonicalizeRfc3339(value: unknown, label = 'date-time'): string
   return new Date(timestamp).toISOString();
 }
 
+function canonicalizeStartTime(value: unknown, timezone: string): string {
+  if (typeof value === 'string' && RFC3339_WITH_OFFSET.test(value)) {
+    return canonicalizeRfc3339(value, 'Start Time');
+  }
+  const match = typeof value === 'string' ? N8N_LOCAL_DATE_TIME.exec(value) : null;
+  if (!match) {
+    throw new Error(`Start Time must be a valid date-time.`);
+  }
+
+  try {
+    const [year, month, day, hour, minute, second] = match.slice(1).map(Number);
+    const wallTime = Date.UTC(year, month - 1, day, hour, minute, second);
+    const calendarCheck = new Date(wallTime);
+    if (
+      calendarCheck.getUTCFullYear() !== year ||
+      calendarCheck.getUTCMonth() !== month - 1 ||
+      calendarCheck.getUTCDate() !== day ||
+      calendarCheck.getUTCHours() !== hour ||
+      calendarCheck.getUTCMinutes() !== minute ||
+      calendarCheck.getUTCSeconds() !== second
+    ) {
+      throw new Error('invalid calendar date');
+    }
+
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: timezone,
+      hourCycle: 'h23',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+    const wallTimeAt = (timestamp: number): number => {
+      const parts = Object.fromEntries(
+        formatter
+          .formatToParts(timestamp)
+          .filter((part) => part.type !== 'literal')
+          .map((part) => [part.type, Number(part.value)]),
+      );
+      return Date.UTC(
+        parts.year,
+        parts.month - 1,
+        parts.day,
+        parts.hour,
+        parts.minute,
+        parts.second,
+      );
+    };
+
+    let timestamp = wallTime;
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const adjusted = wallTime - (wallTimeAt(timestamp) - timestamp);
+      if (adjusted === timestamp) break;
+      timestamp = adjusted;
+    }
+    if (wallTimeAt(timestamp) === wallTime) return new Date(timestamp).toISOString();
+  } catch {
+    // Fall through to the trigger's consistent validation error.
+  }
+  throw new Error('Start Time must be a valid date-time.');
+}
+
 function parseIdentity(value: string): [string, string] | undefined {
   try {
     const parsed = JSON.parse(value);
@@ -216,7 +281,8 @@ function resolveConfiguration(
     );
   }
   const rawStartTime = context.getNodeParameter('startTime', '');
-  const startTime = rawStartTime === '' ? '' : canonicalizeRfc3339(rawStartTime, 'Start Time');
+  const startTime =
+    rawStartTime === '' ? '' : canonicalizeStartTime(rawStartTime, context.getTimezone());
 
   let path = operation.path;
   const scope: Record<string, string> = {};

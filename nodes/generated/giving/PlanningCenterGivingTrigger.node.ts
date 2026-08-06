@@ -3296,13 +3296,6 @@ const OPERATIONS: PollingOperation[] = [
 
 const NODE_PROPERTIES = [
     {
-      displayName: 'Delivery Limitations',
-      name: 'deliveryLimitations',
-      type: 'notice',
-      default: '',
-      description: 'Polling may deliver duplicates. A successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. See the package polling documentation for idempotency, retry, and other limitations.',
-    },
-    {
       displayName: 'Resource',
       name: 'resource',
       type: 'options',
@@ -4318,6 +4311,12 @@ const NODE_PROPERTIES = [
       displayOptions: {"show":{"resource":["Pledge (via Pledge Campaign)"],"operation":["getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_updatedAt"]}},
       options: [{"displayName":"Fields[Pledge]","name":"fieldsPledge","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Person]","name":"fieldsPerson","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Pledge Campaign]","name":"fieldsPledgeCampaign","values":[{"displayName":"Value","name":"value","type":"string","default":""}]},{"displayName":"Fields[Fund]","name":"fieldsFund","values":[{"displayName":"Value","name":"value","type":"string","default":""}]}],
     },
+    {
+      displayName: '<strong>Limitations:</strong> This trigger may occasionally send the same record more than once, and it won’t report when a record is deleted. If a later workflow step fails after records are sent, this trigger won’t automatically send those records again.',
+      name: 'deliveryLimitations',
+      type: 'notice',
+      default: '',
+    },
   ] as any;
 
 export class PlanningCenterGivingTrigger implements INodeType {
@@ -4327,6 +4326,7 @@ export class PlanningCenterGivingTrigger implements INodeType {
     icon: 'file:giving.svg',
     group: ['trigger'],
     version: 1,
+    subtitle: "={{({\"getBatchGroupsBatchGroupIdBatches_updatedAt\":\"GET /batch_groups/{batch_group_id}/batches updated_at\",\"getPeoplePersonIdBatches_updatedAt\":\"GET /people/{person_id}/batches updated_at\",\"getBatchesBatchIdBatchGroup_updatedAt\":\"GET /batches/{batch_id}/batch_group updated_at\",\"getPeoplePersonIdBatchGroups_updatedAt\":\"GET /people/{person_id}/batch_groups updated_at\",\"getBatchGroups_updatedAt\":\"GET /batch_groups updated_at\",\"getBatches_updatedAt\":\"GET /batches updated_at\",\"getBatchesBatchIdDonations_createdAt\":\"GET /batches/{batch_id}/donations created_at\",\"getBatchesBatchIdDonations_updatedAt\":\"GET /batches/{batch_id}/donations updated_at\",\"getCampusesCampusIdDonations_createdAt\":\"GET /campuses/{campus_id}/donations created_at\",\"getCampusesCampusIdDonations_updatedAt\":\"GET /campuses/{campus_id}/donations updated_at\",\"getPaymentSourcesPaymentSourceIdDonations_createdAt\":\"GET /payment_sources/{payment_source_id}/donations created_at\",\"getPaymentSourcesPaymentSourceIdDonations_updatedAt\":\"GET /payment_sources/{payment_source_id}/donations updated_at\",\"getPeoplePersonIdDonations_createdAt\":\"GET /people/{person_id}/donations created_at\",\"getPeoplePersonIdDonations_updatedAt\":\"GET /people/{person_id}/donations updated_at\",\"getDonations_createdAt\":\"GET /donations created_at\",\"getDonations_updatedAt\":\"GET /donations updated_at\",\"getPeoplePersonIdInKindDonations_createdAt\":\"GET /people/{person_id}/in_kind_donations created_at\",\"getPeoplePersonIdInKindDonations_updatedAt\":\"GET /people/{person_id}/in_kind_donations updated_at\",\"getInKindDonations_createdAt\":\"GET /in_kind_donations created_at\",\"getInKindDonations_updatedAt\":\"GET /in_kind_donations updated_at\",\"getPeoplePersonIdPledges_createdAt\":\"GET /people/{person_id}/pledges created_at\",\"getPeoplePersonIdPledges_updatedAt\":\"GET /people/{person_id}/pledges updated_at\",\"getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_createdAt\":\"GET /people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges created_at\",\"getPeoplePersonIdPledgesPledgeIdPledgeCampaignPledgeCampaignIdPledges_updatedAt\":\"GET /people/{person_id}/pledges/{pledge_id}/pledge_campaign/{pledge_campaign_id}/pledges updated_at\"})[$parameter[\"operation\"]] || $parameter[\"operation\"]}}",
     description: "Poll Planning Center Giving for created or updated resources.",
     defaults: { name: "Planning Center Giving Trigger" },
     inputs: [],
