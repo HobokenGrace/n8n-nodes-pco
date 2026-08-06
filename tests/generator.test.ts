@@ -239,6 +239,18 @@ describe('generated Planning Center nodes', () => {
     expect(source).not.toContain('"action":"Created or Updated"');
   });
 
+  it('renders trigger subtitles from source endpoints and cursor fields', () => {
+    const result = buildProductGenerationFromDocument(pollingTestConfig, {
+      paths: { '/items': { get: pollingCollectionOperation() } },
+    });
+    const source = renderTriggerNode(pollingTestConfig, result);
+    const subtitleSource = source?.match(/\n {4}subtitle: (.+),\n {4}description:/)?.[1];
+    const subtitle = subtitleSource ? JSON.parse(subtitleSource) : undefined;
+
+    expect(subtitle).toContain('"listItems_createdAt":"GET /items created_at"');
+    expect(subtitle).toContain('"listItems_updatedAt":"GET /items updated_at"');
+  });
+
   it('adds deeper scope only when scoped polling Resource labels would collide', () => {
     const nestedOperation = (operationId: string) =>
       pollingCollectionOperation({

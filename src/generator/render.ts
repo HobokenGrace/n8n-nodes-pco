@@ -177,11 +177,33 @@ function renderPollingOperations(operations: ProductGenerationResult['pollingOpe
   );
 }
 
-function renderOperationSubtitle(operations: GeneratedOperation[]): string {
+function renderOperationSubtitle(
+  operations: Array<Pick<GeneratedOperation, 'id' | 'description'>>,
+): string {
   const descriptions = Object.fromEntries(
     operations.map((operation) => [operation.id, operation.description]),
   );
   return `={{(${JSON.stringify(descriptions)})[$parameter["operation"]] || $parameter["operation"]}}`;
+}
+
+function renderPollingOperationSubtitle(
+  operations: ProductGenerationResult['pollingOperations'],
+  sourceOperations: GeneratedOperation[],
+): string {
+  const sourceDescriptions = new Map(
+    sourceOperations.map((operation) => [operation.id, operation.description]),
+  );
+  return renderOperationSubtitle(
+    operations.map((operation) => {
+      const sourceDescription = sourceDescriptions.get(operation.sourceOperationId);
+      if (!sourceDescription)
+        throw new Error(`Missing source operation for polling operation ${operation.id}`);
+      return {
+        id: operation.id,
+        description: `${sourceDescription} ${operation.cursorField}`,
+      };
+    }),
+  );
 }
 
 function renderQueryOptionValues(option: GeneratedQueryOption): unknown[] {
@@ -876,6 +898,7 @@ export class ${config.className}Trigger implements INodeType {
     icon: 'file:${config.product}.svg',
     group: ['trigger'],
     version: 1,
+    subtitle: ${q(renderPollingOperationSubtitle(operations, result.operations))},
     description: ${q(`Poll ${config.displayName} for created or updated resources.`)},
     defaults: { name: ${q(`${config.displayName} Trigger`)} },
     inputs: [],
