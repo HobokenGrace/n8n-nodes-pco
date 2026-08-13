@@ -1952,13 +1952,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId",
-          "sourcePath": "/people/v2/people/{person_id}/background_checks",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getBackgroundChecksBackgroundCheckIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/background_checks",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2520,13 +2515,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId",
-          "sourcePath": "/people/v2/people/{person_id}/background_checks",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchBackgroundChecksBackgroundCheckIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/background_checks",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3042,13 +3032,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId",
-          "sourcePath": "/people/v2/people/{person_id}/background_checks",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteBackgroundChecksBackgroundCheckIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/background_checks",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3821,13 +3806,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCampusesCampusIdListsListIdCampusId",
-          "sourcePath": "/people/v2/lists/{list_id}/campus",
-          "parentBindings": [
-            {
-              "sourceName": "list_id",
-              "fieldName": "getCampusesCampusIdListsListId_listId"
-            }
-          ],
+          "sourcePath": "/people/v2/campuses",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4399,13 +4379,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchCampusesCampusIdListsListIdCampusId",
-          "sourcePath": "/people/v2/lists/{list_id}/campus",
-          "parentBindings": [
-            {
-              "sourceName": "list_id",
-              "fieldName": "patchCampusesCampusIdListsListId_listId"
-            }
-          ],
+          "sourcePath": "/people/v2/campuses",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -5579,13 +5554,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEmailsEmailIdPersonPersonIdEmailId",
-          "sourcePath": "/people/v2/people/{person_id}/emails",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getEmailsEmailIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/emails",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -5745,13 +5715,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchEmailsEmailIdPersonPersonIdEmailId",
-          "sourcePath": "/people/v2/people/{person_id}/emails",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchEmailsEmailIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/emails",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6216,13 +6181,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteEmailsEmailIdPersonPersonIdEmailId",
-          "sourcePath": "/people/v2/people/{person_id}/emails",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteEmailsEmailIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/emails",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7561,13 +7521,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetFieldDataFieldDatumIdPersonPersonIdFieldDatumId",
-          "sourcePath": "/people/v2/people/{person_id}/field_data",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getFieldDataFieldDatumIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/field_data",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -8116,13 +8071,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchFieldDataFieldDatumIdPersonPersonIdFieldDatumId",
-          "sourcePath": "/people/v2/people/{person_id}/field_data",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchFieldDataFieldDatumIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/field_data",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -8847,13 +8797,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteFieldDataFieldDatumIdPersonPersonIdFieldDatumId",
-          "sourcePath": "/people/v2/people/{person_id}/field_data",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteFieldDataFieldDatumIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/field_data",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -9436,13 +9381,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId",
-          "sourcePath": "/people/v2/tabs/{tab_id}/field_definitions",
-          "parentBindings": [
-            {
-              "sourceName": "tab_id",
-              "fieldName": "getFieldDefinitionsFieldDefinitionIdTabTabId_tabId"
-            }
-          ],
+          "sourcePath": "/people/v2/field_definitions",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -9795,13 +9735,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId",
-          "sourcePath": "/people/v2/tabs/{tab_id}/field_definitions",
-          "parentBindings": [
-            {
-              "sourceName": "tab_id",
-              "fieldName": "patchFieldDefinitionsFieldDefinitionIdTabTabId_tabId"
-            }
-          ],
+          "sourcePath": "/people/v2/field_definitions",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -10030,13 +9965,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId",
-          "sourcePath": "/people/v2/tabs/{tab_id}/field_definitions",
-          "parentBindings": [
-            {
-              "sourceName": "tab_id",
-              "fieldName": "deleteFieldDefinitionsFieldDefinitionIdTabTabId_tabId"
-            }
-          ],
+          "sourcePath": "/people/v2/field_definitions",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -17402,13 +17332,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId",
-          "sourcePath": "/people/v2/people/{person_id}/households",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/households",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -17536,13 +17461,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetHouseholdsHouseholdIdPeoplePersonIdHouseholdId",
-          "sourcePath": "/people/v2/people/{person_id}/households",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getHouseholdsHouseholdIdPeoplePersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/households",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -18359,13 +18279,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId",
-          "sourcePath": "/people/v2/people/{person_id}/households",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/households",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -18823,13 +18738,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchHouseholdsHouseholdIdPeoplePersonIdHouseholdId",
-          "sourcePath": "/people/v2/people/{person_id}/households",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchHouseholdsHouseholdIdPeoplePersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/households",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -19448,13 +19358,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId",
-          "sourcePath": "/people/v2/people/{person_id}/households",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/households",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -19565,13 +19470,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteHouseholdsHouseholdIdPeoplePersonIdHouseholdId",
-          "sourcePath": "/people/v2/people/{person_id}/households",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteHouseholdsHouseholdIdPeoplePersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/households",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -20389,13 +20289,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetListCategoriesListCategoryIdListsListIdListCategoryId",
-          "sourcePath": "/people/v2/lists/{list_id}/category",
-          "parentBindings": [
-            {
-              "sourceName": "list_id",
-              "fieldName": "getListCategoriesListCategoryIdListsListId_listId"
-            }
-          ],
+          "sourcePath": "/people/v2/list_categories",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -20594,13 +20489,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchListCategoriesListCategoryIdListsListIdListCategoryId",
-          "sourcePath": "/people/v2/lists/{list_id}/category",
-          "parentBindings": [
-            {
-              "sourceName": "list_id",
-              "fieldName": "patchListCategoriesListCategoryIdListsListId_listId"
-            }
-          ],
+          "sourcePath": "/people/v2/list_categories",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -25876,13 +25766,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetListsListIdCampusCampusIdListId",
-          "sourcePath": "/people/v2/campuses/{campus_id}/lists",
-          "parentBindings": [
-            {
-              "sourceName": "campus_id",
-              "fieldName": "getListsListIdCampusCampusId_campusId"
-            }
-          ],
+          "sourcePath": "/people/v2/lists",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -27469,13 +27354,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchListsListIdCampusCampusIdListId",
-          "sourcePath": "/people/v2/campuses/{campus_id}/lists",
-          "parentBindings": [
-            {
-              "sourceName": "campus_id",
-              "fieldName": "patchListsListIdCampusCampusId_campusId"
-            }
-          ],
+          "sourcePath": "/people/v2/lists",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -30523,13 +30403,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteListsListIdCampusCampusIdListId",
-          "sourcePath": "/people/v2/campuses/{campus_id}/lists",
-          "parentBindings": [
-            {
-              "sourceName": "campus_id",
-              "fieldName": "deleteListsListIdCampusCampusId_campusId"
-            }
-          ],
+          "sourcePath": "/people/v2/lists",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -32955,13 +32830,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetMessageGroupsMessageGroupIdMessagesMessageIdMessageGroupId",
-          "sourcePath": "/people/v2/messages/{message_id}/message_group",
-          "parentBindings": [
-            {
-              "sourceName": "message_id",
-              "fieldName": "getMessageGroupsMessageGroupIdMessagesMessageId_messageId"
-            }
-          ],
+          "sourcePath": "/people/v2/message_groups",
+          "parentBindings": [],
           "searchFilter": "where[subject]",
           "labelFields": [
             "name",
@@ -34607,13 +34477,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetMessagesMessageIdMessageGroupMessageGroupIdMessageId",
-          "sourcePath": "/people/v2/message_groups/{message_group_id}/messages",
-          "parentBindings": [
-            {
-              "sourceName": "message_group_id",
-              "fieldName": "getMessagesMessageIdMessageGroupMessageGroupId_messageGroupId"
-            }
-          ],
+          "sourcePath": "/people/v2/messages",
+          "parentBindings": [],
           "searchFilter": "where[subject]",
           "labelFields": [
             "name",
@@ -42395,13 +42260,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetNotesNoteIdPersonPersonIdNoteId",
-          "sourcePath": "/people/v2/people/{person_id}/notes",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getNotesNoteIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/notes",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -43105,13 +42965,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchNotesNoteIdPersonPersonIdNoteId",
-          "sourcePath": "/people/v2/people/{person_id}/notes",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchNotesNoteIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/notes",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -43678,13 +43533,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteNotesNoteIdPersonPersonIdNoteId",
-          "sourcePath": "/people/v2/people/{person_id}/notes",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteNotesNoteIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/notes",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -53602,13 +53452,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId",
-          "sourcePath": "/people/v2/background_checks/{background_check_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "background_check_id",
-              "fieldName": "getPeoplePersonIdBackgroundChecksBackgroundCheckId_backgroundCheckId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -53876,13 +53721,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdEmailsEmailIdPersonId",
-          "sourcePath": "/people/v2/emails/{email_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "email_id",
-              "fieldName": "getPeoplePersonIdEmailsEmailId_emailId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -53957,13 +53797,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdFieldDataFieldDatumIdPersonId",
-          "sourcePath": "/people/v2/field_data/{field_datum_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "field_datum_id",
-              "fieldName": "getPeoplePersonIdFieldDataFieldDatumId_fieldDatumId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -54055,13 +53890,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdHouseholdsHouseholdIdPersonId",
-          "sourcePath": "/people/v2/households/{household_id}/people",
-          "parentBindings": [
-            {
-              "sourceName": "household_id",
-              "fieldName": "getPeoplePersonIdHouseholdsHouseholdId_householdId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -54433,13 +54263,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdMessagesMessageIdPersonId",
-          "sourcePath": "/people/v2/messages/{message_id}/to",
-          "parentBindings": [
-            {
-              "sourceName": "message_id",
-              "fieldName": "getPeoplePersonIdMessagesMessageId_messageId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -54532,13 +54357,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdMessageGroupsMessageGroupIdPersonId",
-          "sourcePath": "/people/v2/message_groups/{message_group_id}/from",
-          "parentBindings": [
-            {
-              "sourceName": "message_group_id",
-              "fieldName": "getPeoplePersonIdMessageGroupsMessageGroupId_messageGroupId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -54783,13 +54603,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdNotesNoteIdPersonId",
-          "sourcePath": "/people/v2/notes/{note_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "note_id",
-              "fieldName": "getPeoplePersonIdNotesNoteId_noteId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -54881,13 +54696,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdWorkflowCardsWorkflowCardIdNotesNoteIdPersonId",
-          "sourcePath": "/people/v2/notes/{note_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "note_id",
-              "fieldName": "getPeoplePersonIdWorkflowCardsWorkflowCardIdNotesNoteId_noteId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -55683,13 +55493,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdSocialProfilesSocialProfileIdPersonId",
-          "sourcePath": "/people/v2/social_profiles/{social_profile_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "social_profile_id",
-              "fieldName": "getPeoplePersonIdSocialProfilesSocialProfileId_socialProfileId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -55781,13 +55586,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId",
-          "sourcePath": "/people/v2/workflows/{workflow_id}/shared_people",
-          "parentBindings": [
-            {
-              "sourceName": "workflow_id",
-              "fieldName": "getPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowId_workflowId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -58693,13 +58493,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId",
-          "sourcePath": "/people/v2/background_checks/{background_check_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "background_check_id",
-              "fieldName": "patchPeoplePersonIdBackgroundChecksBackgroundCheckId_backgroundCheckId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -58987,13 +58782,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdEmailsEmailIdPersonId",
-          "sourcePath": "/people/v2/emails/{email_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "email_id",
-              "fieldName": "patchPeoplePersonIdEmailsEmailId_emailId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -59091,13 +58881,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdFieldDataFieldDatumIdPersonId",
-          "sourcePath": "/people/v2/field_data/{field_datum_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "field_datum_id",
-              "fieldName": "patchPeoplePersonIdFieldDataFieldDatumId_fieldDatumId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -59263,13 +59048,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdHouseholdsHouseholdIdPersonId",
-          "sourcePath": "/people/v2/households/{household_id}/people",
-          "parentBindings": [
-            {
-              "sourceName": "household_id",
-              "fieldName": "patchPeoplePersonIdHouseholdsHouseholdId_householdId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -59936,13 +59716,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdNotesNoteIdPersonId",
-          "sourcePath": "/people/v2/notes/{note_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "note_id",
-              "fieldName": "patchPeoplePersonIdNotesNoteId_noteId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -61759,13 +61534,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdSocialProfilesSocialProfileIdPersonId",
-          "sourcePath": "/people/v2/social_profiles/{social_profile_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "social_profile_id",
-              "fieldName": "patchPeoplePersonIdSocialProfilesSocialProfileId_socialProfileId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -61880,13 +61650,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId",
-          "sourcePath": "/people/v2/workflows/{workflow_id}/shared_people",
-          "parentBindings": [
-            {
-              "sourceName": "workflow_id",
-              "fieldName": "patchPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowId_workflowId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -62689,13 +62454,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId",
-          "sourcePath": "/people/v2/background_checks/{background_check_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "background_check_id",
-              "fieldName": "deletePeoplePersonIdBackgroundChecksBackgroundCheckId_backgroundCheckId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -62853,13 +62613,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdEmailsEmailIdPersonId",
-          "sourcePath": "/people/v2/emails/{email_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "email_id",
-              "fieldName": "deletePeoplePersonIdEmailsEmailId_emailId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -62934,13 +62689,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdFieldDataFieldDatumIdPersonId",
-          "sourcePath": "/people/v2/field_data/{field_datum_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "field_datum_id",
-              "fieldName": "deletePeoplePersonIdFieldDataFieldDatumId_fieldDatumId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -63015,13 +62765,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdHouseholdsHouseholdIdPersonId",
-          "sourcePath": "/people/v2/households/{household_id}/people",
-          "parentBindings": [
-            {
-              "sourceName": "household_id",
-              "fieldName": "deletePeoplePersonIdHouseholdsHouseholdId_householdId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -63477,13 +63222,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdNotesNoteIdPersonId",
-          "sourcePath": "/people/v2/notes/{note_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "note_id",
-              "fieldName": "deletePeoplePersonIdNotesNoteId_noteId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -63935,13 +63675,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdSocialProfilesSocialProfileIdPersonId",
-          "sourcePath": "/people/v2/social_profiles/{social_profile_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "social_profile_id",
-              "fieldName": "deletePeoplePersonIdSocialProfilesSocialProfileId_socialProfileId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -64016,13 +63751,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId",
-          "sourcePath": "/people/v2/workflows/{workflow_id}/shared_people",
-          "parentBindings": [
-            {
-              "sourceName": "workflow_id",
-              "fieldName": "deletePeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowId_workflowId"
-            }
-          ],
+          "sourcePath": "/people/v2/people",
+          "parentBindings": [],
           "searchFilter": "where[search_name]",
           "labelFields": [
             "name",
@@ -68382,13 +68112,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId",
-          "sourcePath": "/people/v2/people/{person_id}/social_profiles",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getSocialProfilesSocialProfileIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/social_profiles",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -68542,13 +68267,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId",
-          "sourcePath": "/people/v2/people/{person_id}/social_profiles",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchSocialProfilesSocialProfileIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/social_profiles",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -69053,13 +68773,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId",
-          "sourcePath": "/people/v2/people/{person_id}/social_profiles",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "deleteSocialProfilesSocialProfileIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/people/v2/social_profiles",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -69540,13 +69255,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetTabsTabIdFieldDefinitionsFieldDefinitionIdTabId",
-          "sourcePath": "/people/v2/field_definitions/{field_definition_id}/tab",
-          "parentBindings": [
-            {
-              "sourceName": "field_definition_id",
-              "fieldName": "getTabsTabIdFieldDefinitionsFieldDefinitionId_fieldDefinitionId"
-            }
-          ],
+          "sourcePath": "/people/v2/tabs",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -69934,13 +69644,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchTabsTabIdFieldDefinitionsFieldDefinitionIdTabId",
-          "sourcePath": "/people/v2/field_definitions/{field_definition_id}/tab",
-          "parentBindings": [
-            {
-              "sourceName": "field_definition_id",
-              "fieldName": "patchTabsTabIdFieldDefinitionsFieldDefinitionId_fieldDefinitionId"
-            }
-          ],
+          "sourcePath": "/people/v2/tabs",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -70246,13 +69951,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteTabsTabIdFieldDefinitionsFieldDefinitionIdTabId",
-          "sourcePath": "/people/v2/field_definitions/{field_definition_id}/tab",
-          "parentBindings": [
-            {
-              "sourceName": "field_definition_id",
-              "fieldName": "deleteTabsTabIdFieldDefinitionsFieldDefinitionId_fieldDefinitionId"
-            }
-          ],
+          "sourcePath": "/people/v2/tabs",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -77041,13 +76741,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId": {
     "methodName": "searchDeleteBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId",
-    "sourcePath": "/people/v2/people/{person_id}/background_checks",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteBackgroundChecksBackgroundCheckIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/background_checks",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -77171,13 +76866,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteEmailsEmailIdPersonPersonIdEmailId": {
     "methodName": "searchDeleteEmailsEmailIdPersonPersonIdEmailId",
-    "sourcePath": "/people/v2/people/{person_id}/emails",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteEmailsEmailIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/emails",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -77326,13 +77016,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteFieldDataFieldDatumIdPersonPersonIdFieldDatumId": {
     "methodName": "searchDeleteFieldDataFieldDatumIdPersonPersonIdFieldDatumId",
-    "sourcePath": "/people/v2/people/{person_id}/field_data",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteFieldDataFieldDatumIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/field_data",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -77483,13 +77168,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId": {
     "methodName": "searchDeleteFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId",
-    "sourcePath": "/people/v2/tabs/{tab_id}/field_definitions",
-    "parentBindings": [
-      {
-        "sourceName": "tab_id",
-        "fieldName": "deleteFieldDefinitionsFieldDefinitionIdTabTabId_tabId"
-      }
-    ],
+    "sourcePath": "/people/v2/field_definitions",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -77866,13 +77546,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId": {
     "methodName": "searchDeleteHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId",
-    "sourcePath": "/people/v2/people/{person_id}/households",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/households",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -77944,13 +77619,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteHouseholdsHouseholdIdPeoplePersonIdHouseholdId": {
     "methodName": "searchDeleteHouseholdsHouseholdIdPeoplePersonIdHouseholdId",
-    "sourcePath": "/people/v2/people/{person_id}/households",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteHouseholdsHouseholdIdPeoplePersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/households",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -78057,13 +77727,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteListsListIdCampusCampusIdListId": {
     "methodName": "searchDeleteListsListIdCampusCampusIdListId",
-    "sourcePath": "/people/v2/campuses/{campus_id}/lists",
-    "parentBindings": [
-      {
-        "sourceName": "campus_id",
-        "fieldName": "deleteListsListIdCampusCampusId_campusId"
-      }
-    ],
+    "sourcePath": "/people/v2/lists",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -78796,13 +78461,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteNotesNoteIdPersonPersonIdNoteId": {
     "methodName": "searchDeleteNotesNoteIdPersonPersonIdNoteId",
-    "sourcePath": "/people/v2/people/{person_id}/notes",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteNotesNoteIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/notes",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -79059,13 +78719,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId",
-    "sourcePath": "/people/v2/background_checks/{background_check_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "background_check_id",
-        "fieldName": "deletePeoplePersonIdBackgroundChecksBackgroundCheckId_backgroundCheckId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -79108,13 +78763,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdEmailsEmailIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdEmailsEmailIdPersonId",
-    "sourcePath": "/people/v2/emails/{email_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "email_id",
-        "fieldName": "deletePeoplePersonIdEmailsEmailId_emailId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -79157,13 +78807,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdFieldDataFieldDatumIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdFieldDataFieldDatumIdPersonId",
-    "sourcePath": "/people/v2/field_data/{field_datum_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "field_datum_id",
-        "fieldName": "deletePeoplePersonIdFieldDataFieldDatumId_fieldDatumId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -79251,13 +78896,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdHouseholdsHouseholdIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdHouseholdsHouseholdIdPersonId",
-    "sourcePath": "/people/v2/households/{household_id}/people",
-    "parentBindings": [
-      {
-        "sourceName": "household_id",
-        "fieldName": "deletePeoplePersonIdHouseholdsHouseholdId_householdId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -79476,13 +79116,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdNotesNoteIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdNotesNoteIdPersonId",
-    "sourcePath": "/people/v2/notes/{note_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "note_id",
-        "fieldName": "deletePeoplePersonIdNotesNoteId_noteId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -79605,13 +79240,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdSocialProfilesSocialProfileIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdSocialProfilesSocialProfileIdPersonId",
-    "sourcePath": "/people/v2/social_profiles/{social_profile_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "social_profile_id",
-        "fieldName": "deletePeoplePersonIdSocialProfilesSocialProfileId_socialProfileId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -79874,13 +79504,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId",
-    "sourcePath": "/people/v2/workflows/{workflow_id}/shared_people",
-    "parentBindings": [
-      {
-        "sourceName": "workflow_id",
-        "fieldName": "deletePeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowId_workflowId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -80182,13 +79807,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId": {
     "methodName": "searchDeleteSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId",
-    "sourcePath": "/people/v2/people/{person_id}/social_profiles",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "deleteSocialProfilesSocialProfileIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/social_profiles",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -80250,13 +79870,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteTabsTabIdFieldDefinitionsFieldDefinitionIdTabId": {
     "methodName": "searchDeleteTabsTabIdFieldDefinitionsFieldDefinitionIdTabId",
-    "sourcePath": "/people/v2/field_definitions/{field_definition_id}/tab",
-    "parentBindings": [
-      {
-        "sourceName": "field_definition_id",
-        "fieldName": "deleteTabsTabIdFieldDefinitionsFieldDefinitionId_fieldDefinitionId"
-      }
-    ],
+    "sourcePath": "/people/v2/tabs",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -80697,13 +80312,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId": {
     "methodName": "searchGetBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId",
-    "sourcePath": "/people/v2/people/{person_id}/background_checks",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getBackgroundChecksBackgroundCheckIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/background_checks",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -80829,13 +80439,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCampusesCampusIdListsListIdCampusId": {
     "methodName": "searchGetCampusesCampusIdListsListIdCampusId",
-    "sourcePath": "/people/v2/lists/{list_id}/campus",
-    "parentBindings": [
-      {
-        "sourceName": "list_id",
-        "fieldName": "getCampusesCampusIdListsListId_listId"
-      }
-    ],
+    "sourcePath": "/people/v2/campuses",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -81022,13 +80627,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEmailsEmailIdPersonPersonIdEmailId": {
     "methodName": "searchGetEmailsEmailIdPersonPersonIdEmailId",
-    "sourcePath": "/people/v2/people/{person_id}/emails",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getEmailsEmailIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/emails",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -81259,13 +80859,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetFieldDataFieldDatumIdPersonPersonIdFieldDatumId": {
     "methodName": "searchGetFieldDataFieldDatumIdPersonPersonIdFieldDatumId",
-    "sourcePath": "/people/v2/people/{person_id}/field_data",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getFieldDataFieldDatumIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/field_data",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -81500,13 +81095,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId": {
     "methodName": "searchGetFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId",
-    "sourcePath": "/people/v2/tabs/{tab_id}/field_definitions",
-    "parentBindings": [
-      {
-        "sourceName": "tab_id",
-        "fieldName": "getFieldDefinitionsFieldDefinitionIdTabTabId_tabId"
-      }
-    ],
+    "sourcePath": "/people/v2/field_definitions",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -82826,13 +82416,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId": {
     "methodName": "searchGetHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId",
-    "sourcePath": "/people/v2/people/{person_id}/households",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/households",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -82978,13 +82563,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetHouseholdsHouseholdIdPeoplePersonIdHouseholdId": {
     "methodName": "searchGetHouseholdsHouseholdIdPeoplePersonIdHouseholdId",
-    "sourcePath": "/people/v2/people/{person_id}/households",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getHouseholdsHouseholdIdPeoplePersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/households",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -83132,13 +82712,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetListCategoriesListCategoryIdListsListIdListCategoryId": {
     "methodName": "searchGetListCategoriesListCategoryIdListsListIdListCategoryId",
-    "sourcePath": "/people/v2/lists/{list_id}/category",
-    "parentBindings": [
-      {
-        "sourceName": "list_id",
-        "fieldName": "getListCategoriesListCategoryIdListsListId_listId"
-      }
-    ],
+    "sourcePath": "/people/v2/list_categories",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -83231,13 +82806,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetListsListIdCampusCampusIdListId": {
     "methodName": "searchGetListsListIdCampusCampusIdListId",
-    "sourcePath": "/people/v2/campuses/{campus_id}/lists",
-    "parentBindings": [
-      {
-        "sourceName": "campus_id",
-        "fieldName": "getListsListIdCampusCampusId_campusId"
-      }
-    ],
+    "sourcePath": "/people/v2/lists",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -84697,13 +84267,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetMessageGroupsMessageGroupIdMessagesMessageIdMessageGroupId": {
     "methodName": "searchGetMessageGroupsMessageGroupIdMessagesMessageIdMessageGroupId",
-    "sourcePath": "/people/v2/messages/{message_id}/message_group",
-    "parentBindings": [
-      {
-        "sourceName": "message_id",
-        "fieldName": "getMessageGroupsMessageGroupIdMessagesMessageId_messageId"
-      }
-    ],
+    "sourcePath": "/people/v2/message_groups",
+    "parentBindings": [],
     "searchFilter": "where[subject]",
     "labelFields": [
       "name",
@@ -84772,13 +84337,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetMessagesMessageIdMessageGroupMessageGroupIdMessageId": {
     "methodName": "searchGetMessagesMessageIdMessageGroupMessageGroupIdMessageId",
-    "sourcePath": "/people/v2/message_groups/{message_group_id}/messages",
-    "parentBindings": [
-      {
-        "sourceName": "message_group_id",
-        "fieldName": "getMessagesMessageIdMessageGroupMessageGroupId_messageGroupId"
-      }
-    ],
+    "sourcePath": "/people/v2/messages",
+    "parentBindings": [],
     "searchFilter": "where[subject]",
     "labelFields": [
       "name",
@@ -85567,13 +85127,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetNotesNoteIdPersonPersonIdNoteId": {
     "methodName": "searchGetNotesNoteIdPersonPersonIdNoteId",
-    "sourcePath": "/people/v2/people/{person_id}/notes",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getNotesNoteIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/notes",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -86201,13 +85756,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId": {
     "methodName": "searchGetPeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId",
-    "sourcePath": "/people/v2/background_checks/{background_check_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "background_check_id",
-        "fieldName": "getPeoplePersonIdBackgroundChecksBackgroundCheckId_backgroundCheckId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -86334,13 +85884,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdEmailsEmailIdPersonId": {
     "methodName": "searchGetPeoplePersonIdEmailsEmailIdPersonId",
-    "sourcePath": "/people/v2/emails/{email_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "email_id",
-        "fieldName": "getPeoplePersonIdEmailsEmailId_emailId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -86403,13 +85948,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdFieldDataFieldDatumIdPersonId": {
     "methodName": "searchGetPeoplePersonIdFieldDataFieldDatumIdPersonId",
-    "sourcePath": "/people/v2/field_data/{field_datum_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "field_datum_id",
-        "fieldName": "getPeoplePersonIdFieldDataFieldDatumId_fieldDatumId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -86537,13 +86077,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdHouseholdsHouseholdIdPersonId": {
     "methodName": "searchGetPeoplePersonIdHouseholdsHouseholdIdPersonId",
-    "sourcePath": "/people/v2/households/{household_id}/people",
-    "parentBindings": [
-      {
-        "sourceName": "household_id",
-        "fieldName": "getPeoplePersonIdHouseholdsHouseholdId_householdId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -86755,13 +86290,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdMessageGroupsMessageGroupIdPersonId": {
     "methodName": "searchGetPeoplePersonIdMessageGroupsMessageGroupIdPersonId",
-    "sourcePath": "/people/v2/message_groups/{message_group_id}/from",
-    "parentBindings": [
-      {
-        "sourceName": "message_group_id",
-        "fieldName": "getPeoplePersonIdMessageGroupsMessageGroupId_messageGroupId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -86825,13 +86355,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdMessagesMessageIdPersonId": {
     "methodName": "searchGetPeoplePersonIdMessagesMessageIdPersonId",
-    "sourcePath": "/people/v2/messages/{message_id}/to",
-    "parentBindings": [
-      {
-        "sourceName": "message_id",
-        "fieldName": "getPeoplePersonIdMessagesMessageId_messageId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -87022,13 +86547,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdNotesNoteIdPersonId": {
     "methodName": "searchGetPeoplePersonIdNotesNoteIdPersonId",
-    "sourcePath": "/people/v2/notes/{note_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "note_id",
-        "fieldName": "getPeoplePersonIdNotesNoteId_noteId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -87584,13 +87104,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdSocialProfilesSocialProfileIdPersonId": {
     "methodName": "searchGetPeoplePersonIdSocialProfilesSocialProfileIdPersonId",
-    "sourcePath": "/people/v2/social_profiles/{social_profile_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "social_profile_id",
-        "fieldName": "getPeoplePersonIdSocialProfilesSocialProfileId_socialProfileId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -88054,13 +87569,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdWorkflowCardsWorkflowCardIdNotesNoteIdPersonId": {
     "methodName": "searchGetPeoplePersonIdWorkflowCardsWorkflowCardIdNotesNoteIdPersonId",
-    "sourcePath": "/people/v2/notes/{note_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "note_id",
-        "fieldName": "getPeoplePersonIdWorkflowCardsWorkflowCardIdNotesNoteId_noteId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -88381,13 +87891,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId": {
     "methodName": "searchGetPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId",
-    "sourcePath": "/people/v2/workflows/{workflow_id}/shared_people",
-    "parentBindings": [
-      {
-        "sourceName": "workflow_id",
-        "fieldName": "getPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowId_workflowId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -88930,13 +88435,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId": {
     "methodName": "searchGetSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId",
-    "sourcePath": "/people/v2/people/{person_id}/social_profiles",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getSocialProfilesSocialProfileIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/social_profiles",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -89061,13 +88561,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetTabsTabIdFieldDefinitionsFieldDefinitionIdTabId": {
     "methodName": "searchGetTabsTabIdFieldDefinitionsFieldDefinitionIdTabId",
-    "sourcePath": "/people/v2/field_definitions/{field_definition_id}/tab",
-    "parentBindings": [
-      {
-        "sourceName": "field_definition_id",
-        "fieldName": "getTabsTabIdFieldDefinitionsFieldDefinitionId_fieldDefinitionId"
-      }
-    ],
+    "sourcePath": "/people/v2/tabs",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -90021,13 +89516,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId": {
     "methodName": "searchPatchBackgroundChecksBackgroundCheckIdPersonPersonIdBackgroundCheckId",
-    "sourcePath": "/people/v2/people/{person_id}/background_checks",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchBackgroundChecksBackgroundCheckIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/background_checks",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -90321,13 +89811,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchEmailsEmailIdPersonPersonIdEmailId": {
     "methodName": "searchPatchEmailsEmailIdPersonPersonIdEmailId",
-    "sourcePath": "/people/v2/people/{person_id}/emails",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchEmailsEmailIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/emails",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -90622,13 +90107,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchFieldDataFieldDatumIdPersonPersonIdFieldDatumId": {
     "methodName": "searchPatchFieldDataFieldDatumIdPersonPersonIdFieldDatumId",
-    "sourcePath": "/people/v2/people/{person_id}/field_data",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchFieldDataFieldDatumIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/field_data",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -90875,13 +90355,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId": {
     "methodName": "searchPatchFieldDefinitionsFieldDefinitionIdTabTabIdFieldDefinitionId",
-    "sourcePath": "/people/v2/tabs/{tab_id}/field_definitions",
-    "parentBindings": [
-      {
-        "sourceName": "tab_id",
-        "fieldName": "patchFieldDefinitionsFieldDefinitionIdTabTabId_tabId"
-      }
-    ],
+    "sourcePath": "/people/v2/field_definitions",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -91517,13 +90992,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId": {
     "methodName": "searchPatchHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonIdHouseholdId",
-    "sourcePath": "/people/v2/people/{person_id}/households",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchHouseholdsHouseholdIdHouseholdMembershipsHouseholdMembershipIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/households",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -91691,13 +91161,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchHouseholdsHouseholdIdPeoplePersonIdHouseholdId": {
     "methodName": "searchPatchHouseholdsHouseholdIdPeoplePersonIdHouseholdId",
-    "sourcePath": "/people/v2/people/{person_id}/households",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchHouseholdsHouseholdIdPeoplePersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/households",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -91999,13 +91464,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchListsListIdCampusCampusIdListId": {
     "methodName": "searchPatchListsListIdCampusCampusIdListId",
-    "sourcePath": "/people/v2/campuses/{campus_id}/lists",
-    "parentBindings": [
-      {
-        "sourceName": "campus_id",
-        "fieldName": "patchListsListIdCampusCampusId_campusId"
-      }
-    ],
+    "sourcePath": "/people/v2/lists",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -93995,13 +93455,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchNotesNoteIdPersonPersonIdNoteId": {
     "methodName": "searchPatchNotesNoteIdPersonPersonIdNoteId",
-    "sourcePath": "/people/v2/people/{person_id}/notes",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchNotesNoteIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/notes",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -94383,13 +93838,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdBackgroundChecksBackgroundCheckIdPersonId",
-    "sourcePath": "/people/v2/background_checks/{background_check_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "background_check_id",
-        "fieldName": "patchPeoplePersonIdBackgroundChecksBackgroundCheckId_backgroundCheckId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -94432,13 +93882,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdEmailsEmailIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdEmailsEmailIdPersonId",
-    "sourcePath": "/people/v2/emails/{email_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "email_id",
-        "fieldName": "patchPeoplePersonIdEmailsEmailId_emailId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -94531,13 +93976,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdFieldDataFieldDatumIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdFieldDataFieldDatumIdPersonId",
-    "sourcePath": "/people/v2/field_data/{field_datum_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "field_datum_id",
-        "fieldName": "patchPeoplePersonIdFieldDataFieldDatumId_fieldDatumId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -94645,13 +94085,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdHouseholdsHouseholdIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdHouseholdsHouseholdIdPersonId",
-    "sourcePath": "/people/v2/households/{household_id}/people",
-    "parentBindings": [
-      {
-        "sourceName": "household_id",
-        "fieldName": "patchPeoplePersonIdHouseholdsHouseholdId_householdId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -95041,13 +94476,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdNotesNoteIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdNotesNoteIdPersonId",
-    "sourcePath": "/people/v2/notes/{note_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "note_id",
-        "fieldName": "patchPeoplePersonIdNotesNoteId_noteId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -95170,13 +94600,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdSocialProfilesSocialProfileIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdSocialProfilesSocialProfileIdPersonId",
-    "sourcePath": "/people/v2/social_profiles/{social_profile_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "social_profile_id",
-        "fieldName": "patchPeoplePersonIdSocialProfilesSocialProfileId_socialProfileId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -95673,13 +95098,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowIdPersonId",
-    "sourcePath": "/people/v2/workflows/{workflow_id}/shared_people",
-    "parentBindings": [
-      {
-        "sourceName": "workflow_id",
-        "fieldName": "patchPeoplePersonIdWorkflowCardsWorkflowCardIdWorkflowWorkflowId_workflowId"
-      }
-    ],
+    "sourcePath": "/people/v2/people",
+    "parentBindings": [],
     "searchFilter": "where[search_name]",
     "labelFields": [
       "name",
@@ -96375,13 +95795,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId": {
     "methodName": "searchPatchSocialProfilesSocialProfileIdPersonPersonIdSocialProfileId",
-    "sourcePath": "/people/v2/people/{person_id}/social_profiles",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchSocialProfilesSocialProfileIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/people/v2/social_profiles",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -96443,13 +95858,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchTabsTabIdFieldDefinitionsFieldDefinitionIdTabId": {
     "methodName": "searchPatchTabsTabIdFieldDefinitionsFieldDefinitionIdTabId",
-    "sourcePath": "/people/v2/field_definitions/{field_definition_id}/tab",
-    "parentBindings": [
-      {
-        "sourceName": "field_definition_id",
-        "fieldName": "patchTabsTabIdFieldDefinitionsFieldDefinitionId_fieldDefinitionId"
-      }
-    ],
+    "sourcePath": "/people/v2/tabs",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",

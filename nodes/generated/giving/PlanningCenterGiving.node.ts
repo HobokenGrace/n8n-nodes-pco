@@ -434,13 +434,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId",
-          "sourcePath": "/giving/v2/batches/{batch_id}/batch_group",
-          "parentBindings": [
-            {
-              "sourceName": "batch_id",
-              "fieldName": "getBatchGroupsBatchGroupIdBatchesBatchId_batchId"
-            }
-          ],
+          "sourcePath": "/giving/v2/batch_groups",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -827,13 +822,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId",
-          "sourcePath": "/giving/v2/batches/{batch_id}/batch_group",
-          "parentBindings": [
-            {
-              "sourceName": "batch_id",
-              "fieldName": "patchBatchGroupsBatchGroupIdBatchesBatchId_batchId"
-            }
-          ],
+          "sourcePath": "/giving/v2/batch_groups",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -1093,13 +1083,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId",
-          "sourcePath": "/giving/v2/batches/{batch_id}/batch_group",
-          "parentBindings": [
-            {
-              "sourceName": "batch_id",
-              "fieldName": "deleteBatchGroupsBatchGroupIdBatchesBatchId_batchId"
-            }
-          ],
+          "sourcePath": "/giving/v2/batch_groups",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -1883,13 +1868,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetBatchesBatchIdBatchGroupBatchGroupIdBatchId",
-          "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/batches",
-          "parentBindings": [
-            {
-              "sourceName": "batch_group_id",
-              "fieldName": "getBatchesBatchIdBatchGroupBatchGroupId_batchGroupId"
-            }
-          ],
+          "sourcePath": "/giving/v2/batches",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2625,13 +2605,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchBatchesBatchIdBatchGroupBatchGroupIdBatchId",
-          "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/batches",
-          "parentBindings": [
-            {
-              "sourceName": "batch_group_id",
-              "fieldName": "patchBatchesBatchIdBatchGroupBatchGroupId_batchGroupId"
-            }
-          ],
+          "sourcePath": "/giving/v2/batches",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3259,13 +3234,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteBatchesBatchIdBatchGroupBatchGroupIdBatchId",
-          "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/batches",
-          "parentBindings": [
-            {
-              "sourceName": "batch_group_id",
-              "fieldName": "deleteBatchesBatchIdBatchGroupBatchGroupId_batchGroupId"
-            }
-          ],
+          "sourcePath": "/giving/v2/batches",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3871,13 +3841,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCampusesCampusIdDonationsDonationIdCampusId",
-          "sourcePath": "/giving/v2/donations/{donation_id}/campus",
-          "parentBindings": [
-            {
-              "sourceName": "donation_id",
-              "fieldName": "getCampusesCampusIdDonationsDonationId_donationId"
-            }
-          ],
+          "sourcePath": "/giving/v2/campuses",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3969,13 +3934,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchCampusesCampusIdDonationsDonationIdCampusId",
-          "sourcePath": "/giving/v2/donations/{donation_id}/campus",
-          "parentBindings": [
-            {
-              "sourceName": "donation_id",
-              "fieldName": "patchCampusesCampusIdDonationsDonationId_donationId"
-            }
-          ],
+          "sourcePath": "/giving/v2/campuses",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4331,13 +4291,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteCampusesCampusIdDonationsDonationIdCampusId",
-          "sourcePath": "/giving/v2/donations/{donation_id}/campus",
-          "parentBindings": [
-            {
-              "sourceName": "donation_id",
-              "fieldName": "deleteCampusesCampusIdDonationsDonationId_donationId"
-            }
-          ],
+          "sourcePath": "/giving/v2/campuses",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -5251,13 +5206,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetDonationsDonationIdCampusCampusIdDonationId",
-          "sourcePath": "/giving/v2/campuses/{campus_id}/donations",
-          "parentBindings": [
-            {
-              "sourceName": "campus_id",
-              "fieldName": "getDonationsDonationIdCampusCampusId_campusId"
-            }
-          ],
+          "sourcePath": "/giving/v2/donations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7814,13 +7764,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetInKindDonationsInKindDonationIdPersonPersonIdInKindDonationId",
-          "sourcePath": "/giving/v2/people/{person_id}/in_kind_donations",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "getInKindDonationsInKindDonationIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/giving/v2/in_kind_donations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -8573,13 +8518,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchInKindDonationsInKindDonationIdPersonPersonIdInKindDonationId",
-          "sourcePath": "/giving/v2/people/{person_id}/in_kind_donations",
-          "parentBindings": [
-            {
-              "sourceName": "person_id",
-              "fieldName": "patchInKindDonationsInKindDonationIdPersonPersonId_personId"
-            }
-          ],
+          "sourcePath": "/giving/v2/in_kind_donations",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -12374,13 +12314,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdBatchesBatchIdPersonId",
-          "sourcePath": "/giving/v2/batches/{batch_id}/owner",
-          "parentBindings": [
-            {
-              "sourceName": "batch_id",
-              "fieldName": "getPeoplePersonIdBatchesBatchId_batchId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -12475,13 +12410,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdBatchGroupsBatchGroupIdPersonId",
-          "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/owner",
-          "parentBindings": [
-            {
-              "sourceName": "batch_group_id",
-              "fieldName": "getPeoplePersonIdBatchGroupsBatchGroupId_batchGroupId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -12826,13 +12756,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdInKindDonationsInKindDonationIdPersonId",
-          "sourcePath": "/giving/v2/in_kind_donations/{in_kind_donation_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "in_kind_donation_id",
-              "fieldName": "getPeoplePersonIdInKindDonationsInKindDonationId_inKindDonationId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -13947,13 +13872,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdBatchesBatchIdPersonId",
-          "sourcePath": "/giving/v2/batches/{batch_id}/owner",
-          "parentBindings": [
-            {
-              "sourceName": "batch_id",
-              "fieldName": "patchPeoplePersonIdBatchesBatchId_batchId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -14088,13 +14008,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdBatchGroupsBatchGroupIdPersonId",
-          "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/owner",
-          "parentBindings": [
-            {
-              "sourceName": "batch_group_id",
-              "fieldName": "patchPeoplePersonIdBatchGroupsBatchGroupId_batchGroupId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -14756,13 +14671,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchPeoplePersonIdInKindDonationsInKindDonationIdPersonId",
-          "sourcePath": "/giving/v2/in_kind_donations/{in_kind_donation_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "in_kind_donation_id",
-              "fieldName": "patchPeoplePersonIdInKindDonationsInKindDonationId_inKindDonationId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -15757,13 +15667,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdBatchesBatchIdPersonId",
-          "sourcePath": "/giving/v2/batches/{batch_id}/owner",
-          "parentBindings": [
-            {
-              "sourceName": "batch_id",
-              "fieldName": "deletePeoplePersonIdBatchesBatchId_batchId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -15841,13 +15746,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdBatchGroupsBatchGroupIdPersonId",
-          "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/owner",
-          "parentBindings": [
-            {
-              "sourceName": "batch_group_id",
-              "fieldName": "deletePeoplePersonIdBatchGroupsBatchGroupId_batchGroupId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -16158,13 +16058,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeletePeoplePersonIdInKindDonationsInKindDonationIdPersonId",
-          "sourcePath": "/giving/v2/in_kind_donations/{in_kind_donation_id}/person",
-          "parentBindings": [
-            {
-              "sourceName": "in_kind_donation_id",
-              "fieldName": "deletePeoplePersonIdInKindDonationsInKindDonationId_inKindDonationId"
-            }
-          ],
+          "sourcePath": "/giving/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -17407,13 +17302,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteBatchesBatchIdBatchGroupBatchGroupIdBatchId": {
     "methodName": "searchDeleteBatchesBatchIdBatchGroupBatchGroupIdBatchId",
-    "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/batches",
-    "parentBindings": [
-      {
-        "sourceName": "batch_group_id",
-        "fieldName": "deleteBatchesBatchIdBatchGroupBatchGroupId_batchGroupId"
-      }
-    ],
+    "sourcePath": "/giving/v2/batches",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -17493,13 +17383,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId": {
     "methodName": "searchDeleteBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId",
-    "sourcePath": "/giving/v2/batches/{batch_id}/batch_group",
-    "parentBindings": [
-      {
-        "sourceName": "batch_id",
-        "fieldName": "deleteBatchGroupsBatchGroupIdBatchesBatchId_batchId"
-      }
-    ],
+    "sourcePath": "/giving/v2/batch_groups",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -17560,13 +17445,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteCampusesCampusIdDonationsDonationIdCampusId": {
     "methodName": "searchDeleteCampusesCampusIdDonationsDonationIdCampusId",
-    "sourcePath": "/giving/v2/donations/{donation_id}/campus",
-    "parentBindings": [
-      {
-        "sourceName": "donation_id",
-        "fieldName": "deleteCampusesCampusIdDonationsDonationId_donationId"
-      }
-    ],
+    "sourcePath": "/giving/v2/campuses",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -17930,13 +17810,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdBatchesBatchIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdBatchesBatchIdPersonId",
-    "sourcePath": "/giving/v2/batches/{batch_id}/owner",
-    "parentBindings": [
-      {
-        "sourceName": "batch_id",
-        "fieldName": "deletePeoplePersonIdBatchesBatchId_batchId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -17982,13 +17857,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdBatchGroupsBatchGroupIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdBatchGroupsBatchGroupIdPersonId",
-    "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/owner",
-    "parentBindings": [
-      {
-        "sourceName": "batch_group_id",
-        "fieldName": "deletePeoplePersonIdBatchGroupsBatchGroupId_batchGroupId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -18081,13 +17951,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeletePeoplePersonIdInKindDonationsInKindDonationIdPersonId": {
     "methodName": "searchDeletePeoplePersonIdInKindDonationsInKindDonationIdPersonId",
-    "sourcePath": "/giving/v2/in_kind_donations/{in_kind_donation_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "in_kind_donation_id",
-        "fieldName": "deletePeoplePersonIdInKindDonationsInKindDonationId_inKindDonationId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -18510,13 +18375,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetBatchesBatchIdBatchGroupBatchGroupIdBatchId": {
     "methodName": "searchGetBatchesBatchIdBatchGroupBatchGroupIdBatchId",
-    "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/batches",
-    "parentBindings": [
-      {
-        "sourceName": "batch_group_id",
-        "fieldName": "getBatchesBatchIdBatchGroupBatchGroupId_batchGroupId"
-      }
-    ],
+    "sourcePath": "/giving/v2/batches",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -18691,13 +18551,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId": {
     "methodName": "searchGetBatchGroupsBatchGroupIdBatchesBatchIdBatchGroupId",
-    "sourcePath": "/giving/v2/batches/{batch_id}/batch_group",
-    "parentBindings": [
-      {
-        "sourceName": "batch_id",
-        "fieldName": "getBatchGroupsBatchGroupIdBatchesBatchId_batchId"
-      }
-    ],
+    "sourcePath": "/giving/v2/batch_groups",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -18834,13 +18689,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCampusesCampusIdDonationsDonationIdCampusId": {
     "methodName": "searchGetCampusesCampusIdDonationsDonationIdCampusId",
-    "sourcePath": "/giving/v2/donations/{donation_id}/campus",
-    "parentBindings": [
-      {
-        "sourceName": "donation_id",
-        "fieldName": "getCampusesCampusIdDonationsDonationId_donationId"
-      }
-    ],
+    "sourcePath": "/giving/v2/campuses",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -18906,13 +18756,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetDonationsDonationIdCampusCampusIdDonationId": {
     "methodName": "searchGetDonationsDonationIdCampusCampusIdDonationId",
-    "sourcePath": "/giving/v2/campuses/{campus_id}/donations",
-    "parentBindings": [
-      {
-        "sourceName": "campus_id",
-        "fieldName": "getDonationsDonationIdCampusCampusId_campusId"
-      }
-    ],
+    "sourcePath": "/giving/v2/donations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -19718,13 +19563,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetInKindDonationsInKindDonationIdPersonPersonIdInKindDonationId": {
     "methodName": "searchGetInKindDonationsInKindDonationIdPersonPersonIdInKindDonationId",
-    "sourcePath": "/giving/v2/people/{person_id}/in_kind_donations",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "getInKindDonationsInKindDonationIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/giving/v2/in_kind_donations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -19914,13 +19754,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdBatchesBatchIdPersonId": {
     "methodName": "searchGetPeoplePersonIdBatchesBatchIdPersonId",
-    "sourcePath": "/giving/v2/batches/{batch_id}/owner",
-    "parentBindings": [
-      {
-        "sourceName": "batch_id",
-        "fieldName": "getPeoplePersonIdBatchesBatchId_batchId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -19989,13 +19824,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdBatchGroupsBatchGroupIdPersonId": {
     "methodName": "searchGetPeoplePersonIdBatchGroupsBatchGroupIdPersonId",
-    "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/owner",
-    "parentBindings": [
-      {
-        "sourceName": "batch_group_id",
-        "fieldName": "getPeoplePersonIdBatchGroupsBatchGroupId_batchGroupId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -20134,13 +19964,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdInKindDonationsInKindDonationIdPersonId": {
     "methodName": "searchGetPeoplePersonIdInKindDonationsInKindDonationIdPersonId",
-    "sourcePath": "/giving/v2/in_kind_donations/{in_kind_donation_id}/person",
-    "parentBindings": [
-      {
-        "sourceName": "in_kind_donation_id",
-        "fieldName": "getPeoplePersonIdInKindDonationsInKindDonationId_inKindDonationId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -21495,13 +21320,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchBatchesBatchIdBatchGroupBatchGroupIdBatchId": {
     "methodName": "searchPatchBatchesBatchIdBatchGroupBatchGroupIdBatchId",
-    "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/batches",
-    "parentBindings": [
-      {
-        "sourceName": "batch_group_id",
-        "fieldName": "patchBatchesBatchIdBatchGroupBatchGroupId_batchGroupId"
-      }
-    ],
+    "sourcePath": "/giving/v2/batches",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22549,13 +22369,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchInKindDonationsInKindDonationIdPersonPersonIdInKindDonationId": {
     "methodName": "searchPatchInKindDonationsInKindDonationIdPersonPersonIdInKindDonationId",
-    "sourcePath": "/giving/v2/people/{person_id}/in_kind_donations",
-    "parentBindings": [
-      {
-        "sourceName": "person_id",
-        "fieldName": "patchInKindDonationsInKindDonationIdPersonPersonId_personId"
-      }
-    ],
+    "sourcePath": "/giving/v2/in_kind_donations",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -22862,13 +22677,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdBatchesBatchIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdBatchesBatchIdPersonId",
-    "sourcePath": "/giving/v2/batches/{batch_id}/owner",
-    "parentBindings": [
-      {
-        "sourceName": "batch_id",
-        "fieldName": "patchPeoplePersonIdBatchesBatchId_batchId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -22914,13 +22724,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchPeoplePersonIdBatchGroupsBatchGroupIdPersonId": {
     "methodName": "searchPatchPeoplePersonIdBatchGroupsBatchGroupIdPersonId",
-    "sourcePath": "/giving/v2/batch_groups/{batch_group_id}/owner",
-    "parentBindings": [
-      {
-        "sourceName": "batch_group_id",
-        "fieldName": "patchPeoplePersonIdBatchGroupsBatchGroupId_batchGroupId"
-      }
-    ],
+    "sourcePath": "/giving/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"

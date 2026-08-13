@@ -993,13 +993,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetChannelsChannelIdEpisodesEpisodeIdChannelId",
-          "sourcePath": "/publishing/v2/episodes/{episode_id}/channel",
-          "parentBindings": [
-            {
-              "sourceName": "episode_id",
-              "fieldName": "getChannelsChannelIdEpisodesEpisodeId_episodeId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/channels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -1141,13 +1136,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetChannelsChannelIdSeriesSeriesIdChannelId",
-          "sourcePath": "/publishing/v2/series/{series_id}/channel",
-          "parentBindings": [
-            {
-              "sourceName": "series_id",
-              "fieldName": "getChannelsChannelIdSeriesSeriesId_seriesId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/channels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2605,13 +2595,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchChannelsChannelIdEpisodesEpisodeIdChannelId",
-          "sourcePath": "/publishing/v2/episodes/{episode_id}/channel",
-          "parentBindings": [
-            {
-              "sourceName": "episode_id",
-              "fieldName": "patchChannelsChannelIdEpisodesEpisodeId_episodeId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/channels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2861,13 +2846,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchChannelsChannelIdSeriesSeriesIdChannelId",
-          "sourcePath": "/publishing/v2/series/{series_id}/channel",
-          "parentBindings": [
-            {
-              "sourceName": "series_id",
-              "fieldName": "patchChannelsChannelIdSeriesSeriesId_seriesId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/channels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3157,13 +3137,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteChannelsChannelIdEpisodesEpisodeIdChannelId",
-          "sourcePath": "/publishing/v2/episodes/{episode_id}/channel",
-          "parentBindings": [
-            {
-              "sourceName": "episode_id",
-              "fieldName": "deleteChannelsChannelIdEpisodesEpisodeId_episodeId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/channels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3237,13 +3212,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteChannelsChannelIdSeriesSeriesIdChannelId",
-          "sourcePath": "/publishing/v2/series/{series_id}/channel",
-          "parentBindings": [
-            {
-              "sourceName": "series_id",
-              "fieldName": "deleteChannelsChannelIdSeriesSeriesId_seriesId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/channels",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -3873,13 +3843,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEpisodesEpisodeIdChannelChannelIdEpisodeId",
-          "sourcePath": "/publishing/v2/channels/{channel_id}/current_episode",
-          "parentBindings": [
-            {
-              "sourceName": "channel_id",
-              "fieldName": "getEpisodesEpisodeIdChannelChannelId_channelId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/episodes",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -5198,13 +5163,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchEpisodesEpisodeIdChannelChannelIdEpisodeId",
-          "sourcePath": "/publishing/v2/channels/{channel_id}/current_episode",
-          "parentBindings": [
-            {
-              "sourceName": "channel_id",
-              "fieldName": "patchEpisodesEpisodeIdChannelChannelId_channelId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/episodes",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6170,13 +6130,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteEpisodesEpisodeIdChannelChannelIdEpisodeId",
-          "sourcePath": "/publishing/v2/channels/{channel_id}/current_episode",
-          "parentBindings": [
-            {
-              "sourceName": "channel_id",
-              "fieldName": "deleteEpisodesEpisodeIdChannelChannelId_channelId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/episodes",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6760,13 +6715,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetSeriesSeriesIdChannelChannelIdSeriesId",
-          "sourcePath": "/publishing/v2/channels/{channel_id}/series",
-          "parentBindings": [
-            {
-              "sourceName": "channel_id",
-              "fieldName": "getSeriesSeriesIdChannelChannelId_channelId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/series",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7179,13 +7129,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchSeriesSeriesIdChannelChannelIdSeriesId",
-          "sourcePath": "/publishing/v2/channels/{channel_id}/series",
-          "parentBindings": [
-            {
-              "sourceName": "channel_id",
-              "fieldName": "patchSeriesSeriesIdChannelChannelId_channelId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/series",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7501,13 +7446,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteSeriesSeriesIdChannelChannelIdSeriesId",
-          "sourcePath": "/publishing/v2/channels/{channel_id}/series",
-          "parentBindings": [
-            {
-              "sourceName": "channel_id",
-              "fieldName": "deleteSeriesSeriesIdChannelChannelId_channelId"
-            }
-          ],
+          "sourcePath": "/publishing/v2/series",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7769,13 +7709,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteChannelsChannelIdEpisodesEpisodeIdChannelId": {
     "methodName": "searchDeleteChannelsChannelIdEpisodesEpisodeIdChannelId",
-    "sourcePath": "/publishing/v2/episodes/{episode_id}/channel",
-    "parentBindings": [
-      {
-        "sourceName": "episode_id",
-        "fieldName": "deleteChannelsChannelIdEpisodesEpisodeId_episodeId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/channels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -7817,13 +7752,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteChannelsChannelIdSeriesSeriesIdChannelId": {
     "methodName": "searchDeleteChannelsChannelIdSeriesSeriesIdChannelId",
-    "sourcePath": "/publishing/v2/series/{series_id}/channel",
-    "parentBindings": [
-      {
-        "sourceName": "series_id",
-        "fieldName": "deleteChannelsChannelIdSeriesSeriesId_seriesId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/channels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -7889,13 +7819,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteEpisodesEpisodeIdChannelChannelIdEpisodeId": {
     "methodName": "searchDeleteEpisodesEpisodeIdChannelChannelIdEpisodeId",
-    "sourcePath": "/publishing/v2/channels/{channel_id}/current_episode",
-    "parentBindings": [
-      {
-        "sourceName": "channel_id",
-        "fieldName": "deleteEpisodesEpisodeIdChannelChannelId_channelId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/episodes",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -8128,13 +8053,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteSeriesSeriesIdChannelChannelIdSeriesId": {
     "methodName": "searchDeleteSeriesSeriesIdChannelChannelIdSeriesId",
-    "sourcePath": "/publishing/v2/channels/{channel_id}/series",
-    "parentBindings": [
-      {
-        "sourceName": "channel_id",
-        "fieldName": "deleteSeriesSeriesIdChannelChannelId_channelId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/series",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -8395,13 +8315,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetChannelsChannelIdEpisodesEpisodeIdChannelId": {
     "methodName": "searchGetChannelsChannelIdEpisodesEpisodeIdChannelId",
-    "sourcePath": "/publishing/v2/episodes/{episode_id}/channel",
-    "parentBindings": [
-      {
-        "sourceName": "episode_id",
-        "fieldName": "getChannelsChannelIdEpisodesEpisodeId_episodeId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/channels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -8524,13 +8439,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetChannelsChannelIdSeriesSeriesIdChannelId": {
     "methodName": "searchGetChannelsChannelIdSeriesSeriesIdChannelId",
-    "sourcePath": "/publishing/v2/series/{series_id}/channel",
-    "parentBindings": [
-      {
-        "sourceName": "series_id",
-        "fieldName": "getChannelsChannelIdSeriesSeriesId_seriesId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/channels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -8658,13 +8568,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEpisodesEpisodeIdChannelChannelIdEpisodeId": {
     "methodName": "searchGetEpisodesEpisodeIdChannelChannelIdEpisodeId",
-    "sourcePath": "/publishing/v2/channels/{channel_id}/current_episode",
-    "parentBindings": [
-      {
-        "sourceName": "channel_id",
-        "fieldName": "getEpisodesEpisodeIdChannelChannelId_channelId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/episodes",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -9168,13 +9073,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetSeriesSeriesIdChannelChannelIdSeriesId": {
     "methodName": "searchGetSeriesSeriesIdChannelChannelIdSeriesId",
-    "sourcePath": "/publishing/v2/channels/{channel_id}/series",
-    "parentBindings": [
-      {
-        "sourceName": "channel_id",
-        "fieldName": "getSeriesSeriesIdChannelChannelId_channelId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/series",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -9493,13 +9393,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchChannelsChannelIdSeriesSeriesIdChannelId": {
     "methodName": "searchPatchChannelsChannelIdSeriesSeriesIdChannelId",
-    "sourcePath": "/publishing/v2/series/{series_id}/channel",
-    "parentBindings": [
-      {
-        "sourceName": "series_id",
-        "fieldName": "patchChannelsChannelIdSeriesSeriesId_seriesId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/channels",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -9565,13 +9460,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchEpisodesEpisodeIdChannelChannelIdEpisodeId": {
     "methodName": "searchPatchEpisodesEpisodeIdChannelChannelIdEpisodeId",
-    "sourcePath": "/publishing/v2/channels/{channel_id}/current_episode",
-    "parentBindings": [
-      {
-        "sourceName": "channel_id",
-        "fieldName": "patchEpisodesEpisodeIdChannelChannelId_channelId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/episodes",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -9895,13 +9785,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchSeriesSeriesIdChannelChannelIdSeriesId": {
     "methodName": "searchPatchSeriesSeriesIdChannelChannelIdSeriesId",
-    "sourcePath": "/publishing/v2/channels/{channel_id}/series",
-    "parentBindings": [
-      {
-        "sourceName": "channel_id",
-        "fieldName": "patchSeriesSeriesIdChannelChannelId_channelId"
-      }
-    ],
+    "sourcePath": "/publishing/v2/series",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",

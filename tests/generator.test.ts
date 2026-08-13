@@ -1074,6 +1074,24 @@ describe('generated Planning Center nodes', () => {
     });
   });
 
+  it('does not make path parameter lookups depend on later path parameters', async () => {
+    const peopleConfig = generatedProductConfigs.find((config) => config.product === 'people');
+    expect(peopleConfig).toBeDefined();
+
+    const summary = await buildProductGeneration(peopleConfig!);
+    const operation = summary.operations.find(
+      (candidate) => candidate.id === 'getListCategoriesListCategoryIdListsListId',
+    );
+    const listCategoryId = operation?.pathParameters.find(
+      (field) => field.sourceName === 'list_category_id',
+    );
+
+    expect(listCategoryId?.lookup).toMatchObject({
+      sourcePath: '/people/v2/list_categories',
+      parentBindings: [],
+    });
+  });
+
   it('infers split-name lookup metadata for Giving people without a combined search filter', async () => {
     const givingConfig = generatedProductConfigs.find((config) => config.product === 'giving');
     expect(givingConfig).toBeDefined();

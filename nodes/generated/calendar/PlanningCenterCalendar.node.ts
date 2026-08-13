@@ -592,13 +592,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetAttachmentsAttachmentIdEventEventIdAttachmentId",
-          "sourcePath": "/calendar/v2/events/{event_id}/attachments",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getAttachmentsAttachmentIdEventEventId_eventId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/attachments",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -983,13 +978,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetCalendarsCalendarIdEventsEventIdCalendarId",
-          "sourcePath": "/calendar/v2/events/{event_id}/calendar",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getCalendarsCalendarIdEventsEventId_eventId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/calendars",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -1998,13 +1988,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetConflictsConflictIdResourceResourceIdConflictId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/conflicts",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getConflictsConflictIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/conflicts",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2165,13 +2150,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchConflictsConflictIdResourceResourceIdConflictId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/conflicts",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchConflictsConflictIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/conflicts",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -2345,13 +2325,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteConflictsConflictIdResourceResourceIdConflictId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/conflicts",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteConflictsConflictIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/conflicts",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4094,13 +4069,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventInstancesEventInstanceIdEventEventIdEventInstanceId",
-          "sourcePath": "/calendar/v2/events/{event_id}/event_instances",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventInstancesEventInstanceIdEventEventId_eventId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_instances",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4192,13 +4162,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventInstancesEventInstanceIdEventTimesEventTimeIdEventEventIdEventInstanceId",
-          "sourcePath": "/calendar/v2/events/{event_id}/event_instances",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventInstancesEventInstanceIdEventTimesEventTimeIdEventEventId_eventId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_instances",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4478,13 +4443,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventInstancesEventInstanceIdTagsTagIdEventInstanceId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/event_instances",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "getEventInstancesEventInstanceIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_instances",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4702,13 +4662,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchEventInstancesEventInstanceIdTagsTagIdEventInstanceId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/event_instances",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "patchEventInstancesEventInstanceIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_instances",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -4868,13 +4823,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteEventInstancesEventInstanceIdTagsTagIdEventInstanceId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/event_instances",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "deleteEventInstancesEventInstanceIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_instances",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -6858,13 +6808,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventResourceRequestsEventResourceRequestIdEventEventIdEventResourceRequestId",
-          "sourcePath": "/calendar/v2/events/{event_id}/event_resource_requests",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getEventResourceRequestsEventResourceRequestIdEventEventId_eventId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_resource_requests",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7017,13 +6962,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/event_resource_requests",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getEventResourceRequestsEventResourceRequestIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_resource_requests",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7115,13 +7055,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsResourceBookingIdEventResourceRequestId",
-          "sourcePath": "/calendar/v2/resource_bookings/{resource_booking_id}/event_resource_request",
-          "parentBindings": [
-            {
-              "sourceName": "resource_booking_id",
-              "fieldName": "getEventResourceRequestsEventResourceRequestIdResourceBookingsResourceBookingId_resourceBookingId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_resource_requests",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7374,13 +7309,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/event_resource_requests",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchEventResourceRequestsEventResourceRequestIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_resource_requests",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -7554,13 +7484,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/event_resource_requests",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteEventResourceRequestsEventResourceRequestIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/event_resource_requests",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -9815,13 +9740,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdAttachmentsAttachmentIdEventId",
-          "sourcePath": "/calendar/v2/attachments/{attachment_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "attachment_id",
-              "fieldName": "getEventsEventIdAttachmentsAttachmentId_attachmentId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -9914,13 +9834,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdCalendarCalendarIdEventId",
-          "sourcePath": "/calendar/v2/calendars/{calendar_id}/events",
-          "parentBindings": [
-            {
-              "sourceName": "calendar_id",
-              "fieldName": "getEventsEventIdCalendarCalendarId_calendarId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -9995,13 +9910,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdConflictsConflictIdEventId",
-          "sourcePath": "/calendar/v2/conflicts/{conflict_id}/winner",
-          "parentBindings": [
-            {
-              "sourceName": "conflict_id",
-              "fieldName": "getEventsEventIdConflictsConflictId_conflictId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -10169,13 +10079,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventInstancesEventInstanceIdEventId",
-          "sourcePath": "/calendar/v2/event_instances/{event_instance_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_instance_id",
-              "fieldName": "getEventsEventIdEventInstancesEventInstanceId_eventInstanceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -10267,13 +10172,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdEventResourceRequestsEventResourceRequestIdEventId",
-          "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/event",
-          "parentBindings": [
-            {
-              "sourceName": "event_resource_request_id",
-              "fieldName": "getEventsEventIdEventResourceRequestsEventResourceRequestId_eventResourceRequestId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -10665,13 +10565,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetEventsEventIdTagsTagIdEventId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/events",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "getEventsEventIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -11086,13 +10981,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchEventsEventIdTagsTagIdEventId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/events",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "patchEventsEventIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -11329,13 +11219,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteEventsEventIdTagsTagIdEventId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/events",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "deleteEventsEventIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/events",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -12037,13 +11922,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetPeoplePersonIdEventResourceRequestsEventResourceRequestIdPersonId",
-          "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/created_by",
-          "parentBindings": [
-            {
-              "sourceName": "event_resource_request_id",
-              "fieldName": "getPeoplePersonIdEventResourceRequestsEventResourceRequestId_eventResourceRequestId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/people",
+          "parentBindings": [],
           "splitNameSearch": {
             "firstNameFilter": "where[first_name]",
             "lastNameFilter": "where[last_name]"
@@ -14161,13 +14041,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_approval_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14295,13 +14170,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_approval_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14457,13 +14327,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_approval_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14674,13 +14539,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_approval_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14855,13 +14715,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_approval_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -14972,13 +14827,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_approval_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -15929,13 +15779,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourceBookingsResourceBookingIdEventResourceRequestEventResourceRequestIdResourceBookingId",
-          "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource_bookings",
-          "parentBindings": [
-            {
-              "sourceName": "event_resource_request_id",
-              "fieldName": "getResourceBookingsResourceBookingIdEventResourceRequestEventResourceRequestId_eventResourceRequestId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_bookings",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16026,13 +15871,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_bookings",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getResourceBookingsResourceBookingIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_bookings",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16186,13 +16026,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_bookings",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchResourceBookingsResourceBookingIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_bookings",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16366,13 +16201,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_bookings",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteResourceBookingsResourceBookingIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_bookings",
+          "parentBindings": [],
           "labelFields": [
             "name",
             "full_name",
@@ -16926,13 +16756,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_folder",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getResourceFoldersResourceFolderIdResourcesResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_folders",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -17165,13 +16990,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_folder",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchResourceFoldersResourceFolderIdResourcesResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_folders",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -17444,13 +17264,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/resource_folder",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteResourceFoldersResourceFolderIdResourcesResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resource_folders",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -19769,13 +19584,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourcesResourceIdConflictsConflictIdResourceId",
-          "sourcePath": "/calendar/v2/conflicts/{conflict_id}/resource",
-          "parentBindings": [
-            {
-              "sourceName": "conflict_id",
-              "fieldName": "getResourcesResourceIdConflictsConflictId_conflictId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -19867,13 +19677,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourcesResourceIdEventResourceRequestsEventResourceRequestIdResourceId",
-          "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource",
-          "parentBindings": [
-            {
-              "sourceName": "event_resource_request_id",
-              "fieldName": "getResourcesResourceIdEventResourceRequestsEventResourceRequestId_eventResourceRequestId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -20058,13 +19863,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourcesResourceIdResourceApprovalGroupsResourceApprovalGroupIdResourceId",
-          "sourcePath": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/resources",
-          "parentBindings": [
-            {
-              "sourceName": "resource_approval_group_id",
-              "fieldName": "getResourcesResourceIdResourceApprovalGroupsResourceApprovalGroupId_resourceApprovalGroupId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -20157,13 +19957,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourcesResourceIdResourceBookingsResourceBookingIdResourceId",
-          "sourcePath": "/calendar/v2/resource_bookings/{resource_booking_id}/resource",
-          "parentBindings": [
-            {
-              "sourceName": "resource_booking_id",
-              "fieldName": "getResourcesResourceIdResourceBookingsResourceBookingId_resourceBookingId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -20255,13 +20050,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetResourcesResourceIdResourceFolderResourceFolderIdResourceId",
-          "sourcePath": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
-          "parentBindings": [
-            {
-              "sourceName": "resource_folder_id",
-              "fieldName": "getResourcesResourceIdResourceFolderResourceFolderId_resourceFolderId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -20919,13 +20709,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchResourcesResourceIdResourceFolderResourceFolderIdResourceId",
-          "sourcePath": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
-          "parentBindings": [
-            {
-              "sourceName": "resource_folder_id",
-              "fieldName": "patchResourcesResourceIdResourceFolderResourceFolderId_resourceFolderId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -21330,13 +21115,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteResourcesResourceIdResourceFolderResourceFolderIdResourceId",
-          "sourcePath": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
-          "parentBindings": [
-            {
-              "sourceName": "resource_folder_id",
-              "fieldName": "deleteResourcesResourceIdResourceFolderResourceFolderId_resourceFolderId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/resources",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -22265,13 +22045,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/room_setups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "getRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/room_setups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -22555,13 +22330,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/room_setups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "patchRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/room_setups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -22771,13 +22541,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId",
-          "sourcePath": "/calendar/v2/resources/{resource_id}/room_setups",
-          "parentBindings": [
-            {
-              "sourceName": "resource_id",
-              "fieldName": "deleteRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId_resourceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/room_setups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -23676,13 +23441,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetTagGroupsTagGroupIdTagsTagIdTagGroupId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/tag_group",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "getTagGroupsTagGroupIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tag_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -24014,13 +23774,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchTagGroupsTagGroupIdTagsTagIdTagGroupId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/tag_group",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "patchTagGroupsTagGroupIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tag_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -24259,13 +24014,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteTagGroupsTagGroupIdTagsTagIdTagGroupId",
-          "sourcePath": "/calendar/v2/tags/{tag_id}/tag_group",
-          "parentBindings": [
-            {
-              "sourceName": "tag_id",
-              "fieldName": "deleteTagGroupsTagGroupIdTagsTagId_tagId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tag_groups",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -25428,13 +25178,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetTagsTagIdEventsEventIdTagId",
-          "sourcePath": "/calendar/v2/events/{event_id}/tags",
-          "parentBindings": [
-            {
-              "sourceName": "event_id",
-              "fieldName": "getTagsTagIdEventsEventId_eventId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tags",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -25527,13 +25272,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetTagsTagIdEventInstancesEventInstanceIdTagId",
-          "sourcePath": "/calendar/v2/event_instances/{event_instance_id}/tags",
-          "parentBindings": [
-            {
-              "sourceName": "event_instance_id",
-              "fieldName": "getTagsTagIdEventInstancesEventInstanceId_eventInstanceId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tags",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -25625,13 +25365,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchGetTagsTagIdTagGroupTagGroupIdTagId",
-          "sourcePath": "/calendar/v2/tag_groups/{tag_group_id}/tags",
-          "parentBindings": [
-            {
-              "sourceName": "tag_group_id",
-              "fieldName": "getTagsTagIdTagGroupTagGroupId_tagGroupId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tags",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -25963,13 +25698,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchPatchTagsTagIdTagGroupTagGroupIdTagId",
-          "sourcePath": "/calendar/v2/tag_groups/{tag_group_id}/tags",
-          "parentBindings": [
-            {
-              "sourceName": "tag_group_id",
-              "fieldName": "patchTagsTagIdTagGroupTagGroupId_tagGroupId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tags",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -26208,13 +25938,8 @@ const OPERATIONS: Operation[] = [
         "type": "string",
         "lookup": {
           "methodName": "searchDeleteTagsTagIdTagGroupTagGroupIdTagId",
-          "sourcePath": "/calendar/v2/tag_groups/{tag_group_id}/tags",
-          "parentBindings": [
-            {
-              "sourceName": "tag_group_id",
-              "fieldName": "deleteTagsTagIdTagGroupTagGroupId_tagGroupId"
-            }
-          ],
+          "sourcePath": "/calendar/v2/tags",
+          "parentBindings": [],
           "searchFilter": "where[name]",
           "labelFields": [
             "name",
@@ -26320,13 +26045,8 @@ const OPERATIONS: Operation[] = [
 const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   "searchDeleteConflictsConflictIdResourceResourceIdConflictId": {
     "methodName": "searchDeleteConflictsConflictIdResourceResourceIdConflictId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/conflicts",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteConflictsConflictIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/conflicts",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26369,13 +26089,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteEventInstancesEventInstanceIdTagsTagIdEventInstanceId": {
     "methodName": "searchDeleteEventInstancesEventInstanceIdTagsTagIdEventInstanceId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/event_instances",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "deleteEventInstancesEventInstanceIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_instances",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26418,13 +26133,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId": {
     "methodName": "searchDeleteEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/event_resource_requests",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteEventResourceRequestsEventResourceRequestIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_resource_requests",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26511,13 +26221,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteEventsEventIdTagsTagIdEventId": {
     "methodName": "searchDeleteEventsEventIdTagsTagIdEventId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/events",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "deleteEventsEventIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -26604,13 +26309,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId": {
     "methodName": "searchDeleteResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_approval_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -26658,13 +26358,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId": {
     "methodName": "searchDeleteResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_approval_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -26708,13 +26403,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId": {
     "methodName": "searchDeleteResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_bookings",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteResourceBookingsResourceBookingIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_bookings",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -26777,13 +26467,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId": {
     "methodName": "searchDeleteResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_folder",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteResourceFoldersResourceFolderIdResourcesResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_folders",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -26871,13 +26556,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteResourcesResourceIdResourceFolderResourceFolderIdResourceId": {
     "methodName": "searchDeleteResourcesResourceIdResourceFolderResourceFolderIdResourceId",
-    "sourcePath": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
-    "parentBindings": [
-      {
-        "sourceName": "resource_folder_id",
-        "fieldName": "deleteResourcesResourceIdResourceFolderResourceFolderId_resourceFolderId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -27013,13 +26693,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId": {
     "methodName": "searchDeleteRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/room_setups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "deleteRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/room_setups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -27058,13 +26733,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteTagGroupsTagGroupIdTagsTagIdTagGroupId": {
     "methodName": "searchDeleteTagGroupsTagGroupIdTagsTagIdTagGroupId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/tag_group",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "deleteTagGroupsTagGroupIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tag_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -27133,13 +26803,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchDeleteTagsTagIdTagGroupTagGroupIdTagId": {
     "methodName": "searchDeleteTagsTagIdTagGroupTagGroupIdTagId",
-    "sourcePath": "/calendar/v2/tag_groups/{tag_group_id}/tags",
-    "parentBindings": [
-      {
-        "sourceName": "tag_group_id",
-        "fieldName": "deleteTagsTagIdTagGroupTagGroupId_tagGroupId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tags",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -27218,13 +26883,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetAttachmentsAttachmentIdEventEventIdAttachmentId": {
     "methodName": "searchGetAttachmentsAttachmentIdEventEventIdAttachmentId",
-    "sourcePath": "/calendar/v2/events/{event_id}/attachments",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getAttachmentsAttachmentIdEventEventId_eventId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/attachments",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -27306,13 +26966,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetCalendarsCalendarIdEventsEventIdCalendarId": {
     "methodName": "searchGetCalendarsCalendarIdEventsEventIdCalendarId",
-    "sourcePath": "/calendar/v2/events/{event_id}/calendar",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getCalendarsCalendarIdEventsEventId_eventId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/calendars",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27431,13 +27086,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetConflictsConflictIdResourceResourceIdConflictId": {
     "methodName": "searchGetConflictsConflictIdResourceResourceIdConflictId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/conflicts",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getConflictsConflictIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/conflicts",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27588,13 +27238,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventInstancesEventInstanceIdEventEventIdEventInstanceId": {
     "methodName": "searchGetEventInstancesEventInstanceIdEventEventIdEventInstanceId",
-    "sourcePath": "/calendar/v2/events/{event_id}/event_instances",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventInstancesEventInstanceIdEventEventId_eventId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_instances",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27698,13 +27343,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventInstancesEventInstanceIdEventTimesEventTimeIdEventEventIdEventInstanceId": {
     "methodName": "searchGetEventInstancesEventInstanceIdEventTimesEventTimeIdEventEventIdEventInstanceId",
-    "sourcePath": "/calendar/v2/events/{event_id}/event_instances",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventInstancesEventInstanceIdEventTimesEventTimeIdEventEventId_eventId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_instances",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -27890,13 +27530,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventInstancesEventInstanceIdTagsTagIdEventInstanceId": {
     "methodName": "searchGetEventInstancesEventInstanceIdTagsTagIdEventInstanceId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/event_instances",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "getEventInstancesEventInstanceIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_instances",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -28065,13 +27700,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventResourceRequestsEventResourceRequestIdEventEventIdEventResourceRequestId": {
     "methodName": "searchGetEventResourceRequestsEventResourceRequestIdEventEventIdEventResourceRequestId",
-    "sourcePath": "/calendar/v2/events/{event_id}/event_resource_requests",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getEventResourceRequestsEventResourceRequestIdEventEventId_eventId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_resource_requests",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -28146,13 +27776,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsResourceBookingIdEventResourceRequestId": {
     "methodName": "searchGetEventResourceRequestsEventResourceRequestIdResourceBookingsResourceBookingIdEventResourceRequestId",
-    "sourcePath": "/calendar/v2/resource_bookings/{resource_booking_id}/event_resource_request",
-    "parentBindings": [
-      {
-        "sourceName": "resource_booking_id",
-        "fieldName": "getEventResourceRequestsEventResourceRequestIdResourceBookingsResourceBookingId_resourceBookingId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_resource_requests",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -28238,13 +27863,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId": {
     "methodName": "searchGetEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/event_resource_requests",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getEventResourceRequestsEventResourceRequestIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_resource_requests",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -28458,13 +28078,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdAttachmentsAttachmentIdEventId": {
     "methodName": "searchGetEventsEventIdAttachmentsAttachmentIdEventId",
-    "sourcePath": "/calendar/v2/attachments/{attachment_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "attachment_id",
-        "fieldName": "getEventsEventIdAttachmentsAttachmentId_attachmentId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -28527,13 +28142,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdCalendarCalendarIdEventId": {
     "methodName": "searchGetEventsEventIdCalendarCalendarIdEventId",
-    "sourcePath": "/calendar/v2/calendars/{calendar_id}/events",
-    "parentBindings": [
-      {
-        "sourceName": "calendar_id",
-        "fieldName": "getEventsEventIdCalendarCalendarId_calendarId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -28596,13 +28206,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdConflictsConflictIdEventId": {
     "methodName": "searchGetEventsEventIdConflictsConflictIdEventId",
-    "sourcePath": "/calendar/v2/conflicts/{conflict_id}/winner",
-    "parentBindings": [
-      {
-        "sourceName": "conflict_id",
-        "fieldName": "getEventsEventIdConflictsConflictId_conflictId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -28765,13 +28370,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventInstancesEventInstanceIdEventId": {
     "methodName": "searchGetEventsEventIdEventInstancesEventInstanceIdEventId",
-    "sourcePath": "/calendar/v2/event_instances/{event_instance_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_instance_id",
-        "fieldName": "getEventsEventIdEventInstancesEventInstanceId_eventInstanceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -28834,13 +28434,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdEventResourceRequestsEventResourceRequestIdEventId": {
     "methodName": "searchGetEventsEventIdEventResourceRequestsEventResourceRequestIdEventId",
-    "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/event",
-    "parentBindings": [
-      {
-        "sourceName": "event_resource_request_id",
-        "fieldName": "getEventsEventIdEventResourceRequestsEventResourceRequestId_eventResourceRequestId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -29111,13 +28706,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetEventsEventIdTagsTagIdEventId": {
     "methodName": "searchGetEventsEventIdTagsTagIdEventId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/events",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "getEventsEventIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -29248,13 +28838,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetPeoplePersonIdEventResourceRequestsEventResourceRequestIdPersonId": {
     "methodName": "searchGetPeoplePersonIdEventResourceRequestsEventResourceRequestIdPersonId",
-    "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/created_by",
-    "parentBindings": [
-      {
-        "sourceName": "event_resource_request_id",
-        "fieldName": "getPeoplePersonIdEventResourceRequestsEventResourceRequestId_eventResourceRequestId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/people",
+    "parentBindings": [],
     "splitNameSearch": {
       "firstNameFilter": "where[first_name]",
       "lastNameFilter": "where[last_name]"
@@ -29700,13 +29285,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId": {
     "methodName": "searchGetResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_approval_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -29843,13 +29423,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId": {
     "methodName": "searchGetResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_approval_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -29962,13 +29537,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourceBookingsResourceBookingIdEventResourceRequestEventResourceRequestIdResourceBookingId": {
     "methodName": "searchGetResourceBookingsResourceBookingIdEventResourceRequestEventResourceRequestIdResourceBookingId",
-    "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource_bookings",
-    "parentBindings": [
-      {
-        "sourceName": "event_resource_request_id",
-        "fieldName": "getResourceBookingsResourceBookingIdEventResourceRequestEventResourceRequestId_eventResourceRequestId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_bookings",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -30068,13 +29638,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId": {
     "methodName": "searchGetResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_bookings",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getResourceBookingsResourceBookingIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_bookings",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -30202,13 +29767,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId": {
     "methodName": "searchGetResourceFoldersResourceFolderIdResourcesResourceIdResourceFolderId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_folder",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getResourceFoldersResourceFolderIdResourcesResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_folders",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -30320,13 +29880,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourcesResourceIdConflictsConflictIdResourceId": {
     "methodName": "searchGetResourcesResourceIdConflictsConflictIdResourceId",
-    "sourcePath": "/calendar/v2/conflicts/{conflict_id}/resource",
-    "parentBindings": [
-      {
-        "sourceName": "conflict_id",
-        "fieldName": "getResourcesResourceIdConflictsConflictId_conflictId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -30389,13 +29944,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourcesResourceIdEventResourceRequestsEventResourceRequestIdResourceId": {
     "methodName": "searchGetResourcesResourceIdEventResourceRequestsEventResourceRequestIdResourceId",
-    "sourcePath": "/calendar/v2/event_resource_requests/{event_resource_request_id}/resource",
-    "parentBindings": [
-      {
-        "sourceName": "event_resource_request_id",
-        "fieldName": "getResourcesResourceIdEventResourceRequestsEventResourceRequestId_eventResourceRequestId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -30523,13 +30073,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourcesResourceIdResourceApprovalGroupsResourceApprovalGroupIdResourceId": {
     "methodName": "searchGetResourcesResourceIdResourceApprovalGroupsResourceApprovalGroupIdResourceId",
-    "sourcePath": "/calendar/v2/resource_approval_groups/{resource_approval_group_id}/resources",
-    "parentBindings": [
-      {
-        "sourceName": "resource_approval_group_id",
-        "fieldName": "getResourcesResourceIdResourceApprovalGroupsResourceApprovalGroupId_resourceApprovalGroupId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -30617,13 +30162,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourcesResourceIdResourceBookingsResourceBookingIdResourceId": {
     "methodName": "searchGetResourcesResourceIdResourceBookingsResourceBookingIdResourceId",
-    "sourcePath": "/calendar/v2/resource_bookings/{resource_booking_id}/resource",
-    "parentBindings": [
-      {
-        "sourceName": "resource_booking_id",
-        "fieldName": "getResourcesResourceIdResourceBookingsResourceBookingId_resourceBookingId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -30687,13 +30227,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetResourcesResourceIdResourceFolderResourceFolderIdResourceId": {
     "methodName": "searchGetResourcesResourceIdResourceFolderResourceFolderIdResourceId",
-    "sourcePath": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
-    "parentBindings": [
-      {
-        "sourceName": "resource_folder_id",
-        "fieldName": "getResourcesResourceIdResourceFolderResourceFolderId_resourceFolderId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -31018,13 +30553,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId": {
     "methodName": "searchGetRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/room_setups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "getRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/room_setups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -31325,13 +30855,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetTagGroupsTagGroupIdTagsTagIdTagGroupId": {
     "methodName": "searchGetTagGroupsTagGroupIdTagsTagIdTagGroupId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/tag_group",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "getTagGroupsTagGroupIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tag_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -31424,13 +30949,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetTagsTagIdEventInstancesEventInstanceIdTagId": {
     "methodName": "searchGetTagsTagIdEventInstancesEventInstanceIdTagId",
-    "sourcePath": "/calendar/v2/event_instances/{event_instance_id}/tags",
-    "parentBindings": [
-      {
-        "sourceName": "event_instance_id",
-        "fieldName": "getTagsTagIdEventInstancesEventInstanceId_eventInstanceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tags",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -31494,13 +31014,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetTagsTagIdEventsEventIdTagId": {
     "methodName": "searchGetTagsTagIdEventsEventIdTagId",
-    "sourcePath": "/calendar/v2/events/{event_id}/tags",
-    "parentBindings": [
-      {
-        "sourceName": "event_id",
-        "fieldName": "getTagsTagIdEventsEventId_eventId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tags",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -31564,13 +31079,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchGetTagsTagIdTagGroupTagGroupIdTagId": {
     "methodName": "searchGetTagsTagIdTagGroupTagGroupIdTagId",
-    "sourcePath": "/calendar/v2/tag_groups/{tag_group_id}/tags",
-    "parentBindings": [
-      {
-        "sourceName": "tag_group_id",
-        "fieldName": "getTagsTagIdTagGroupTagGroupId_tagGroupId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tags",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -31649,13 +31159,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchConflictsConflictIdResourceResourceIdConflictId": {
     "methodName": "searchPatchConflictsConflictIdResourceResourceIdConflictId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/conflicts",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "patchConflictsConflictIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/conflicts",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -31723,13 +31228,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchEventInstancesEventInstanceIdTagsTagIdEventInstanceId": {
     "methodName": "searchPatchEventInstancesEventInstanceIdTagsTagIdEventInstanceId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/event_instances",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "patchEventInstancesEventInstanceIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_instances",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -31797,13 +31297,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId": {
     "methodName": "searchPatchEventResourceRequestsEventResourceRequestIdResourceResourceIdEventResourceRequestId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/event_resource_requests",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "patchEventResourceRequestsEventResourceRequestIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/event_resource_requests",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -31915,13 +31410,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchEventsEventIdTagsTagIdEventId": {
     "methodName": "searchPatchEventsEventIdTagsTagIdEventId",
-    "sourcePath": "/calendar/v2/tags/{tag_id}/events",
-    "parentBindings": [
-      {
-        "sourceName": "tag_id",
-        "fieldName": "patchEventsEventIdTagsTagId_tagId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/events",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -32033,13 +31523,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId": {
     "methodName": "searchPatchResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceIdResourceApprovalGroupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "patchResourceApprovalGroupsResourceApprovalGroupIdRequiredApprovalsRequiredApprovalIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_approval_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -32112,13 +31597,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId": {
     "methodName": "searchPatchResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceIdResourceApprovalGroupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_approval_groups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "patchResourceApprovalGroupsResourceApprovalGroupIdResourcesResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_approval_groups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -32187,13 +31667,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId": {
     "methodName": "searchPatchResourceBookingsResourceBookingIdResourceResourceIdResourceBookingId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/resource_bookings",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "patchResourceBookingsResourceBookingIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resource_bookings",
+    "parentBindings": [],
     "labelFields": [
       "name",
       "full_name",
@@ -32400,13 +31875,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchResourcesResourceIdResourceFolderResourceFolderIdResourceId": {
     "methodName": "searchPatchResourcesResourceIdResourceFolderResourceFolderIdResourceId",
-    "sourcePath": "/calendar/v2/resource_folders/{resource_folder_id}/resources",
-    "parentBindings": [
-      {
-        "sourceName": "resource_folder_id",
-        "fieldName": "patchResourcesResourceIdResourceFolderResourceFolderId_resourceFolderId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/resources",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -32567,13 +32037,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId": {
     "methodName": "searchPatchRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceIdRoomSetupId",
-    "sourcePath": "/calendar/v2/resources/{resource_id}/room_setups",
-    "parentBindings": [
-      {
-        "sourceName": "resource_id",
-        "fieldName": "patchRoomSetupsRoomSetupIdResourceSuggestionsResourceSuggestionIdResourceResourceId_resourceId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/room_setups",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",
@@ -32712,13 +32177,8 @@ const LOOKUP_SOURCES: Record<string, GeneratedLookup> = {
   },
   "searchPatchTagsTagIdTagGroupTagGroupIdTagId": {
     "methodName": "searchPatchTagsTagIdTagGroupTagGroupIdTagId",
-    "sourcePath": "/calendar/v2/tag_groups/{tag_group_id}/tags",
-    "parentBindings": [
-      {
-        "sourceName": "tag_group_id",
-        "fieldName": "patchTagsTagIdTagGroupTagGroupId_tagGroupId"
-      }
-    ],
+    "sourcePath": "/calendar/v2/tags",
+    "parentBindings": [],
     "searchFilter": "where[name]",
     "labelFields": [
       "name",

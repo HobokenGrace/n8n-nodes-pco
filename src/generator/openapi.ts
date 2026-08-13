@@ -737,12 +737,13 @@ function compatibleLookupSource(
   target: string | undefined,
   operation: GeneratedOperation,
   excludedSourceParameterName?: string,
+  availableSourceParameterNames?: Set<string>,
 ): LookupSource | undefined {
   if (!target) return undefined;
 
-  const operationPathNames = new Set(
-    operation.pathParameters.map((parameter) => parameter.sourceName),
-  );
+  const operationPathNames =
+    availableSourceParameterNames ??
+    new Set(operation.pathParameters.map((parameter) => parameter.sourceName));
   return catalog
     .get(target)
     ?.find((source) =>
@@ -781,14 +782,17 @@ function addLookupMetadata(operations: GeneratedOperation[]): void {
   const catalog = buildLookupCatalog(operations);
 
   for (const operation of operations) {
+    const availablePathParameters = new Set<string>();
     for (const field of operation.pathParameters) {
       const source = compatibleLookupSource(
         catalog,
         lookupTargetFromIdName(field.sourceName),
         operation,
         field.sourceName,
+        availablePathParameters,
       );
       if (source) field.lookup = lookupForSource(operation, field.name, source);
+      availablePathParameters.add(field.sourceName);
     }
 
     for (const option of operation.queryOptions) {
