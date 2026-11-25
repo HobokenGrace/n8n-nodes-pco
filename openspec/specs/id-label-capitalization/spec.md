@@ -1,7 +1,7 @@
 # id-label-capitalization Specification
 
 ## Purpose
-TBD - created by archiving change standardize-id-label-capitalization. Update Purpose after archive.
+Ensure generated n8n display labels render identifier acronyms as `ID` or `IDs` without changing machine-readable names.
 ## Requirements
 ### Requirement: User-facing identifier labels use ID capitalization
 The generator SHALL render user-facing n8n labels with the identifier acronym capitalized as `ID` or `IDs` whenever the label contains an identifier term.

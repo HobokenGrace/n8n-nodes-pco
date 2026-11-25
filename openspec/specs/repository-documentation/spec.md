@@ -1,7 +1,7 @@
 # repository-documentation Specification
 
 ## Purpose
-TBD - created by archiving change improve-repository-documentation. Update Purpose after archive.
+Keep user, contributor, support, and release documentation aligned with the package's actual behavior and automation.
 ## Requirements
 ### Requirement: User-facing documentation entry point
 

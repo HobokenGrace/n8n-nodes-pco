@@ -1,7 +1,7 @@
 # pco-api-supplements Specification
 
 ## Purpose
-TBD - created by archiving change support-undocumented-pco-endpoints. Update Purpose after archive.
+Maintain repository-owned OpenAPI supplements for Planning Center operations that are missing from or incorrect in published vendor snapshots.
 ## Requirements
 ### Requirement: Product-local supplementary contracts
 

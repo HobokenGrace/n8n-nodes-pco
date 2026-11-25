@@ -1,7 +1,7 @@
 # pco-polling-triggers Specification
 
 ## Purpose
-TBD - created by archiving change add-generated-polling-triggers. Update Purpose after archive.
+Poll Planning Center collections for created or updated resources with durable, configuration-aware cursor state.
 ## Requirements
 ### Requirement: Polling trigger eligibility is deterministic
 
@@ -323,7 +323,7 @@ The runtime SHALL validate and normalize the fetched batch before returning reco
 
 ### Requirement: Delivery limitations are visible before activation
 
-Every generated trigger SHALL include a concise informational notice in the n8n node editor stating that polling may deliver duplicates, a successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. The notice SHALL direct users to fuller documentation covering idempotency, retry, and polling limitations.
+Every generated trigger SHALL include a concise informational notice in the n8n node editor stating that polling may deliver duplicates, a successfully returned batch is not replayed solely because a downstream node fails, and deleted resources are not detected. User-facing documentation SHALL cover the related idempotency, retry, and polling limitations.
 
 #### Scenario: User configures a generated trigger
 

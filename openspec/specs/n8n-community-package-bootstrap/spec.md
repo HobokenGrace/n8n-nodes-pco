@@ -1,7 +1,7 @@
 # n8n-community-package-bootstrap Specification
 
 ## Purpose
-TBD - created by archiving change bootstrap-pco-n8n-node. Update Purpose after archive.
+Define the community-node package foundation, generation inputs, verification commands, and release automation for `@hobokengrace/n8n-nodes-pco`.
 ## Requirements
 ### Requirement: Community node package foundation
 The system SHALL provide a TypeScript-based n8n community node package foundation with package metadata, n8n node metadata, credential metadata, source directories, generated-code directories, and ignored build outputs.
@@ -14,13 +14,14 @@ The system SHALL provide a TypeScript-based n8n community node package foundatio
 - **WHEN** package dependencies are configured
 - **THEN** `n8n-workflow` SHALL be declared as a wildcard peer/dev dependency rather than bundled as a runtime dependency
 
-#### Scenario: Generated nodes have placeholder icon
-- **WHEN** People, Groups, and Giving nodes are generated
-- **THEN** each generated product node SHALL reference the same placeholder PCO icon asset until product-specific icons are added later
+#### Scenario: Generated nodes use product icon assets
+- **WHEN** Planning Center product action or polling trigger nodes are generated
+- **THEN** each node SHALL reference the SVG asset for its own product under `nodes/assets/<product>.svg`
+- **AND** a product's trigger node SHALL reuse the same icon as its action node
 
 #### Scenario: Runtime baseline is configured
 - **WHEN** the project bootstrap is complete
-- **THEN** the package SHALL target Node.js 20 and use pnpm as the documented package manager with a pnpm lockfile
+- **THEN** the package SHALL target Node.js 22 or newer through `.node-version`, `package.json#engines`, and CI, and use pnpm as the documented package manager with a pnpm lockfile
 
 #### Scenario: Source boundaries are clear
 - **WHEN** a contributor inspects the project structure
@@ -35,7 +36,8 @@ The system SHALL provide repeatable commands for building, linting, formatting, 
 
 #### Scenario: Lint verification runs
 - **WHEN** a contributor runs the package lint command
-- **THEN** n8n community-node lint rules SHALL run against hand-written and generated node package files and complete with zero lint errors
+- **THEN** the repository ESLint configuration SHALL run against hand-written, generated, and test sources and complete with zero lint errors
+- **AND** the stricter `n8n-node lint` community-node check SHALL remain available as a separate optional command
 
 #### Scenario: Test verification runs
 - **WHEN** a contributor runs the package test command
@@ -43,7 +45,7 @@ The system SHALL provide repeatable commands for building, linting, formatting, 
 
 #### Scenario: CI verification runs
 - **WHEN** GitHub Actions check CI runs for the bootstrap project
-- **THEN** it SHALL install dependencies with pnpm, verify generated output is current from committed snapshots, run tests, run linting, and run the build without publishing the package or fetching remote OpenAPI specs
+- **THEN** it SHALL install dependencies with pnpm, verify generated output is current from committed snapshots, run tests, run linting, run the build, and inspect the npm package contents without publishing the package or fetching remote OpenAPI specs
 
 ### Requirement: Bootstrap documentation
 The system SHALL document PAT setup, the generated-node model, the OpenAPI snapshot refresh workflow, the node generation workflow, and the future OAuth direction.

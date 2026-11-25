@@ -1,7 +1,7 @@
 # pco-pat-authentication Specification
 
 ## Purpose
-TBD - created by archiving change bootstrap-pco-n8n-node. Update Purpose after archive.
+Authenticate generated Planning Center operations with a Personal Access Token credential and a shared request helper.
 ## Requirements
 ### Requirement: Personal Access Token credential
 The system SHALL provide a Planning Center Personal Access Token credential type for authenticating API requests with a Planning Center application ID, secret, and base URL.
@@ -20,7 +20,7 @@ The system SHALL provide a Planning Center Personal Access Token credential type
 
 #### Scenario: Credential test validates PAT access
 - **WHEN** a user runs the n8n credential test for Planning Center PAT credentials
-- **THEN** the test SHALL call `GET {baseUrl}/people/v2/me` and report whether the configured credentials can authenticate successfully
+- **THEN** the test SHALL call `GET {baseUrl}/api/v2/personal_access_tokens` and report whether the configured credentials can authenticate successfully
 
 #### Scenario: Credential secrets are protected
 - **WHEN** credentials are displayed or errors are emitted

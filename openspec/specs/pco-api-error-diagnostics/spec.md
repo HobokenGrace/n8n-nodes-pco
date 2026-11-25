@@ -1,7 +1,7 @@
 # pco-api-error-diagnostics Specification
 
 ## Purpose
-TBD - created by archiving change improve-api-error-details. Update Purpose after archive.
+Keep Planning Center API failures actionable and safe by preserving response details and reproduction context while redacting credentials.
 ## Requirements
 ### Requirement: Planning Center API errors retain actionable response details
 When a Planning Center request ultimately fails, the runtime SHALL expose the HTTP status and Planning Center response data through the n8n node error. For a JSON:API `errors` array, the runtime SHALL create a description from each available error title and detail without replacing the original request-failure message.
